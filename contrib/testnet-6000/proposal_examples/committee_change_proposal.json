@@ -1,5 +1,5 @@
 {
-  "type": "Furya-Official/mageCommitteeChangeProposal",
+  "type": "furya-official/mageCommitteeChangeProposal",
   "value": {
     "title": "Update Committee 0",
     "description": "This is a proposal that updates committee with id 0",
@@ -12,7 +12,7 @@
       ],
       "permissions": [
         {
-          "type": "Furya-Official/mageSubParamChangePermission",
+          "type": "furya-official/mageSubParamChangePermission",
           "value": {
             "allowed_params": [
               {

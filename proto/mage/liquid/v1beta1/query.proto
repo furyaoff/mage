@@ -14,12 +14,12 @@ service Query {
   // DelegatedBalance returns an account's vesting and vested coins currently delegated to validators.
   // It ignores coins in unbonding delegations.
   rpc DelegatedBalance(QueryDelegatedBalanceRequest) returns (QueryDelegatedBalanceResponse) {
-    option (google.api.http).get = "/Furya-Official/mageliquid/v1beta1/delegated_balance/{delegator}";
+    option (google.api.http).get = "/furya-official/mageliquid/v1beta1/delegated_balance/{delegator}";
   }
 
   // TotalSupply returns the total sum of all coins currently locked into the liquid module.
   rpc TotalSupply(QueryTotalSupplyRequest) returns (QueryTotalSupplyResponse) {
-    option (google.api.http).get = "/Furya-Official/mageliquid/v1beta1/total_supply";
+    option (google.api.http).get = "/furya-official/mageliquid/v1beta1/total_supply";
   }
 }
 

@@ -3,7 +3,7 @@ package mage.evmutil.v1beta1;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "Furya-Official/mageevmutil/v1beta1/genesis.proto";
+import "furya-official/mageevmutil/v1beta1/genesis.proto";
 
 option go_package = "github.com/furya-official/mage/x/evmutil/types";
 option (gogoproto.equal_all) = true;
@@ -13,7 +13,7 @@ option (gogoproto.verbose_equal_all) = true;
 service Query {
   // Params queries all parameters of the evmutil module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/Furya-Official/mageevmutil/v1beta1/params";
+    option (google.api.http).get = "/furya-official/mageevmutil/v1beta1/params";
   }
 }
 

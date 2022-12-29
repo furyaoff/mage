@@ -4,8 +4,8 @@ package mage.earn.v1beta1;
 import "cosmos/base/v1beta1/coin.proto";
 import "cosmos_proto/cosmos.proto";
 import "gogoproto/gogo.proto";
-import "Furya-Official/mageearn/v1beta1/strategy.proto";
-import "Furya-Official/mageearn/v1beta1/vault.proto";
+import "furya-official/mageearn/v1beta1/strategy.proto";
+import "furya-official/mageearn/v1beta1/vault.proto";
 
 option go_package = "github.com/furya-official/mage/x/earn/types";
 

@@ -6,7 +6,7 @@ import "cosmos/base/v1beta1/coin.proto";
 import "cosmos_proto/cosmos.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "Furya-Official/magesavings/v1beta1/store.proto";
+import "furya-official/magesavings/v1beta1/store.proto";
 
 option go_package = "github.com/furya-official/mage/x/savings/types";
 
@@ -14,17 +14,17 @@ option go_package = "github.com/furya-official/mage/x/savings/types";
 service Query {
   // Params queries all parameters of the savings module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/Furya-Official/magesavings/v1beta1/params";
+    option (google.api.http).get = "/furya-official/magesavings/v1beta1/params";
   }
 
   // Deposits queries savings deposits.
   rpc Deposits(QueryDepositsRequest) returns (QueryDepositsResponse) {
-    option (google.api.http).get = "/Furya-Official/magesavings/v1beta1/deposits";
+    option (google.api.http).get = "/furya-official/magesavings/v1beta1/deposits";
   }
 
   // TotalSupply returns the total sum of all coins currently locked into the savings module.
   rpc TotalSupply(QueryTotalSupplyRequest) returns (QueryTotalSupplyResponse) {
-    option (google.api.http).get = "/Furya-Official/magesavings/v1beta1/total_supply";
+    option (google.api.http).get = "/furya-official/magesavings/v1beta1/total_supply";
   }
 }
 

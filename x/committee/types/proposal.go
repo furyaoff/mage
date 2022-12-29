@@ -43,10 +43,10 @@ var _ codectypes.UnpackInterfacesMessage = &CommitteeChangeProposal{}
 func init() {
 	// Gov proposals need to be registered on gov's ModuleCdc so MsgSubmitProposal can be encoded.
 	govtypes.RegisterProposalType(ProposalTypeCommitteeChange)
-	govtypes.RegisterProposalTypeCodec(CommitteeChangeProposal{}, "Furya-Official/mageCommitteeChangeProposal")
+	govtypes.RegisterProposalTypeCodec(CommitteeChangeProposal{}, "furya-official/mageCommitteeChangeProposal")
 
 	govtypes.RegisterProposalType(ProposalTypeCommitteeDelete)
-	govtypes.RegisterProposalTypeCodec(CommitteeDeleteProposal{}, "Furya-Official/mageCommitteeDeleteProposal")
+	govtypes.RegisterProposalTypeCodec(CommitteeDeleteProposal{}, "furya-official/mageCommitteeDeleteProposal")
 }
 
 func NewCommitteeChangeProposal(title string, description string, newCommittee Committee) (CommitteeChangeProposal, error) {

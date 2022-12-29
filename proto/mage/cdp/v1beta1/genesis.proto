@@ -5,7 +5,7 @@ import "cosmos/base/v1beta1/coin.proto";
 import "cosmos_proto/cosmos.proto";
 import "gogoproto/gogo.proto";
 import "google/protobuf/timestamp.proto";
-import "Furya-Official/magecdp/v1beta1/cdp.proto";
+import "furya-official/magecdp/v1beta1/cdp.proto";
 
 option go_package = "github.com/furya-official/mage/x/cdp/types";
 

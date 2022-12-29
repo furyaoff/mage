@@ -2,7 +2,7 @@ syntax = "proto3";
 package mage.pricefeed.v1beta1;
 
 import "gogoproto/gogo.proto";
-import "Furya-Official/magepricefeed/v1beta1/store.proto";
+import "furya-official/magepricefeed/v1beta1/store.proto";
 
 option go_package = "github.com/furya-official/mage/x/pricefeed/types";
 option (gogoproto.equal_all) = true;

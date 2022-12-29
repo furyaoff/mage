@@ -4,18 +4,18 @@
 
 ## Table of Contents
 
-- [Furya-Official/mageauction/v1beta1/auction.proto](#Furya-Official/mageauction/v1beta1/auction.proto)
+- [furya-official/mageauction/v1beta1/auction.proto](#furya-official/mageauction/v1beta1/auction.proto)
     - [BaseAuction](#mage.auction.v1beta1.BaseAuction)
     - [CollateralAuction](#mage.auction.v1beta1.CollateralAuction)
     - [DebtAuction](#mage.auction.v1beta1.DebtAuction)
     - [SurplusAuction](#mage.auction.v1beta1.SurplusAuction)
     - [WeightedAddresses](#mage.auction.v1beta1.WeightedAddresses)
   
-- [Furya-Official/mageauction/v1beta1/genesis.proto](#Furya-Official/mageauction/v1beta1/genesis.proto)
+- [furya-official/mageauction/v1beta1/genesis.proto](#furya-official/mageauction/v1beta1/genesis.proto)
     - [GenesisState](#mage.auction.v1beta1.GenesisState)
     - [Params](#mage.auction.v1beta1.Params)
   
-- [Furya-Official/mageauction/v1beta1/query.proto](#Furya-Official/mageauction/v1beta1/query.proto)
+- [furya-official/mageauction/v1beta1/query.proto](#furya-official/mageauction/v1beta1/query.proto)
     - [QueryAuctionRequest](#mage.auction.v1beta1.QueryAuctionRequest)
     - [QueryAuctionResponse](#mage.auction.v1beta1.QueryAuctionResponse)
     - [QueryAuctionsRequest](#mage.auction.v1beta1.QueryAuctionsRequest)
@@ -27,13 +27,13 @@
   
     - [Query](#mage.auction.v1beta1.Query)
   
-- [Furya-Official/mageauction/v1beta1/tx.proto](#Furya-Official/mageauction/v1beta1/tx.proto)
+- [furya-official/mageauction/v1beta1/tx.proto](#furya-official/mageauction/v1beta1/tx.proto)
     - [MsgPlaceBid](#mage.auction.v1beta1.MsgPlaceBid)
     - [MsgPlaceBidResponse](#mage.auction.v1beta1.MsgPlaceBidResponse)
   
     - [Msg](#mage.auction.v1beta1.Msg)
   
-- [Furya-Official/magebep3/v1beta1/bep3.proto](#Furya-Official/magebep3/v1beta1/bep3.proto)
+- [furya-official/magebep3/v1beta1/bep3.proto](#furya-official/magebep3/v1beta1/bep3.proto)
     - [AssetParam](#mage.bep3.v1beta1.AssetParam)
     - [AssetSupply](#mage.bep3.v1beta1.AssetSupply)
     - [AtomicSwap](#mage.bep3.v1beta1.AtomicSwap)
@@ -43,10 +43,10 @@
     - [SwapDirection](#mage.bep3.v1beta1.SwapDirection)
     - [SwapStatus](#mage.bep3.v1beta1.SwapStatus)
   
-- [Furya-Official/magebep3/v1beta1/genesis.proto](#Furya-Official/magebep3/v1beta1/genesis.proto)
+- [furya-official/magebep3/v1beta1/genesis.proto](#furya-official/magebep3/v1beta1/genesis.proto)
     - [GenesisState](#mage.bep3.v1beta1.GenesisState)
   
-- [Furya-Official/magebep3/v1beta1/query.proto](#Furya-Official/magebep3/v1beta1/query.proto)
+- [furya-official/magebep3/v1beta1/query.proto](#furya-official/magebep3/v1beta1/query.proto)
     - [AssetSupplyResponse](#mage.bep3.v1beta1.AssetSupplyResponse)
     - [AtomicSwapResponse](#mage.bep3.v1beta1.AtomicSwapResponse)
     - [QueryAssetSuppliesRequest](#mage.bep3.v1beta1.QueryAssetSuppliesRequest)
@@ -62,7 +62,7 @@
   
     - [Query](#mage.bep3.v1beta1.Query)
   
-- [Furya-Official/magebep3/v1beta1/tx.proto](#Furya-Official/magebep3/v1beta1/tx.proto)
+- [furya-official/magebep3/v1beta1/tx.proto](#furya-official/magebep3/v1beta1/tx.proto)
     - [MsgClaimAtomicSwap](#mage.bep3.v1beta1.MsgClaimAtomicSwap)
     - [MsgClaimAtomicSwapResponse](#mage.bep3.v1beta1.MsgClaimAtomicSwapResponse)
     - [MsgCreateAtomicSwap](#mage.bep3.v1beta1.MsgCreateAtomicSwap)
@@ -72,14 +72,14 @@
   
     - [Msg](#mage.bep3.v1beta1.Msg)
   
-- [Furya-Official/magecdp/v1beta1/cdp.proto](#Furya-Official/magecdp/v1beta1/cdp.proto)
+- [furya-official/magecdp/v1beta1/cdp.proto](#furya-official/magecdp/v1beta1/cdp.proto)
     - [CDP](#mage.cdp.v1beta1.CDP)
     - [Deposit](#mage.cdp.v1beta1.Deposit)
     - [OwnerCDPIndex](#mage.cdp.v1beta1.OwnerCDPIndex)
     - [TotalCollateral](#mage.cdp.v1beta1.TotalCollateral)
     - [TotalPrincipal](#mage.cdp.v1beta1.TotalPrincipal)
   
-- [Furya-Official/magecdp/v1beta1/genesis.proto](#Furya-Official/magecdp/v1beta1/genesis.proto)
+- [furya-official/magecdp/v1beta1/genesis.proto](#furya-official/magecdp/v1beta1/genesis.proto)
     - [CollateralParam](#mage.cdp.v1beta1.CollateralParam)
     - [DebtParam](#mage.cdp.v1beta1.DebtParam)
     - [GenesisAccumulationTime](#mage.cdp.v1beta1.GenesisAccumulationTime)
@@ -87,7 +87,7 @@
     - [GenesisTotalPrincipal](#mage.cdp.v1beta1.GenesisTotalPrincipal)
     - [Params](#mage.cdp.v1beta1.Params)
   
-- [Furya-Official/magecdp/v1beta1/query.proto](#Furya-Official/magecdp/v1beta1/query.proto)
+- [furya-official/magecdp/v1beta1/query.proto](#furya-official/magecdp/v1beta1/query.proto)
     - [CDPResponse](#mage.cdp.v1beta1.CDPResponse)
     - [QueryAccountsRequest](#mage.cdp.v1beta1.QueryAccountsRequest)
     - [QueryAccountsResponse](#mage.cdp.v1beta1.QueryAccountsResponse)
@@ -106,7 +106,7 @@
   
     - [Query](#mage.cdp.v1beta1.Query)
   
-- [Furya-Official/magecdp/v1beta1/tx.proto](#Furya-Official/magecdp/v1beta1/tx.proto)
+- [furya-official/magecdp/v1beta1/tx.proto](#furya-official/magecdp/v1beta1/tx.proto)
     - [MsgCreateCDP](#mage.cdp.v1beta1.MsgCreateCDP)
     - [MsgCreateCDPResponse](#mage.cdp.v1beta1.MsgCreateCDPResponse)
     - [MsgDeposit](#mage.cdp.v1beta1.MsgDeposit)
@@ -122,21 +122,21 @@
   
     - [Msg](#mage.cdp.v1beta1.Msg)
   
-- [Furya-Official/magecommittee/v1beta1/committee.proto](#Furya-Official/magecommittee/v1beta1/committee.proto)
+- [furya-official/magecommittee/v1beta1/committee.proto](#furya-official/magecommittee/v1beta1/committee.proto)
     - [BaseCommittee](#mage.committee.v1beta1.BaseCommittee)
     - [MemberCommittee](#mage.committee.v1beta1.MemberCommittee)
     - [TokenCommittee](#mage.committee.v1beta1.TokenCommittee)
   
     - [TallyOption](#mage.committee.v1beta1.TallyOption)
   
-- [Furya-Official/magecommittee/v1beta1/genesis.proto](#Furya-Official/magecommittee/v1beta1/genesis.proto)
+- [furya-official/magecommittee/v1beta1/genesis.proto](#furya-official/magecommittee/v1beta1/genesis.proto)
     - [GenesisState](#mage.committee.v1beta1.GenesisState)
     - [Proposal](#mage.committee.v1beta1.Proposal)
     - [Vote](#mage.committee.v1beta1.Vote)
   
     - [VoteType](#mage.committee.v1beta1.VoteType)
   
-- [Furya-Official/magecommittee/v1beta1/permissions.proto](#Furya-Official/magecommittee/v1beta1/permissions.proto)
+- [furya-official/magecommittee/v1beta1/permissions.proto](#furya-official/magecommittee/v1beta1/permissions.proto)
     - [AllowedParamsChange](#mage.committee.v1beta1.AllowedParamsChange)
     - [GodPermission](#mage.committee.v1beta1.GodPermission)
     - [ParamsChangePermission](#mage.committee.v1beta1.ParamsChangePermission)
@@ -144,11 +144,11 @@
     - [SubparamRequirement](#mage.committee.v1beta1.SubparamRequirement)
     - [TextPermission](#mage.committee.v1beta1.TextPermission)
   
-- [Furya-Official/magecommittee/v1beta1/proposal.proto](#Furya-Official/magecommittee/v1beta1/proposal.proto)
+- [furya-official/magecommittee/v1beta1/proposal.proto](#furya-official/magecommittee/v1beta1/proposal.proto)
     - [CommitteeChangeProposal](#mage.committee.v1beta1.CommitteeChangeProposal)
     - [CommitteeDeleteProposal](#mage.committee.v1beta1.CommitteeDeleteProposal)
   
-- [Furya-Official/magecommittee/v1beta1/query.proto](#Furya-Official/magecommittee/v1beta1/query.proto)
+- [furya-official/magecommittee/v1beta1/query.proto](#furya-official/magecommittee/v1beta1/query.proto)
     - [QueryCommitteeRequest](#mage.committee.v1beta1.QueryCommitteeRequest)
     - [QueryCommitteeResponse](#mage.committee.v1beta1.QueryCommitteeResponse)
     - [QueryCommitteesRequest](#mage.committee.v1beta1.QueryCommitteesRequest)
@@ -170,7 +170,7 @@
   
     - [Query](#mage.committee.v1beta1.Query)
   
-- [Furya-Official/magecommittee/v1beta1/tx.proto](#Furya-Official/magecommittee/v1beta1/tx.proto)
+- [furya-official/magecommittee/v1beta1/tx.proto](#furya-official/magecommittee/v1beta1/tx.proto)
     - [MsgSubmitProposal](#mage.committee.v1beta1.MsgSubmitProposal)
     - [MsgSubmitProposalResponse](#mage.committee.v1beta1.MsgSubmitProposalResponse)
     - [MsgVote](#mage.committee.v1beta1.MsgVote)
@@ -178,11 +178,11 @@
   
     - [Msg](#mage.committee.v1beta1.Msg)
   
-- [Furya-Official/magecommunity/v1beta1/proposal.proto](#Furya-Official/magecommunity/v1beta1/proposal.proto)
+- [furya-official/magecommunity/v1beta1/proposal.proto](#furya-official/magecommunity/v1beta1/proposal.proto)
     - [CommunityPoolLendDepositProposal](#mage.community.v1beta1.CommunityPoolLendDepositProposal)
     - [CommunityPoolLendWithdrawProposal](#mage.community.v1beta1.CommunityPoolLendWithdrawProposal)
   
-- [Furya-Official/magecommunity/v1beta1/query.proto](#Furya-Official/magecommunity/v1beta1/query.proto)
+- [furya-official/magecommunity/v1beta1/query.proto](#furya-official/magecommunity/v1beta1/query.proto)
     - [QueryBalanceRequest](#mage.community.v1beta1.QueryBalanceRequest)
     - [QueryBalanceResponse](#mage.community.v1beta1.QueryBalanceResponse)
     - [QueryLegacyCommunityPoolRequest](#mage.community.v1beta1.QueryLegacyCommunityPoolRequest)
@@ -190,34 +190,34 @@
   
     - [Query](#mage.community.v1beta1.Query)
   
-- [Furya-Official/magecommunity/v1beta1/tx.proto](#Furya-Official/magecommunity/v1beta1/tx.proto)
+- [furya-official/magecommunity/v1beta1/tx.proto](#furya-official/magecommunity/v1beta1/tx.proto)
     - [MsgFundCommunityPool](#mage.community.v1beta1.MsgFundCommunityPool)
     - [MsgFundCommunityPoolResponse](#mage.community.v1beta1.MsgFundCommunityPoolResponse)
   
     - [Msg](#mage.community.v1beta1.Msg)
   
-- [Furya-Official/mageearn/v1beta1/strategy.proto](#Furya-Official/mageearn/v1beta1/strategy.proto)
+- [furya-official/mageearn/v1beta1/strategy.proto](#furya-official/mageearn/v1beta1/strategy.proto)
     - [StrategyType](#mage.earn.v1beta1.StrategyType)
   
-- [Furya-Official/mageearn/v1beta1/vault.proto](#Furya-Official/mageearn/v1beta1/vault.proto)
+- [furya-official/mageearn/v1beta1/vault.proto](#furya-official/mageearn/v1beta1/vault.proto)
     - [AllowedVault](#mage.earn.v1beta1.AllowedVault)
     - [VaultRecord](#mage.earn.v1beta1.VaultRecord)
     - [VaultShare](#mage.earn.v1beta1.VaultShare)
     - [VaultShareRecord](#mage.earn.v1beta1.VaultShareRecord)
   
-- [Furya-Official/mageearn/v1beta1/params.proto](#Furya-Official/mageearn/v1beta1/params.proto)
+- [furya-official/mageearn/v1beta1/params.proto](#furya-official/mageearn/v1beta1/params.proto)
     - [Params](#mage.earn.v1beta1.Params)
   
-- [Furya-Official/mageearn/v1beta1/genesis.proto](#Furya-Official/mageearn/v1beta1/genesis.proto)
+- [furya-official/mageearn/v1beta1/genesis.proto](#furya-official/mageearn/v1beta1/genesis.proto)
     - [GenesisState](#mage.earn.v1beta1.GenesisState)
   
-- [Furya-Official/mageearn/v1beta1/proposal.proto](#Furya-Official/mageearn/v1beta1/proposal.proto)
+- [furya-official/mageearn/v1beta1/proposal.proto](#furya-official/mageearn/v1beta1/proposal.proto)
     - [CommunityPoolDepositProposal](#mage.earn.v1beta1.CommunityPoolDepositProposal)
     - [CommunityPoolDepositProposalJSON](#mage.earn.v1beta1.CommunityPoolDepositProposalJSON)
     - [CommunityPoolWithdrawProposal](#mage.earn.v1beta1.CommunityPoolWithdrawProposal)
     - [CommunityPoolWithdrawProposalJSON](#mage.earn.v1beta1.CommunityPoolWithdrawProposalJSON)
   
-- [Furya-Official/mageearn/v1beta1/query.proto](#Furya-Official/mageearn/v1beta1/query.proto)
+- [furya-official/mageearn/v1beta1/query.proto](#furya-official/mageearn/v1beta1/query.proto)
     - [DepositResponse](#mage.earn.v1beta1.DepositResponse)
     - [QueryDepositsRequest](#mage.earn.v1beta1.QueryDepositsRequest)
     - [QueryDepositsResponse](#mage.earn.v1beta1.QueryDepositsResponse)
@@ -233,7 +233,7 @@
   
     - [Query](#mage.earn.v1beta1.Query)
   
-- [Furya-Official/mageearn/v1beta1/tx.proto](#Furya-Official/mageearn/v1beta1/tx.proto)
+- [furya-official/mageearn/v1beta1/tx.proto](#furya-official/mageearn/v1beta1/tx.proto)
     - [MsgDeposit](#mage.earn.v1beta1.MsgDeposit)
     - [MsgDepositResponse](#mage.earn.v1beta1.MsgDepositResponse)
     - [MsgWithdraw](#mage.earn.v1beta1.MsgWithdraw)
@@ -241,21 +241,21 @@
   
     - [Msg](#mage.earn.v1beta1.Msg)
   
-- [Furya-Official/mageevmutil/v1beta1/conversion_pair.proto](#Furya-Official/mageevmutil/v1beta1/conversion_pair.proto)
+- [furya-official/mageevmutil/v1beta1/conversion_pair.proto](#furya-official/mageevmutil/v1beta1/conversion_pair.proto)
     - [ConversionPair](#mage.evmutil.v1beta1.ConversionPair)
   
-- [Furya-Official/mageevmutil/v1beta1/genesis.proto](#Furya-Official/mageevmutil/v1beta1/genesis.proto)
+- [furya-official/mageevmutil/v1beta1/genesis.proto](#furya-official/mageevmutil/v1beta1/genesis.proto)
     - [Account](#mage.evmutil.v1beta1.Account)
     - [GenesisState](#mage.evmutil.v1beta1.GenesisState)
     - [Params](#mage.evmutil.v1beta1.Params)
   
-- [Furya-Official/mageevmutil/v1beta1/query.proto](#Furya-Official/mageevmutil/v1beta1/query.proto)
+- [furya-official/mageevmutil/v1beta1/query.proto](#furya-official/mageevmutil/v1beta1/query.proto)
     - [QueryParamsRequest](#mage.evmutil.v1beta1.QueryParamsRequest)
     - [QueryParamsResponse](#mage.evmutil.v1beta1.QueryParamsResponse)
   
     - [Query](#mage.evmutil.v1beta1.Query)
   
-- [Furya-Official/mageevmutil/v1beta1/tx.proto](#Furya-Official/mageevmutil/v1beta1/tx.proto)
+- [furya-official/mageevmutil/v1beta1/tx.proto](#furya-official/mageevmutil/v1beta1/tx.proto)
     - [MsgConvertCoinToERC20](#mage.evmutil.v1beta1.MsgConvertCoinToERC20)
     - [MsgConvertCoinToERC20Response](#mage.evmutil.v1beta1.MsgConvertCoinToERC20Response)
     - [MsgConvertERC20ToCoin](#mage.evmutil.v1beta1.MsgConvertERC20ToCoin)
@@ -263,7 +263,7 @@
   
     - [Msg](#mage.evmutil.v1beta1.Msg)
   
-- [Furya-Official/magehard/v1beta1/hard.proto](#Furya-Official/magehard/v1beta1/hard.proto)
+- [furya-official/magehard/v1beta1/hard.proto](#furya-official/magehard/v1beta1/hard.proto)
     - [Borrow](#mage.hard.v1beta1.Borrow)
     - [BorrowInterestFactor](#mage.hard.v1beta1.BorrowInterestFactor)
     - [BorrowLimit](#mage.hard.v1beta1.BorrowLimit)
@@ -274,11 +274,11 @@
     - [Params](#mage.hard.v1beta1.Params)
     - [SupplyInterestFactor](#mage.hard.v1beta1.SupplyInterestFactor)
   
-- [Furya-Official/magehard/v1beta1/genesis.proto](#Furya-Official/magehard/v1beta1/genesis.proto)
+- [furya-official/magehard/v1beta1/genesis.proto](#furya-official/magehard/v1beta1/genesis.proto)
     - [GenesisAccumulationTime](#mage.hard.v1beta1.GenesisAccumulationTime)
     - [GenesisState](#mage.hard.v1beta1.GenesisState)
   
-- [Furya-Official/magehard/v1beta1/query.proto](#Furya-Official/magehard/v1beta1/query.proto)
+- [furya-official/magehard/v1beta1/query.proto](#furya-official/magehard/v1beta1/query.proto)
     - [BorrowInterestFactorResponse](#mage.hard.v1beta1.BorrowInterestFactorResponse)
     - [BorrowResponse](#mage.hard.v1beta1.BorrowResponse)
     - [DepositResponse](#mage.hard.v1beta1.DepositResponse)
@@ -310,7 +310,7 @@
   
     - [Query](#mage.hard.v1beta1.Query)
   
-- [Furya-Official/magehard/v1beta1/tx.proto](#Furya-Official/magehard/v1beta1/tx.proto)
+- [furya-official/magehard/v1beta1/tx.proto](#furya-official/magehard/v1beta1/tx.proto)
     - [MsgBorrow](#mage.hard.v1beta1.MsgBorrow)
     - [MsgBorrowResponse](#mage.hard.v1beta1.MsgBorrowResponse)
     - [MsgDeposit](#mage.hard.v1beta1.MsgDeposit)
@@ -324,7 +324,7 @@
   
     - [Msg](#mage.hard.v1beta1.Msg)
   
-- [Furya-Official/mageincentive/v1beta1/claims.proto](#Furya-Official/mageincentive/v1beta1/claims.proto)
+- [furya-official/mageincentive/v1beta1/claims.proto](#furya-official/mageincentive/v1beta1/claims.proto)
     - [BaseClaim](#mage.incentive.v1beta1.BaseClaim)
     - [BaseMultiClaim](#mage.incentive.v1beta1.BaseMultiClaim)
     - [DelegatorClaim](#mage.incentive.v1beta1.DelegatorClaim)
@@ -338,19 +338,19 @@
     - [SwapClaim](#mage.incentive.v1beta1.SwapClaim)
     - [USDXMintingClaim](#mage.incentive.v1beta1.USDXMintingClaim)
   
-- [Furya-Official/mageincentive/v1beta1/params.proto](#Furya-Official/mageincentive/v1beta1/params.proto)
+- [furya-official/mageincentive/v1beta1/params.proto](#furya-official/mageincentive/v1beta1/params.proto)
     - [MultiRewardPeriod](#mage.incentive.v1beta1.MultiRewardPeriod)
     - [Multiplier](#mage.incentive.v1beta1.Multiplier)
     - [MultipliersPerDenom](#mage.incentive.v1beta1.MultipliersPerDenom)
     - [Params](#mage.incentive.v1beta1.Params)
     - [RewardPeriod](#mage.incentive.v1beta1.RewardPeriod)
   
-- [Furya-Official/mageincentive/v1beta1/genesis.proto](#Furya-Official/mageincentive/v1beta1/genesis.proto)
+- [furya-official/mageincentive/v1beta1/genesis.proto](#furya-official/mageincentive/v1beta1/genesis.proto)
     - [AccumulationTime](#mage.incentive.v1beta1.AccumulationTime)
     - [GenesisRewardState](#mage.incentive.v1beta1.GenesisRewardState)
     - [GenesisState](#mage.incentive.v1beta1.GenesisState)
   
-- [Furya-Official/mageincentive/v1beta1/tx.proto](#Furya-Official/mageincentive/v1beta1/tx.proto)
+- [furya-official/mageincentive/v1beta1/tx.proto](#furya-official/mageincentive/v1beta1/tx.proto)
     - [MsgClaimDelegatorReward](#mage.incentive.v1beta1.MsgClaimDelegatorReward)
     - [MsgClaimDelegatorRewardResponse](#mage.incentive.v1beta1.MsgClaimDelegatorRewardResponse)
     - [MsgClaimEarnReward](#mage.incentive.v1beta1.MsgClaimEarnReward)
@@ -367,20 +367,20 @@
   
     - [Msg](#mage.incentive.v1beta1.Msg)
   
-- [Furya-Official/mageissuance/v1beta1/genesis.proto](#Furya-Official/mageissuance/v1beta1/genesis.proto)
+- [furya-official/mageissuance/v1beta1/genesis.proto](#furya-official/mageissuance/v1beta1/genesis.proto)
     - [Asset](#mage.issuance.v1beta1.Asset)
     - [AssetSupply](#mage.issuance.v1beta1.AssetSupply)
     - [GenesisState](#mage.issuance.v1beta1.GenesisState)
     - [Params](#mage.issuance.v1beta1.Params)
     - [RateLimit](#mage.issuance.v1beta1.RateLimit)
   
-- [Furya-Official/mageissuance/v1beta1/query.proto](#Furya-Official/mageissuance/v1beta1/query.proto)
+- [furya-official/mageissuance/v1beta1/query.proto](#furya-official/mageissuance/v1beta1/query.proto)
     - [QueryParamsRequest](#mage.issuance.v1beta1.QueryParamsRequest)
     - [QueryParamsResponse](#mage.issuance.v1beta1.QueryParamsResponse)
   
     - [Query](#mage.issuance.v1beta1.Query)
   
-- [Furya-Official/mageissuance/v1beta1/tx.proto](#Furya-Official/mageissuance/v1beta1/tx.proto)
+- [furya-official/mageissuance/v1beta1/tx.proto](#furya-official/mageissuance/v1beta1/tx.proto)
     - [MsgBlockAddress](#mage.issuance.v1beta1.MsgBlockAddress)
     - [MsgBlockAddressResponse](#mage.issuance.v1beta1.MsgBlockAddressResponse)
     - [MsgIssueTokens](#mage.issuance.v1beta1.MsgIssueTokens)
@@ -394,22 +394,22 @@
   
     - [Msg](#mage.issuance.v1beta1.Msg)
   
-- [Furya-Official/mageMagedist/v1beta1/params.proto](#Furya-Official/mageMagedist/v1beta1/params.proto)
+- [furya-official/mageMagedist/v1beta1/params.proto](#furya-official/mageMagedist/v1beta1/params.proto)
     - [CoreReward](#mage.Magedist.v1beta1.CoreReward)
     - [InfrastructureParams](#mage.Magedist.v1beta1.InfrastructureParams)
     - [Params](#mage.Magedist.v1beta1.Params)
     - [PartnerReward](#mage.Magedist.v1beta1.PartnerReward)
     - [Period](#mage.Magedist.v1beta1.Period)
   
-- [Furya-Official/mageMagedist/v1beta1/genesis.proto](#Furya-Official/mageMagedist/v1beta1/genesis.proto)
+- [furya-official/mageMagedist/v1beta1/genesis.proto](#furya-official/mageMagedist/v1beta1/genesis.proto)
     - [GenesisState](#mage.Magedist.v1beta1.GenesisState)
   
-- [Furya-Official/mageMagedist/v1beta1/proposal.proto](#Furya-Official/mageMagedist/v1beta1/proposal.proto)
+- [furya-official/mageMagedist/v1beta1/proposal.proto](#furya-official/mageMagedist/v1beta1/proposal.proto)
     - [CommunityPoolMultiSpendProposal](#mage.Magedist.v1beta1.CommunityPoolMultiSpendProposal)
     - [CommunityPoolMultiSpendProposalJSON](#mage.Magedist.v1beta1.CommunityPoolMultiSpendProposalJSON)
     - [MultiSpendRecipient](#mage.Magedist.v1beta1.MultiSpendRecipient)
   
-- [Furya-Official/mageMagedist/v1beta1/query.proto](#Furya-Official/mageMagedist/v1beta1/query.proto)
+- [furya-official/mageMagedist/v1beta1/query.proto](#furya-official/mageMagedist/v1beta1/query.proto)
     - [QueryBalanceRequest](#mage.Magedist.v1beta1.QueryBalanceRequest)
     - [QueryBalanceResponse](#mage.Magedist.v1beta1.QueryBalanceResponse)
     - [QueryParamsRequest](#mage.Magedist.v1beta1.QueryParamsRequest)
@@ -417,13 +417,13 @@
   
     - [Query](#mage.Magedist.v1beta1.Query)
   
-- [Furya-Official/mageMagemint/v1beta1/Magemint.proto](#Furya-Official/mageMagemint/v1beta1/Magemint.proto)
+- [furya-official/mageMagemint/v1beta1/Magemint.proto](#furya-official/mageMagemint/v1beta1/Magemint.proto)
     - [Params](#mage.Magemint.v1beta1.Params)
   
-- [Furya-Official/mageMagemint/v1beta1/genesis.proto](#Furya-Official/mageMagemint/v1beta1/genesis.proto)
+- [furya-official/mageMagemint/v1beta1/genesis.proto](#furya-official/mageMagemint/v1beta1/genesis.proto)
     - [GenesisState](#mage.Magemint.v1beta1.GenesisState)
   
-- [Furya-Official/mageMagemint/v1beta1/query.proto](#Furya-Official/mageMagemint/v1beta1/query.proto)
+- [furya-official/mageMagemint/v1beta1/query.proto](#furya-official/mageMagemint/v1beta1/query.proto)
     - [QueryInflationRequest](#mage.Magemint.v1beta1.QueryInflationRequest)
     - [QueryInflationResponse](#mage.Magemint.v1beta1.QueryInflationResponse)
     - [QueryParamsRequest](#mage.Magemint.v1beta1.QueryParamsRequest)
@@ -431,7 +431,7 @@
   
     - [Query](#mage.Magemint.v1beta1.Query)
   
-- [Furya-Official/mageliquid/v1beta1/query.proto](#Furya-Official/mageliquid/v1beta1/query.proto)
+- [furya-official/mageliquid/v1beta1/query.proto](#furya-official/mageliquid/v1beta1/query.proto)
     - [QueryDelegatedBalanceRequest](#mage.liquid.v1beta1.QueryDelegatedBalanceRequest)
     - [QueryDelegatedBalanceResponse](#mage.liquid.v1beta1.QueryDelegatedBalanceResponse)
     - [QueryTotalSupplyRequest](#mage.liquid.v1beta1.QueryTotalSupplyRequest)
@@ -439,7 +439,7 @@
   
     - [Query](#mage.liquid.v1beta1.Query)
   
-- [Furya-Official/mageliquid/v1beta1/tx.proto](#Furya-Official/mageliquid/v1beta1/tx.proto)
+- [furya-official/mageliquid/v1beta1/tx.proto](#furya-official/mageliquid/v1beta1/tx.proto)
     - [MsgBurnDerivative](#mage.liquid.v1beta1.MsgBurnDerivative)
     - [MsgBurnDerivativeResponse](#mage.liquid.v1beta1.MsgBurnDerivativeResponse)
     - [MsgMintDerivative](#mage.liquid.v1beta1.MsgMintDerivative)
@@ -447,16 +447,16 @@
   
     - [Msg](#mage.liquid.v1beta1.Msg)
   
-- [Furya-Official/magepricefeed/v1beta1/store.proto](#Furya-Official/magepricefeed/v1beta1/store.proto)
+- [furya-official/magepricefeed/v1beta1/store.proto](#furya-official/magepricefeed/v1beta1/store.proto)
     - [CurrentPrice](#mage.pricefeed.v1beta1.CurrentPrice)
     - [Market](#mage.pricefeed.v1beta1.Market)
     - [Params](#mage.pricefeed.v1beta1.Params)
     - [PostedPrice](#mage.pricefeed.v1beta1.PostedPrice)
   
-- [Furya-Official/magepricefeed/v1beta1/genesis.proto](#Furya-Official/magepricefeed/v1beta1/genesis.proto)
+- [furya-official/magepricefeed/v1beta1/genesis.proto](#furya-official/magepricefeed/v1beta1/genesis.proto)
     - [GenesisState](#mage.pricefeed.v1beta1.GenesisState)
   
-- [Furya-Official/magepricefeed/v1beta1/query.proto](#Furya-Official/magepricefeed/v1beta1/query.proto)
+- [furya-official/magepricefeed/v1beta1/query.proto](#furya-official/magepricefeed/v1beta1/query.proto)
     - [CurrentPriceResponse](#mage.pricefeed.v1beta1.CurrentPriceResponse)
     - [MarketResponse](#mage.pricefeed.v1beta1.MarketResponse)
     - [PostedPriceResponse](#mage.pricefeed.v1beta1.PostedPriceResponse)
@@ -475,13 +475,13 @@
   
     - [Query](#mage.pricefeed.v1beta1.Query)
   
-- [Furya-Official/magepricefeed/v1beta1/tx.proto](#Furya-Official/magepricefeed/v1beta1/tx.proto)
+- [furya-official/magepricefeed/v1beta1/tx.proto](#furya-official/magepricefeed/v1beta1/tx.proto)
     - [MsgPostPrice](#mage.pricefeed.v1beta1.MsgPostPrice)
     - [MsgPostPriceResponse](#mage.pricefeed.v1beta1.MsgPostPriceResponse)
   
     - [Msg](#mage.pricefeed.v1beta1.Msg)
   
-- [Furya-Official/magerouter/v1beta1/tx.proto](#Furya-Official/magerouter/v1beta1/tx.proto)
+- [furya-official/magerouter/v1beta1/tx.proto](#furya-official/magerouter/v1beta1/tx.proto)
     - [MsgDelegateMintDeposit](#mage.router.v1beta1.MsgDelegateMintDeposit)
     - [MsgDelegateMintDepositResponse](#mage.router.v1beta1.MsgDelegateMintDepositResponse)
     - [MsgMintDeposit](#mage.router.v1beta1.MsgMintDeposit)
@@ -493,14 +493,14 @@
   
     - [Msg](#mage.router.v1beta1.Msg)
   
-- [Furya-Official/magesavings/v1beta1/store.proto](#Furya-Official/magesavings/v1beta1/store.proto)
+- [furya-official/magesavings/v1beta1/store.proto](#furya-official/magesavings/v1beta1/store.proto)
     - [Deposit](#mage.savings.v1beta1.Deposit)
     - [Params](#mage.savings.v1beta1.Params)
   
-- [Furya-Official/magesavings/v1beta1/genesis.proto](#Furya-Official/magesavings/v1beta1/genesis.proto)
+- [furya-official/magesavings/v1beta1/genesis.proto](#furya-official/magesavings/v1beta1/genesis.proto)
     - [GenesisState](#mage.savings.v1beta1.GenesisState)
   
-- [Furya-Official/magesavings/v1beta1/query.proto](#Furya-Official/magesavings/v1beta1/query.proto)
+- [furya-official/magesavings/v1beta1/query.proto](#furya-official/magesavings/v1beta1/query.proto)
     - [QueryDepositsRequest](#mage.savings.v1beta1.QueryDepositsRequest)
     - [QueryDepositsResponse](#mage.savings.v1beta1.QueryDepositsResponse)
     - [QueryParamsRequest](#mage.savings.v1beta1.QueryParamsRequest)
@@ -510,7 +510,7 @@
   
     - [Query](#mage.savings.v1beta1.Query)
   
-- [Furya-Official/magesavings/v1beta1/tx.proto](#Furya-Official/magesavings/v1beta1/tx.proto)
+- [furya-official/magesavings/v1beta1/tx.proto](#furya-official/magesavings/v1beta1/tx.proto)
     - [MsgDeposit](#mage.savings.v1beta1.MsgDeposit)
     - [MsgDepositResponse](#mage.savings.v1beta1.MsgDepositResponse)
     - [MsgWithdraw](#mage.savings.v1beta1.MsgWithdraw)
@@ -518,16 +518,16 @@
   
     - [Msg](#mage.savings.v1beta1.Msg)
   
-- [Furya-Official/mageswap/v1beta1/swap.proto](#Furya-Official/mageswap/v1beta1/swap.proto)
+- [furya-official/mageswap/v1beta1/swap.proto](#furya-official/mageswap/v1beta1/swap.proto)
     - [AllowedPool](#mage.swap.v1beta1.AllowedPool)
     - [Params](#mage.swap.v1beta1.Params)
     - [PoolRecord](#mage.swap.v1beta1.PoolRecord)
     - [ShareRecord](#mage.swap.v1beta1.ShareRecord)
   
-- [Furya-Official/mageswap/v1beta1/genesis.proto](#Furya-Official/mageswap/v1beta1/genesis.proto)
+- [furya-official/mageswap/v1beta1/genesis.proto](#furya-official/mageswap/v1beta1/genesis.proto)
     - [GenesisState](#mage.swap.v1beta1.GenesisState)
   
-- [Furya-Official/mageswap/v1beta1/query.proto](#Furya-Official/mageswap/v1beta1/query.proto)
+- [furya-official/mageswap/v1beta1/query.proto](#furya-official/mageswap/v1beta1/query.proto)
     - [DepositResponse](#mage.swap.v1beta1.DepositResponse)
     - [PoolResponse](#mage.swap.v1beta1.PoolResponse)
     - [QueryDepositsRequest](#mage.swap.v1beta1.QueryDepositsRequest)
@@ -539,7 +539,7 @@
   
     - [Query](#mage.swap.v1beta1.Query)
   
-- [Furya-Official/mageswap/v1beta1/tx.proto](#Furya-Official/mageswap/v1beta1/tx.proto)
+- [furya-official/mageswap/v1beta1/tx.proto](#furya-official/mageswap/v1beta1/tx.proto)
     - [MsgDeposit](#mage.swap.v1beta1.MsgDeposit)
     - [MsgDepositResponse](#mage.swap.v1beta1.MsgDepositResponse)
     - [MsgSwapExactForTokens](#mage.swap.v1beta1.MsgSwapExactForTokens)
@@ -555,10 +555,10 @@
 
 
 
-<a name="Furya-Official/mageauction/v1beta1/auction.proto"></a>
+<a name="furya-official/mageauction/v1beta1/auction.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageauction/v1beta1/auction.proto
+## furya-official/mageauction/v1beta1/auction.proto
 
 
 
@@ -665,10 +665,10 @@ WeightedAddresses is a type for storing some addresses and associated weights.
 
 
 
-<a name="Furya-Official/mageauction/v1beta1/genesis.proto"></a>
+<a name="furya-official/mageauction/v1beta1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageauction/v1beta1/genesis.proto
+## furya-official/mageauction/v1beta1/genesis.proto
 
 
 
@@ -718,10 +718,10 @@ Params defines the parameters for the issuance module.
 
 
 
-<a name="Furya-Official/mageauction/v1beta1/query.proto"></a>
+<a name="furya-official/mageauction/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageauction/v1beta1/query.proto
+## furya-official/mageauction/v1beta1/query.proto
 
 
 
@@ -853,19 +853,19 @@ Query defines the gRPC querier service for auction module
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#mage.auction.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.auction.v1beta1.QueryParamsResponse) | Params queries all parameters of the auction module. | GET|/Furya-Official/mageauction/v1beta1/params|
-| `Auction` | [QueryAuctionRequest](#mage.auction.v1beta1.QueryAuctionRequest) | [QueryAuctionResponse](#mage.auction.v1beta1.QueryAuctionResponse) | Auction queries an individual Auction by auction ID | GET|/Furya-Official/mageauction/v1beta1/auctions/{auction_id}|
-| `Auctions` | [QueryAuctionsRequest](#mage.auction.v1beta1.QueryAuctionsRequest) | [QueryAuctionsResponse](#mage.auction.v1beta1.QueryAuctionsResponse) | Auctions queries auctions filtered by asset denom, owner address, phase, and auction type | GET|/Furya-Official/mageauction/v1beta1/auctions|
-| `NextAuctionID` | [QueryNextAuctionIDRequest](#mage.auction.v1beta1.QueryNextAuctionIDRequest) | [QueryNextAuctionIDResponse](#mage.auction.v1beta1.QueryNextAuctionIDResponse) | NextAuctionID queries the next auction ID | GET|/Furya-Official/mageauction/v1beta1/next-auction-id|
+| `Params` | [QueryParamsRequest](#mage.auction.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.auction.v1beta1.QueryParamsResponse) | Params queries all parameters of the auction module. | GET|/furya-official/mageauction/v1beta1/params|
+| `Auction` | [QueryAuctionRequest](#mage.auction.v1beta1.QueryAuctionRequest) | [QueryAuctionResponse](#mage.auction.v1beta1.QueryAuctionResponse) | Auction queries an individual Auction by auction ID | GET|/furya-official/mageauction/v1beta1/auctions/{auction_id}|
+| `Auctions` | [QueryAuctionsRequest](#mage.auction.v1beta1.QueryAuctionsRequest) | [QueryAuctionsResponse](#mage.auction.v1beta1.QueryAuctionsResponse) | Auctions queries auctions filtered by asset denom, owner address, phase, and auction type | GET|/furya-official/mageauction/v1beta1/auctions|
+| `NextAuctionID` | [QueryNextAuctionIDRequest](#mage.auction.v1beta1.QueryNextAuctionIDRequest) | [QueryNextAuctionIDResponse](#mage.auction.v1beta1.QueryNextAuctionIDResponse) | NextAuctionID queries the next auction ID | GET|/furya-official/mageauction/v1beta1/next-auction-id|
 
  <!-- end services -->
 
 
 
-<a name="Furya-Official/mageauction/v1beta1/tx.proto"></a>
+<a name="furya-official/mageauction/v1beta1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageauction/v1beta1/tx.proto
+## furya-official/mageauction/v1beta1/tx.proto
 
 
 
@@ -915,10 +915,10 @@ Msg defines the auction Msg service.
 
 
 
-<a name="Furya-Official/magebep3/v1beta1/bep3.proto"></a>
+<a name="furya-official/magebep3/v1beta1/bep3.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magebep3/v1beta1/bep3.proto
+## furya-official/magebep3/v1beta1/bep3.proto
 
 
 
@@ -1060,10 +1060,10 @@ SwapStatus is the status of an AtomicSwap
 
 
 
-<a name="Furya-Official/magebep3/v1beta1/genesis.proto"></a>
+<a name="furya-official/magebep3/v1beta1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magebep3/v1beta1/genesis.proto
+## furya-official/magebep3/v1beta1/genesis.proto
 
 
 
@@ -1094,10 +1094,10 @@ GenesisState defines the pricefeed module's genesis state.
 
 
 
-<a name="Furya-Official/magebep3/v1beta1/query.proto"></a>
+<a name="furya-official/magebep3/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magebep3/v1beta1/query.proto
+## furya-official/magebep3/v1beta1/query.proto
 
 
 
@@ -1305,20 +1305,20 @@ Query defines the gRPC querier service for bep3 module
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#mage.bep3.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.bep3.v1beta1.QueryParamsResponse) | Params queries module params | GET|/Furya-Official/magebep3/v1beta1/params|
-| `AssetSupply` | [QueryAssetSupplyRequest](#mage.bep3.v1beta1.QueryAssetSupplyRequest) | [QueryAssetSupplyResponse](#mage.bep3.v1beta1.QueryAssetSupplyResponse) | AssetSupply queries info about an asset's supply | GET|/Furya-Official/magebep3/v1beta1/assetsupply/{denom}|
-| `AssetSupplies` | [QueryAssetSuppliesRequest](#mage.bep3.v1beta1.QueryAssetSuppliesRequest) | [QueryAssetSuppliesResponse](#mage.bep3.v1beta1.QueryAssetSuppliesResponse) | AssetSupplies queries a list of asset supplies | GET|/Furya-Official/magebep3/v1beta1/assetsupplies|
-| `AtomicSwap` | [QueryAtomicSwapRequest](#mage.bep3.v1beta1.QueryAtomicSwapRequest) | [QueryAtomicSwapResponse](#mage.bep3.v1beta1.QueryAtomicSwapResponse) | AtomicSwap queries info about an atomic swap | GET|/Furya-Official/magebep3/v1beta1/atomicswap/{swap_id}|
-| `AtomicSwaps` | [QueryAtomicSwapsRequest](#mage.bep3.v1beta1.QueryAtomicSwapsRequest) | [QueryAtomicSwapsResponse](#mage.bep3.v1beta1.QueryAtomicSwapsResponse) | AtomicSwaps queries a list of atomic swaps | GET|/Furya-Official/magebep3/v1beta1/atomicswaps|
+| `Params` | [QueryParamsRequest](#mage.bep3.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.bep3.v1beta1.QueryParamsResponse) | Params queries module params | GET|/furya-official/magebep3/v1beta1/params|
+| `AssetSupply` | [QueryAssetSupplyRequest](#mage.bep3.v1beta1.QueryAssetSupplyRequest) | [QueryAssetSupplyResponse](#mage.bep3.v1beta1.QueryAssetSupplyResponse) | AssetSupply queries info about an asset's supply | GET|/furya-official/magebep3/v1beta1/assetsupply/{denom}|
+| `AssetSupplies` | [QueryAssetSuppliesRequest](#mage.bep3.v1beta1.QueryAssetSuppliesRequest) | [QueryAssetSuppliesResponse](#mage.bep3.v1beta1.QueryAssetSuppliesResponse) | AssetSupplies queries a list of asset supplies | GET|/furya-official/magebep3/v1beta1/assetsupplies|
+| `AtomicSwap` | [QueryAtomicSwapRequest](#mage.bep3.v1beta1.QueryAtomicSwapRequest) | [QueryAtomicSwapResponse](#mage.bep3.v1beta1.QueryAtomicSwapResponse) | AtomicSwap queries info about an atomic swap | GET|/furya-official/magebep3/v1beta1/atomicswap/{swap_id}|
+| `AtomicSwaps` | [QueryAtomicSwapsRequest](#mage.bep3.v1beta1.QueryAtomicSwapsRequest) | [QueryAtomicSwapsResponse](#mage.bep3.v1beta1.QueryAtomicSwapsResponse) | AtomicSwaps queries a list of atomic swaps | GET|/furya-official/magebep3/v1beta1/atomicswaps|
 
  <!-- end services -->
 
 
 
-<a name="Furya-Official/magebep3/v1beta1/tx.proto"></a>
+<a name="furya-official/magebep3/v1beta1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magebep3/v1beta1/tx.proto
+## furya-official/magebep3/v1beta1/tx.proto
 
 
 
@@ -1428,10 +1428,10 @@ Msg defines the bep3 Msg service.
 
 
 
-<a name="Furya-Official/magecdp/v1beta1/cdp.proto"></a>
+<a name="furya-official/magecdp/v1beta1/cdp.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magecdp/v1beta1/cdp.proto
+## furya-official/magecdp/v1beta1/cdp.proto
 
 
 
@@ -1530,10 +1530,10 @@ TotalPrincipal defines the total principal of a given collateral type
 
 
 
-<a name="Furya-Official/magecdp/v1beta1/genesis.proto"></a>
+<a name="furya-official/magecdp/v1beta1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magecdp/v1beta1/genesis.proto
+## furya-official/magecdp/v1beta1/genesis.proto
 
 
 
@@ -1667,10 +1667,10 @@ Params defines the parameters for the cdp module.
 
 
 
-<a name="Furya-Official/magecdp/v1beta1/query.proto"></a>
+<a name="furya-official/magecdp/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magecdp/v1beta1/query.proto
+## furya-official/magecdp/v1beta1/query.proto
 
 
 
@@ -1918,22 +1918,22 @@ Query defines the gRPC querier service for cdp module
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#mage.cdp.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.cdp.v1beta1.QueryParamsResponse) | Params queries all parameters of the cdp module. | GET|/Furya-Official/magecdp/v1beta1/params|
-| `Accounts` | [QueryAccountsRequest](#mage.cdp.v1beta1.QueryAccountsRequest) | [QueryAccountsResponse](#mage.cdp.v1beta1.QueryAccountsResponse) | Accounts queries the CDP module accounts. | GET|/Furya-Official/magecdp/v1beta1/accounts|
-| `TotalPrincipal` | [QueryTotalPrincipalRequest](#mage.cdp.v1beta1.QueryTotalPrincipalRequest) | [QueryTotalPrincipalResponse](#mage.cdp.v1beta1.QueryTotalPrincipalResponse) | TotalPrincipal queries the total principal of a given collateral type. | GET|/Furya-Official/magecdp/v1beta1/totalPrincipal|
-| `TotalCollateral` | [QueryTotalCollateralRequest](#mage.cdp.v1beta1.QueryTotalCollateralRequest) | [QueryTotalCollateralResponse](#mage.cdp.v1beta1.QueryTotalCollateralResponse) | TotalCollateral queries the total collateral of a given collateral type. | GET|/Furya-Official/magecdp/v1beta1/totalCollateral|
-| `Cdps` | [QueryCdpsRequest](#mage.cdp.v1beta1.QueryCdpsRequest) | [QueryCdpsResponse](#mage.cdp.v1beta1.QueryCdpsResponse) | Cdps queries all active CDPs. | GET|/Furya-Official/magecdp/v1beta1/cdps|
-| `Cdp` | [QueryCdpRequest](#mage.cdp.v1beta1.QueryCdpRequest) | [QueryCdpResponse](#mage.cdp.v1beta1.QueryCdpResponse) | Cdp queries a CDP with the input owner address and collateral type. | GET|/Furya-Official/magecdp/v1beta1/cdps/{owner}/{collateral_type}|
-| `Deposits` | [QueryDepositsRequest](#mage.cdp.v1beta1.QueryDepositsRequest) | [QueryDepositsResponse](#mage.cdp.v1beta1.QueryDepositsResponse) | Deposits queries deposits associated with the CDP owned by an address for a collateral type. | GET|/Furya-Official/magecdp/v1beta1/cdps/deposits/{owner}/{collateral_type}|
+| `Params` | [QueryParamsRequest](#mage.cdp.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.cdp.v1beta1.QueryParamsResponse) | Params queries all parameters of the cdp module. | GET|/furya-official/magecdp/v1beta1/params|
+| `Accounts` | [QueryAccountsRequest](#mage.cdp.v1beta1.QueryAccountsRequest) | [QueryAccountsResponse](#mage.cdp.v1beta1.QueryAccountsResponse) | Accounts queries the CDP module accounts. | GET|/furya-official/magecdp/v1beta1/accounts|
+| `TotalPrincipal` | [QueryTotalPrincipalRequest](#mage.cdp.v1beta1.QueryTotalPrincipalRequest) | [QueryTotalPrincipalResponse](#mage.cdp.v1beta1.QueryTotalPrincipalResponse) | TotalPrincipal queries the total principal of a given collateral type. | GET|/furya-official/magecdp/v1beta1/totalPrincipal|
+| `TotalCollateral` | [QueryTotalCollateralRequest](#mage.cdp.v1beta1.QueryTotalCollateralRequest) | [QueryTotalCollateralResponse](#mage.cdp.v1beta1.QueryTotalCollateralResponse) | TotalCollateral queries the total collateral of a given collateral type. | GET|/furya-official/magecdp/v1beta1/totalCollateral|
+| `Cdps` | [QueryCdpsRequest](#mage.cdp.v1beta1.QueryCdpsRequest) | [QueryCdpsResponse](#mage.cdp.v1beta1.QueryCdpsResponse) | Cdps queries all active CDPs. | GET|/furya-official/magecdp/v1beta1/cdps|
+| `Cdp` | [QueryCdpRequest](#mage.cdp.v1beta1.QueryCdpRequest) | [QueryCdpResponse](#mage.cdp.v1beta1.QueryCdpResponse) | Cdp queries a CDP with the input owner address and collateral type. | GET|/furya-official/magecdp/v1beta1/cdps/{owner}/{collateral_type}|
+| `Deposits` | [QueryDepositsRequest](#mage.cdp.v1beta1.QueryDepositsRequest) | [QueryDepositsResponse](#mage.cdp.v1beta1.QueryDepositsResponse) | Deposits queries deposits associated with the CDP owned by an address for a collateral type. | GET|/furya-official/magecdp/v1beta1/cdps/deposits/{owner}/{collateral_type}|
 
  <!-- end services -->
 
 
 
-<a name="Furya-Official/magecdp/v1beta1/tx.proto"></a>
+<a name="furya-official/magecdp/v1beta1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magecdp/v1beta1/tx.proto
+## furya-official/magecdp/v1beta1/tx.proto
 
 
 
@@ -2132,10 +2132,10 @@ Msg defines the cdp Msg service.
 
 
 
-<a name="Furya-Official/magecommittee/v1beta1/committee.proto"></a>
+<a name="furya-official/magecommittee/v1beta1/committee.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magecommittee/v1beta1/committee.proto
+## furya-official/magecommittee/v1beta1/committee.proto
 
 
 
@@ -2214,10 +2214,10 @@ TallyOption enumerates the valid types of a tally.
 
 
 
-<a name="Furya-Official/magecommittee/v1beta1/genesis.proto"></a>
+<a name="furya-official/magecommittee/v1beta1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magecommittee/v1beta1/genesis.proto
+## furya-official/magecommittee/v1beta1/genesis.proto
 
 
 
@@ -2297,10 +2297,10 @@ VoteType enumerates the valid types of a vote.
 
 
 
-<a name="Furya-Official/magecommittee/v1beta1/permissions.proto"></a>
+<a name="furya-official/magecommittee/v1beta1/permissions.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magecommittee/v1beta1/permissions.proto
+## furya-official/magecommittee/v1beta1/permissions.proto
 
 
 
@@ -2393,10 +2393,10 @@ TextPermission allows any text governance proposal.
 
 
 
-<a name="Furya-Official/magecommittee/v1beta1/proposal.proto"></a>
+<a name="furya-official/magecommittee/v1beta1/proposal.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magecommittee/v1beta1/proposal.proto
+## furya-official/magecommittee/v1beta1/proposal.proto
 
 
 
@@ -2443,10 +2443,10 @@ CommitteeDeleteProposal is a gov proposal for removing a committee.
 
 
 
-<a name="Furya-Official/magecommittee/v1beta1/query.proto"></a>
+<a name="furya-official/magecommittee/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magecommittee/v1beta1/query.proto
+## furya-official/magecommittee/v1beta1/query.proto
 
 
 
@@ -2738,24 +2738,24 @@ Query defines the gRPC querier service for committee module
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Committees` | [QueryCommitteesRequest](#mage.committee.v1beta1.QueryCommitteesRequest) | [QueryCommitteesResponse](#mage.committee.v1beta1.QueryCommitteesResponse) | Committees queries all committess of the committee module. | GET|/Furya-Official/magecommittee/v1beta1/committees|
-| `Committee` | [QueryCommitteeRequest](#mage.committee.v1beta1.QueryCommitteeRequest) | [QueryCommitteeResponse](#mage.committee.v1beta1.QueryCommitteeResponse) | Committee queries a committee based on committee ID. | GET|/Furya-Official/magecommittee/v1beta1/committees/{committee_id}|
-| `Proposals` | [QueryProposalsRequest](#mage.committee.v1beta1.QueryProposalsRequest) | [QueryProposalsResponse](#mage.committee.v1beta1.QueryProposalsResponse) | Proposals queries proposals based on committee ID. | GET|/Furya-Official/magecommittee/v1beta1/proposals|
-| `Proposal` | [QueryProposalRequest](#mage.committee.v1beta1.QueryProposalRequest) | [QueryProposalResponse](#mage.committee.v1beta1.QueryProposalResponse) | Deposits queries a proposal based on proposal ID. | GET|/Furya-Official/magecommittee/v1beta1/proposals/{proposal_id}|
-| `NextProposalID` | [QueryNextProposalIDRequest](#mage.committee.v1beta1.QueryNextProposalIDRequest) | [QueryNextProposalIDResponse](#mage.committee.v1beta1.QueryNextProposalIDResponse) | NextProposalID queries the next proposal ID of the committee module. | GET|/Furya-Official/magecommittee/v1beta1/next-proposal-id|
-| `Votes` | [QueryVotesRequest](#mage.committee.v1beta1.QueryVotesRequest) | [QueryVotesResponse](#mage.committee.v1beta1.QueryVotesResponse) | Votes queries all votes for a single proposal ID. | GET|/Furya-Official/magecommittee/v1beta1/proposals/{proposal_id}/votes|
-| `Vote` | [QueryVoteRequest](#mage.committee.v1beta1.QueryVoteRequest) | [QueryVoteResponse](#mage.committee.v1beta1.QueryVoteResponse) | Vote queries the vote of a single voter for a single proposal ID. | GET|/Furya-Official/magecommittee/v1beta1/proposals/{proposal_id}/votes/{voter}|
-| `Tally` | [QueryTallyRequest](#mage.committee.v1beta1.QueryTallyRequest) | [QueryTallyResponse](#mage.committee.v1beta1.QueryTallyResponse) | Tally queries the tally of a single proposal ID. | GET|/Furya-Official/magecommittee/v1beta1/proposals/{proposal_id}/tally|
-| `RawParams` | [QueryRawParamsRequest](#mage.committee.v1beta1.QueryRawParamsRequest) | [QueryRawParamsResponse](#mage.committee.v1beta1.QueryRawParamsResponse) | RawParams queries the raw params data of any subspace and key. | GET|/Furya-Official/magecommittee/v1beta1/raw-params|
+| `Committees` | [QueryCommitteesRequest](#mage.committee.v1beta1.QueryCommitteesRequest) | [QueryCommitteesResponse](#mage.committee.v1beta1.QueryCommitteesResponse) | Committees queries all committess of the committee module. | GET|/furya-official/magecommittee/v1beta1/committees|
+| `Committee` | [QueryCommitteeRequest](#mage.committee.v1beta1.QueryCommitteeRequest) | [QueryCommitteeResponse](#mage.committee.v1beta1.QueryCommitteeResponse) | Committee queries a committee based on committee ID. | GET|/furya-official/magecommittee/v1beta1/committees/{committee_id}|
+| `Proposals` | [QueryProposalsRequest](#mage.committee.v1beta1.QueryProposalsRequest) | [QueryProposalsResponse](#mage.committee.v1beta1.QueryProposalsResponse) | Proposals queries proposals based on committee ID. | GET|/furya-official/magecommittee/v1beta1/proposals|
+| `Proposal` | [QueryProposalRequest](#mage.committee.v1beta1.QueryProposalRequest) | [QueryProposalResponse](#mage.committee.v1beta1.QueryProposalResponse) | Deposits queries a proposal based on proposal ID. | GET|/furya-official/magecommittee/v1beta1/proposals/{proposal_id}|
+| `NextProposalID` | [QueryNextProposalIDRequest](#mage.committee.v1beta1.QueryNextProposalIDRequest) | [QueryNextProposalIDResponse](#mage.committee.v1beta1.QueryNextProposalIDResponse) | NextProposalID queries the next proposal ID of the committee module. | GET|/furya-official/magecommittee/v1beta1/next-proposal-id|
+| `Votes` | [QueryVotesRequest](#mage.committee.v1beta1.QueryVotesRequest) | [QueryVotesResponse](#mage.committee.v1beta1.QueryVotesResponse) | Votes queries all votes for a single proposal ID. | GET|/furya-official/magecommittee/v1beta1/proposals/{proposal_id}/votes|
+| `Vote` | [QueryVoteRequest](#mage.committee.v1beta1.QueryVoteRequest) | [QueryVoteResponse](#mage.committee.v1beta1.QueryVoteResponse) | Vote queries the vote of a single voter for a single proposal ID. | GET|/furya-official/magecommittee/v1beta1/proposals/{proposal_id}/votes/{voter}|
+| `Tally` | [QueryTallyRequest](#mage.committee.v1beta1.QueryTallyRequest) | [QueryTallyResponse](#mage.committee.v1beta1.QueryTallyResponse) | Tally queries the tally of a single proposal ID. | GET|/furya-official/magecommittee/v1beta1/proposals/{proposal_id}/tally|
+| `RawParams` | [QueryRawParamsRequest](#mage.committee.v1beta1.QueryRawParamsRequest) | [QueryRawParamsResponse](#mage.committee.v1beta1.QueryRawParamsResponse) | RawParams queries the raw params data of any subspace and key. | GET|/furya-official/magecommittee/v1beta1/raw-params|
 
  <!-- end services -->
 
 
 
-<a name="Furya-Official/magecommittee/v1beta1/tx.proto"></a>
+<a name="furya-official/magecommittee/v1beta1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magecommittee/v1beta1/tx.proto
+## furya-official/magecommittee/v1beta1/tx.proto
 
 
 
@@ -2838,10 +2838,10 @@ Msg defines the committee Msg service
 
 
 
-<a name="Furya-Official/magecommunity/v1beta1/proposal.proto"></a>
+<a name="furya-official/magecommunity/v1beta1/proposal.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magecommunity/v1beta1/proposal.proto
+## furya-official/magecommunity/v1beta1/proposal.proto
 
 
 
@@ -2888,10 +2888,10 @@ CommunityPoolLendWithdrawProposal withdraws a lend position back to the communit
 
 
 
-<a name="Furya-Official/magecommunity/v1beta1/query.proto"></a>
+<a name="furya-official/magecommunity/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magecommunity/v1beta1/query.proto
+## furya-official/magecommunity/v1beta1/query.proto
 
 
 
@@ -2959,17 +2959,17 @@ Query defines the gRPC querier service for x/community.
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Balance` | [QueryBalanceRequest](#mage.community.v1beta1.QueryBalanceRequest) | [QueryBalanceResponse](#mage.community.v1beta1.QueryBalanceResponse) | Balance queries the balance of all coins of x/community module. | GET|/Furya-Official/magecommunity/v1beta1/balance|
-| `LegacyCommunityPool` | [QueryLegacyCommunityPoolRequest](#mage.community.v1beta1.QueryLegacyCommunityPoolRequest) | [QueryLegacyCommunityPoolResponse](#mage.community.v1beta1.QueryLegacyCommunityPoolResponse) | LegacyCommunityPool queries the balance of all coins of the legacy community pool. The legacy community pool is a subaccount of the fee pool and has been replaced by x/community. | GET|/Furya-Official/magecommunity/v1beta1/legacy_community_pool|
+| `Balance` | [QueryBalanceRequest](#mage.community.v1beta1.QueryBalanceRequest) | [QueryBalanceResponse](#mage.community.v1beta1.QueryBalanceResponse) | Balance queries the balance of all coins of x/community module. | GET|/furya-official/magecommunity/v1beta1/balance|
+| `LegacyCommunityPool` | [QueryLegacyCommunityPoolRequest](#mage.community.v1beta1.QueryLegacyCommunityPoolRequest) | [QueryLegacyCommunityPoolResponse](#mage.community.v1beta1.QueryLegacyCommunityPoolResponse) | LegacyCommunityPool queries the balance of all coins of the legacy community pool. The legacy community pool is a subaccount of the fee pool and has been replaced by x/community. | GET|/furya-official/magecommunity/v1beta1/legacy_community_pool|
 
  <!-- end services -->
 
 
 
-<a name="Furya-Official/magecommunity/v1beta1/tx.proto"></a>
+<a name="furya-official/magecommunity/v1beta1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magecommunity/v1beta1/tx.proto
+## furya-official/magecommunity/v1beta1/tx.proto
 
 
 
@@ -3018,10 +3018,10 @@ Msg defines the community Msg service.
 
 
 
-<a name="Furya-Official/mageearn/v1beta1/strategy.proto"></a>
+<a name="furya-official/mageearn/v1beta1/strategy.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageearn/v1beta1/strategy.proto
+## furya-official/mageearn/v1beta1/strategy.proto
 
 
  <!-- end messages -->
@@ -3047,10 +3047,10 @@ StrategyType is the type of strategy that a vault uses to optimize yields.
 
 
 
-<a name="Furya-Official/mageearn/v1beta1/vault.proto"></a>
+<a name="furya-official/mageearn/v1beta1/vault.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageearn/v1beta1/vault.proto
+## furya-official/mageearn/v1beta1/vault.proto
 
 
 
@@ -3129,10 +3129,10 @@ VaultShareRecord defines the vault shares owned by a depositor.
 
 
 
-<a name="Furya-Official/mageearn/v1beta1/params.proto"></a>
+<a name="furya-official/mageearn/v1beta1/params.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageearn/v1beta1/params.proto
+## furya-official/mageearn/v1beta1/params.proto
 
 
 
@@ -3160,10 +3160,10 @@ Params defines the parameters of the earn module.
 
 
 
-<a name="Furya-Official/mageearn/v1beta1/genesis.proto"></a>
+<a name="furya-official/mageearn/v1beta1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageearn/v1beta1/genesis.proto
+## furya-official/mageearn/v1beta1/genesis.proto
 
 
 
@@ -3193,10 +3193,10 @@ GenesisState defines the earn module's genesis state.
 
 
 
-<a name="Furya-Official/mageearn/v1beta1/proposal.proto"></a>
+<a name="furya-official/mageearn/v1beta1/proposal.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageearn/v1beta1/proposal.proto
+## furya-official/mageearn/v1beta1/proposal.proto
 
 
 
@@ -3279,10 +3279,10 @@ CommunityPoolWithdrawProposalJSON defines a CommunityPoolWithdrawProposal with a
 
 
 
-<a name="Furya-Official/mageearn/v1beta1/query.proto"></a>
+<a name="furya-official/mageearn/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageearn/v1beta1/query.proto
+## furya-official/mageearn/v1beta1/query.proto
 
 
 
@@ -3476,20 +3476,20 @@ Query defines the gRPC querier service for earn module
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#mage.earn.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.earn.v1beta1.QueryParamsResponse) | Params queries all parameters of the earn module. | GET|/Furya-Official/mageearn/v1beta1/params|
-| `Vaults` | [QueryVaultsRequest](#mage.earn.v1beta1.QueryVaultsRequest) | [QueryVaultsResponse](#mage.earn.v1beta1.QueryVaultsResponse) | Vaults queries all vaults | GET|/Furya-Official/mageearn/v1beta1/vaults|
-| `Vault` | [QueryVaultRequest](#mage.earn.v1beta1.QueryVaultRequest) | [QueryVaultResponse](#mage.earn.v1beta1.QueryVaultResponse) | Vault queries a single vault based on the vault denom | GET|/Furya-Official/mageearn/v1beta1/vaults/{denom=**}|
-| `Deposits` | [QueryDepositsRequest](#mage.earn.v1beta1.QueryDepositsRequest) | [QueryDepositsResponse](#mage.earn.v1beta1.QueryDepositsResponse) | Deposits queries deposit details based on depositor address and vault | GET|/Furya-Official/mageearn/v1beta1/deposits|
-| `TotalSupply` | [QueryTotalSupplyRequest](#mage.earn.v1beta1.QueryTotalSupplyRequest) | [QueryTotalSupplyResponse](#mage.earn.v1beta1.QueryTotalSupplyResponse) | TotalSupply returns the total sum of all coins currently locked into the earn module. | GET|/Furya-Official/mageearn/v1beta1/total_supply|
+| `Params` | [QueryParamsRequest](#mage.earn.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.earn.v1beta1.QueryParamsResponse) | Params queries all parameters of the earn module. | GET|/furya-official/mageearn/v1beta1/params|
+| `Vaults` | [QueryVaultsRequest](#mage.earn.v1beta1.QueryVaultsRequest) | [QueryVaultsResponse](#mage.earn.v1beta1.QueryVaultsResponse) | Vaults queries all vaults | GET|/furya-official/mageearn/v1beta1/vaults|
+| `Vault` | [QueryVaultRequest](#mage.earn.v1beta1.QueryVaultRequest) | [QueryVaultResponse](#mage.earn.v1beta1.QueryVaultResponse) | Vault queries a single vault based on the vault denom | GET|/furya-official/mageearn/v1beta1/vaults/{denom=**}|
+| `Deposits` | [QueryDepositsRequest](#mage.earn.v1beta1.QueryDepositsRequest) | [QueryDepositsResponse](#mage.earn.v1beta1.QueryDepositsResponse) | Deposits queries deposit details based on depositor address and vault | GET|/furya-official/mageearn/v1beta1/deposits|
+| `TotalSupply` | [QueryTotalSupplyRequest](#mage.earn.v1beta1.QueryTotalSupplyRequest) | [QueryTotalSupplyResponse](#mage.earn.v1beta1.QueryTotalSupplyResponse) | TotalSupply returns the total sum of all coins currently locked into the earn module. | GET|/furya-official/mageearn/v1beta1/total_supply|
 
  <!-- end services -->
 
 
 
-<a name="Furya-Official/mageearn/v1beta1/tx.proto"></a>
+<a name="furya-official/mageearn/v1beta1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageearn/v1beta1/tx.proto
+## furya-official/mageearn/v1beta1/tx.proto
 
 
 
@@ -3577,10 +3577,10 @@ Msg defines the earn Msg service.
 
 
 
-<a name="Furya-Official/mageevmutil/v1beta1/conversion_pair.proto"></a>
+<a name="furya-official/mageevmutil/v1beta1/conversion_pair.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageevmutil/v1beta1/conversion_pair.proto
+## furya-official/mageevmutil/v1beta1/conversion_pair.proto
 
 
 
@@ -3610,10 +3610,10 @@ allowed to be converted between ERC20 and sdk.Coin
 
 
 
-<a name="Furya-Official/mageevmutil/v1beta1/genesis.proto"></a>
+<a name="furya-official/mageevmutil/v1beta1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageevmutil/v1beta1/genesis.proto
+## furya-official/mageevmutil/v1beta1/genesis.proto
 
 
 
@@ -3673,10 +3673,10 @@ Params defines the evmutil module params
 
 
 
-<a name="Furya-Official/mageevmutil/v1beta1/query.proto"></a>
+<a name="furya-official/mageevmutil/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageevmutil/v1beta1/query.proto
+## furya-official/mageevmutil/v1beta1/query.proto
 
 
 
@@ -3718,16 +3718,16 @@ Query defines the gRPC querier service for evmutil module
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#mage.evmutil.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.evmutil.v1beta1.QueryParamsResponse) | Params queries all parameters of the evmutil module. | GET|/Furya-Official/mageevmutil/v1beta1/params|
+| `Params` | [QueryParamsRequest](#mage.evmutil.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.evmutil.v1beta1.QueryParamsResponse) | Params queries all parameters of the evmutil module. | GET|/furya-official/mageevmutil/v1beta1/params|
 
  <!-- end services -->
 
 
 
-<a name="Furya-Official/mageevmutil/v1beta1/tx.proto"></a>
+<a name="furya-official/mageevmutil/v1beta1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageevmutil/v1beta1/tx.proto
+## furya-official/mageevmutil/v1beta1/tx.proto
 
 
 
@@ -3807,10 +3807,10 @@ Msg defines the evmutil Msg service.
 
 
 
-<a name="Furya-Official/magehard/v1beta1/hard.proto"></a>
+<a name="furya-official/magehard/v1beta1/hard.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magehard/v1beta1/hard.proto
+## furya-official/magehard/v1beta1/hard.proto
 
 
 
@@ -3976,10 +3976,10 @@ SupplyInterestFactor defines an individual borrow interest factor.
 
 
 
-<a name="Furya-Official/magehard/v1beta1/genesis.proto"></a>
+<a name="furya-official/magehard/v1beta1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magehard/v1beta1/genesis.proto
+## furya-official/magehard/v1beta1/genesis.proto
 
 
 
@@ -4031,10 +4031,10 @@ GenesisState defines the hard module's genesis state.
 
 
 
-<a name="Furya-Official/magehard/v1beta1/query.proto"></a>
+<a name="furya-official/magehard/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magehard/v1beta1/query.proto
+## furya-official/magehard/v1beta1/query.proto
 
 
 
@@ -4483,26 +4483,26 @@ Query defines the gRPC querier service for bep3 module.
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#mage.hard.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.hard.v1beta1.QueryParamsResponse) | Params queries module params. | GET|/Furya-Official/magehard/v1beta1/params|
-| `Accounts` | [QueryAccountsRequest](#mage.hard.v1beta1.QueryAccountsRequest) | [QueryAccountsResponse](#mage.hard.v1beta1.QueryAccountsResponse) | Accounts queries module accounts. | GET|/Furya-Official/magehard/v1beta1/accounts|
-| `Deposits` | [QueryDepositsRequest](#mage.hard.v1beta1.QueryDepositsRequest) | [QueryDepositsResponse](#mage.hard.v1beta1.QueryDepositsResponse) | Deposits queries hard deposits. | GET|/Furya-Official/magehard/v1beta1/deposits|
-| `UnsyncedDeposits` | [QueryUnsyncedDepositsRequest](#mage.hard.v1beta1.QueryUnsyncedDepositsRequest) | [QueryUnsyncedDepositsResponse](#mage.hard.v1beta1.QueryUnsyncedDepositsResponse) | UnsyncedDeposits queries unsynced deposits. | GET|/Furya-Official/magehard/v1beta1/unsynced-deposits|
-| `TotalDeposited` | [QueryTotalDepositedRequest](#mage.hard.v1beta1.QueryTotalDepositedRequest) | [QueryTotalDepositedResponse](#mage.hard.v1beta1.QueryTotalDepositedResponse) | TotalDeposited queries total coins deposited to hard liquidity pools. | GET|/Furya-Official/magehard/v1beta1/total-deposited/{denom}|
-| `Borrows` | [QueryBorrowsRequest](#mage.hard.v1beta1.QueryBorrowsRequest) | [QueryBorrowsResponse](#mage.hard.v1beta1.QueryBorrowsResponse) | Borrows queries hard borrows. | GET|/Furya-Official/magehard/v1beta1/borrows|
-| `UnsyncedBorrows` | [QueryUnsyncedBorrowsRequest](#mage.hard.v1beta1.QueryUnsyncedBorrowsRequest) | [QueryUnsyncedBorrowsResponse](#mage.hard.v1beta1.QueryUnsyncedBorrowsResponse) | UnsyncedBorrows queries unsynced borrows. | GET|/Furya-Official/magehard/v1beta1/unsynced-borrows|
-| `TotalBorrowed` | [QueryTotalBorrowedRequest](#mage.hard.v1beta1.QueryTotalBorrowedRequest) | [QueryTotalBorrowedResponse](#mage.hard.v1beta1.QueryTotalBorrowedResponse) | TotalBorrowed queries total coins borrowed from hard liquidity pools. | GET|/Furya-Official/magehard/v1beta1/total-borrowed/{denom}|
-| `InterestRate` | [QueryInterestRateRequest](#mage.hard.v1beta1.QueryInterestRateRequest) | [QueryInterestRateResponse](#mage.hard.v1beta1.QueryInterestRateResponse) | InterestRate queries the hard module interest rates. | GET|/Furya-Official/magehard/v1beta1/interest-rate/{denom}|
-| `Reserves` | [QueryReservesRequest](#mage.hard.v1beta1.QueryReservesRequest) | [QueryReservesResponse](#mage.hard.v1beta1.QueryReservesResponse) | Reserves queries total hard reserve coins. | GET|/Furya-Official/magehard/v1beta1/reserves/{denom}|
-| `InterestFactors` | [QueryInterestFactorsRequest](#mage.hard.v1beta1.QueryInterestFactorsRequest) | [QueryInterestFactorsResponse](#mage.hard.v1beta1.QueryInterestFactorsResponse) | InterestFactors queries hard module interest factors. | GET|/Furya-Official/magehard/v1beta1/interest-factors/{denom}|
+| `Params` | [QueryParamsRequest](#mage.hard.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.hard.v1beta1.QueryParamsResponse) | Params queries module params. | GET|/furya-official/magehard/v1beta1/params|
+| `Accounts` | [QueryAccountsRequest](#mage.hard.v1beta1.QueryAccountsRequest) | [QueryAccountsResponse](#mage.hard.v1beta1.QueryAccountsResponse) | Accounts queries module accounts. | GET|/furya-official/magehard/v1beta1/accounts|
+| `Deposits` | [QueryDepositsRequest](#mage.hard.v1beta1.QueryDepositsRequest) | [QueryDepositsResponse](#mage.hard.v1beta1.QueryDepositsResponse) | Deposits queries hard deposits. | GET|/furya-official/magehard/v1beta1/deposits|
+| `UnsyncedDeposits` | [QueryUnsyncedDepositsRequest](#mage.hard.v1beta1.QueryUnsyncedDepositsRequest) | [QueryUnsyncedDepositsResponse](#mage.hard.v1beta1.QueryUnsyncedDepositsResponse) | UnsyncedDeposits queries unsynced deposits. | GET|/furya-official/magehard/v1beta1/unsynced-deposits|
+| `TotalDeposited` | [QueryTotalDepositedRequest](#mage.hard.v1beta1.QueryTotalDepositedRequest) | [QueryTotalDepositedResponse](#mage.hard.v1beta1.QueryTotalDepositedResponse) | TotalDeposited queries total coins deposited to hard liquidity pools. | GET|/furya-official/magehard/v1beta1/total-deposited/{denom}|
+| `Borrows` | [QueryBorrowsRequest](#mage.hard.v1beta1.QueryBorrowsRequest) | [QueryBorrowsResponse](#mage.hard.v1beta1.QueryBorrowsResponse) | Borrows queries hard borrows. | GET|/furya-official/magehard/v1beta1/borrows|
+| `UnsyncedBorrows` | [QueryUnsyncedBorrowsRequest](#mage.hard.v1beta1.QueryUnsyncedBorrowsRequest) | [QueryUnsyncedBorrowsResponse](#mage.hard.v1beta1.QueryUnsyncedBorrowsResponse) | UnsyncedBorrows queries unsynced borrows. | GET|/furya-official/magehard/v1beta1/unsynced-borrows|
+| `TotalBorrowed` | [QueryTotalBorrowedRequest](#mage.hard.v1beta1.QueryTotalBorrowedRequest) | [QueryTotalBorrowedResponse](#mage.hard.v1beta1.QueryTotalBorrowedResponse) | TotalBorrowed queries total coins borrowed from hard liquidity pools. | GET|/furya-official/magehard/v1beta1/total-borrowed/{denom}|
+| `InterestRate` | [QueryInterestRateRequest](#mage.hard.v1beta1.QueryInterestRateRequest) | [QueryInterestRateResponse](#mage.hard.v1beta1.QueryInterestRateResponse) | InterestRate queries the hard module interest rates. | GET|/furya-official/magehard/v1beta1/interest-rate/{denom}|
+| `Reserves` | [QueryReservesRequest](#mage.hard.v1beta1.QueryReservesRequest) | [QueryReservesResponse](#mage.hard.v1beta1.QueryReservesResponse) | Reserves queries total hard reserve coins. | GET|/furya-official/magehard/v1beta1/reserves/{denom}|
+| `InterestFactors` | [QueryInterestFactorsRequest](#mage.hard.v1beta1.QueryInterestFactorsRequest) | [QueryInterestFactorsResponse](#mage.hard.v1beta1.QueryInterestFactorsResponse) | InterestFactors queries hard module interest factors. | GET|/furya-official/magehard/v1beta1/interest-factors/{denom}|
 
  <!-- end services -->
 
 
 
-<a name="Furya-Official/magehard/v1beta1/tx.proto"></a>
+<a name="furya-official/magehard/v1beta1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magehard/v1beta1/tx.proto
+## furya-official/magehard/v1beta1/tx.proto
 
 
 
@@ -4660,10 +4660,10 @@ Msg defines the hard Msg service.
 
 
 
-<a name="Furya-Official/mageincentive/v1beta1/claims.proto"></a>
+<a name="furya-official/mageincentive/v1beta1/claims.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageincentive/v1beta1/claims.proto
+## furya-official/mageincentive/v1beta1/claims.proto
 
 
 
@@ -4867,10 +4867,10 @@ USDXMintingClaim is for USDX minting rewards
 
 
 
-<a name="Furya-Official/mageincentive/v1beta1/params.proto"></a>
+<a name="furya-official/mageincentive/v1beta1/params.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageincentive/v1beta1/params.proto
+## furya-official/mageincentive/v1beta1/params.proto
 
 
 
@@ -4977,10 +4977,10 @@ RewardPeriod stores the state of an ongoing reward
 
 
 
-<a name="Furya-Official/mageincentive/v1beta1/genesis.proto"></a>
+<a name="furya-official/mageincentive/v1beta1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageincentive/v1beta1/genesis.proto
+## furya-official/mageincentive/v1beta1/genesis.proto
 
 
 
@@ -5053,10 +5053,10 @@ GenesisState is the state that must be provided at genesis.
 
 
 
-<a name="Furya-Official/mageincentive/v1beta1/tx.proto"></a>
+<a name="furya-official/mageincentive/v1beta1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageincentive/v1beta1/tx.proto
+## furya-official/mageincentive/v1beta1/tx.proto
 
 
 
@@ -5257,10 +5257,10 @@ Msg defines the incentive Msg service.
 
 
 
-<a name="Furya-Official/mageissuance/v1beta1/genesis.proto"></a>
+<a name="furya-official/mageissuance/v1beta1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageissuance/v1beta1/genesis.proto
+## furya-official/mageissuance/v1beta1/genesis.proto
 
 
 
@@ -5358,10 +5358,10 @@ RateLimit parameters for rate-limiting the supply of an issued asset
 
 
 
-<a name="Furya-Official/mageissuance/v1beta1/query.proto"></a>
+<a name="furya-official/mageissuance/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageissuance/v1beta1/query.proto
+## furya-official/mageissuance/v1beta1/query.proto
 
 
 
@@ -5403,16 +5403,16 @@ Query defines the gRPC querier service for issuance module
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#mage.issuance.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.issuance.v1beta1.QueryParamsResponse) | Params queries all parameters of the issuance module. | GET|/Furya-Official/mageissuance/v1beta1/params|
+| `Params` | [QueryParamsRequest](#mage.issuance.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.issuance.v1beta1.QueryParamsResponse) | Params queries all parameters of the issuance module. | GET|/furya-official/mageissuance/v1beta1/params|
 
  <!-- end services -->
 
 
 
-<a name="Furya-Official/mageissuance/v1beta1/tx.proto"></a>
+<a name="furya-official/mageissuance/v1beta1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageissuance/v1beta1/tx.proto
+## furya-official/mageissuance/v1beta1/tx.proto
 
 
 
@@ -5573,10 +5573,10 @@ Msg defines the issuance Msg service.
 
 
 
-<a name="Furya-Official/mageMagedist/v1beta1/params.proto"></a>
+<a name="furya-official/mageMagedist/v1beta1/params.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageMagedist/v1beta1/params.proto
+## furya-official/mageMagedist/v1beta1/params.proto
 
 
 
@@ -5673,10 +5673,10 @@ representing the yearly APR of MAGE tokens that will be minted during that perio
 
 
 
-<a name="Furya-Official/mageMagedist/v1beta1/genesis.proto"></a>
+<a name="furya-official/mageMagedist/v1beta1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageMagedist/v1beta1/genesis.proto
+## furya-official/mageMagedist/v1beta1/genesis.proto
 
 
 
@@ -5705,10 +5705,10 @@ GenesisState defines the Magedist module's genesis state.
 
 
 
-<a name="Furya-Official/mageMagedist/v1beta1/proposal.proto"></a>
+<a name="furya-official/mageMagedist/v1beta1/proposal.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageMagedist/v1beta1/proposal.proto
+## furya-official/mageMagedist/v1beta1/proposal.proto
 
 
 
@@ -5773,10 +5773,10 @@ MultiSpendRecipient defines a recipient and the amount of coins they are receivi
 
 
 
-<a name="Furya-Official/mageMagedist/v1beta1/query.proto"></a>
+<a name="furya-official/mageMagedist/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageMagedist/v1beta1/query.proto
+## furya-official/mageMagedist/v1beta1/query.proto
 
 
 
@@ -5843,17 +5843,17 @@ Query defines the gRPC querier service.
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#mage.Magedist.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.Magedist.v1beta1.QueryParamsResponse) | Params queries the parameters of x/Magedist module. | GET|/Furya-Official/mageMagedist/v1beta1/parameters|
-| `Balance` | [QueryBalanceRequest](#mage.Magedist.v1beta1.QueryBalanceRequest) | [QueryBalanceResponse](#mage.Magedist.v1beta1.QueryBalanceResponse) | Balance queries the balance of all coins of x/Magedist module. | GET|/Furya-Official/mageMagedist/v1beta1/balance|
+| `Params` | [QueryParamsRequest](#mage.Magedist.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.Magedist.v1beta1.QueryParamsResponse) | Params queries the parameters of x/Magedist module. | GET|/furya-official/mageMagedist/v1beta1/parameters|
+| `Balance` | [QueryBalanceRequest](#mage.Magedist.v1beta1.QueryBalanceRequest) | [QueryBalanceResponse](#mage.Magedist.v1beta1.QueryBalanceResponse) | Balance queries the balance of all coins of x/Magedist module. | GET|/furya-official/mageMagedist/v1beta1/balance|
 
  <!-- end services -->
 
 
 
-<a name="Furya-Official/mageMagemint/v1beta1/Magemint.proto"></a>
+<a name="furya-official/mageMagemint/v1beta1/Magemint.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageMagemint/v1beta1/Magemint.proto
+## furya-official/mageMagemint/v1beta1/Magemint.proto
 
 
 
@@ -5882,10 +5882,10 @@ Params wraps the governance parameters for the Magemint module
 
 
 
-<a name="Furya-Official/mageMagemint/v1beta1/genesis.proto"></a>
+<a name="furya-official/mageMagemint/v1beta1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageMagemint/v1beta1/genesis.proto
+## furya-official/mageMagemint/v1beta1/genesis.proto
 
 
 
@@ -5914,10 +5914,10 @@ GenesisState defines the Magemint module's genesis state.
 
 
 
-<a name="Furya-Official/mageMagemint/v1beta1/query.proto"></a>
+<a name="furya-official/mageMagemint/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageMagemint/v1beta1/query.proto
+## furya-official/mageMagemint/v1beta1/query.proto
 
 
 
@@ -5984,17 +5984,17 @@ Query defines the gRPC querier service for Magemint.
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#mage.Magemint.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.Magemint.v1beta1.QueryParamsResponse) | Params queries the parameters of x/Magemint module. | GET|/Furya-Official/mageMagemint/v1beta1/params|
-| `Inflation` | [QueryInflationRequest](#mage.Magemint.v1beta1.QueryInflationRequest) | [QueryInflationResponse](#mage.Magemint.v1beta1.QueryInflationResponse) | Inflation queries x/Magemint for the overall cumulative inflation rate of MAGE. | GET|/Furya-Official/mageMagemint/v1beta1/inflation|
+| `Params` | [QueryParamsRequest](#mage.Magemint.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.Magemint.v1beta1.QueryParamsResponse) | Params queries the parameters of x/Magemint module. | GET|/furya-official/mageMagemint/v1beta1/params|
+| `Inflation` | [QueryInflationRequest](#mage.Magemint.v1beta1.QueryInflationRequest) | [QueryInflationResponse](#mage.Magemint.v1beta1.QueryInflationResponse) | Inflation queries x/Magemint for the overall cumulative inflation rate of MAGE. | GET|/furya-official/mageMagemint/v1beta1/inflation|
 
  <!-- end services -->
 
 
 
-<a name="Furya-Official/mageliquid/v1beta1/query.proto"></a>
+<a name="furya-official/mageliquid/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageliquid/v1beta1/query.proto
+## furya-official/mageliquid/v1beta1/query.proto
 
 
 
@@ -6068,17 +6068,17 @@ Query defines the gRPC querier service for liquid module
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `DelegatedBalance` | [QueryDelegatedBalanceRequest](#mage.liquid.v1beta1.QueryDelegatedBalanceRequest) | [QueryDelegatedBalanceResponse](#mage.liquid.v1beta1.QueryDelegatedBalanceResponse) | DelegatedBalance returns an account's vesting and vested coins currently delegated to validators. It ignores coins in unbonding delegations. | GET|/Furya-Official/mageliquid/v1beta1/delegated_balance/{delegator}|
-| `TotalSupply` | [QueryTotalSupplyRequest](#mage.liquid.v1beta1.QueryTotalSupplyRequest) | [QueryTotalSupplyResponse](#mage.liquid.v1beta1.QueryTotalSupplyResponse) | TotalSupply returns the total sum of all coins currently locked into the liquid module. | GET|/Furya-Official/mageliquid/v1beta1/total_supply|
+| `DelegatedBalance` | [QueryDelegatedBalanceRequest](#mage.liquid.v1beta1.QueryDelegatedBalanceRequest) | [QueryDelegatedBalanceResponse](#mage.liquid.v1beta1.QueryDelegatedBalanceResponse) | DelegatedBalance returns an account's vesting and vested coins currently delegated to validators. It ignores coins in unbonding delegations. | GET|/furya-official/mageliquid/v1beta1/delegated_balance/{delegator}|
+| `TotalSupply` | [QueryTotalSupplyRequest](#mage.liquid.v1beta1.QueryTotalSupplyRequest) | [QueryTotalSupplyResponse](#mage.liquid.v1beta1.QueryTotalSupplyResponse) | TotalSupply returns the total sum of all coins currently locked into the liquid module. | GET|/furya-official/mageliquid/v1beta1/total_supply|
 
  <!-- end services -->
 
 
 
-<a name="Furya-Official/mageliquid/v1beta1/tx.proto"></a>
+<a name="furya-official/mageliquid/v1beta1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageliquid/v1beta1/tx.proto
+## furya-official/mageliquid/v1beta1/tx.proto
 
 
 
@@ -6166,10 +6166,10 @@ Msg defines the liquid Msg service.
 
 
 
-<a name="Furya-Official/magepricefeed/v1beta1/store.proto"></a>
+<a name="furya-official/magepricefeed/v1beta1/store.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magepricefeed/v1beta1/store.proto
+## furya-official/magepricefeed/v1beta1/store.proto
 
 
 
@@ -6251,10 +6251,10 @@ PostedPrice defines a price for market posted by a specific oracle.
 
 
 
-<a name="Furya-Official/magepricefeed/v1beta1/genesis.proto"></a>
+<a name="furya-official/magepricefeed/v1beta1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magepricefeed/v1beta1/genesis.proto
+## furya-official/magepricefeed/v1beta1/genesis.proto
 
 
 
@@ -6283,10 +6283,10 @@ GenesisState defines the pricefeed module's genesis state.
 
 
 
-<a name="Furya-Official/magepricefeed/v1beta1/query.proto"></a>
+<a name="furya-official/magepricefeed/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magepricefeed/v1beta1/query.proto
+## furya-official/magepricefeed/v1beta1/query.proto
 
 
 
@@ -6525,21 +6525,21 @@ Query defines the gRPC querier service for pricefeed module
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#mage.pricefeed.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.pricefeed.v1beta1.QueryParamsResponse) | Params queries all parameters of the pricefeed module. | GET|/Furya-Official/magepricefeed/v1beta1/params|
-| `Price` | [QueryPriceRequest](#mage.pricefeed.v1beta1.QueryPriceRequest) | [QueryPriceResponse](#mage.pricefeed.v1beta1.QueryPriceResponse) | Price queries price details based on a market | GET|/Furya-Official/magepricefeed/v1beta1/prices/{market_id}|
-| `Prices` | [QueryPricesRequest](#mage.pricefeed.v1beta1.QueryPricesRequest) | [QueryPricesResponse](#mage.pricefeed.v1beta1.QueryPricesResponse) | Prices queries all prices | GET|/Furya-Official/magepricefeed/v1beta1/prices|
-| `RawPrices` | [QueryRawPricesRequest](#mage.pricefeed.v1beta1.QueryRawPricesRequest) | [QueryRawPricesResponse](#mage.pricefeed.v1beta1.QueryRawPricesResponse) | RawPrices queries all raw prices based on a market | GET|/Furya-Official/magepricefeed/v1beta1/rawprices/{market_id}|
-| `Oracles` | [QueryOraclesRequest](#mage.pricefeed.v1beta1.QueryOraclesRequest) | [QueryOraclesResponse](#mage.pricefeed.v1beta1.QueryOraclesResponse) | Oracles queries all oracles based on a market | GET|/Furya-Official/magepricefeed/v1beta1/oracles/{market_id}|
-| `Markets` | [QueryMarketsRequest](#mage.pricefeed.v1beta1.QueryMarketsRequest) | [QueryMarketsResponse](#mage.pricefeed.v1beta1.QueryMarketsResponse) | Markets queries all markets | GET|/Furya-Official/magepricefeed/v1beta1/markets|
+| `Params` | [QueryParamsRequest](#mage.pricefeed.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.pricefeed.v1beta1.QueryParamsResponse) | Params queries all parameters of the pricefeed module. | GET|/furya-official/magepricefeed/v1beta1/params|
+| `Price` | [QueryPriceRequest](#mage.pricefeed.v1beta1.QueryPriceRequest) | [QueryPriceResponse](#mage.pricefeed.v1beta1.QueryPriceResponse) | Price queries price details based on a market | GET|/furya-official/magepricefeed/v1beta1/prices/{market_id}|
+| `Prices` | [QueryPricesRequest](#mage.pricefeed.v1beta1.QueryPricesRequest) | [QueryPricesResponse](#mage.pricefeed.v1beta1.QueryPricesResponse) | Prices queries all prices | GET|/furya-official/magepricefeed/v1beta1/prices|
+| `RawPrices` | [QueryRawPricesRequest](#mage.pricefeed.v1beta1.QueryRawPricesRequest) | [QueryRawPricesResponse](#mage.pricefeed.v1beta1.QueryRawPricesResponse) | RawPrices queries all raw prices based on a market | GET|/furya-official/magepricefeed/v1beta1/rawprices/{market_id}|
+| `Oracles` | [QueryOraclesRequest](#mage.pricefeed.v1beta1.QueryOraclesRequest) | [QueryOraclesResponse](#mage.pricefeed.v1beta1.QueryOraclesResponse) | Oracles queries all oracles based on a market | GET|/furya-official/magepricefeed/v1beta1/oracles/{market_id}|
+| `Markets` | [QueryMarketsRequest](#mage.pricefeed.v1beta1.QueryMarketsRequest) | [QueryMarketsResponse](#mage.pricefeed.v1beta1.QueryMarketsResponse) | Markets queries all markets | GET|/furya-official/magepricefeed/v1beta1/markets|
 
  <!-- end services -->
 
 
 
-<a name="Furya-Official/magepricefeed/v1beta1/tx.proto"></a>
+<a name="furya-official/magepricefeed/v1beta1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magepricefeed/v1beta1/tx.proto
+## furya-official/magepricefeed/v1beta1/tx.proto
 
 
 
@@ -6590,10 +6590,10 @@ Msg defines the pricefeed Msg service.
 
 
 
-<a name="Furya-Official/magerouter/v1beta1/tx.proto"></a>
+<a name="furya-official/magerouter/v1beta1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magerouter/v1beta1/tx.proto
+## furya-official/magerouter/v1beta1/tx.proto
 
 
 
@@ -6729,10 +6729,10 @@ Msg defines the router Msg service.
 
 
 
-<a name="Furya-Official/magesavings/v1beta1/store.proto"></a>
+<a name="furya-official/magesavings/v1beta1/store.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magesavings/v1beta1/store.proto
+## furya-official/magesavings/v1beta1/store.proto
 
 
 
@@ -6776,10 +6776,10 @@ Params defines the parameters for the savings module.
 
 
 
-<a name="Furya-Official/magesavings/v1beta1/genesis.proto"></a>
+<a name="furya-official/magesavings/v1beta1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magesavings/v1beta1/genesis.proto
+## furya-official/magesavings/v1beta1/genesis.proto
 
 
 
@@ -6808,10 +6808,10 @@ GenesisState defines the savings module's genesis state.
 
 
 
-<a name="Furya-Official/magesavings/v1beta1/query.proto"></a>
+<a name="furya-official/magesavings/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magesavings/v1beta1/query.proto
+## furya-official/magesavings/v1beta1/query.proto
 
 
 
@@ -6916,18 +6916,18 @@ Query defines the gRPC querier service for savings module
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#mage.savings.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.savings.v1beta1.QueryParamsResponse) | Params queries all parameters of the savings module. | GET|/Furya-Official/magesavings/v1beta1/params|
-| `Deposits` | [QueryDepositsRequest](#mage.savings.v1beta1.QueryDepositsRequest) | [QueryDepositsResponse](#mage.savings.v1beta1.QueryDepositsResponse) | Deposits queries savings deposits. | GET|/Furya-Official/magesavings/v1beta1/deposits|
-| `TotalSupply` | [QueryTotalSupplyRequest](#mage.savings.v1beta1.QueryTotalSupplyRequest) | [QueryTotalSupplyResponse](#mage.savings.v1beta1.QueryTotalSupplyResponse) | TotalSupply returns the total sum of all coins currently locked into the savings module. | GET|/Furya-Official/magesavings/v1beta1/total_supply|
+| `Params` | [QueryParamsRequest](#mage.savings.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.savings.v1beta1.QueryParamsResponse) | Params queries all parameters of the savings module. | GET|/furya-official/magesavings/v1beta1/params|
+| `Deposits` | [QueryDepositsRequest](#mage.savings.v1beta1.QueryDepositsRequest) | [QueryDepositsResponse](#mage.savings.v1beta1.QueryDepositsResponse) | Deposits queries savings deposits. | GET|/furya-official/magesavings/v1beta1/deposits|
+| `TotalSupply` | [QueryTotalSupplyRequest](#mage.savings.v1beta1.QueryTotalSupplyRequest) | [QueryTotalSupplyResponse](#mage.savings.v1beta1.QueryTotalSupplyResponse) | TotalSupply returns the total sum of all coins currently locked into the savings module. | GET|/furya-official/magesavings/v1beta1/total_supply|
 
  <!-- end services -->
 
 
 
-<a name="Furya-Official/magesavings/v1beta1/tx.proto"></a>
+<a name="furya-official/magesavings/v1beta1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/magesavings/v1beta1/tx.proto
+## furya-official/magesavings/v1beta1/tx.proto
 
 
 
@@ -7003,10 +7003,10 @@ Msg defines the savings Msg service.
 
 
 
-<a name="Furya-Official/mageswap/v1beta1/swap.proto"></a>
+<a name="furya-official/mageswap/v1beta1/swap.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageswap/v1beta1/swap.proto
+## furya-official/mageswap/v1beta1/swap.proto
 
 
 
@@ -7087,10 +7087,10 @@ ShareRecord stores the shares owned for a depositor and pool
 
 
 
-<a name="Furya-Official/mageswap/v1beta1/genesis.proto"></a>
+<a name="furya-official/mageswap/v1beta1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageswap/v1beta1/genesis.proto
+## furya-official/mageswap/v1beta1/genesis.proto
 
 
 
@@ -7120,10 +7120,10 @@ GenesisState defines the swap module's genesis state.
 
 
 
-<a name="Furya-Official/mageswap/v1beta1/query.proto"></a>
+<a name="furya-official/mageswap/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageswap/v1beta1/query.proto
+## furya-official/mageswap/v1beta1/query.proto
 
 
 
@@ -7265,18 +7265,18 @@ Query defines the gRPC querier service for swap module
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#mage.swap.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.swap.v1beta1.QueryParamsResponse) | Params queries all parameters of the swap module. | GET|/Furya-Official/mageswap/v1beta1/params|
-| `Pools` | [QueryPoolsRequest](#mage.swap.v1beta1.QueryPoolsRequest) | [QueryPoolsResponse](#mage.swap.v1beta1.QueryPoolsResponse) | Pools queries pools based on pool ID | GET|/Furya-Official/mageswap/v1beta1/pools|
-| `Deposits` | [QueryDepositsRequest](#mage.swap.v1beta1.QueryDepositsRequest) | [QueryDepositsResponse](#mage.swap.v1beta1.QueryDepositsResponse) | Deposits queries deposit details based on owner address and pool | GET|/Furya-Official/mageswap/v1beta1/deposits|
+| `Params` | [QueryParamsRequest](#mage.swap.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.swap.v1beta1.QueryParamsResponse) | Params queries all parameters of the swap module. | GET|/furya-official/mageswap/v1beta1/params|
+| `Pools` | [QueryPoolsRequest](#mage.swap.v1beta1.QueryPoolsRequest) | [QueryPoolsResponse](#mage.swap.v1beta1.QueryPoolsResponse) | Pools queries pools based on pool ID | GET|/furya-official/mageswap/v1beta1/pools|
+| `Deposits` | [QueryDepositsRequest](#mage.swap.v1beta1.QueryDepositsRequest) | [QueryDepositsResponse](#mage.swap.v1beta1.QueryDepositsResponse) | Deposits queries deposit details based on owner address and pool | GET|/furya-official/mageswap/v1beta1/deposits|
 
  <!-- end services -->
 
 
 
-<a name="Furya-Official/mageswap/v1beta1/tx.proto"></a>
+<a name="furya-official/mageswap/v1beta1/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Furya-Official/mageswap/v1beta1/tx.proto
+## furya-official/mageswap/v1beta1/tx.proto
 
 
 

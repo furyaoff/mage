@@ -6,9 +6,9 @@ import "cosmos/base/v1beta1/coin.proto";
 import "cosmos_proto/cosmos.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "Furya-Official/mageearn/v1beta1/params.proto";
-import "Furya-Official/mageearn/v1beta1/strategy.proto";
-import "Furya-Official/mageearn/v1beta1/vault.proto";
+import "furya-official/mageearn/v1beta1/params.proto";
+import "furya-official/mageearn/v1beta1/strategy.proto";
+import "furya-official/mageearn/v1beta1/vault.proto";
 
 option go_package = "github.com/furya-official/mage/x/earn/types";
 option (gogoproto.goproto_getters_all) = false;
@@ -17,27 +17,27 @@ option (gogoproto.goproto_getters_all) = false;
 service Query {
   // Params queries all parameters of the earn module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/Furya-Official/mageearn/v1beta1/params";
+    option (google.api.http).get = "/furya-official/mageearn/v1beta1/params";
   }
 
   // Vaults queries all vaults
   rpc Vaults(QueryVaultsRequest) returns (QueryVaultsResponse) {
-    option (google.api.http).get = "/Furya-Official/mageearn/v1beta1/vaults";
+    option (google.api.http).get = "/furya-official/mageearn/v1beta1/vaults";
   }
 
   // Vault queries a single vault based on the vault denom
   rpc Vault(QueryVaultRequest) returns (QueryVaultResponse) {
-    option (google.api.http).get = "/Furya-Official/mageearn/v1beta1/vaults/{denom=**}";
+    option (google.api.http).get = "/furya-official/mageearn/v1beta1/vaults/{denom=**}";
   }
 
   // Deposits queries deposit details based on depositor address and vault
   rpc Deposits(QueryDepositsRequest) returns (QueryDepositsResponse) {
-    option (google.api.http).get = "/Furya-Official/mageearn/v1beta1/deposits";
+    option (google.api.http).get = "/furya-official/mageearn/v1beta1/deposits";
   }
 
   // TotalSupply returns the total sum of all coins currently locked into the earn module.
   rpc TotalSupply(QueryTotalSupplyRequest) returns (QueryTotalSupplyResponse) {
-    option (google.api.http).get = "/Furya-Official/mageearn/v1beta1/total_supply";
+    option (google.api.http).get = "/furya-official/mageearn/v1beta1/total_supply";
   }
 }
 

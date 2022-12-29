@@ -121,5 +121,5 @@ func (msr MultiSpendRecipient) Validate() error {
 }
 
 func RegisterLegacyAminoCodec(cdc *codec.LegacyAmino) {
-	cdc.RegisterConcrete(CommunityPoolMultiSpendProposal{}, "Furya-Official/mageCommunityPoolMultiSpendProposal", nil)
+	cdc.RegisterConcrete(CommunityPoolMultiSpendProposal{}, "furya-official/mageCommunityPoolMultiSpendProposal", nil)
 }

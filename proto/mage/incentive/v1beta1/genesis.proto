@@ -3,8 +3,8 @@ package mage.incentive.v1beta1;
 
 import "gogoproto/gogo.proto";
 import "google/protobuf/timestamp.proto";
-import "Furya-Official/mageincentive/v1beta1/claims.proto";
-import "Furya-Official/mageincentive/v1beta1/params.proto";
+import "furya-official/mageincentive/v1beta1/claims.proto";
+import "furya-official/mageincentive/v1beta1/params.proto";
 
 // import "cosmos/base/v1beta1/coin.proto";
 // import "cosmos/base/v1beta1/coins.proto";

@@ -10,7 +10,7 @@ import (
 // RegisterLegacyAminoCodec registers the necessary Magedist interfaces and concrete types
 // on the provided LegacyAmino codec. These types are used for Amino JSON serialization.
 func RegisterLegacyAminoCodec(cdc *codec.LegacyAmino) {
-	cdc.RegisterConcrete(&CommunityPoolMultiSpendProposal{}, "Furya-Official/mageCommunityPoolMultiSpendProposal", nil)
+	cdc.RegisterConcrete(&CommunityPoolMultiSpendProposal{}, "furya-official/mageCommunityPoolMultiSpendProposal", nil)
 }
 
 func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {

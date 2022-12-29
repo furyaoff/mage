@@ -4,7 +4,7 @@ package mage.Magedist.v1beta1;
 import "cosmos/base/v1beta1/coin.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "Furya-Official/mageMagedist/v1beta1/params.proto";
+import "furya-official/mageMagedist/v1beta1/params.proto";
 
 option go_package = "github.com/furya-official/mage/x/Magedist/types";
 
@@ -12,12 +12,12 @@ option go_package = "github.com/furya-official/mage/x/Magedist/types";
 service Query {
   // Params queries the parameters of x/Magedist module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/Furya-Official/mageMagedist/v1beta1/parameters";
+    option (google.api.http).get = "/furya-official/mageMagedist/v1beta1/parameters";
   }
 
   // Balance queries the balance of all coins of x/Magedist module.
   rpc Balance(QueryBalanceRequest) returns (QueryBalanceResponse) {
-    option (google.api.http).get = "/Furya-Official/mageMagedist/v1beta1/balance";
+    option (google.api.http).get = "/furya-official/mageMagedist/v1beta1/balance";
   }
 }
 

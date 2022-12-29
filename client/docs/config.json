@@ -7,13 +7,13 @@
   },
   "externalDocs": {
     "description": "GitHub",
-    "url": "https://github.com/Furya-Official/mage"
+    "url": "https://github.com/furya-official/mage"
   },
   "host": "api.data.mage.io",
   "schemes": ["https"],
   "apis": [
     {
-      "url": "./out/swagger/Furya-Official/mageauction/v1beta1/query.swagger.json",
+      "url": "./out/swagger/furya-official/mageauction/v1beta1/query.swagger.json",
       "tags": {
         "rename": {
           "Query": "Auction"
@@ -30,7 +30,7 @@
       }
     },
     {
-      "url": "./out/swagger/Furya-Official/magebep3/v1beta1/query.swagger.json",
+      "url": "./out/swagger/furya-official/magebep3/v1beta1/query.swagger.json",
       "tags": {
         "rename": {
           "Query": "BEP3"
@@ -47,7 +47,7 @@
       }
     },
     {
-      "url": "./out/swagger/Furya-Official/magecdp/v1beta1/query.swagger.json",
+      "url": "./out/swagger/furya-official/magecdp/v1beta1/query.swagger.json",
       "tags": {
         "rename": {
           "Query": "CDP"
@@ -64,7 +64,7 @@
       }
     },
     {
-      "url": "./out/swagger/Furya-Official/magecommittee/v1beta1/query.swagger.json",
+      "url": "./out/swagger/furya-official/magecommittee/v1beta1/query.swagger.json",
       "tags": {
         "rename": {
           "Query": "Committee"
@@ -81,7 +81,7 @@
       }
     },
     {
-      "url": "./out/swagger/Furya-Official/mageearn/v1beta1/query.swagger.json",
+      "url": "./out/swagger/furya-official/mageearn/v1beta1/query.swagger.json",
       "tags": {
         "rename": {
           "Query": "Earn"
@@ -98,7 +98,7 @@
       }
     },
     {
-      "url": "./out/swagger/Furya-Official/magehard/v1beta1/query.swagger.json",
+      "url": "./out/swagger/furya-official/magehard/v1beta1/query.swagger.json",
       "tags": {
         "rename": {
           "Query": "Hard"
@@ -115,7 +115,7 @@
       }
     },
     {
-      "url": "./out/swagger/Furya-Official/mageissuance/v1beta1/query.swagger.json",
+      "url": "./out/swagger/furya-official/mageissuance/v1beta1/query.swagger.json",
       "tags": {
         "rename": {
           "Query": "Issuance"
@@ -132,7 +132,7 @@
       }
     },
     {
-      "url": "./out/swagger/Furya-Official/mageMagedist/v1beta1/query.swagger.json",
+      "url": "./out/swagger/furya-official/mageMagedist/v1beta1/query.swagger.json",
       "tags": {
         "rename": {
           "Query": "Magedist"
@@ -149,7 +149,7 @@
       }
     },
     {
-      "url": "./out/swagger/Furya-Official/mageliquid/v1beta1/query.swagger.json",
+      "url": "./out/swagger/furya-official/mageliquid/v1beta1/query.swagger.json",
       "tags": {
         "rename": {
           "Query": "Liquid"
@@ -166,7 +166,7 @@
       }
     },
     {
-      "url": "./out/swagger/Furya-Official/magepricefeed/v1beta1/query.swagger.json",
+      "url": "./out/swagger/furya-official/magepricefeed/v1beta1/query.swagger.json",
       "tags": {
         "rename": {
           "Query": "Pricefeed"
@@ -183,7 +183,7 @@
       }
     },
     {
-      "url": "./out/swagger/Furya-Official/mageswap/v1beta1/query.swagger.json",
+      "url": "./out/swagger/furya-official/mageswap/v1beta1/query.swagger.json",
       "tags": {
         "rename": {
           "Query": "Swap"
@@ -200,7 +200,7 @@
       }
     },
     {
-      "url": "./out/swagger/Furya-Official/magesavings/v1beta1/query.swagger.json",
+      "url": "./out/swagger/furya-official/magesavings/v1beta1/query.swagger.json",
       "tags": {
         "rename": {
           "Query": "Savings"
@@ -217,7 +217,7 @@
       }
     },
     {
-      "url": "./out/swagger/Furya-Official/mageMagemint/v1beta1/query.swagger.json",
+      "url": "./out/swagger/furya-official/mageMagemint/v1beta1/query.swagger.json",
       "tags": {
         "rename": {
           "Query": "Magemint"

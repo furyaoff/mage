@@ -7,7 +7,7 @@ import "cosmos/base/v1beta1/coin.proto";
 import "cosmos_proto/cosmos.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "Furya-Official/magehard/v1beta1/hard.proto";
+import "furya-official/magehard/v1beta1/hard.proto";
 
 option go_package = "github.com/furya-official/mage/x/hard/types";
 
@@ -15,57 +15,57 @@ option go_package = "github.com/furya-official/mage/x/hard/types";
 service Query {
   // Params queries module params.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/Furya-Official/magehard/v1beta1/params";
+    option (google.api.http).get = "/furya-official/magehard/v1beta1/params";
   }
 
   // Accounts queries module accounts.
   rpc Accounts(QueryAccountsRequest) returns (QueryAccountsResponse) {
-    option (google.api.http).get = "/Furya-Official/magehard/v1beta1/accounts";
+    option (google.api.http).get = "/furya-official/magehard/v1beta1/accounts";
   }
 
   // Deposits queries hard deposits.
   rpc Deposits(QueryDepositsRequest) returns (QueryDepositsResponse) {
-    option (google.api.http).get = "/Furya-Official/magehard/v1beta1/deposits";
+    option (google.api.http).get = "/furya-official/magehard/v1beta1/deposits";
   }
 
   // UnsyncedDeposits queries unsynced deposits.
   rpc UnsyncedDeposits(QueryUnsyncedDepositsRequest) returns (QueryUnsyncedDepositsResponse) {
-    option (google.api.http).get = "/Furya-Official/magehard/v1beta1/unsynced-deposits";
+    option (google.api.http).get = "/furya-official/magehard/v1beta1/unsynced-deposits";
   }
 
   // TotalDeposited queries total coins deposited to hard liquidity pools.
   rpc TotalDeposited(QueryTotalDepositedRequest) returns (QueryTotalDepositedResponse) {
-    option (google.api.http).get = "/Furya-Official/magehard/v1beta1/total-deposited/{denom}";
+    option (google.api.http).get = "/furya-official/magehard/v1beta1/total-deposited/{denom}";
   }
 
   // Borrows queries hard borrows.
   rpc Borrows(QueryBorrowsRequest) returns (QueryBorrowsResponse) {
-    option (google.api.http).get = "/Furya-Official/magehard/v1beta1/borrows";
+    option (google.api.http).get = "/furya-official/magehard/v1beta1/borrows";
   }
 
   // UnsyncedBorrows queries unsynced borrows.
   rpc UnsyncedBorrows(QueryUnsyncedBorrowsRequest) returns (QueryUnsyncedBorrowsResponse) {
-    option (google.api.http).get = "/Furya-Official/magehard/v1beta1/unsynced-borrows";
+    option (google.api.http).get = "/furya-official/magehard/v1beta1/unsynced-borrows";
   }
 
   // TotalBorrowed queries total coins borrowed from hard liquidity pools.
   rpc TotalBorrowed(QueryTotalBorrowedRequest) returns (QueryTotalBorrowedResponse) {
-    option (google.api.http).get = "/Furya-Official/magehard/v1beta1/total-borrowed/{denom}";
+    option (google.api.http).get = "/furya-official/magehard/v1beta1/total-borrowed/{denom}";
   }
 
   // InterestRate queries the hard module interest rates.
   rpc InterestRate(QueryInterestRateRequest) returns (QueryInterestRateResponse) {
-    option (google.api.http).get = "/Furya-Official/magehard/v1beta1/interest-rate/{denom}";
+    option (google.api.http).get = "/furya-official/magehard/v1beta1/interest-rate/{denom}";
   }
 
   // Reserves queries total hard reserve coins.
   rpc Reserves(QueryReservesRequest) returns (QueryReservesResponse) {
-    option (google.api.http).get = "/Furya-Official/magehard/v1beta1/reserves/{denom}";
+    option (google.api.http).get = "/furya-official/magehard/v1beta1/reserves/{denom}";
   }
 
   // InterestFactors queries hard module interest factors.
   rpc InterestFactors(QueryInterestFactorsRequest) returns (QueryInterestFactorsResponse) {
-    option (google.api.http).get = "/Furya-Official/magehard/v1beta1/interest-factors/{denom}";
+    option (google.api.http).get = "/furya-official/magehard/v1beta1/interest-factors/{denom}";
   }
 }
 

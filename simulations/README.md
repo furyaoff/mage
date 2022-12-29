@@ -15,7 +15,7 @@ Then to run stuff you create "jobs" and submit them to a job queue.
 The number of machines running auto-scales to match the number of jobs. When there are no jobs there are no machines, so you don't pay for anything.
 
 Jobs are defined as a docker image (assumed hosted on dockerhub) and a command string.  
->e.g. `Furya-Official/mageMage-sim:version1`, `go test ./app`
+>e.g. `furya-official/mageMage-sim:version1`, `go test ./app`
 
 This can run sims but doesn't collect the results. This is handled by a custom script.
 
@@ -30,12 +30,12 @@ AWS Batch allows for "array jobs" which are a way of specifying many duplicates 
 ### Steps
 
 - create and submit a new array job (based of the job definition) with
-  - image `Furya-Official/mageMage-sim:<some-version>`
+  - image `furya-official/mageMage-sim:<some-version>`
   - command `run-then-upload.sh TestFullAppSimulation <starting-seed> <num-blocks> <block-size>`
   - array size of how many sims you want to run
 - any changes needed to the code or script necessitates a rebuild:
-  - `docker build -f simulations/Dockerfile -t Furya-Official/mageMage-sim:<some-version> .`
-  - `docker push Furya-Official/mageMage-sim:<some-version>`
+  - `docker build -f simulations/Dockerfile -t furya-official/mageMage-sim:<some-version> .`
+  - `docker push furya-official/mageMage-sim:<some-version>`
 
 ### Tips
 

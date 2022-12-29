@@ -12,13 +12,13 @@ option go_package = "github.com/furya-official/mage/x/community/types";
 service Query {
   // Balance queries the balance of all coins of x/community module.
   rpc Balance(QueryBalanceRequest) returns (QueryBalanceResponse) {
-    option (google.api.http).get = "/Furya-Official/magecommunity/v1beta1/balance";
+    option (google.api.http).get = "/furya-official/magecommunity/v1beta1/balance";
   }
 
   // LegacyCommunityPool queries the balance of all coins of the legacy community pool.
   // The legacy community pool is a subaccount of the fee pool and has been replaced by x/community.
   rpc LegacyCommunityPool(QueryLegacyCommunityPoolRequest) returns (QueryLegacyCommunityPoolResponse) {
-    option (google.api.http).get = "/Furya-Official/magecommunity/v1beta1/legacy_community_pool";
+    option (google.api.http).get = "/furya-official/magecommunity/v1beta1/legacy_community_pool";
   }
 }
 

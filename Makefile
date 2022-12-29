@@ -32,7 +32,7 @@ print-version:
 LEDGER_ENABLED ?= true
 DOCKER:=docker
 DOCKER_BUF := $(DOCKER) run --rm -v $(CURDIR):/workspace --workdir /workspace bufbuild/buf
-HTTPS_GIT := https://github.com/Furya-Official/mage.git
+HTTPS_GIT := https://github.com/furya-official/mage.git
 
 ################################################################################
 ###                             Machine Info                                 ###
@@ -232,7 +232,7 @@ build-docker-local-mage:
 
 # Run a 4-node testnet locally
 localnet-start: build-linux localnet-stop
-	@if ! [ -f build/node0/kvd/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/kvd:Z Furya-Official/mageMagenode testnet --v 4 -o . --starting-ip-address 192.168.10.2 --keyring-backend=test ; fi
+	@if ! [ -f build/node0/kvd/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/kvd:Z furya-official/mageMagenode testnet --v 4 -o . --starting-ip-address 192.168.10.2 --keyring-backend=test ; fi
 	docker-compose up -d
 
 localnet-stop:
@@ -291,9 +291,9 @@ test-migrate:
 # This submits an AWS Batch job to run a lot of sims, each within a docker image. Results are uploaded to S3
 start-remote-sims:
 	# build the image used for running sims in, and tag it
-	docker build -f simulations/Dockerfile -t Furya-Official/mageMage-sim:master .
+	docker build -f simulations/Dockerfile -t furya-official/mageMage-sim:master .
 	# push that image to the hub
-	docker push Furya-Official/mageMage-sim:master
+	docker push furya-official/mageMage-sim:master
 	# submit an array job on AWS Batch, using 1000 seeds, spot instances
 	aws batch submit-job \
 		-—job-name "master-$(VERSION)" \

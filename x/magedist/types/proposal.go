@@ -18,7 +18,7 @@ var _ govtypes.Content = CommunityPoolMultiSpendProposal{}
 
 func init() {
 	govtypes.RegisterProposalType(ProposalTypeCommunityPoolMultiSpend)
-	govtypes.RegisterProposalTypeCodec(CommunityPoolMultiSpendProposal{}, "Furya-Official/mageCommunityPoolMultiSpendProposal")
+	govtypes.RegisterProposalTypeCodec(CommunityPoolMultiSpendProposal{}, "furya-official/mageCommunityPoolMultiSpendProposal")
 }
 
 // NewCommunityPoolMultiSpendProposal creates a new community pool multi-spend proposal.

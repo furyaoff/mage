@@ -24,9 +24,9 @@ var (
 
 func init() {
 	govtypes.RegisterProposalType(ProposalTypeCommunityPoolLendDeposit)
-	govtypes.RegisterProposalTypeCodec(&CommunityPoolLendDepositProposal{}, "Furya-Official/mageCommunityPoolLendDepositProposal")
+	govtypes.RegisterProposalTypeCodec(&CommunityPoolLendDepositProposal{}, "furya-official/mageCommunityPoolLendDepositProposal")
 	govtypes.RegisterProposalType(ProposalTypeCommunityPoolLendWithdraw)
-	govtypes.RegisterProposalTypeCodec(&CommunityPoolLendWithdrawProposal{}, "Furya-Official/mageCommunityPoolLendWithdrawProposal")
+	govtypes.RegisterProposalTypeCodec(&CommunityPoolLendWithdrawProposal{}, "furya-official/mageCommunityPoolLendWithdrawProposal")
 }
 
 // NewCommunityPoolLendDepositProposal creates a new community pool deposit proposal.

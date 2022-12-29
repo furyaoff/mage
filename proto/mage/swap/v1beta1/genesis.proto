@@ -2,7 +2,7 @@ syntax = "proto3";
 package mage.swap.v1beta1;
 
 import "gogoproto/gogo.proto";
-import "Furya-Official/mageswap/v1beta1/swap.proto";
+import "furya-official/mageswap/v1beta1/swap.proto";
 
 option go_package = "github.com/furya-official/mage/x/swap/types";
 

@@ -15,9 +15,9 @@ import (
 const MaxCommitteeDescriptionLength int = 512
 
 const (
-	BaseCommitteeType   = "Furya-Official/mageBaseCommittee"
-	MemberCommitteeType = "Furya-Official/mageMemberCommittee" // Committee is composed of member addresses that vote to enact proposals within their permissions
-	TokenCommitteeType  = "Furya-Official/mageTokenCommittee"  // Committee is composed of token holders with voting power determined by total token balance
+	BaseCommitteeType   = "furya-official/mageBaseCommittee"
+	MemberCommitteeType = "furya-official/mageMemberCommittee" // Committee is composed of member addresses that vote to enact proposals within their permissions
+	TokenCommitteeType  = "furya-official/mageTokenCommittee"  // Committee is composed of token holders with voting power determined by total token balance
 	BondDenom           = "uMage"
 )
 
@@ -25,9 +25,9 @@ func init() {
 	// CommitteeChange/Delete proposals are registered on gov's ModuleCdc (see proposal.go).
 	// But since these proposals contain Committees, these types also need registering:
 	govtypes.ModuleCdc.RegisterInterface((*Committee)(nil), nil)
-	govtypes.RegisterProposalTypeCodec(BaseCommittee{}, "Furya-Official/mageBaseCommittee")
-	govtypes.RegisterProposalTypeCodec(MemberCommittee{}, "Furya-Official/mageMemberCommittee")
-	govtypes.RegisterProposalTypeCodec(TokenCommittee{}, "Furya-Official/mageTokenCommittee")
+	govtypes.RegisterProposalTypeCodec(BaseCommittee{}, "furya-official/mageBaseCommittee")
+	govtypes.RegisterProposalTypeCodec(MemberCommittee{}, "furya-official/mageMemberCommittee")
+	govtypes.RegisterProposalTypeCodec(TokenCommittee{}, "furya-official/mageTokenCommittee")
 }
 
 // Marshal needed for protobuf compatibility.

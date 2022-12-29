@@ -3,7 +3,7 @@ package mage.bep3.v1beta1;
 
 import "gogoproto/gogo.proto";
 import "google/protobuf/timestamp.proto";
-import "Furya-Official/magebep3/v1beta1/bep3.proto";
+import "furya-official/magebep3/v1beta1/bep3.proto";
 
 option go_package = "github.com/furya-official/mage/x/bep3/types";
 

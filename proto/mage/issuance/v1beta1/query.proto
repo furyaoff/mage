@@ -3,7 +3,7 @@ package mage.issuance.v1beta1;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "Furya-Official/mageissuance/v1beta1/genesis.proto";
+import "furya-official/mageissuance/v1beta1/genesis.proto";
 
 option go_package = "github.com/furya-official/mage/x/issuance/types";
 
@@ -11,7 +11,7 @@ option go_package = "github.com/furya-official/mage/x/issuance/types";
 service Query {
   // Params queries all parameters of the issuance module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/Furya-Official/mageissuance/v1beta1/params";
+    option (google.api.http).get = "/furya-official/mageissuance/v1beta1/params";
   }
 }
 

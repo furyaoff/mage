@@ -120,7 +120,7 @@
           ],
           "permissions": [
             {
-              "type": "Furya-Official/mageSubParamChangePermission",
+              "type": "furya-official/mageSubParamChangePermission",
               "value": {
                 "allowed_params": [
                   {
@@ -235,7 +235,7 @@
           ],
           "permissions": [
             {
-              "type": "Furya-Official/mageGodPermission",
+              "type": "furya-official/mageGodPermission",
               "value": {}
             }
           ],

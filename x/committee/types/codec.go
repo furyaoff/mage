@@ -43,25 +43,25 @@ func init() {
 func RegisterLegacyAminoCodec(cdc *codec.LegacyAmino) {
 	// Proposals
 	cdc.RegisterInterface((*PubProposal)(nil), nil)
-	cdc.RegisterConcrete(CommitteeChangeProposal{}, "Furya-Official/mageCommitteeChangeProposal", nil)
-	cdc.RegisterConcrete(CommitteeDeleteProposal{}, "Furya-Official/mageCommitteeDeleteProposal", nil)
+	cdc.RegisterConcrete(CommitteeChangeProposal{}, "furya-official/mageCommitteeChangeProposal", nil)
+	cdc.RegisterConcrete(CommitteeDeleteProposal{}, "furya-official/mageCommitteeDeleteProposal", nil)
 
 	// Committees
 	cdc.RegisterInterface((*Committee)(nil), nil)
-	cdc.RegisterConcrete(BaseCommittee{}, "Furya-Official/mageBaseCommittee", nil)
-	cdc.RegisterConcrete(MemberCommittee{}, "Furya-Official/mageMemberCommittee", nil)
-	cdc.RegisterConcrete(TokenCommittee{}, "Furya-Official/mageTokenCommittee", nil)
+	cdc.RegisterConcrete(BaseCommittee{}, "furya-official/mageBaseCommittee", nil)
+	cdc.RegisterConcrete(MemberCommittee{}, "furya-official/mageMemberCommittee", nil)
+	cdc.RegisterConcrete(TokenCommittee{}, "furya-official/mageTokenCommittee", nil)
 
 	// Permissions
 	cdc.RegisterInterface((*Permission)(nil), nil)
-	cdc.RegisterConcrete(GodPermission{}, "Furya-Official/mageGodPermission", nil)
-	cdc.RegisterConcrete(TextPermission{}, "Furya-Official/mageTextPermission", nil)
-	cdc.RegisterConcrete(SoftwareUpgradePermission{}, "Furya-Official/mageSoftwareUpgradePermission", nil)
-	cdc.RegisterConcrete(ParamsChangePermission{}, "Furya-Official/mageParamsChangePermission", nil)
+	cdc.RegisterConcrete(GodPermission{}, "furya-official/mageGodPermission", nil)
+	cdc.RegisterConcrete(TextPermission{}, "furya-official/mageTextPermission", nil)
+	cdc.RegisterConcrete(SoftwareUpgradePermission{}, "furya-official/mageSoftwareUpgradePermission", nil)
+	cdc.RegisterConcrete(ParamsChangePermission{}, "furya-official/mageParamsChangePermission", nil)
 
 	// Msgs
-	cdc.RegisterConcrete(&MsgSubmitProposal{}, "Furya-Official/mageMsgSubmitProposal", nil)
-	cdc.RegisterConcrete(&MsgVote{}, "Furya-Official/mageMsgVote", nil)
+	cdc.RegisterConcrete(&MsgSubmitProposal{}, "furya-official/mageMsgSubmitProposal", nil)
+	cdc.RegisterConcrete(&MsgVote{}, "furya-official/mageMsgVote", nil)
 }
 
 // RegisterProposalTypeCodec allows external modules to register their own pubproposal types on the

@@ -8,8 +8,8 @@ import "cosmos_proto/cosmos.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
-import "Furya-Official/magecdp/v1beta1/cdp.proto";
-import "Furya-Official/magecdp/v1beta1/genesis.proto";
+import "furya-official/magecdp/v1beta1/cdp.proto";
+import "furya-official/magecdp/v1beta1/genesis.proto";
 
 option go_package = "github.com/furya-official/mage/x/cdp/types";
 
@@ -17,37 +17,37 @@ option go_package = "github.com/furya-official/mage/x/cdp/types";
 service Query {
   // Params queries all parameters of the cdp module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/Furya-Official/magecdp/v1beta1/params";
+    option (google.api.http).get = "/furya-official/magecdp/v1beta1/params";
   }
 
   // Accounts queries the CDP module accounts.
   rpc Accounts(QueryAccountsRequest) returns (QueryAccountsResponse) {
-    option (google.api.http).get = "/Furya-Official/magecdp/v1beta1/accounts";
+    option (google.api.http).get = "/furya-official/magecdp/v1beta1/accounts";
   }
 
   // TotalPrincipal queries the total principal of a given collateral type.
   rpc TotalPrincipal(QueryTotalPrincipalRequest) returns (QueryTotalPrincipalResponse) {
-    option (google.api.http).get = "/Furya-Official/magecdp/v1beta1/totalPrincipal";
+    option (google.api.http).get = "/furya-official/magecdp/v1beta1/totalPrincipal";
   }
 
   // TotalCollateral queries the total collateral of a given collateral type.
   rpc TotalCollateral(QueryTotalCollateralRequest) returns (QueryTotalCollateralResponse) {
-    option (google.api.http).get = "/Furya-Official/magecdp/v1beta1/totalCollateral";
+    option (google.api.http).get = "/furya-official/magecdp/v1beta1/totalCollateral";
   }
 
   // Cdps queries all active CDPs.
   rpc Cdps(QueryCdpsRequest) returns (QueryCdpsResponse) {
-    option (google.api.http).get = "/Furya-Official/magecdp/v1beta1/cdps";
+    option (google.api.http).get = "/furya-official/magecdp/v1beta1/cdps";
   }
 
   // Cdp queries a CDP with the input owner address and collateral type.
   rpc Cdp(QueryCdpRequest) returns (QueryCdpResponse) {
-    option (google.api.http).get = "/Furya-Official/magecdp/v1beta1/cdps/{owner}/{collateral_type}";
+    option (google.api.http).get = "/furya-official/magecdp/v1beta1/cdps/{owner}/{collateral_type}";
   }
 
   // Deposits queries deposits associated with the CDP owned by an address for a collateral type.
   rpc Deposits(QueryDepositsRequest) returns (QueryDepositsResponse) {
-    option (google.api.http).get = "/Furya-Official/magecdp/v1beta1/cdps/deposits/{owner}/{collateral_type}";
+    option (google.api.http).get = "/furya-official/magecdp/v1beta1/cdps/deposits/{owner}/{collateral_type}";
   }
 }
 

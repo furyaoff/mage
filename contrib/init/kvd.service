@@ -6,7 +6,7 @@ After=network-online.target
 
 # Run as mage:mage
 User=mage
-ExecStart=/home/Furya-Official/magego/bin/kvd start
+ExecStart=/home/furya-official/magego/bin/kvd start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096

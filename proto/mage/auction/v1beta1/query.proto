@@ -5,7 +5,7 @@ import "cosmos/base/query/v1beta1/pagination.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/any.proto";
-import "Furya-Official/mageauction/v1beta1/genesis.proto";
+import "furya-official/mageauction/v1beta1/genesis.proto";
 
 option go_package = "github.com/furya-official/mage/x/auction/types";
 
@@ -13,22 +13,22 @@ option go_package = "github.com/furya-official/mage/x/auction/types";
 service Query {
   // Params queries all parameters of the auction module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/Furya-Official/mageauction/v1beta1/params";
+    option (google.api.http).get = "/furya-official/mageauction/v1beta1/params";
   }
 
   // Auction queries an individual Auction by auction ID
   rpc Auction(QueryAuctionRequest) returns (QueryAuctionResponse) {
-    option (google.api.http).get = "/Furya-Official/mageauction/v1beta1/auctions/{auction_id}";
+    option (google.api.http).get = "/furya-official/mageauction/v1beta1/auctions/{auction_id}";
   }
 
   // Auctions queries auctions filtered by asset denom, owner address, phase, and auction type
   rpc Auctions(QueryAuctionsRequest) returns (QueryAuctionsResponse) {
-    option (google.api.http).get = "/Furya-Official/mageauction/v1beta1/auctions";
+    option (google.api.http).get = "/furya-official/mageauction/v1beta1/auctions";
   }
 
   // NextAuctionID queries the next auction ID
   rpc NextAuctionID(QueryNextAuctionIDRequest) returns (QueryNextAuctionIDResponse) {
-    option (google.api.http).get = "/Furya-Official/mageauction/v1beta1/next-auction-id";
+    option (google.api.http).get = "/furya-official/mageauction/v1beta1/next-auction-id";
   }
 }
 

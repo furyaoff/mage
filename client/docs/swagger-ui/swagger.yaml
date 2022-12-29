@@ -5,12 +5,12 @@ info:
   version: 1.0.0
 externalDocs:
   description: GitHub
-  url: https://github.com/Furya-Official/mage
+  url: https://github.com/furya-official/mage
 host: api.data.mage.io
 schemes:
   - https
 paths:
-  /Furya-Official/mageauction/v1beta1/auctions:
+  /furya-official/mageauction/v1beta1/auctions:
     get:
       summary: >-
         Auctions queries auctions filtered by asset denom, owner address, phase,
@@ -488,7 +488,7 @@ paths:
           type: boolean
       tags:
         - Auction
-  /Furya-Official/mageauction/v1beta1/auctions/{auction_id}:
+  /furya-official/mageauction/v1beta1/auctions/{auction_id}:
     get:
       summary: Auction queries an individual Auction by auction ID
       operationId: AuctionAuction
@@ -873,7 +873,7 @@ paths:
           format: uint64
       tags:
         - Auction
-  /Furya-Official/mageauction/v1beta1/next-auction-id:
+  /furya-official/mageauction/v1beta1/next-auction-id:
     get:
       summary: NextAuctionID queries the next auction ID
       operationId: AuctionNextAuctionID
@@ -1082,7 +1082,7 @@ paths:
                         }
       tags:
         - Auction
-  /Furya-Official/mageauction/v1beta1/params:
+  /furya-official/mageauction/v1beta1/params:
     get:
       summary: Params queries all parameters of the auction module.
       operationId: AuctionParams
@@ -1307,7 +1307,7 @@ paths:
                         }
       tags:
         - Auction
-  /Furya-Official/magebep3/v1beta1/assetsupplies:
+  /furya-official/magebep3/v1beta1/assetsupplies:
     get:
       summary: AssetSupplies queries a list of asset supplies
       operationId: BEP3AssetSupplies
@@ -1428,7 +1428,7 @@ paths:
                       format: byte
       tags:
         - BEP3
-  /Furya-Official/magebep3/v1beta1/assetsupply/{denom}:
+  /furya-official/magebep3/v1beta1/assetsupply/{denom}:
     get:
       summary: AssetSupply queries info about an asset's supply
       operationId: BEP3AssetSupply
@@ -1549,7 +1549,7 @@ paths:
           type: string
       tags:
         - BEP3
-  /Furya-Official/magebep3/v1beta1/atomicswap/{swap_id}:
+  /furya-official/magebep3/v1beta1/atomicswap/{swap_id}:
     get:
       summary: AtomicSwap queries info about an atomic swap
       operationId: BEP3AtomicSwap
@@ -1681,7 +1681,7 @@ paths:
           type: string
       tags:
         - BEP3
-  /Furya-Official/magebep3/v1beta1/atomicswaps:
+  /furya-official/magebep3/v1beta1/atomicswaps:
     get:
       summary: AtomicSwaps queries a list of atomic swaps
       operationId: BEP3AtomicSwaps
@@ -1944,7 +1944,7 @@ paths:
           type: boolean
       tags:
         - BEP3
-  /Furya-Official/magebep3/v1beta1/params:
+  /furya-official/magebep3/v1beta1/params:
     get:
       summary: Params queries module params
       operationId: BEP3Params
@@ -2057,7 +2057,7 @@ paths:
                       format: byte
       tags:
         - BEP3
-  /Furya-Official/magecdp/v1beta1/accounts:
+  /furya-official/magecdp/v1beta1/accounts:
     get:
       summary: Accounts queries the CDP module accounts.
       operationId: CDPAccounts
@@ -2476,7 +2476,7 @@ paths:
                         }
       tags:
         - CDP
-  /Furya-Official/magecdp/v1beta1/cdps:
+  /furya-official/magecdp/v1beta1/cdps:
     get:
       summary: Cdps queries all active CDPs.
       operationId: CDPCdps
@@ -2866,7 +2866,7 @@ paths:
           type: boolean
       tags:
         - CDP
-  /Furya-Official/magecdp/v1beta1/cdps/deposits/{owner}/{collateral_type}:
+  /furya-official/magecdp/v1beta1/cdps/deposits/{owner}/{collateral_type}:
     get:
       summary: >-
         Deposits queries deposits associated with the CDP owned by an address
@@ -3111,7 +3111,7 @@ paths:
           type: string
       tags:
         - CDP
-  /Furya-Official/magecdp/v1beta1/cdps/{owner}/{collateral_type}:
+  /furya-official/magecdp/v1beta1/cdps/{owner}/{collateral_type}:
     get:
       summary: Cdp queries a CDP with the input owner address and collateral type.
       operationId: CDPCdp
@@ -3406,7 +3406,7 @@ paths:
           type: string
       tags:
         - CDP
-  /Furya-Official/magecdp/v1beta1/params:
+  /furya-official/magecdp/v1beta1/params:
     get:
       summary: Params queries all parameters of the cdp module.
       operationId: CDPParams
@@ -3699,7 +3699,7 @@ paths:
                         }
       tags:
         - CDP
-  /Furya-Official/magecdp/v1beta1/totalCollateral:
+  /furya-official/magecdp/v1beta1/totalCollateral:
     get:
       summary: TotalCollateral queries the total collateral of a given collateral type.
       operationId: CDPTotalCollateral
@@ -3935,7 +3935,7 @@ paths:
           type: string
       tags:
         - CDP
-  /Furya-Official/magecdp/v1beta1/totalPrincipal:
+  /furya-official/magecdp/v1beta1/totalPrincipal:
     get:
       summary: TotalPrincipal queries the total principal of a given collateral type.
       operationId: CDPTotalPrincipal
@@ -4171,7 +4171,7 @@ paths:
           type: string
       tags:
         - CDP
-  /Furya-Official/magecommittee/v1beta1/committees:
+  /furya-official/magecommittee/v1beta1/committees:
     get:
       summary: Committees queries all committess of the committee module.
       operationId: CommitteeCommittees
@@ -4556,7 +4556,7 @@ paths:
                         }
       tags:
         - Committee
-  /Furya-Official/magecommittee/v1beta1/committees/{committee_id}:
+  /furya-official/magecommittee/v1beta1/committees/{committee_id}:
     get:
       summary: Committee queries a committee based on committee ID.
       operationId: CommitteeCommittee
@@ -4941,7 +4941,7 @@ paths:
           format: uint64
       tags:
         - Committee
-  /Furya-Official/magecommittee/v1beta1/next-proposal-id:
+  /furya-official/magecommittee/v1beta1/next-proposal-id:
     get:
       summary: NextProposalID queries the next proposal ID of the committee module.
       operationId: CommitteeNextProposalID
@@ -5150,7 +5150,7 @@ paths:
                         }
       tags:
         - Committee
-  /Furya-Official/magecommittee/v1beta1/proposals:
+  /furya-official/magecommittee/v1beta1/proposals:
     get:
       summary: Proposals queries proposals based on committee ID.
       operationId: CommitteeProposals
@@ -5558,7 +5558,7 @@ paths:
           format: uint64
       tags:
         - Committee
-  /Furya-Official/magecommittee/v1beta1/proposals/{proposal_id}:
+  /furya-official/magecommittee/v1beta1/proposals/{proposal_id}:
     get:
       summary: Deposits queries a proposal based on proposal ID.
       operationId: CommitteeProposal
@@ -5952,7 +5952,7 @@ paths:
           format: uint64
       tags:
         - Committee
-  /Furya-Official/magecommittee/v1beta1/proposals/{proposal_id}/tally:
+  /furya-official/magecommittee/v1beta1/proposals/{proposal_id}/tally:
     get:
       summary: Tally queries the tally of a single proposal ID.
       operationId: CommitteeTally
@@ -6179,7 +6179,7 @@ paths:
           format: uint64
       tags:
         - Committee
-  /Furya-Official/magecommittee/v1beta1/proposals/{proposal_id}/votes:
+  /furya-official/magecommittee/v1beta1/proposals/{proposal_id}/votes:
     get:
       summary: Votes queries all votes for a single proposal ID.
       operationId: CommitteeVotes
@@ -6494,7 +6494,7 @@ paths:
           type: boolean
       tags:
         - Committee
-  /Furya-Official/magecommittee/v1beta1/proposals/{proposal_id}/votes/{voter}:
+  /furya-official/magecommittee/v1beta1/proposals/{proposal_id}/votes/{voter}:
     get:
       summary: Vote queries the vote of a single voter for a single proposal ID.
       operationId: CommitteeVote
@@ -6730,7 +6730,7 @@ paths:
           type: string
       tags:
         - Committee
-  /Furya-Official/magecommittee/v1beta1/raw-params:
+  /furya-official/magecommittee/v1beta1/raw-params:
     get:
       summary: RawParams queries the raw params data of any subspace and key.
       operationId: CommitteeRawParams
@@ -6947,7 +6947,7 @@ paths:
           type: string
       tags:
         - Committee
-  /Furya-Official/mageearn/v1beta1/deposits:
+  /furya-official/mageearn/v1beta1/deposits:
     get:
       summary: Deposits queries deposit details based on depositor address and vault
       operationId: EarnDeposits
@@ -7127,7 +7127,7 @@ paths:
           type: boolean
       tags:
         - Earn
-  /Furya-Official/mageearn/v1beta1/params:
+  /furya-official/mageearn/v1beta1/params:
     get:
       summary: Params queries all parameters of the earn module.
       operationId: EarnParams
@@ -7226,7 +7226,7 @@ paths:
                       format: byte
       tags:
         - Earn
-  /Furya-Official/mageearn/v1beta1/total_supply:
+  /furya-official/mageearn/v1beta1/total_supply:
     get:
       summary: >-
         TotalSupply returns the total sum of all coins currently locked into the
@@ -7287,7 +7287,7 @@ paths:
                       format: byte
       tags:
         - Earn
-  /Furya-Official/mageearn/v1beta1/vaults:
+  /furya-official/mageearn/v1beta1/vaults:
     get:
       summary: Vaults queries all vaults
       operationId: EarnVaults
@@ -7387,7 +7387,7 @@ paths:
                       format: byte
       tags:
         - Earn
-  /Furya-Official/mageearn/v1beta1/vaults/{denom}:
+  /furya-official/mageearn/v1beta1/vaults/{denom}:
     get:
       summary: Vault queries a single vault based on the vault denom
       operationId: EarnVault
@@ -7491,7 +7491,7 @@ paths:
           type: string
       tags:
         - Earn
-  /Furya-Official/magehard/v1beta1/accounts:
+  /furya-official/magehard/v1beta1/accounts:
     get:
       summary: Accounts queries module accounts.
       operationId: HardAccounts
@@ -7910,7 +7910,7 @@ paths:
                         }
       tags:
         - Hard
-  /Furya-Official/magehard/v1beta1/borrows:
+  /furya-official/magehard/v1beta1/borrows:
     get:
       summary: Borrows queries hard borrows.
       operationId: HardBorrows
@@ -8249,7 +8249,7 @@ paths:
           type: boolean
       tags:
         - Hard
-  /Furya-Official/magehard/v1beta1/deposits:
+  /furya-official/magehard/v1beta1/deposits:
     get:
       summary: Deposits queries hard deposits.
       operationId: HardDeposits
@@ -8588,7 +8588,7 @@ paths:
           type: boolean
       tags:
         - Hard
-  /Furya-Official/magehard/v1beta1/interest-factors/{denom}:
+  /furya-official/magehard/v1beta1/interest-factors/{denom}:
     get:
       summary: InterestFactors queries hard module interest factors.
       operationId: HardInterestFactors
@@ -8815,7 +8815,7 @@ paths:
           type: string
       tags:
         - Hard
-  /Furya-Official/magehard/v1beta1/interest-rate/{denom}:
+  /furya-official/magehard/v1beta1/interest-rate/{denom}:
     get:
       summary: InterestRate queries the hard module interest rates.
       operationId: HardInterestRate
@@ -9042,7 +9042,7 @@ paths:
           type: string
       tags:
         - Hard
-  /Furya-Official/magehard/v1beta1/params:
+  /furya-official/magehard/v1beta1/params:
     get:
       summary: Params queries module params.
       operationId: HardParams
@@ -9294,7 +9294,7 @@ paths:
                         }
       tags:
         - Hard
-  /Furya-Official/magehard/v1beta1/reserves/{denom}:
+  /furya-official/magehard/v1beta1/reserves/{denom}:
     get:
       summary: Reserves queries total hard reserve coins.
       operationId: HardReserves
@@ -9522,7 +9522,7 @@ paths:
           type: string
       tags:
         - Hard
-  /Furya-Official/magehard/v1beta1/total-borrowed/{denom}:
+  /furya-official/magehard/v1beta1/total-borrowed/{denom}:
     get:
       summary: TotalBorrowed queries total coins borrowed from hard liquidity pools.
       operationId: HardTotalBorrowed
@@ -9750,7 +9750,7 @@ paths:
           type: string
       tags:
         - Hard
-  /Furya-Official/magehard/v1beta1/total-deposited/{denom}:
+  /furya-official/magehard/v1beta1/total-deposited/{denom}:
     get:
       summary: TotalDeposited queries total coins deposited to hard liquidity pools.
       operationId: HardTotalDeposited
@@ -9978,7 +9978,7 @@ paths:
           type: string
       tags:
         - Hard
-  /Furya-Official/magehard/v1beta1/unsynced-borrows:
+  /furya-official/magehard/v1beta1/unsynced-borrows:
     get:
       summary: UnsyncedBorrows queries unsynced borrows.
       operationId: HardUnsyncedBorrows
@@ -10317,7 +10317,7 @@ paths:
           type: boolean
       tags:
         - Hard
-  /Furya-Official/magehard/v1beta1/unsynced-deposits:
+  /furya-official/magehard/v1beta1/unsynced-deposits:
     get:
       summary: UnsyncedDeposits queries unsynced deposits.
       operationId: HardUnsyncedDeposits
@@ -10656,7 +10656,7 @@ paths:
           type: boolean
       tags:
         - Hard
-  /Furya-Official/mageissuance/v1beta1/params:
+  /furya-official/mageissuance/v1beta1/params:
     get:
       summary: Params queries all parameters of the issuance module.
       operationId: IssuanceParams
@@ -10728,7 +10728,7 @@ paths:
                       format: byte
       tags:
         - Issuance
-  /Furya-Official/mageMagedist/v1beta1/balance:
+  /furya-official/mageMagedist/v1beta1/balance:
     get:
       summary: Balance queries the balance of all coins of x/Magedist module.
       operationId: MagedistBalance
@@ -10782,7 +10782,7 @@ paths:
                       format: byte
       tags:
         - Magedist
-  /Furya-Official/mageMagedist/v1beta1/parameters:
+  /furya-official/mageMagedist/v1beta1/parameters:
     get:
       summary: Params queries the parameters of x/Magedist module.
       operationId: MagedistParams
@@ -10917,7 +10917,7 @@ paths:
                       format: byte
       tags:
         - Magedist
-  /Furya-Official/mageliquid/v1beta1/delegated_balance/{delegator}:
+  /furya-official/mageliquid/v1beta1/delegated_balance/{delegator}:
     get:
       summary: >-
         DelegatedBalance returns an account's vesting and vested coins currently
@@ -11000,7 +11000,7 @@ paths:
           type: string
       tags:
         - Liquid
-  /Furya-Official/mageliquid/v1beta1/total_supply:
+  /furya-official/mageliquid/v1beta1/total_supply:
     get:
       summary: >-
         TotalSupply returns the total sum of all coins currently locked into the
@@ -11061,7 +11061,7 @@ paths:
                       format: byte
       tags:
         - Liquid
-  /Furya-Official/magepricefeed/v1beta1/markets:
+  /furya-official/magepricefeed/v1beta1/markets:
     get:
       summary: Markets queries all markets
       operationId: PricefeedMarkets
@@ -11117,7 +11117,7 @@ paths:
                       format: byte
       tags:
         - Pricefeed
-  /Furya-Official/magepricefeed/v1beta1/oracles/{market_id}:
+  /furya-official/magepricefeed/v1beta1/oracles/{market_id}:
     get:
       summary: Oracles queries all oracles based on a market
       operationId: PricefeedOracles
@@ -11164,7 +11164,7 @@ paths:
           type: string
       tags:
         - Pricefeed
-  /Furya-Official/magepricefeed/v1beta1/params:
+  /furya-official/magepricefeed/v1beta1/params:
     get:
       summary: Params queries all parameters of the pricefeed module.
       operationId: PricefeedParams
@@ -11226,7 +11226,7 @@ paths:
                       format: byte
       tags:
         - Pricefeed
-  /Furya-Official/magepricefeed/v1beta1/prices:
+  /furya-official/magepricefeed/v1beta1/prices:
     get:
       summary: Prices queries all prices
       operationId: PricefeedPrices
@@ -11277,7 +11277,7 @@ paths:
                       format: byte
       tags:
         - Pricefeed
-  /Furya-Official/magepricefeed/v1beta1/prices/{market_id}:
+  /furya-official/magepricefeed/v1beta1/prices/{market_id}:
     get:
       summary: Price queries price details based on a market
       operationId: PricefeedPrice
@@ -11331,7 +11331,7 @@ paths:
           type: string
       tags:
         - Pricefeed
-  /Furya-Official/magepricefeed/v1beta1/rawprices/{market_id}:
+  /furya-official/magepricefeed/v1beta1/rawprices/{market_id}:
     get:
       summary: RawPrices queries all raw prices based on a market
       operationId: PricefeedRawPrices
@@ -11392,7 +11392,7 @@ paths:
           type: string
       tags:
         - Pricefeed
-  /Furya-Official/mageswap/v1beta1/deposits:
+  /furya-official/mageswap/v1beta1/deposits:
     get:
       summary: Deposits queries deposit details based on owner address and pool
       operationId: SwapDeposits
@@ -11557,7 +11557,7 @@ paths:
           type: boolean
       tags:
         - Swap
-  /Furya-Official/mageswap/v1beta1/params:
+  /furya-official/mageswap/v1beta1/params:
     get:
       summary: Params queries all parameters of the swap module.
       operationId: SwapParams
@@ -11617,7 +11617,7 @@ paths:
                       format: byte
       tags:
         - Swap
-  /Furya-Official/mageswap/v1beta1/pools:
+  /furya-official/mageswap/v1beta1/pools:
     get:
       summary: Pools queries pools based on pool ID
       operationId: SwapPools
@@ -11766,7 +11766,7 @@ paths:
           type: boolean
       tags:
         - Swap
-  /Furya-Official/magesavings/v1beta1/deposits:
+  /furya-official/magesavings/v1beta1/deposits:
     get:
       summary: Deposits queries savings deposits.
       operationId: SavingsDeposits
@@ -11925,7 +11925,7 @@ paths:
           type: boolean
       tags:
         - Savings
-  /Furya-Official/magesavings/v1beta1/params:
+  /furya-official/magesavings/v1beta1/params:
     get:
       summary: Params queries all parameters of the savings module.
       operationId: SavingsParams
@@ -11972,7 +11972,7 @@ paths:
                       format: byte
       tags:
         - Savings
-  /Furya-Official/magesavings/v1beta1/total_supply:
+  /furya-official/magesavings/v1beta1/total_supply:
     get:
       summary: >-
         TotalSupply returns the total sum of all coins currently locked into the
@@ -12033,7 +12033,7 @@ paths:
                       format: byte
       tags:
         - Savings
-  /Furya-Official/mageMagemint/v1beta1/inflation:
+  /furya-official/mageMagemint/v1beta1/inflation:
     get:
       summary: >-
         Inflation queries x/Magemint for the overall cumulative inflation rate
@@ -12077,7 +12077,7 @@ paths:
                       format: byte
       tags:
         - Magemint
-  /Furya-Official/mageMagemint/v1beta1/params:
+  /furya-official/mageMagemint/v1beta1/params:
     get:
       summary: Params queries the parameters of x/Magemint module.
       operationId: MagemintParams

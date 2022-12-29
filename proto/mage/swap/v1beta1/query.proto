@@ -6,7 +6,7 @@ import "cosmos/base/v1beta1/coin.proto";
 import "cosmos_proto/cosmos.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "Furya-Official/mageswap/v1beta1/swap.proto";
+import "furya-official/mageswap/v1beta1/swap.proto";
 
 option go_package = "github.com/furya-official/mage/x/swap/types";
 
@@ -14,15 +14,15 @@ option go_package = "github.com/furya-official/mage/x/swap/types";
 service Query {
   // Params queries all parameters of the swap module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/Furya-Official/mageswap/v1beta1/params";
+    option (google.api.http).get = "/furya-official/mageswap/v1beta1/params";
   }
   // Pools queries pools based on pool ID
   rpc Pools(QueryPoolsRequest) returns (QueryPoolsResponse) {
-    option (google.api.http).get = "/Furya-Official/mageswap/v1beta1/pools";
+    option (google.api.http).get = "/furya-official/mageswap/v1beta1/pools";
   }
   // Deposits queries deposit details based on owner address and pool
   rpc Deposits(QueryDepositsRequest) returns (QueryDepositsResponse) {
-    option (google.api.http).get = "/Furya-Official/mageswap/v1beta1/deposits";
+    option (google.api.http).get = "/furya-official/mageswap/v1beta1/deposits";
   }
 }
 
