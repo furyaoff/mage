@@ -3,7 +3,7 @@ version: '3'
 services:
   magenode0:
     container_name: magenode0
-    image: "furya-official/magenode"
+    image: "mage/magenode"
     ports:
       - "26656-26657:26656-26657"
     environment:
@@ -17,7 +17,7 @@ services:
 
   magenode1:
     container_name: magenode1
-    image: "furya-official/magenode"
+    image: "mage/magenode"
     ports:
       - "26659-26660:26656-26657"
     environment:
@@ -31,7 +31,7 @@ services:
 
   magenode2:
     container_name: magenode2
-    image: "furya-official/magenode"
+    image: "mage/magenode"
     environment:
       - ID=2
       - LOG=${LOG:-mage.log}
@@ -45,7 +45,7 @@ services:
 
   magenode3:
     container_name: magenode3
-    image: "furya-official/magenode"
+    image: "mage/magenode"
     environment:
       - ID=3
       - LOG=${LOG:-mage.log}
