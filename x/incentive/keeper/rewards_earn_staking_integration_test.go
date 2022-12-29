@@ -134,7 +134,7 @@ func (suite *EarnStakingRewardsIntegrationTestSuite) TestStakingRewardsDistribut
 
 	suite.keeper.SetEarnRewardAccrualTime(suite.Ctx, vaultDenom1, suite.Ctx.BlockTime())
 	suite.keeper.SetEarnRewardAccrualTime(suite.Ctx, vaultDenom2, suite.Ctx.BlockTime())
-	suite.App.GetmagemintKeeper().SetPreviousBlockTime(suite.Ctx, suite.Ctx.BlockTime())
+	suite.App.GetMagemintKeeper().SetPreviousBlockTime(suite.Ctx, suite.Ctx.BlockTime())
 
 	val := suite.GetAbciValidator(suite.valAddrs[0])
 

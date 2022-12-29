@@ -49,8 +49,8 @@ func (suite *QuerierTestSuite) TestGetStakingAPR() {
 		addVault(usdcDenom, earntypes.NewVaultShare(usdcDenom, sdk.NewDec(usdcSupply)))
 
 	suite.keeper = suite.NewTestKeeper(&fakeParamSubspace{}).
-		WithmagemintKeeper(
-			newFakemagemintKeeper().
+		WithMagemintKeeper(
+			newFakeMagemintKeeper().
 				setCommunityInflation(communityInflation).
 				setStakingApy(stakingRewardsApy),
 		).

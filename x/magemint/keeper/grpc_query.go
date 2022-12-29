@@ -38,8 +38,8 @@ type MintQueryServer struct {
 }
 
 // NewMintQueryServer returns a service that implements x/mint's QueryServer
-func NewMintQueryServer(magemintKeeper Keeper) MintQueryServer {
-	return MintQueryServer{magemintKeeper}
+func NewMintQueryServer(MagemintKeeper Keeper) MintQueryServer {
+	return MintQueryServer{MagemintKeeper}
 }
 
 var _ minttypes.QueryServer = MintQueryServer{}

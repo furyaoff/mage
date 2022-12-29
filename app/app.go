@@ -308,7 +308,7 @@ type App struct {
 	liquidKeeper     liquidkeeper.Keeper
 	earnKeeper       earnkeeper.Keeper
 	routerKeeper     routerkeeper.Keeper
-	magemintKeeper   magemintkeeper.Keeper
+	MagemintKeeper   magemintkeeper.Keeper
 	communityKeeper  communitykeeper.Keeper
 
 	// make scoped keepers public for test purposes
@@ -628,7 +628,7 @@ func NewApp(
 		app.loadBlockedMaccAddrs(),
 	)
 
-	app.magemintKeeper = magemintkeeper.NewKeeper(
+	app.MagemintKeeper = magemintkeeper.NewKeeper(
 		appCodec,
 		keys[mageminttypes.StoreKey],
 		magemintSubspace,
@@ -652,7 +652,7 @@ func NewApp(
 		&savingsKeeper,
 		&app.liquidKeeper,
 		&earnKeeper,
-		app.magemintKeeper,
+		app.MagemintKeeper,
 		app.distrKeeper,
 		app.pricefeedKeeper,
 	)
@@ -758,7 +758,7 @@ func NewApp(
 		liquid.NewAppModule(app.liquidKeeper),
 		earn.NewAppModule(app.earnKeeper, app.accountKeeper, app.bankKeeper),
 		router.NewAppModule(app.routerKeeper),
-		magemint.NewAppModule(appCodec, app.magemintKeeper, app.accountKeeper),
+		magemint.NewAppModule(appCodec, app.MagemintKeeper, app.accountKeeper),
 		community.NewAppModule(app.communityKeeper, app.accountKeeper),
 	)
 

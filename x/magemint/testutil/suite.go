@@ -28,7 +28,7 @@ func (suite *magemintTestSuite) SetupTest() {
 	suite.App = app.NewTestApp()
 	suite.App.InitializeFromGenesisStates()
 	suite.Ctx = suite.App.BaseApp.NewContext(true, tmproto.Header{Height: 1, Time: tmtime.Now()})
-	suite.Keeper = suite.App.GetmagemintKeeper()
+	suite.Keeper = suite.App.GetMagemintKeeper()
 	suite.StakingKeeper = suite.App.GetStakingKeeper()
 
 	suite.BondDenom = suite.StakingKeeper.BondDenom(suite.Ctx)

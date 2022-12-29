@@ -53,7 +53,7 @@ func (suite *HandlerTestSuite) TestEarnLiquidClaim() {
 	// bk := suite.App.GetBankKeeper()
 	sk := suite.App.GetStakingKeeper()
 	lq := suite.App.GetLiquidKeeper()
-	mk := suite.App.GetmagemintKeeper()
+	mk := suite.App.GetMagemintKeeper()
 	dk := suite.App.GetDistrKeeper()
 	ik := suite.App.GetIncentiveKeeper()
 
@@ -138,7 +138,7 @@ func (suite *HandlerTestSuite) TestEarnLiquidClaim() {
 		WithBlockTime(suite.Ctx.BlockTime().Add(7 * time.Second))
 
 	// Mint tokens
-	magemint.BeginBlocker(suite.Ctx, suite.App.GetmagemintKeeper())
+	magemint.BeginBlocker(suite.Ctx, suite.App.GetMagemintKeeper())
 	// Distribute to validators, block needs votes
 	distribution.BeginBlocker(
 		suite.Ctx,

@@ -116,7 +116,7 @@ func (tApp TestApp) GetFeeMarketKeeper() feemarketkeeper.Keeper { return tApp.fe
 func (tApp TestApp) GetLiquidKeeper() liquidkeeper.Keeper       { return tApp.liquidKeeper }
 func (tApp TestApp) GetEarnKeeper() earnkeeper.Keeper           { return tApp.earnKeeper }
 func (tApp TestApp) GetRouterKeeper() routerkeeper.Keeper       { return tApp.routerKeeper }
-func (tApp TestApp) GetmagemintKeeper() magemintkeeper.Keeper   { return tApp.magemintKeeper }
+func (tApp TestApp) GetMagemintKeeper() magemintkeeper.Keeper   { return tApp.MagemintKeeper }
 func (tApp TestApp) GetCommunityKeeper() communitykeeper.Keeper { return tApp.communityKeeper }
 
 // LegacyAmino returns the app's amino codec.

@@ -423,7 +423,7 @@ func queryGetAPYs(ctx sdk.Context, req abci.RequestQuery, k Keeper, legacyQuerie
 // GetStakingAPR returns the total APR for staking and incentive rewards
 func GetStakingAPR(ctx sdk.Context, k Keeper, params types.Params) (sdk.Dec, error) {
 	// Get staking APR
-	stakingAPR := k.magemintKeeper.GetStakingApy(ctx)
+	stakingAPR := k.MagemintKeeper.GetStakingApy(ctx)
 
 	// Get incentive APR
 	bmageRewardPeriod, found := params.EarnRewardPeriods.GetMultiRewardPeriod(liquidtypes.DefaultDerivativeDenom)
