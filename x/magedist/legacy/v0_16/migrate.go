@@ -2,7 +2,7 @@ package v0_16
 
 import (
 	v015Magedist "github.com/furya-official/mage/x/Magedist/legacy/v0_15"
-	v016Magedist "github.com/furya-official/mage/x/Magedist/types"
+	v016Magedist "github.com/furya-official/mage/x/magedist/types"
 )
 
 func migrateParams(oldParams v015Magedist.Params) v016Magedist.Params {

@@ -23,7 +23,7 @@ import (
 	"github.com/furya-official/mage/x/Magedist/client/rest"
 	"github.com/furya-official/mage/x/Magedist/keeper"
 	"github.com/furya-official/mage/x/Magedist/simulation"
-	"github.com/furya-official/mage/x/Magedist/types"
+	"github.com/furya-official/mage/x/magedist/types"
 )
 
 var (

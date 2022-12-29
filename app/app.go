@@ -127,7 +127,7 @@ import (
 	"github.com/furya-official/mage/x/Magedist"
 	Magedistclient "github.com/furya-official/mage/x/Magedist/client"
 	Magedistkeeper "github.com/furya-official/mage/x/Magedist/keeper"
-	Magedisttypes "github.com/furya-official/mage/x/Magedist/types"
+	Magedisttypes "github.com/furya-official/mage/x/magedist/types"
 	"github.com/furya-official/mage/x/Magemint"
 	Magemintkeeper "github.com/furya-official/mage/x/Magemint/keeper"
 	Mageminttypes "github.com/furya-official/mage/x/Magemint/types"
