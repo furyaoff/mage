@@ -41,10 +41,10 @@ func (suite *EarnStakingRewardsIntegrationTestSuite) SetupTest() {
 
 	// Setup app with test state
 	authBuilder := app.NewAuthBankGenesisBuilder().
-		WithSimpleAccount(addrs[0], cs(c("uMage", 1e12))).
-		WithSimpleAccount(addrs[1], cs(c("uMage", 1e12))).
-		WithSimpleAccount(addrs[2], cs(c("uMage", 1e12))).
-		WithSimpleAccount(addrs[3], cs(c("uMage", 1e12)))
+		WithSimpleAccount(addrs[0], cs(c("umage", 1e12))).
+		WithSimpleAccount(addrs[1], cs(c("umage", 1e12))).
+		WithSimpleAccount(addrs[2], cs(c("umage", 1e12))).
+		WithSimpleAccount(addrs[3], cs(c("umage", 1e12)))
 
 	incentiveBuilder := testutil.NewIncentiveGenesisBuilder().
 		WithGenesisTime(suite.GenesisTime).
@@ -80,8 +80,8 @@ func (suite *EarnStakingRewardsIntegrationTestSuite) SetupTest() {
 func (suite *EarnStakingRewardsIntegrationTestSuite) TestStakingRewardsDistributed() {
 	// derivative 1: 8 total staked, 7 to earn, 1 not in earn
 	// derivative 2: 2 total staked, 1 to earn, 1 not in earn
-	userMintAmount0 := c("uMage", 8e9)
-	userMintAmount1 := c("uMage", 2e9)
+	userMintAmount0 := c("umage", 8e9)
+	userMintAmount1 := c("umage", 2e9)
 
 	userDepositAmount0 := i(7e9)
 	userDepositAmount1 := i(1e9)
@@ -114,7 +114,7 @@ func (suite *EarnStakingRewardsIntegrationTestSuite) TestStakingRewardsDistribut
 			CollateralType: vaultDenom1,
 			RewardIndexes: types.RewardIndexes{
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   initialVault1RewardFactor,
 				},
 			},
@@ -123,7 +123,7 @@ func (suite *EarnStakingRewardsIntegrationTestSuite) TestStakingRewardsDistribut
 			CollateralType: vaultDenom2,
 			RewardIndexes: types.RewardIndexes{
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   initialVault2RewardFactor,
 				},
 			},
@@ -166,26 +166,26 @@ func (suite *EarnStakingRewardsIntegrationTestSuite) TestStakingRewardsDistribut
 	// types.RewardIndexes.Quo() uses Dec.Quo() which uses bankers rounding.
 	// So we need to use Dec.Quo() to also round vs Dec.QuoInt() which truncates
 	expectedIndexes1 := validatorRewards[suite.valAddrs[0].String()].
-		AmountOf("uMage").
+		AmountOf("umage").
 		ToDec().
 		Quo(userDepositAmount0.ToDec())
 
 	expectedIndexes2 := validatorRewards[suite.valAddrs[1].String()].
-		AmountOf("uMage").
+		AmountOf("umage").
 		ToDec().
 		Quo(userDepositAmount1.ToDec())
 
 	// Only contains staking rewards
 	suite.StoredEarnIndexesEqual(vaultDenom1, types.RewardIndexes{
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			RewardFactor:   initialVault1RewardFactor.Add(expectedIndexes1),
 		},
 	})
 
 	suite.StoredEarnIndexesEqual(vaultDenom2, types.RewardIndexes{
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			RewardFactor:   initialVault2RewardFactor.Add(expectedIndexes2),
 		},
 	})

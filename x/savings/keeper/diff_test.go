@@ -15,8 +15,8 @@ func TestSetDiff(t *testing.T) {
 	}{
 		{"empty", []string{}, []string{}, []string(nil)},
 		{"diff equal sets", []string{"busd", "usdx"}, []string{"busd", "usdx"}, []string(nil)},
-		{"diff set empty", []string{"bnb", "uMage", "usdx"}, []string{}, []string{"bnb", "uMage", "usdx"}},
-		{"input set empty", []string{}, []string{"bnb", "uMage", "usdx"}, []string(nil)},
+		{"diff set empty", []string{"bnb", "umage", "usdx"}, []string{}, []string{"bnb", "umage", "usdx"}},
+		{"input set empty", []string{}, []string{"bnb", "umage", "usdx"}, []string(nil)},
 		{"diff set with common elements", []string{"bnb", "btcb", "usdx", "xrpb"}, []string{"bnb", "usdx"}, []string{"btcb", "xrpb"}},
 		{"diff set with all common elements", []string{"bnb", "usdx"}, []string{"bnb", "btcb", "usdx", "xrpb"}, []string(nil)},
 	}

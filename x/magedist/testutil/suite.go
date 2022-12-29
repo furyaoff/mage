@@ -40,7 +40,7 @@ func (suite *Suite) SetupTest() {
 	app.SetBech32AddressPrefixes(config)
 	tApp := app.NewTestApp()
 	_, addrs := app.GeneratePrivKeyAddressPairs(1)
-	coins := sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000000000000)))
+	coins := sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000000000000)))
 	authGS := app.NewFundedGenStateWithSameCoins(tApp.AppCodec(), coins, addrs)
 
 	ctx := tApp.NewContext(true, tmproto.Header{Height: 1, Time: tmtime.Now()})

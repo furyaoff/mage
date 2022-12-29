@@ -48,7 +48,7 @@ func (suite *KeeperTestSuite) TestDeposit() {
 		{
 			"valid",
 			args{
-				allowedDenoms:             []string{"bnb", "btcb", "uMage"},
+				allowedDenoms:             []string{"bnb", "btcb", "umage"},
 				depositor:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
 				initialDepositorBalance:   sdk.NewCoins(sdk.NewCoin("bnb", sdk.NewInt(1000)), sdk.NewCoin("btcb", sdk.NewInt(1000))),
 				depositAmount:             sdk.NewCoins(sdk.NewCoin("bnb", sdk.NewInt(100))),
@@ -65,7 +65,7 @@ func (suite *KeeperTestSuite) TestDeposit() {
 		{
 			"valid multi deposit",
 			args{
-				allowedDenoms:             []string{"bnb", "btcb", "uMage"},
+				allowedDenoms:             []string{"bnb", "btcb", "umage"},
 				depositor:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
 				initialDepositorBalance:   sdk.NewCoins(sdk.NewCoin("bnb", sdk.NewInt(1000)), sdk.NewCoin("btcb", sdk.NewInt(1000))),
 				depositAmount:             sdk.NewCoins(sdk.NewCoin("bnb", sdk.NewInt(100))),
@@ -82,7 +82,7 @@ func (suite *KeeperTestSuite) TestDeposit() {
 		{
 			"valid bMage",
 			args{
-				allowedDenoms:             []string{"bnb", "btcb", "uMage", "bMage"},
+				allowedDenoms:             []string{"bnb", "btcb", "umage", "bMage"},
 				depositor:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
 				initialDepositorBalance:   sdk.NewCoins(sdk.NewCoin(bMageDenom, sdk.NewInt(1000)), sdk.NewCoin("btcb", sdk.NewInt(1000))),
 				depositAmount:             sdk.NewCoins(sdk.NewCoin(bMageDenom, sdk.NewInt(100))),
@@ -99,7 +99,7 @@ func (suite *KeeperTestSuite) TestDeposit() {
 		{
 			"invalid deposit denom",
 			args{
-				allowedDenoms:             []string{"bnb", "btcb", "uMage"},
+				allowedDenoms:             []string{"bnb", "btcb", "umage"},
 				depositor:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
 				initialDepositorBalance:   sdk.NewCoins(sdk.NewCoin("bnb", sdk.NewInt(1000)), sdk.NewCoin("btcb", sdk.NewInt(1000))),
 				depositAmount:             sdk.NewCoins(sdk.NewCoin("fake", sdk.NewInt(100))),
@@ -116,7 +116,7 @@ func (suite *KeeperTestSuite) TestDeposit() {
 		{
 			"invalid bMage",
 			args{
-				allowedDenoms:             []string{"bnb", "btcb", "uMage", "bMage"},
+				allowedDenoms:             []string{"bnb", "btcb", "umage", "bMage"},
 				depositor:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
 				initialDepositorBalance:   sdk.NewCoins(sdk.NewCoin(invalidBMageDenom, sdk.NewInt(1000)), sdk.NewCoin("btcb", sdk.NewInt(1000))),
 				depositAmount:             sdk.NewCoins(sdk.NewCoin(invalidBMageDenom, sdk.NewInt(100))),
@@ -133,7 +133,7 @@ func (suite *KeeperTestSuite) TestDeposit() {
 		{
 			"insufficient funds",
 			args{
-				allowedDenoms:             []string{"bnb", "btcb", "uMage"},
+				allowedDenoms:             []string{"bnb", "btcb", "umage"},
 				depositor:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
 				initialDepositorBalance:   sdk.NewCoins(sdk.NewCoin("bnb", sdk.NewInt(1000)), sdk.NewCoin("btcb", sdk.NewInt(1000))),
 				depositAmount:             sdk.NewCoins(sdk.NewCoin("bnb", sdk.NewInt(10000))),
@@ -166,7 +166,7 @@ func (suite *KeeperTestSuite) TestDeposit() {
 			)
 
 			stakingParams := stakingtypes.DefaultParams()
-			stakingParams.BondDenom = "uMage"
+			stakingParams.BondDenom = "umage"
 
 			tApp.InitializeFromGenesisStates(authGS,
 				app.GenesisState{types.ModuleName: tApp.AppCodec().MustMarshalJSON(&savingsGS)},
@@ -178,8 +178,8 @@ func (suite *KeeperTestSuite) TestDeposit() {
 			suite.keeper = keeper
 
 			// Create validator and delegate for bMage
-			suite.CreateAccountWithAddress(valAccAddr, cs(c("uMage", 100e10)))
-			suite.CreateAccountWithAddress(delegator, cs(c("uMage", 100e10)))
+			suite.CreateAccountWithAddress(valAccAddr, cs(c("umage", 100e10)))
+			suite.CreateAccountWithAddress(delegator, cs(c("umage", 100e10)))
 
 			suite.CreateNewUnbondedValidator(valAddr, initialBalance)
 			suite.CreateDelegation(valAddr, delegator, initialBalance)

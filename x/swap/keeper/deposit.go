@@ -30,9 +30,9 @@ import (
 // inverse price -- or the price of the other pool asset, appreciates by a larger amount.
 // It's this percent change we calculate and compare to the slippage limit provided.
 //
-// For example, if we have a pool with 100e6 uMage and 400e6 usdx.  The uMage price is 4 usdx and the
-// usdx price is 0.25 uMage.  If a depositor adds liquidity of 4e6 uMage and 14e6 usdx, a mage price of
-// 3.50 usdx and a usdx price of 0.29 uMage.  This is a -12.5% slippage is the uMage price, and a 14.3%
+// For example, if we have a pool with 100e6 umage and 400e6 usdx.  The umage price is 4 usdx and the
+// usdx price is 0.25 umage.  If a depositor adds liquidity of 4e6 umage and 14e6 usdx, a mage price of
+// 3.50 usdx and a usdx price of 0.29 umage.  This is a -12.5% slippage is the umage price, and a 14.3%
 // slippage in the usdx price.
 //
 // These slippages can be calculated by S_B = ((A/B')/(A/B) - 1) and S_A ((B/A')/(B/A) - 1), simplifying to

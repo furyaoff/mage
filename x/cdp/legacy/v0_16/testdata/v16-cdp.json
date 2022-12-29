@@ -79,7 +79,7 @@
   ],
   "starting_cdp_id": "1",
   "debt_denom": "debt",
-  "gov_denom": "uMage",
+  "gov_denom": "umage",
   "previous_accumulation_times": [
     {
       "collateral_type": "bnb-a",

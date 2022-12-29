@@ -323,7 +323,7 @@ type QueryDepositsRequest struct {
 	Depositor string `protobuf:"bytes,1,opt,name=depositor,proto3" json:"depositor,omitempty"`
 	// denom optionally filters deposits by vault denom
 	Denom string `protobuf:"bytes,2,opt,name=denom,proto3" json:"denom,omitempty"`
-	// respond with vault value in uMage for bMage vaults
+	// respond with vault value in umage for bMage vaults
 	ValueInStakedTokens bool `protobuf:"varint,3,opt,name=value_in_staked_tokens,json=valueInStakedTokens,proto3" json:"value_in_staked_tokens,omitempty"`
 	// pagination defines an optional pagination for the request.
 	Pagination *query.PageRequest `protobuf:"bytes,4,opt,name=pagination,proto3" json:"pagination,omitempty"`

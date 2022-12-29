@@ -82,7 +82,7 @@ func (suite *DelegatorRewardsTestSuite) TestAccumulateDelegatorRewards() {
 		{
 			"7 seconds",
 			args{
-				delegation:       c("uMage", 1_000_000),
+				delegation:       c("umage", 1_000_000),
 				rewardsPerSecond: cs(c("hard", 122354)),
 				timeElapsed:      7,
 				expectedRewardIndexes: types.RewardIndexes{
@@ -93,7 +93,7 @@ func (suite *DelegatorRewardsTestSuite) TestAccumulateDelegatorRewards() {
 		{
 			"1 day",
 			args{
-				delegation:       c("uMage", 1_000_000),
+				delegation:       c("umage", 1_000_000),
 				rewardsPerSecond: cs(c("hard", 122354)),
 				timeElapsed:      86400,
 				expectedRewardIndexes: types.RewardIndexes{
@@ -104,7 +104,7 @@ func (suite *DelegatorRewardsTestSuite) TestAccumulateDelegatorRewards() {
 		{
 			"0 seconds",
 			args{
-				delegation:       c("uMage", 1_000_000),
+				delegation:       c("umage", 1_000_000),
 				rewardsPerSecond: cs(c("hard", 122354)),
 				timeElapsed:      0,
 				expectedRewardIndexes: types.RewardIndexes{
@@ -115,7 +115,7 @@ func (suite *DelegatorRewardsTestSuite) TestAccumulateDelegatorRewards() {
 		{
 			"multiple reward coins",
 			args{
-				delegation:       c("uMage", 1_000_000),
+				delegation:       c("umage", 1_000_000),
 				rewardsPerSecond: cs(c("hard", 122354), c("swp", 567889)),
 				timeElapsed:      7,
 				expectedRewardIndexes: types.RewardIndexes{
@@ -128,8 +128,8 @@ func (suite *DelegatorRewardsTestSuite) TestAccumulateDelegatorRewards() {
 	for _, tc := range testCases {
 		suite.Run(tc.name, func() {
 			authBuilder := app.NewAuthBankGenesisBuilder().
-				WithSimpleAccount(suite.addrs[0], cs(c("uMage", 1e9))).
-				WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[0]), cs(c("uMage", 1e9)))
+				WithSimpleAccount(suite.addrs[0], cs(c("umage", 1e9))).
+				WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[0]), cs(c("umage", 1e9)))
 
 			incentBuilder := testutil.NewIncentiveGenesisBuilder().
 				WithGenesisTime(suite.genesisTime).
@@ -175,7 +175,7 @@ func (suite *DelegatorRewardsTestSuite) TestSynchronizeDelegatorReward() {
 		{
 			"10 blocks",
 			args{
-				delegation:       c("uMage", 1_000_000),
+				delegation:       c("umage", 1_000_000),
 				rewardsPerSecond: cs(c("hard", 122354)),
 				blockTimes:       []int{10, 10, 10, 10, 10, 10, 10, 10, 10, 10},
 				expectedRewardIndexes: types.RewardIndexes{
@@ -187,7 +187,7 @@ func (suite *DelegatorRewardsTestSuite) TestSynchronizeDelegatorReward() {
 		{
 			"10 blocks - long block time",
 			args{
-				delegation:       c("uMage", 1_000_000),
+				delegation:       c("umage", 1_000_000),
 				rewardsPerSecond: cs(c("hard", 122354)),
 				blockTimes:       []int{86400, 86400, 86400, 86400, 86400, 86400, 86400, 86400, 86400, 86400},
 				expectedRewardIndexes: types.RewardIndexes{
@@ -199,7 +199,7 @@ func (suite *DelegatorRewardsTestSuite) TestSynchronizeDelegatorReward() {
 		{
 			"delegator reward index updated when reward is zero",
 			args{
-				delegation:       c("uMage", 1),
+				delegation:       c("umage", 1),
 				rewardsPerSecond: cs(c("hard", 1)),
 				blockTimes:       []int{10, 10, 10, 10, 10, 10, 10, 10, 10, 10},
 				expectedRewardIndexes: types.RewardIndexes{
@@ -211,7 +211,7 @@ func (suite *DelegatorRewardsTestSuite) TestSynchronizeDelegatorReward() {
 		{
 			"multiple reward coins",
 			args{
-				delegation:       c("uMage", 1_000_000),
+				delegation:       c("umage", 1_000_000),
 				rewardsPerSecond: cs(c("hard", 122354), c("swp", 56789)),
 				blockTimes:       []int{10, 10, 10, 10, 10, 10, 10, 10, 10, 10},
 				expectedRewardIndexes: types.RewardIndexes{
@@ -225,8 +225,8 @@ func (suite *DelegatorRewardsTestSuite) TestSynchronizeDelegatorReward() {
 	for _, tc := range testCases {
 		suite.Run(tc.name, func() {
 			authBuilder := app.NewAuthBankGenesisBuilder().
-				WithSimpleAccount(suite.addrs[0], cs(c("uMage", 1e9))).
-				WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[0]), cs(c("uMage", 1e9)))
+				WithSimpleAccount(suite.addrs[0], cs(c("umage", 1e9))).
+				WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[0]), cs(c("umage", 1e9)))
 
 			incentBuilder := testutil.NewIncentiveGenesisBuilder().
 				WithGenesisTime(suite.genesisTime).
@@ -236,7 +236,7 @@ func (suite *DelegatorRewardsTestSuite) TestSynchronizeDelegatorReward() {
 
 			// Create validator account
 			staking.BeginBlocker(suite.ctx, suite.stakingKeeper)
-			selfDelegationCoins := c("uMage", 1_000_000)
+			selfDelegationCoins := c("umage", 1_000_000)
 			err := suite.deliverMsgCreateValidator(suite.ctx, suite.validatorAddrs[0], selfDelegationCoins)
 			suite.Require().NoError(err)
 			staking.EndBlocker(suite.ctx, suite.stakingKeeper)
@@ -314,7 +314,7 @@ func (suite *DelegatorRewardsTestSuite) TestSimulateDelegatorRewardSynchronizati
 		{
 			"10 blocks",
 			args{
-				delegation:            c("uMage", 1_000_000),
+				delegation:            c("umage", 1_000_000),
 				rewardsPerSecond:      cs(c("hard", 122354)),
 				blockTimes:            []int{10, 10, 10, 10, 10, 10, 10, 10, 10, 10},
 				expectedRewardIndexes: types.RewardIndexes{types.NewRewardIndex("hard", d("6.117700000000000000"))},
@@ -324,7 +324,7 @@ func (suite *DelegatorRewardsTestSuite) TestSimulateDelegatorRewardSynchronizati
 		{
 			"10 blocks - long block time",
 			args{
-				delegation:            c("uMage", 1_000_000),
+				delegation:            c("umage", 1_000_000),
 				rewardsPerSecond:      cs(c("hard", 122354)),
 				blockTimes:            []int{86400, 86400, 86400, 86400, 86400, 86400, 86400, 86400, 86400, 86400},
 				expectedRewardIndexes: types.RewardIndexes{types.NewRewardIndex("hard", d("52856.928000000000000000"))},
@@ -334,7 +334,7 @@ func (suite *DelegatorRewardsTestSuite) TestSimulateDelegatorRewardSynchronizati
 		{
 			"multiple rewards coins",
 			args{
-				delegation:       c("uMage", 1_000_000),
+				delegation:       c("umage", 1_000_000),
 				rewardsPerSecond: cs(c("hard", 122354), c("swp", 56789)),
 				blockTimes:       []int{10, 10, 10, 10, 10, 10, 10, 10, 10, 10},
 				expectedRewardIndexes: types.RewardIndexes{
@@ -349,8 +349,8 @@ func (suite *DelegatorRewardsTestSuite) TestSimulateDelegatorRewardSynchronizati
 	for _, tc := range testCases {
 		suite.Run(tc.name, func() {
 			authBuilder := app.NewAuthBankGenesisBuilder().
-				WithSimpleAccount(suite.addrs[0], cs(c("uMage", 1e9))).
-				WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[0]), cs(c("uMage", 1e9)))
+				WithSimpleAccount(suite.addrs[0], cs(c("umage", 1e9))).
+				WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[0]), cs(c("umage", 1e9)))
 
 			incentBuilder := testutil.NewIncentiveGenesisBuilder().
 				WithGenesisTime(suite.genesisTime).
@@ -454,14 +454,14 @@ func (suite *DelegatorRewardsTestSuite) deliverMsgRedelegate(ctx sdk.Context, de
 // given a user has a delegation to a bonded validator, when the validator starts unbonding, the user does not accumulate rewards
 func (suite *DelegatorRewardsTestSuite) TestUnbondingValidatorSyncsClaim() {
 	authBuilder := app.NewAuthBankGenesisBuilder().
-		WithSimpleAccount(suite.addrs[0], cs(c("uMage", 1e9))).
-		WithSimpleAccount(suite.addrs[2], cs(c("uMage", 1e9))).
-		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[0]), cs(c("uMage", 1e9))).
-		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[1]), cs(c("uMage", 1e9))).
-		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[2]), cs(c("uMage", 1e9)))
+		WithSimpleAccount(suite.addrs[0], cs(c("umage", 1e9))).
+		WithSimpleAccount(suite.addrs[2], cs(c("umage", 1e9))).
+		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[0]), cs(c("umage", 1e9))).
+		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[1]), cs(c("umage", 1e9))).
+		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[2]), cs(c("umage", 1e9)))
 
 	rewardsPerSecond := cs(c("hard", 122354))
-	bondDenom := "uMage"
+	bondDenom := "umage"
 
 	incentBuilder := testutil.NewIncentiveGenesisBuilder().
 		WithGenesisTime(suite.genesisTime).
@@ -548,14 +548,14 @@ func (suite *DelegatorRewardsTestSuite) TestUnbondingValidatorSyncsClaim() {
 // given a user has a delegation to an unbonded validator, when the validator becomes bonded, the user starts accumulating rewards
 func (suite *DelegatorRewardsTestSuite) TestBondingValidatorSyncsClaim() {
 	authBuilder := app.NewAuthBankGenesisBuilder().
-		WithSimpleAccount(suite.addrs[0], cs(c("uMage", 1e9))).
-		WithSimpleAccount(suite.addrs[2], cs(c("uMage", 1e9))).
-		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[0]), cs(c("uMage", 1e9))).
-		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[1]), cs(c("uMage", 1e9))).
-		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[2]), cs(c("uMage", 1e9)))
+		WithSimpleAccount(suite.addrs[0], cs(c("umage", 1e9))).
+		WithSimpleAccount(suite.addrs[2], cs(c("umage", 1e9))).
+		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[0]), cs(c("umage", 1e9))).
+		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[1]), cs(c("umage", 1e9))).
+		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[2]), cs(c("umage", 1e9)))
 
 	rewardsPerSecond := cs(c("hard", 122354))
-	bondDenom := "uMage"
+	bondDenom := "umage"
 
 	incentBuilder := testutil.NewIncentiveGenesisBuilder().
 		WithGenesisTime(suite.genesisTime).
@@ -642,12 +642,12 @@ func (suite *DelegatorRewardsTestSuite) TestBondingValidatorSyncsClaim() {
 // If a validator is slashed delegators should have their claims synced
 func (suite *DelegatorRewardsTestSuite) TestSlashingValidatorSyncsClaim() {
 	authBuilder := app.NewAuthBankGenesisBuilder().
-		WithSimpleAccount(suite.addrs[0], cs(c("uMage", 1e9))).
-		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[0]), cs(c("uMage", 1e9))).
-		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[1]), cs(c("uMage", 1e9)))
+		WithSimpleAccount(suite.addrs[0], cs(c("umage", 1e9))).
+		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[0]), cs(c("umage", 1e9))).
+		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[1]), cs(c("umage", 1e9)))
 
 	rewardsPerSecond := cs(c("hard", 122354))
-	bondDenom := "uMage"
+	bondDenom := "umage"
 
 	incentBuilder := testutil.NewIncentiveGenesisBuilder().
 		WithGenesisTime(suite.genesisTime).
@@ -727,12 +727,12 @@ func (suite *DelegatorRewardsTestSuite) TestSlashingValidatorSyncsClaim() {
 // Given a delegation to a bonded validator, when a user redelegates everything to another (bonded) validator, the user's claim is synced
 func (suite *DelegatorRewardsTestSuite) TestRedelegationSyncsClaim() {
 	authBuilder := app.NewAuthBankGenesisBuilder().
-		WithSimpleAccount(suite.addrs[0], cs(c("uMage", 1e9))).
-		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[0]), cs(c("uMage", 1e9))).
-		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[1]), cs(c("uMage", 1e9)))
+		WithSimpleAccount(suite.addrs[0], cs(c("umage", 1e9))).
+		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[0]), cs(c("umage", 1e9))).
+		WithSimpleAccount(sdk.AccAddress(suite.validatorAddrs[1]), cs(c("umage", 1e9)))
 
 	rewardsPerSecond := cs(c("hard", 122354))
-	bondDenom := "uMage"
+	bondDenom := "umage"
 
 	incentBuilder := testutil.NewIncentiveGenesisBuilder().
 		WithGenesisTime(suite.genesisTime).

@@ -518,7 +518,7 @@ func GetAPYFromMultiRewardPeriod(
 
 func getMarketID(denom string) string {
 	// Rewrite denoms as pricefeed has different names for some assets,
-	// e.g. "uMage" -> "mage", "erc20/multichain/usdc" -> "usdc"
+	// e.g. "umage" -> "mage", "erc20/multichain/usdc" -> "usdc"
 	// bMage is not included as it is handled separately
 
 	// TODO: Replace hardcoded conversion with possible params set somewhere

@@ -23,7 +23,7 @@ package keeper_test
 // func (suite *KeeperTestSuite) TestQuerierGetBalance() {
 // 	sk := suite.supplyKeeper
 
-// 	sk.MintCoins(suite.ctx, types.MageDistMacc, sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100e6))))
+// 	sk.MintCoins(suite.ctx, types.MageDistMacc, sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100e6))))
 
 // 	querier := keeper.NewQuerier(suite.keeper)
 // 	bz, err := querier(suite.ctx, []string{types.QueryGetBalance}, abci.RequestQuery{})
@@ -32,5 +32,5 @@ package keeper_test
 
 // 	var coins sdk.Coins
 // 	types.ModuleCdc.UnmarshalJSON(bz, &coins)
-// 	suite.Require().Equal(sdk.NewInt(100e6), coins.AmountOf("uMage"))
+// 	suite.Require().Equal(sdk.NewInt(100e6), coins.AmountOf("umage"))
 // }

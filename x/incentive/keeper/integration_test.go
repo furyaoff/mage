@@ -167,7 +167,7 @@ func NewPricefeedGenStateMultiFromTime(cdc codec.JSONCodec, t time.Time) app.Gen
 }
 
 func NewHardGenStateMulti(genTime time.Time) testutil.HardGenesisBuilder {
-	MageMM := testutil.NewStandardMoneyMarket("uMage")
+	MageMM := testutil.NewStandardMoneyMarket("umage")
 	MageMM.SpotMarketID = "mage:usd"
 	btcMM := testutil.NewStandardMoneyMarket("btcb")
 	btcMM.SpotMarketID = "btc:usd"
@@ -184,7 +184,7 @@ func NewHardGenStateMulti(genTime time.Time) testutil.HardGenesisBuilder {
 
 func NewStakingGenesisState(cdc codec.JSONCodec) app.GenesisState {
 	genState := stakingtypes.DefaultGenesisState()
-	genState.Params.BondDenom = "uMage"
+	genState.Params.BondDenom = "umage"
 	return app.GenesisState{
 		stakingtypes.ModuleName: cdc.MustMarshalJSON(genState),
 	}
@@ -225,7 +225,7 @@ func NewCommitteeGenesisState(cdc codec.Codec, committeeID uint64, members ...sd
 func NewSwapGenesisState(cdc codec.JSONCodec) app.GenesisState {
 	genesis := swaptypes.NewGenesisState(
 		swaptypes.NewParams(
-			swaptypes.NewAllowedPools(swaptypes.NewAllowedPool("busd", "uMage")),
+			swaptypes.NewAllowedPools(swaptypes.NewAllowedPool("busd", "umage")),
 			d("0.0"),
 		),
 		swaptypes.DefaultPoolRecords,

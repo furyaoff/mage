@@ -50,7 +50,7 @@ func getCmdFundCommunityPool() *cobra.Command {
 		Long:  "Fund community pool removes the listed coins from the sender's account and send them to the community module account.",
 		Args:  cobra.ExactArgs(1),
 		Example: fmt.Sprintf(
-			`%s tx %s fund-community-module 10000000uMage --from <key>`, version.AppName, types.ModuleName,
+			`%s tx %s fund-community-module 10000000umage --from <key>`, version.AppName, types.ModuleName,
 		),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			clientCtx, err := client.GetClientTxContext(cmd)
@@ -83,14 +83,14 @@ func NewCmdSubmitCommunityPoolLendDepositProposal() *cobra.Command {
 The proposal details must be supplied via a JSON file.
 Note that --deposit below is the initial proposal deposit submitted along with the proposal.
 Example:
-$ %s tx gov submit-proposal community-pool-lend-deposit <path/to/proposal.json> --deposit 1000000000uMage --from=<key_or_address>
+$ %s tx gov submit-proposal community-pool-lend-deposit <path/to/proposal.json> --deposit 1000000000umage --from=<key_or_address>
 Where proposal.json contains:
 {
   "title": "Community Pool Deposit",
   "description": "Deposit some MAGE from community pool!",
   "amount": [
     {
-      "denom": "uMage",
+      "denom": "umage",
       "amount": "100000000000"
     }
   ]
@@ -144,14 +144,14 @@ func NewCmdSubmitCommunityPoolLendWithdrawProposal() *cobra.Command {
 The proposal details must be supplied via a JSON file.
 Note that --deposit below is the initial proposal deposit submitted along with the proposal.
 Example:
-$ %s tx gov submit-proposal community-pool-lend-withdraw <path/to/proposal.json> --deposit 1000000000uMage --from=<key_or_address>
+$ %s tx gov submit-proposal community-pool-lend-withdraw <path/to/proposal.json> --deposit 1000000000umage --from=<key_or_address>
 Where proposal.json contains:
 {
   "title": "Community Pool Withdrawal",
   "description": "Withdraw some MAGE from community pool!",
   "amount": [
     {
-      "denom": "uMage",
+      "denom": "umage",
       "amount": "100000000000"
     }
   ]

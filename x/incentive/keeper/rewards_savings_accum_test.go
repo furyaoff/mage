@@ -78,7 +78,7 @@ func (suite *SavingsRewardsTestSuite) TestAccumulateSavingsRewards() {
 		{
 			"7 seconds",
 			args{
-				deposit:          c("uMage", 1_000_000),
+				deposit:          c("umage", 1_000_000),
 				rewardsPerSecond: cs(c("hard", 122354)),
 				timeElapsed:      7,
 				expectedRewardIndexes: types.RewardIndexes{
@@ -89,7 +89,7 @@ func (suite *SavingsRewardsTestSuite) TestAccumulateSavingsRewards() {
 		{
 			"1 day",
 			args{
-				deposit:          c("uMage", 1_000_000),
+				deposit:          c("umage", 1_000_000),
 				rewardsPerSecond: cs(c("hard", 122354)),
 				timeElapsed:      86400,
 				expectedRewardIndexes: types.RewardIndexes{
@@ -100,7 +100,7 @@ func (suite *SavingsRewardsTestSuite) TestAccumulateSavingsRewards() {
 		{
 			"0 seconds",
 			args{
-				deposit:          c("uMage", 1_000_000),
+				deposit:          c("umage", 1_000_000),
 				rewardsPerSecond: cs(c("hard", 122354)),
 				timeElapsed:      0,
 				expectedRewardIndexes: types.RewardIndexes{
@@ -111,7 +111,7 @@ func (suite *SavingsRewardsTestSuite) TestAccumulateSavingsRewards() {
 		{
 			"multiple reward coins",
 			args{
-				deposit:          c("uMage", 1_000_000),
+				deposit:          c("umage", 1_000_000),
 				rewardsPerSecond: cs(c("hard", 122354), c("bnb", 567889)),
 				timeElapsed:      7,
 				expectedRewardIndexes: types.RewardIndexes{
@@ -124,7 +124,7 @@ func (suite *SavingsRewardsTestSuite) TestAccumulateSavingsRewards() {
 	for _, tc := range testCases {
 		suite.Run(tc.name, func() {
 			params := savingstypes.NewParams(
-				[]string{"uMage"},
+				[]string{"umage"},
 			)
 			deposits := savingstypes.Deposits{
 				savingstypes.NewDeposit(
@@ -135,7 +135,7 @@ func (suite *SavingsRewardsTestSuite) TestAccumulateSavingsRewards() {
 			savingsGenesis := savingstypes.NewGenesisState(params, deposits)
 
 			authBuilder := app.NewAuthBankGenesisBuilder().
-				WithSimpleAccount(suite.addrs[0], cs(c("uMage", 1e9))).
+				WithSimpleAccount(suite.addrs[0], cs(c("umage", 1e9))).
 				WithSimpleModuleAccount(savingstypes.ModuleName, sdk.NewCoins(tc.args.deposit))
 
 			incentBuilder := testutil.NewIncentiveGenesisBuilder().

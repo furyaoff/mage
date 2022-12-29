@@ -29,7 +29,7 @@ func (suite *KeeperTestSuite) TestCommunityPool() {
 	maccAddr := suite.App.GetAccountKeeper().GetModuleAddress(types.ModuleAccountName)
 
 	funds := sdk.NewCoins(
-		sdk.NewCoin("uMage", sdk.NewInt(10000)),
+		sdk.NewCoin("umage", sdk.NewInt(10000)),
 		sdk.NewCoin("usdx", sdk.NewInt(100)),
 	)
 	sender := suite.CreateFundedAccount(funds)

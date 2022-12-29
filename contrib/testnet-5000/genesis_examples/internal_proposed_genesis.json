@@ -82,14 +82,14 @@
         "inflation_max": "0.130000000000000000",
         "inflation_min": "0.010000000000000000",
         "inflation_rate_change": "0.130000000000000000",
-        "mint_denom": "uMage"
+        "mint_denom": "umage"
       }
     },
     "cdp": {
       "cdps": [],
       "debt_denom": "debt",
       "deposits": [],
-      "gov_denom": "uMage",
+      "gov_denom": "umage",
       "params": {
         "circuit_breaker": false,
         "collateral_params": [
@@ -145,7 +145,7 @@
         "min_deposit": [
           {
             "amount": "200000000",
-            "denom": "uMage"
+            "denom": "umage"
           }
         ]
       },
@@ -168,7 +168,7 @@
       "last_total_power": "0",
       "last_validator_powers": null,
       "params": {
-        "bond_denom": "uMage",
+        "bond_denom": "umage",
         "max_entries": 7,
         "max_validators": 100,
         "unbonding_time": "3600000000000"
@@ -183,7 +183,7 @@
     "crisis": {
       "constant_fee": {
         "amount": "1333000000",
-        "denom": "uMage"
+        "denom": "umage"
       }
     },
     "pricefeed": {

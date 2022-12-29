@@ -623,10 +623,10 @@ func (suite *KeeperTestSuite) TestBorrowInterest() {
 			"one day",
 			args{
 				user:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000*MAGA_CF))),
-				borrowCoinDenom:      "uMage",
-				borrowCoins:          sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20*MAGA_CF))),
+				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000*MAGA_CF))),
+				borrowCoinDenom:      "umage",
+				borrowCoins:          sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20*MAGA_CF))),
 				interestRateModel:    normalModel,
 				reserveFactor:        sdk.MustNewDecFromStr("0.05"),
 				expectedInterestSnaphots: []ExpectedBorrowInterest{
@@ -646,10 +646,10 @@ func (suite *KeeperTestSuite) TestBorrowInterest() {
 			"one week",
 			args{
 				user:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000*MAGA_CF))),
-				borrowCoinDenom:      "uMage",
-				borrowCoins:          sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20*MAGA_CF))),
+				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000*MAGA_CF))),
+				borrowCoinDenom:      "umage",
+				borrowCoins:          sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20*MAGA_CF))),
 				interestRateModel:    normalModel,
 				reserveFactor:        sdk.MustNewDecFromStr("0.05"),
 				expectedInterestSnaphots: []ExpectedBorrowInterest{
@@ -669,10 +669,10 @@ func (suite *KeeperTestSuite) TestBorrowInterest() {
 			"one month",
 			args{
 				user:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000*MAGA_CF))),
-				borrowCoinDenom:      "uMage",
-				borrowCoins:          sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20*MAGA_CF))),
+				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000*MAGA_CF))),
+				borrowCoinDenom:      "umage",
+				borrowCoins:          sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20*MAGA_CF))),
 				interestRateModel:    normalModel,
 				reserveFactor:        sdk.MustNewDecFromStr("0.05"),
 				expectedInterestSnaphots: []ExpectedBorrowInterest{
@@ -692,10 +692,10 @@ func (suite *KeeperTestSuite) TestBorrowInterest() {
 			"one year",
 			args{
 				user:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000*MAGA_CF))),
-				borrowCoinDenom:      "uMage",
-				borrowCoins:          sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20*MAGA_CF))),
+				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000*MAGA_CF))),
+				borrowCoinDenom:      "umage",
+				borrowCoins:          sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20*MAGA_CF))),
 				interestRateModel:    normalModel,
 				reserveFactor:        sdk.MustNewDecFromStr("0.05"),
 				expectedInterestSnaphots: []ExpectedBorrowInterest{
@@ -715,10 +715,10 @@ func (suite *KeeperTestSuite) TestBorrowInterest() {
 			"0 reserve factor",
 			args{
 				user:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000*MAGA_CF))),
-				borrowCoinDenom:      "uMage",
-				borrowCoins:          sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20*MAGA_CF))),
+				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000*MAGA_CF))),
+				borrowCoinDenom:      "umage",
+				borrowCoins:          sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20*MAGA_CF))),
 				interestRateModel:    normalModel,
 				reserveFactor:        sdk.MustNewDecFromStr("0"),
 				expectedInterestSnaphots: []ExpectedBorrowInterest{
@@ -738,17 +738,17 @@ func (suite *KeeperTestSuite) TestBorrowInterest() {
 			"borrow during snapshot",
 			args{
 				user:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000*MAGA_CF))),
-				borrowCoinDenom:      "uMage",
-				borrowCoins:          sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20*MAGA_CF))),
+				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000*MAGA_CF))),
+				borrowCoinDenom:      "umage",
+				borrowCoins:          sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20*MAGA_CF))),
 				interestRateModel:    normalModel,
 				reserveFactor:        sdk.MustNewDecFromStr("0.05"),
 				expectedInterestSnaphots: []ExpectedBorrowInterest{
 					{
 						elapsedTime:  oneYearInSeconds,
 						shouldBorrow: true,
-						borrowCoin:   sdk.NewCoin("uMage", sdk.NewInt(1*MAGA_CF)),
+						borrowCoin:   sdk.NewCoin("umage", sdk.NewInt(1*MAGA_CF)),
 					},
 				},
 			},
@@ -761,10 +761,10 @@ func (suite *KeeperTestSuite) TestBorrowInterest() {
 			"multiple snapshots",
 			args{
 				user:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000*MAGA_CF))),
-				borrowCoinDenom:      "uMage",
-				borrowCoins:          sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20*MAGA_CF))),
+				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000*MAGA_CF))),
+				borrowCoinDenom:      "umage",
+				borrowCoins:          sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20*MAGA_CF))),
 				interestRateModel:    normalModel,
 				reserveFactor:        sdk.MustNewDecFromStr("0.05"),
 				expectedInterestSnaphots: []ExpectedBorrowInterest{
@@ -789,10 +789,10 @@ func (suite *KeeperTestSuite) TestBorrowInterest() {
 			"varied snapshots",
 			args{
 				user:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000*MAGA_CF))),
-				borrowCoinDenom:      "uMage",
-				borrowCoins:          sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20*MAGA_CF))),
+				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000*MAGA_CF))),
+				borrowCoinDenom:      "umage",
+				borrowCoins:          sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20*MAGA_CF))),
 				interestRateModel:    normalModel,
 				reserveFactor:        sdk.MustNewDecFromStr("0.05"),
 				expectedInterestSnaphots: []ExpectedBorrowInterest{
@@ -841,7 +841,7 @@ func (suite *KeeperTestSuite) TestBorrowInterest() {
 			// Hard module genesis state
 			hardGS := types.NewGenesisState(types.NewParams(
 				types.MoneyMarkets{
-					types.NewMoneyMarket("uMage",
+					types.NewMoneyMarket("umage",
 						types.NewBorrowLimit(false, sdk.NewDec(100000000*MAGA_CF), sdk.MustNewDecFromStr("0.8")), // Borrow Limit
 						"mage:usd",                // Market ID
 						sdk.NewInt(MAGA_CF),       // Conversion Factor
@@ -1016,11 +1016,11 @@ func (suite *KeeperTestSuite) TestSupplyInterest() {
 			"one day",
 			args{
 				user:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000*MAGA_CF))),
-				depositCoins:         sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				coinDenoms:           []string{"uMage"},
-				borrowCoins:          sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20*MAGA_CF))),
+				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000*MAGA_CF))),
+				depositCoins:         sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				coinDenoms:           []string{"umage"},
+				borrowCoins:          sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20*MAGA_CF))),
 				interestRateModel:    normalModel,
 				reserveFactor:        sdk.MustNewDecFromStr("0.05"),
 				expectedInterestSnaphots: []ExpectedSupplyInterest{
@@ -1040,11 +1040,11 @@ func (suite *KeeperTestSuite) TestSupplyInterest() {
 			"one week",
 			args{
 				user:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000*MAGA_CF))),
-				depositCoins:         sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				coinDenoms:           []string{"uMage"},
-				borrowCoins:          sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20*MAGA_CF))),
+				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000*MAGA_CF))),
+				depositCoins:         sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				coinDenoms:           []string{"umage"},
+				borrowCoins:          sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20*MAGA_CF))),
 				interestRateModel:    normalModel,
 				reserveFactor:        sdk.MustNewDecFromStr("0.05"),
 				expectedInterestSnaphots: []ExpectedSupplyInterest{
@@ -1064,11 +1064,11 @@ func (suite *KeeperTestSuite) TestSupplyInterest() {
 			"one month",
 			args{
 				user:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000*MAGA_CF))),
-				depositCoins:         sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				coinDenoms:           []string{"uMage"},
-				borrowCoins:          sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20*MAGA_CF))),
+				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000*MAGA_CF))),
+				depositCoins:         sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				coinDenoms:           []string{"umage"},
+				borrowCoins:          sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20*MAGA_CF))),
 				interestRateModel:    normalModel,
 				reserveFactor:        sdk.MustNewDecFromStr("0.05"),
 				expectedInterestSnaphots: []ExpectedSupplyInterest{
@@ -1088,11 +1088,11 @@ func (suite *KeeperTestSuite) TestSupplyInterest() {
 			"one year",
 			args{
 				user:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000*MAGA_CF))),
-				depositCoins:         sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				coinDenoms:           []string{"uMage"},
-				borrowCoins:          sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20*MAGA_CF))),
+				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000*MAGA_CF))),
+				depositCoins:         sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				coinDenoms:           []string{"umage"},
+				borrowCoins:          sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20*MAGA_CF))),
 				interestRateModel:    normalModel,
 				reserveFactor:        sdk.MustNewDecFromStr("0.05"),
 				expectedInterestSnaphots: []ExpectedSupplyInterest{
@@ -1112,11 +1112,11 @@ func (suite *KeeperTestSuite) TestSupplyInterest() {
 			"supply/borrow multiple coins",
 			args{
 				user:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF)), sdk.NewCoin("bnb", sdk.NewInt(100*BNB_CF))),
-				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000*MAGA_CF))),
-				depositCoins:         sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF)), sdk.NewCoin("bnb", sdk.NewInt(100*BNB_CF))),
-				coinDenoms:           []string{"uMage"},
-				borrowCoins:          sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20*MAGA_CF)), sdk.NewCoin("bnb", sdk.NewInt(20*BNB_CF))),
+				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF)), sdk.NewCoin("bnb", sdk.NewInt(100*BNB_CF))),
+				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000*MAGA_CF))),
+				depositCoins:         sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF)), sdk.NewCoin("bnb", sdk.NewInt(100*BNB_CF))),
+				coinDenoms:           []string{"umage"},
+				borrowCoins:          sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20*MAGA_CF)), sdk.NewCoin("bnb", sdk.NewInt(20*BNB_CF))),
 				interestRateModel:    normalModel,
 				reserveFactor:        sdk.MustNewDecFromStr("0.05"),
 				expectedInterestSnaphots: []ExpectedSupplyInterest{
@@ -1136,18 +1136,18 @@ func (suite *KeeperTestSuite) TestSupplyInterest() {
 			"supply during snapshot",
 			args{
 				user:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000*MAGA_CF))),
-				depositCoins:         sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				coinDenoms:           []string{"uMage"},
-				borrowCoins:          sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20*MAGA_CF))),
+				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000*MAGA_CF))),
+				depositCoins:         sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				coinDenoms:           []string{"umage"},
+				borrowCoins:          sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20*MAGA_CF))),
 				interestRateModel:    normalModel,
 				reserveFactor:        sdk.MustNewDecFromStr("0.05"),
 				expectedInterestSnaphots: []ExpectedSupplyInterest{
 					{
 						elapsedTime:  oneMonthInSeconds,
 						shouldSupply: true,
-						supplyCoin:   sdk.NewCoin("uMage", sdk.NewInt(20*MAGA_CF)),
+						supplyCoin:   sdk.NewCoin("umage", sdk.NewInt(20*MAGA_CF)),
 					},
 				},
 			},
@@ -1160,11 +1160,11 @@ func (suite *KeeperTestSuite) TestSupplyInterest() {
 			"multiple snapshots",
 			args{
 				user:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000*MAGA_CF))),
-				depositCoins:         sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				coinDenoms:           []string{"uMage"},
-				borrowCoins:          sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(80*MAGA_CF))),
+				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000*MAGA_CF))),
+				depositCoins:         sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				coinDenoms:           []string{"umage"},
+				borrowCoins:          sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(80*MAGA_CF))),
 				interestRateModel:    normalModel,
 				reserveFactor:        sdk.MustNewDecFromStr("0.05"),
 				expectedInterestSnaphots: []ExpectedSupplyInterest{
@@ -1194,11 +1194,11 @@ func (suite *KeeperTestSuite) TestSupplyInterest() {
 			"varied snapshots",
 			args{
 				user:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1000*MAGA_CF))),
-				depositCoins:         sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100*MAGA_CF))),
-				coinDenoms:           []string{"uMage"},
-				borrowCoins:          sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(50*MAGA_CF))),
+				initialBorrowerCoins: sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				initialModuleCoins:   sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1000*MAGA_CF))),
+				depositCoins:         sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100*MAGA_CF))),
+				coinDenoms:           []string{"umage"},
+				borrowCoins:          sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(50*MAGA_CF))),
 				interestRateModel:    normalModel,
 				reserveFactor:        sdk.MustNewDecFromStr("0.05"),
 				expectedInterestSnaphots: []ExpectedSupplyInterest{
@@ -1246,7 +1246,7 @@ func (suite *KeeperTestSuite) TestSupplyInterest() {
 			// Hard module genesis state
 			hardGS := types.NewGenesisState(types.NewParams(
 				types.MoneyMarkets{
-					types.NewMoneyMarket("uMage",
+					types.NewMoneyMarket("umage",
 						types.NewBorrowLimit(false, sdk.NewDec(100000000*MAGA_CF), sdk.MustNewDecFromStr("0.8")), // Borrow Limit
 						"mage:usd",                // Market ID
 						sdk.NewInt(MAGA_CF),       // Conversion Factor

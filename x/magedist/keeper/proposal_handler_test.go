@@ -14,7 +14,7 @@ func (suite *keeperTestSuite) TestHandleCommunityPoolMultiSpendProposal() {
 
 	// add coins to the module account and fund community pool
 	initialFunds := int64(1000000)
-	fundAmount := sdk.NewCoins(sdk.NewInt64Coin("uMage", initialFunds))
+	fundAmount := sdk.NewCoins(sdk.NewInt64Coin("umage", initialFunds))
 	suite.Require().NoError(suite.App.FundModuleAccount(ctx, communitytypes.ModuleAccountName, fundAmount))
 	// expect funds to start in community pool
 	commPoolFunds := communityKeeper.GetModuleAccountBalance(ctx)
@@ -25,11 +25,11 @@ func (suite *keeperTestSuite) TestHandleCommunityPoolMultiSpendProposal() {
 	proposal := types.NewCommunityPoolMultiSpendProposal("test title", "description", []types.MultiSpendRecipient{
 		{
 			Address: addr.String(),
-			Amount:  sdk.NewCoins(sdk.NewInt64Coin("uMage", proposalAmount1)),
+			Amount:  sdk.NewCoins(sdk.NewInt64Coin("umage", proposalAmount1)),
 		},
 		{
 			Address: addr.String(),
-			Amount:  sdk.NewCoins(sdk.NewInt64Coin("uMage", proposalAmount2)),
+			Amount:  sdk.NewCoins(sdk.NewInt64Coin("umage", proposalAmount2)),
 		},
 	})
 	err := keeper.HandleCommunityPoolMultiSpendProposal(ctx, suite.Keeper, proposal)
@@ -38,10 +38,10 @@ func (suite *keeperTestSuite) TestHandleCommunityPoolMultiSpendProposal() {
 	balances := suite.BankKeeper.GetAllBalances(ctx, addr)
 
 	// expect funds to be transferred to recipient
-	expected := initBalances.AmountOf("uMage").Add(sdk.NewInt(proposalAmount1 + proposalAmount2))
-	suite.Require().Equal(expected, balances.AmountOf("uMage"))
+	expected := initBalances.AmountOf("umage").Add(sdk.NewInt(proposalAmount1 + proposalAmount2))
+	suite.Require().Equal(expected, balances.AmountOf("umage"))
 
 	// expect funds to be deducted from community pool
-	expectedCommPool := commPoolFunds.AmountOf("uMage").SubRaw(proposalAmount1 + proposalAmount2)
-	suite.Require().Equal(expectedCommPool, communityKeeper.GetModuleAccountBalance(ctx).AmountOf("uMage"))
+	expectedCommPool := commPoolFunds.AmountOf("umage").SubRaw(proposalAmount1 + proposalAmount2)
+	suite.Require().Equal(expectedCommPool, communityKeeper.GetModuleAccountBalance(ctx).AmountOf("umage"))
 }

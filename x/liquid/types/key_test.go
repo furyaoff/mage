@@ -28,9 +28,9 @@ func TestParseLiquidStakingTokenDenom(t *testing.T) {
 		},
 		{
 			name:        "invalid prefix",
-			giveDenom:   "uMage-Magevaloper1ze7y9qwdddejmy7jlw4cymqqlt2wh05y6cpt5a",
+			giveDenom:   "umage-Magevaloper1ze7y9qwdddejmy7jlw4cymqqlt2wh05y6cpt5a",
 			wantAddress: mustValAddressFromBech32("Magevaloper1ze7y9qwdddejmy7jlw4cymqqlt2wh05y6cpt5a"),
-			wantErr:     fmt.Errorf("invalid denom prefix, expected %s, got %s", types.DefaultDerivativeDenom, "uMage"),
+			wantErr:     fmt.Errorf("invalid denom prefix, expected %s, got %s", types.DefaultDerivativeDenom, "umage"),
 		},
 		{
 			name:        "invalid validator address",

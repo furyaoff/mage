@@ -58,7 +58,7 @@
       "depositor": "Mage1e8xjfylam4nvugcmkxwvuxh22uvvad5vknu4yh"
     }
   ],
-  "gov_denom": "uMage",
+  "gov_denom": "umage",
   "params": {
     "circuit_breaker": false,
     "collateral_params": [

@@ -1066,7 +1066,7 @@ paths:
                 type: array
                 items:
                   type: string
-                  example: "uMage"
+                  example: "umage"
       responses:
         200:
           description: OK
@@ -1102,7 +1102,7 @@ paths:
                 type: array
                 items:
                   type: string
-                  example: "uMage"
+                  example: "umage"
       responses:
         200:
           description: OK
@@ -1138,7 +1138,7 @@ paths:
                 type: array
                 items:
                   type: string
-                  example: "uMage"
+                  example: "umage"
       responses:
         200:
           description: OK
@@ -1174,7 +1174,7 @@ paths:
                 type: array
                 items:
                   type: string
-                  example: "uMage"
+                  example: "umage"
       responses:
         200:
           description: OK
@@ -2626,7 +2626,7 @@ definitions:
     properties:
       denom:
         type: string
-        example: uMage
+        example: umage
       amount:
         type: string
         example: "50000"
@@ -3072,7 +3072,7 @@ definitions:
     properties:
       token_a:
         type: string
-        example: "uMage"
+        example: "umage"
       token_b:
         type: string
         example: "usdx"

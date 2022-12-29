@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>io.mage.kvd</string>
+	<string>io.mage.mgd</string>
 	<key>ProgramArguments</key>
 	<array>
 		<!--Assumes user is "mage"-->
-		<string>/Users/furya-official/magego/bin/kvd</string>
+		<string>/Users/furya-official/magego/bin/mgd</string>
     <string>start</string>
 	</array>
 	<key>RunAtLoad</key>

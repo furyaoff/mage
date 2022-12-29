@@ -39,7 +39,7 @@ message GenesisState {
 
 An `Account` is a struct representing the excess `aMage` balance of an address.
 
-Since an address's total `aMage` balance is derived from its `uMage` balance and the excess `aMage` balance stored by the `Account` struct, the `aMage` balance here should never exceed 1 `uMage` (10^12 `aMage`).
+Since an address's total `aMage` balance is derived from its `umage` balance and the excess `aMage` balance stored by the `Account` struct, the `aMage` balance here should never exceed 1 `umage` (10^12 `aMage`).
 
 ```protobuf
 message Account {

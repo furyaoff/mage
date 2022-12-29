@@ -14,7 +14,7 @@ func (suite *HandlerTestSuite) TestPayoutDelegatorClaimMultiDenom() {
 	receiverAddr := suite.addrs[1]
 
 	authBulder := suite.authBuilder().
-		WithSimpleAccount(userAddr, cs(c("uMage", 1e12))).
+		WithSimpleAccount(userAddr, cs(c("umage", 1e12))).
 		WithSimpleAccount(receiverAddr, nil)
 
 	incentBuilder := suite.incentiveBuilder().
@@ -24,7 +24,7 @@ func (suite *HandlerTestSuite) TestPayoutDelegatorClaimMultiDenom() {
 
 	// create a delegation (need to create a validator first, which will have a self delegation)
 	suite.NoError(
-		suite.DeliverMsgCreateValidator(sdk.ValAddress(userAddr), c("uMage", 1e9)),
+		suite.DeliverMsgCreateValidator(sdk.ValAddress(userAddr), c("umage", 1e9)),
 	)
 	// new block required to bond validator
 	suite.NextBlockAfter(7 * time.Second)
@@ -62,7 +62,7 @@ func (suite *HandlerTestSuite) TestPayoutDelegatorClaimSingleDenom() {
 	userAddr := suite.addrs[0]
 
 	authBulder := suite.authBuilder().
-		WithSimpleAccount(userAddr, cs(c("uMage", 1e12)))
+		WithSimpleAccount(userAddr, cs(c("umage", 1e12)))
 
 	incentBuilder := suite.incentiveBuilder().
 		WithSimpleDelegatorRewardPeriod(types.BondDenom, cs(c("hard", 1e6), c("swap", 1e6)))
@@ -71,7 +71,7 @@ func (suite *HandlerTestSuite) TestPayoutDelegatorClaimSingleDenom() {
 
 	// create a delegation (need to create a validator first, which will have a self delegation)
 	suite.NoError(
-		suite.DeliverMsgCreateValidator(sdk.ValAddress(userAddr), c("uMage", 1e9)),
+		suite.DeliverMsgCreateValidator(sdk.ValAddress(userAddr), c("umage", 1e9)),
 	)
 	// new block required to bond validator
 	suite.NextBlockAfter(7 * time.Second)

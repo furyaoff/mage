@@ -15,10 +15,10 @@ const (
 	EvmDenom = "aMage"
 
 	// CosmosDenom is the gas denom used by the mage app
-	CosmosDenom = "uMage"
+	CosmosDenom = "umage"
 )
 
-// ConversionMultiplier is the conversion multiplier between aMage and uMage
+// ConversionMultiplier is the conversion multiplier between aMage and umage
 var ConversionMultiplier = sdk.NewInt(1_000_000_000_000)
 
 var _ evmtypes.BankKeeper = EvmBankKeeper{}
@@ -27,7 +27,7 @@ var _ evmtypes.BankKeeper = EvmBankKeeper{}
 // of the 18 decimal aMage coin on the evm.
 // x/evm consumes gas and send coins by minting and burning aMage coins in its module
 // account and then sending the funds to the target account.
-// This keeper uses both the uMage coin and a separate aMage balance to manage the
+// This keeper uses both the umage coin and a separate aMage balance to manage the
 // extra percision needed by the evm.
 type EvmBankKeeper struct {
 	aMageKeeper Keeper
@@ -50,9 +50,9 @@ func (k EvmBankKeeper) GetBalance(ctx sdk.Context, addr sdk.AccAddress, denom st
 	}
 
 	spendableCoins := k.bk.SpendableCoins(ctx, addr)
-	uMage := spendableCoins.AmountOf(CosmosDenom)
+	umage := spendableCoins.AmountOf(CosmosDenom)
 	aMage := k.aMageKeeper.GetBalance(ctx, addr)
-	total := uMage.Mul(ConversionMultiplier).Add(aMage)
+	total := umage.Mul(ConversionMultiplier).Add(aMage)
 	return sdk.NewCoin(EvmDenom, total)
 }
 
@@ -60,13 +60,13 @@ func (k EvmBankKeeper) GetBalance(ctx sdk.Context, addr sdk.AccAddress, denom st
 // It will panic if the module account does not exist. An error is returned if the recipient
 // address is black-listed or if sending the tokens fails.
 func (k EvmBankKeeper) SendCoinsFromModuleToAccount(ctx sdk.Context, senderModule string, recipientAddr sdk.AccAddress, amt sdk.Coins) error {
-	uMage, aMage, err := SplitAMageCoins(amt)
+	umage, aMage, err := SplitAMageCoins(amt)
 	if err != nil {
 		return err
 	}
 
-	if uMage.Amount.IsPositive() {
-		if err := k.bk.SendCoinsFromModuleToAccount(ctx, senderModule, recipientAddr, sdk.NewCoins(uMage)); err != nil {
+	if umage.Amount.IsPositive() {
+		if err := k.bk.SendCoinsFromModuleToAccount(ctx, senderModule, recipientAddr, sdk.NewCoins(umage)); err != nil {
 			return err
 		}
 	}
@@ -86,13 +86,13 @@ func (k EvmBankKeeper) SendCoinsFromModuleToAccount(ctx sdk.Context, senderModul
 // SendCoinsFromAccountToModule transfers aMage coins from an AccAddress to a ModuleAccount.
 // It will panic if the module account does not exist.
 func (k EvmBankKeeper) SendCoinsFromAccountToModule(ctx sdk.Context, senderAddr sdk.AccAddress, recipientModule string, amt sdk.Coins) error {
-	uMage, aMageNeeded, err := SplitAMageCoins(amt)
+	umage, aMageNeeded, err := SplitAMageCoins(amt)
 	if err != nil {
 		return err
 	}
 
-	if uMage.IsPositive() {
-		if err := k.bk.SendCoinsFromAccountToModule(ctx, senderAddr, recipientModule, sdk.NewCoins(uMage)); err != nil {
+	if umage.IsPositive() {
+		if err := k.bk.SendCoinsFromAccountToModule(ctx, senderAddr, recipientModule, sdk.NewCoins(umage)); err != nil {
 			return err
 		}
 	}
@@ -109,16 +109,16 @@ func (k EvmBankKeeper) SendCoinsFromAccountToModule(ctx sdk.Context, senderAddr 
 	return k.ConvertAMageToUMage(ctx, recipientAddr)
 }
 
-// MintCoins mints aMage coins by minting the equivalent uMage coins and any remaining aMage coins.
+// MintCoins mints aMage coins by minting the equivalent umage coins and any remaining aMage coins.
 // It will panic if the module account does not exist or is unauthorized.
 func (k EvmBankKeeper) MintCoins(ctx sdk.Context, moduleName string, amt sdk.Coins) error {
-	uMage, aMage, err := SplitAMageCoins(amt)
+	umage, aMage, err := SplitAMageCoins(amt)
 	if err != nil {
 		return err
 	}
 
-	if uMage.IsPositive() {
-		if err := k.bk.MintCoins(ctx, moduleName, sdk.NewCoins(uMage)); err != nil {
+	if umage.IsPositive() {
+		if err := k.bk.MintCoins(ctx, moduleName, sdk.NewCoins(umage)); err != nil {
 			return err
 		}
 	}
@@ -131,16 +131,16 @@ func (k EvmBankKeeper) MintCoins(ctx sdk.Context, moduleName string, amt sdk.Coi
 	return k.ConvertAMageToUMage(ctx, recipientAddr)
 }
 
-// BurnCoins burns aMage coins by burning the equivalent uMage coins and any remaining aMage coins.
+// BurnCoins burns aMage coins by burning the equivalent umage coins and any remaining aMage coins.
 // It will panic if the module account does not exist or is unauthorized.
 func (k EvmBankKeeper) BurnCoins(ctx sdk.Context, moduleName string, amt sdk.Coins) error {
-	uMage, aMage, err := SplitAMageCoins(amt)
+	umage, aMage, err := SplitAMageCoins(amt)
 	if err != nil {
 		return err
 	}
 
-	if uMage.IsPositive() {
-		if err := k.bk.BurnCoins(ctx, moduleName, sdk.NewCoins(uMage)); err != nil {
+	if umage.IsPositive() {
+		if err := k.bk.BurnCoins(ctx, moduleName, sdk.NewCoins(umage)); err != nil {
 			return err
 		}
 	}
@@ -153,7 +153,7 @@ func (k EvmBankKeeper) BurnCoins(ctx sdk.Context, moduleName string, amt sdk.Coi
 	return k.aMageKeeper.RemoveBalance(ctx, moduleAddr, aMage)
 }
 
-// ConvertOneUMageToAMageIfNeeded converts 1 uMage to aMage for an address if
+// ConvertOneUMageToAMageIfNeeded converts 1 umage to aMage for an address if
 // its aMage balance is smaller than the aMageNeeded amount.
 func (k EvmBankKeeper) ConvertOneUMageToAMageIfNeeded(ctx sdk.Context, addr sdk.AccAddress, aMageNeeded sdk.Int) error {
 	aMageBal := k.aMageKeeper.GetBalance(ctx, addr)
@@ -161,12 +161,12 @@ func (k EvmBankKeeper) ConvertOneUMageToAMageIfNeeded(ctx sdk.Context, addr sdk.
 		return nil
 	}
 
-	uMageToStore := sdk.NewCoins(sdk.NewCoin(CosmosDenom, sdk.OneInt()))
-	if err := k.bk.SendCoinsFromAccountToModule(ctx, addr, types.ModuleName, uMageToStore); err != nil {
+	umageToStore := sdk.NewCoins(sdk.NewCoin(CosmosDenom, sdk.OneInt()))
+	if err := k.bk.SendCoinsFromAccountToModule(ctx, addr, types.ModuleName, umageToStore); err != nil {
 		return err
 	}
 
-	// add 1uMage equivalent of aMage to addr
+	// add 1umage equivalent of aMage to addr
 	aMageToReceive := ConversionMultiplier
 	if err := k.aMageKeeper.AddBalance(ctx, addr, aMageToReceive); err != nil {
 		return err
@@ -175,29 +175,29 @@ func (k EvmBankKeeper) ConvertOneUMageToAMageIfNeeded(ctx sdk.Context, addr sdk.
 	return nil
 }
 
-// ConvertAMageToUMage converts all available aMage to uMage for a given AccAddress.
+// ConvertAMageToUMage converts all available aMage to umage for a given AccAddress.
 func (k EvmBankKeeper) ConvertAMageToUMage(ctx sdk.Context, addr sdk.AccAddress) error {
 	totalAMage := k.aMageKeeper.GetBalance(ctx, addr)
-	uMage, _, err := SplitAMageCoins(sdk.NewCoins(sdk.NewCoin(EvmDenom, totalAMage)))
+	umage, _, err := SplitAMageCoins(sdk.NewCoins(sdk.NewCoin(EvmDenom, totalAMage)))
 	if err != nil {
 		return err
 	}
 
-	// do nothing if account does not have enough aMage for a single uMage
-	uMageToReceive := uMage.Amount
-	if !uMageToReceive.IsPositive() {
+	// do nothing if account does not have enough aMage for a single umage
+	umageToReceive := umage.Amount
+	if !umageToReceive.IsPositive() {
 		return nil
 	}
 
-	// remove aMage used for converting to uMage
-	aMageToBurn := uMageToReceive.Mul(ConversionMultiplier)
+	// remove aMage used for converting to umage
+	aMageToBurn := umageToReceive.Mul(ConversionMultiplier)
 	finalBal := totalAMage.Sub(aMageToBurn)
 	if err := k.aMageKeeper.SetBalance(ctx, addr, finalBal); err != nil {
 		return err
 	}
 
 	fromAddr := k.GetModuleAddress(types.ModuleName)
-	if err := k.bk.SendCoins(ctx, fromAddr, addr, sdk.NewCoins(uMage)); err != nil {
+	if err := k.bk.SendCoins(ctx, fromAddr, addr, sdk.NewCoins(umage)); err != nil {
 		return err
 	}
 
@@ -212,18 +212,18 @@ func (k EvmBankKeeper) GetModuleAddress(moduleName string) sdk.AccAddress {
 	return addr
 }
 
-// SplitAMageCoins splits aMage coins to the equivalent uMage coins and any remaining aMage balance.
+// SplitAMageCoins splits aMage coins to the equivalent umage coins and any remaining aMage balance.
 // An error will be returned if the coins are not valid or if the coins are not the aMage denom.
 func SplitAMageCoins(coins sdk.Coins) (sdk.Coin, sdk.Int, error) {
 	aMage := sdk.ZeroInt()
-	uMage := sdk.NewCoin(CosmosDenom, sdk.ZeroInt())
+	umage := sdk.NewCoin(CosmosDenom, sdk.ZeroInt())
 
 	if len(coins) == 0 {
-		return uMage, aMage, nil
+		return umage, aMage, nil
 	}
 
 	if err := ValidateEvmCoins(coins); err != nil {
-		return uMage, aMage, err
+		return umage, aMage, err
 	}
 
 	// note: we should always have len(coins) == 1 here since coins cannot have dup denoms after we validate.
@@ -232,12 +232,12 @@ func SplitAMageCoins(coins sdk.Coins) (sdk.Coin, sdk.Int, error) {
 	if remainingBalance.IsPositive() {
 		aMage = remainingBalance
 	}
-	uMageAmount := coin.Amount.Quo(ConversionMultiplier)
-	if uMageAmount.IsPositive() {
-		uMage = sdk.NewCoin(CosmosDenom, uMageAmount)
+	umageAmount := coin.Amount.Quo(ConversionMultiplier)
+	if umageAmount.IsPositive() {
+		umage = sdk.NewCoin(CosmosDenom, umageAmount)
 	}
 
-	return uMage, aMage, nil
+	return umage, aMage, nil
 }
 
 // ValidateEvmCoins validates the coins from evm is valid and is the EvmDenom (aMage).

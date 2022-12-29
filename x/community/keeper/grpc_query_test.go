@@ -49,7 +49,7 @@ func (suite *grpcQueryTestSuite) TestGrpcQueryBalance() {
 			name: "handles response with balance",
 			setup: func() {
 				expCoins = sdk.NewCoins(
-					sdk.NewCoin("uMage", sdk.NewInt(100)),
+					sdk.NewCoin("umage", sdk.NewInt(100)),
 					sdk.NewCoin("usdx", sdk.NewInt(1000)),
 				)
 				suite.App.FundModuleAccount(suite.Ctx, types.ModuleName, expCoins)
@@ -79,7 +79,7 @@ func (suite *grpcQueryTestSuite) TestLegacyCommunityPoolBalance() {
 		{
 			name: "success - nonzero balance, single denom",
 			balance: sdk.NewDecCoins(
-				sdk.NewDecCoinFromDec("uMage", sdk.MustNewDecFromStr("1234567.89")),
+				sdk.NewDecCoinFromDec("umage", sdk.MustNewDecFromStr("1234567.89")),
 				sdk.NewDecCoinFromDec("usdx", sdk.NewDec(1e5)),
 				sdk.NewDecCoinFromDec("other-denom", sdk.MustNewDecFromStr("0.00000000003")),
 			),
@@ -87,7 +87,7 @@ func (suite *grpcQueryTestSuite) TestLegacyCommunityPoolBalance() {
 		{
 			name: "success - nonzero balance, multiple denoms",
 			balance: sdk.NewDecCoins(
-				sdk.NewDecCoinFromDec("uMage", sdk.MustNewDecFromStr("1234567.89")),
+				sdk.NewDecCoinFromDec("umage", sdk.MustNewDecFromStr("1234567.89")),
 			),
 		},
 		{

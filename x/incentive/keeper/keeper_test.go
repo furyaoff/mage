@@ -47,7 +47,7 @@ func (suite *KeeperTestSuite) SetupApp() {
 
 func (suite *KeeperTestSuite) TestGetSetDeleteUSDXMintingClaim() {
 	suite.SetupApp()
-	c := types.NewUSDXMintingClaim(suite.addrs[0], c("uMage", 1000000), types.RewardIndexes{types.NewRewardIndex("bnb-a", sdk.ZeroDec())})
+	c := types.NewUSDXMintingClaim(suite.addrs[0], c("umage", 1000000), types.RewardIndexes{types.NewRewardIndex("bnb-a", sdk.ZeroDec())})
 	_, found := suite.keeper.GetUSDXMintingClaim(suite.ctx, suite.addrs[0])
 	suite.Require().False(found)
 	suite.Require().NotPanics(func() {
@@ -66,7 +66,7 @@ func (suite *KeeperTestSuite) TestGetSetDeleteUSDXMintingClaim() {
 func (suite *KeeperTestSuite) TestIterateUSDXMintingClaims() {
 	suite.SetupApp()
 	for i := 0; i < len(suite.addrs); i++ {
-		c := types.NewUSDXMintingClaim(suite.addrs[i], c("uMage", 100000), types.RewardIndexes{types.NewRewardIndex("bnb-a", sdk.ZeroDec())})
+		c := types.NewUSDXMintingClaim(suite.addrs[i], c("umage", 100000), types.RewardIndexes{types.NewRewardIndex("bnb-a", sdk.ZeroDec())})
 		suite.Require().NotPanics(func() {
 			suite.keeper.SetUSDXMintingClaim(suite.ctx, c)
 		})
@@ -139,7 +139,7 @@ func (suite *KeeperTestSuite) TestGetSetSwapRewardIndexes() {
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -149,7 +149,7 @@ func (suite *KeeperTestSuite) TestGetSetSwapRewardIndexes() {
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -163,7 +163,7 @@ func (suite *KeeperTestSuite) TestGetSetSwapRewardIndexes() {
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -222,7 +222,7 @@ func (suite *KeeperTestSuite) TestIterateSwapRewardIndexes() {
 					RewardFactor:   d("0.0000002"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -348,7 +348,7 @@ func (suite *KeeperTestSuite) TestGetSetEarnRewardIndexes() {
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -358,7 +358,7 @@ func (suite *KeeperTestSuite) TestGetSetEarnRewardIndexes() {
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -372,7 +372,7 @@ func (suite *KeeperTestSuite) TestGetSetEarnRewardIndexes() {
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -424,14 +424,14 @@ func (suite *KeeperTestSuite) TestIterateEarnRewardIndexes() {
 	suite.SetupApp()
 	multiIndexes := types.MultiRewardIndexes{
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			RewardIndexes: types.RewardIndexes{
 				{
 					CollateralType: "earn",
 					RewardFactor:   d("0.0000002"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -511,7 +511,7 @@ var nonEmptyAccrualTimes = []accrualtime{
 		time:  time.Date(1998, 1, 1, 0, 0, 0, 1, time.UTC),
 	},
 	{
-		denom: "uMage",
+		denom: "umage",
 		time:  time.Time{},
 	},
 }

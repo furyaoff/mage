@@ -95,7 +95,7 @@ func (suite *ParamTestSuite) TestParamValidation() {
 						},
 					},
 					{
-						Denom: "uMage",
+						Denom: "umage",
 						Multipliers: types.Multipliers{
 							types.NewMultiplier("small", 1, sdk.MustNewDecFromStr("0.2")),
 							types.NewMultiplier("large", 12, sdk.MustNewDecFromStr("1.0")),

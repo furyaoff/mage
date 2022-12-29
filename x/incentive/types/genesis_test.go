@@ -38,7 +38,7 @@ func TestGenesisState_Validate(t *testing.T) {
 							"bnb-a",
 							time.Date(2020, 10, 15, 14, 0, 0, 0, time.UTC),
 							time.Date(2024, 10, 15, 14, 0, 0, 0, time.UTC),
-							sdk.NewCoin("uMage", sdk.NewInt(25000)),
+							sdk.NewCoin("umage", sdk.NewInt(25000)),
 						),
 					},
 					DefaultMultiRewardPeriods,
@@ -49,7 +49,7 @@ func TestGenesisState_Validate(t *testing.T) {
 					DefaultMultiRewardPeriods,
 					MultipliersPerDenoms{
 						{
-							Denom: "uMage",
+							Denom: "umage",
 							Multipliers: Multipliers{
 								NewMultiplier("small", 1, sdk.MustNewDecFromStr("0.33")),
 								NewMultiplier("large", 12, sdk.MustNewDecFromStr("1.00")),
@@ -72,7 +72,7 @@ func TestGenesisState_Validate(t *testing.T) {
 					{
 						BaseClaim: BaseClaim{
 							Owner:  sdk.AccAddress(crypto.AddressHash([]byte("MageTestUser1"))),
-							Reward: sdk.NewCoin("uMage", sdk.NewInt(100000000)),
+							Reward: sdk.NewCoin("umage", sdk.NewInt(100000000)),
 						},
 						RewardIndexes: []RewardIndex{
 							{
@@ -117,7 +117,7 @@ func TestGenesisState_Validate(t *testing.T) {
 					{
 						BaseClaim: BaseClaim{
 							Owner:  nil, // invalid address
-							Reward: sdk.NewCoin("uMage", sdk.NewInt(100000000)),
+							Reward: sdk.NewCoin("umage", sdk.NewInt(100000000)),
 						},
 						RewardIndexes: []RewardIndex{
 							{

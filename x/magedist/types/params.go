@@ -20,7 +20,7 @@ var (
 	DefaultPeriods           = []Period{}
 	DefaultInfraParams       = InfrastructureParams{}
 	DefaultPreviousBlockTime = tmtime.Canonical(time.Unix(1, 0))
-	GovDenom                 = "uMage" // TODO: replace with cdptypes.DefaultGovDenom
+	GovDenom                 = "umage" // TODO: replace with cdptypes.DefaultGovDenom
 )
 
 func NewParams(active bool, periods []Period, infraParams InfrastructureParams) Params {

@@ -26,7 +26,7 @@ func TestVestingMempoolDecorator_MsgCreateVestingAccount_Unauthorized(t *testing
 		[]sdk.Msg{
 			vesting.NewMsgCreateVestingAccount(
 				testAddresses[0], testAddresses[1],
-				sdk.NewCoins(sdk.NewInt64Coin("uMage", 100_000_000)),
+				sdk.NewCoins(sdk.NewInt64Coin("umage", 100_000_000)),
 				time.Date(1998, 1, 1, 0, 0, 0, 0, time.UTC).Unix(), false),
 		},
 		sdk.NewCoins(),

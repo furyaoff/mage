@@ -5,7 +5,7 @@
         "active": true,
         "rewards_per_second": {
           "amount": "122354",
-          "denom": "uMage"
+          "denom": "umage"
         },
         "collateral_type": "bnb-a",
         "start": "2021-07-20T14:00:00Z",
@@ -15,7 +15,7 @@
         "active": true,
         "rewards_per_second": {
           "amount": "23809",
-          "denom": "uMage"
+          "denom": "umage"
         },
         "collateral_type": "hard-a",
         "start": "2021-07-20T14:00:00Z",
@@ -77,7 +77,7 @@
     "delegator_reward_periods": [
       {
         "active": true,
-        "collateral_type": "uMage",
+        "collateral_type": "umage",
         "start": "2020-01-01T00:00:00Z",
         "end": "2024-01-01T00:00:00Z",
         "rewards_per_second": [
@@ -95,7 +95,7 @@
     "swap_reward_periods": [
       {
         "active": true,
-        "collateral_type": "uMage:usdx",
+        "collateral_type": "umage:usdx",
         "start": "2021-07-14T00:00:00Z",
         "end": "2024-01-01T00:00:00Z",
         "rewards_per_second": [
@@ -105,7 +105,7 @@
           },
           {
             "amount": "31688",
-            "denom": "uMage"
+            "denom": "umage"
           }
         ]
       },
@@ -121,7 +121,7 @@
           },
           {
             "amount": "31688",
-            "denom": "uMage"
+            "denom": "umage"
           }
         ]
       }
@@ -163,13 +163,13 @@
   "delegator_reward_state": {
     "accumulation_times": [
       {
-        "collateral_type": "uMage",
+        "collateral_type": "umage",
         "previous_accumulation_time": "2021-11-05T21:13:12.85608847Z"
       }
     ],
     "multi_reward_indexes": [
       {
-        "collateral_type": "uMage",
+        "collateral_type": "umage",
         "reward_indexes": [
           {
             "collateral_type": "hard",
@@ -265,7 +265,7 @@
         "collateral_type": "bnb-a",
         "reward_indexes": [
           {
-            "collateral_type": "uMage",
+            "collateral_type": "umage",
             "reward_factor": "0.043949244534927716"
           }
         ]
@@ -280,7 +280,7 @@
       },
       "reward_indexes": [
         {
-          "collateral_type": "uMage",
+          "collateral_type": "umage",
           "reward_indexes": [
             {
               "collateral_type": "hard",
@@ -358,7 +358,7 @@
         "owner": "Mage1qptt5vu26cmxpmv0hf2tnnmf293x266pjcsjar",
         "reward": {
           "amount": "550",
-          "denom": "uMage"
+          "denom": "umage"
         }
       },
       "reward_indexes": [

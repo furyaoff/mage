@@ -31,7 +31,7 @@ func (suite *hookTestSuite) TestHooks_DepositAndWithdraw() {
 	suite.Keeper.SetHooks(earnHooks)
 
 	vault1Denom := "usdx"
-	vault2Denom := "uMage"
+	vault2Denom := "umage"
 	acc1deposit1Amount := sdk.NewInt64Coin(vault1Denom, 100)
 	acc1deposit2Amount := sdk.NewInt64Coin(vault2Denom, 200)
 

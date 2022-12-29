@@ -40,4 +40,4 @@ Each `PartnerReward` has the following properties
 | Key              | Type           | Example                                       | Description                        |
 | ---------------- | -------------- | --------------------------------------------- | ---------------------------------- |
 | Address          | sdk.AccAddress | "Mage1x0cztstumgcfrw69s5nd5qtu9vdcg7alqtyhgr" | address of infrastructure partner  |
-| RewardsPerSecond | object (coin)  | {"denom": "uMage", "amount": "1285" }         | per second reward for this partner |
+| RewardsPerSecond | object (coin)  | {"denom": "umage", "amount": "1285" }         | per second reward for this partner |

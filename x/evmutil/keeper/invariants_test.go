@@ -41,7 +41,7 @@ func (suite *invariantTestSuite) SetupValidState() {
 	suite.FundModuleAccountWithMage(
 		types.ModuleName,
 		sdk.NewCoins(
-			sdk.NewCoin("uMage", sdk.NewInt(2)), // ( sum of all minor balances ) / conversion multiplier
+			sdk.NewCoin("umage", sdk.NewInt(2)), // ( sum of all minor balances ) / conversion multiplier
 		),
 	)
 
@@ -126,7 +126,7 @@ func (suite *invariantTestSuite) TestSmallBalances() {
 
 	// increase minor balance at least above conversion multiplier
 	suite.Keeper.AddBalance(suite.Ctx, suite.Addrs[0], keeper.ConversionMultiplier)
-	// add same number of uMage to avoid breaking other invariants
+	// add same number of umage to avoid breaking other invariants
 	amt := sdk.NewCoins(sdk.NewInt64Coin(keeper.CosmosDenom, 1))
 	suite.Require().NoError(
 		suite.App.FundModuleAccount(suite.Ctx, types.ModuleName, amt),

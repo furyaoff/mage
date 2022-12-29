@@ -367,7 +367,7 @@ func TestCalculateRewards(t *testing.T) {
 						RewardFactor:   d("0.000000001"),
 					},
 					{
-						CollateralType: "uMage",
+						CollateralType: "umage",
 						RewardFactor:   d("0.1"),
 					},
 				},
@@ -377,7 +377,7 @@ func TestCalculateRewards(t *testing.T) {
 						RewardFactor:   d("1000.0"),
 					},
 					{
-						CollateralType: "uMage",
+						CollateralType: "umage",
 						RewardFactor:   d("0.100000001"),
 					},
 				},
@@ -385,7 +385,7 @@ func TestCalculateRewards(t *testing.T) {
 			},
 			expected: expected{
 				// for each denom: (new - old) * sourceAmount
-				coins: cs(c("hard", 999999999999), c("uMage", 1)),
+				coins: cs(c("hard", 999999999999), c("umage", 1)),
 			},
 		},
 		{
@@ -403,7 +403,7 @@ func TestCalculateRewards(t *testing.T) {
 						RewardFactor:   d("1000.0"),
 					},
 					{
-						CollateralType: "uMage",
+						CollateralType: "umage",
 						RewardFactor:   d("0.100000001"),
 					},
 				},
@@ -411,7 +411,7 @@ func TestCalculateRewards(t *testing.T) {
 			},
 			expected: expected{
 				// for each denom: (new - old) * sourceAmount
-				coins: cs(c("hard", 999999999999), c("uMage", 100000001)),
+				coins: cs(c("hard", 999999999999), c("umage", 100000001)),
 			},
 		},
 		{
@@ -444,7 +444,7 @@ func TestCalculateRewards(t *testing.T) {
 						RewardFactor:   d("0.1"),
 					},
 					{
-						CollateralType: "uMage",
+						CollateralType: "umage",
 						RewardFactor:   d("0.1"),
 					},
 				},

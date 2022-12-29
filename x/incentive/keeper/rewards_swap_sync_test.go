@@ -352,7 +352,7 @@ func (suite *SynchronizeSwapRewardTests) TestGetSyncedClaim_ClaimUnchangedWhenNo
 
 func (suite *SynchronizeSwapRewardTests) TestGetSyncedClaim_ClaimUpdatedWhenMissingIndexAndHasNoSourceShares() {
 	poolID_1 := "btcb:usdx"
-	poolID_2 := "uMage:usdx"
+	poolID_2 := "umage:usdx"
 	owner := arbitraryAddress()
 
 	// owner has no shares in any pool
@@ -410,7 +410,7 @@ func (suite *SynchronizeSwapRewardTests) TestGetSyncedClaim_ClaimUpdatedWhenMiss
 
 func (suite *SynchronizeSwapRewardTests) TestGetSyncedClaim_ClaimUpdatedWhenMissingIndexButHasSourceShares() {
 	poolID_1 := "btcb:usdx"
-	poolID_2 := "uMage:usdx"
+	poolID_2 := "umage:usdx"
 	owner := arbitraryAddress()
 
 	swapKeeper := newFakeSwapKeeper().

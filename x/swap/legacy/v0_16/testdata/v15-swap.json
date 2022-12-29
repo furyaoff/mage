@@ -22,7 +22,7 @@
         "token_b": "usdx"
       },
       {
-        "token_a": "uMage",
+        "token_a": "umage",
         "token_b": "usdx"
       },
       {
@@ -34,10 +34,10 @@
   },
   "pool_records": [
     {
-      "pool_id": "uMage:usdx",
+      "pool_id": "umage:usdx",
       "reserves_a": {
         "amount": "583616549439",
-        "denom": "uMage"
+        "denom": "umage"
       },
       "reserves_b": {
         "amount": "3431399443511",
@@ -76,7 +76,7 @@
     },
     {
       "depositor": "Mage1ll3ndyv333aet6mzqltu5wdepqhyme8umv34es",
-      "pool_id": "uMage:usdx",
+      "pool_id": "umage:usdx",
       "shares_owned": "3427014047"
     }
   ]

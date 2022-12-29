@@ -67,7 +67,7 @@ func NewRootCmd() *cobra.Command {
 				return err
 			}
 
-			customAppTemplate, customAppConfig := servercfg.AppConfig("uMage")
+			customAppTemplate, customAppConfig := servercfg.AppConfig("umage")
 
 			return server.InterceptConfigsPreRunHandler(cmd, customAppTemplate, customAppConfig)
 		},

@@ -60,7 +60,7 @@ func (suite keeperTestSuite) TestParams_Persistance() {
 
 	params := types.Params{
 		AllowedPools: types.AllowedPools{
-			types.NewAllowedPool("uMage", "usdx"),
+			types.NewAllowedPool("umage", "usdx"),
 		},
 		SwapFee: sdk.MustNewDecFromStr("0.03"),
 	}
@@ -70,7 +70,7 @@ func (suite keeperTestSuite) TestParams_Persistance() {
 	oldParams := params
 	params = types.Params{
 		AllowedPools: types.AllowedPools{
-			types.NewAllowedPool("hard", "uMage"),
+			types.NewAllowedPool("hard", "umage"),
 		},
 		SwapFee: sdk.MustNewDecFromStr("0.01"),
 	}
@@ -92,7 +92,7 @@ func (suite keeperTestSuite) TestParams_GetSwapFee() {
 
 func (suite *keeperTestSuite) TestPool_Persistance() {
 	reserves := sdk.NewCoins(
-		sdk.NewCoin("uMage", sdk.NewInt(10e6)),
+		sdk.NewCoin("umage", sdk.NewInt(10e6)),
 		sdk.NewCoin("usdx", sdk.NewInt(50e6)),
 	)
 
@@ -118,7 +118,7 @@ func (suite *keeperTestSuite) TestPool_Persistance() {
 
 func (suite *keeperTestSuite) TestPool_PanicsWhenInvalid() {
 	invalidRecord := types.NewPoolRecord(
-		sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(100e6)), sdk.NewCoin("usdx", sdk.NewInt(100e6))),
+		sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100e6)), sdk.NewCoin("usdx", sdk.NewInt(100e6))),
 		i(-1),
 	)
 
@@ -128,7 +128,7 @@ func (suite *keeperTestSuite) TestPool_PanicsWhenInvalid() {
 }
 
 func (suite *keeperTestSuite) TestShare_Persistance() {
-	poolID := types.PoolID("uMage", "usdx")
+	poolID := types.PoolID("umage", "usdx")
 	depositor, err := sdk.AccAddressFromBech32("Mage1skpsgk5cnrarn69ql2tfun47fyjssataz0g07l")
 	suite.NoError(err)
 	shares := sdk.NewInt(3126432331)
@@ -174,18 +174,18 @@ func (suite *keeperTestSuite) TestHooks() {
 	suite.Require().NoError(err)
 
 	// hooks can be called when not set
-	suite.Keeper.AfterPoolDepositCreated(suite.Ctx, "uMage/usdx", depositor, sdk.NewInt(1e6))
-	suite.Keeper.BeforePoolDepositModified(suite.Ctx, "uMage/usdx", depositor, sdk.NewInt(1e6))
+	suite.Keeper.AfterPoolDepositCreated(suite.Ctx, "umage/usdx", depositor, sdk.NewInt(1e6))
+	suite.Keeper.BeforePoolDepositModified(suite.Ctx, "umage/usdx", depositor, sdk.NewInt(1e6))
 
 	// set hooks
 	swapHooks := &mocks.SwapHooks{}
 	suite.Keeper.SetHooks(swapHooks)
 
 	// test hook calls are correct
-	swapHooks.On("AfterPoolDepositCreated", suite.Ctx, "uMage/usdx", depositor, sdk.NewInt(1e6)).Once()
-	suite.Keeper.AfterPoolDepositCreated(suite.Ctx, "uMage/usdx", depositor, sdk.NewInt(1e6))
-	swapHooks.On("BeforePoolDepositModified", suite.Ctx, "uMage/usdx", depositor, sdk.NewInt(1e6)).Once()
-	suite.Keeper.BeforePoolDepositModified(suite.Ctx, "uMage/usdx", depositor, sdk.NewInt(1e6))
+	swapHooks.On("AfterPoolDepositCreated", suite.Ctx, "umage/usdx", depositor, sdk.NewInt(1e6)).Once()
+	suite.Keeper.AfterPoolDepositCreated(suite.Ctx, "umage/usdx", depositor, sdk.NewInt(1e6))
+	swapHooks.On("BeforePoolDepositModified", suite.Ctx, "umage/usdx", depositor, sdk.NewInt(1e6)).Once()
+	suite.Keeper.BeforePoolDepositModified(suite.Ctx, "umage/usdx", depositor, sdk.NewInt(1e6))
 	swapHooks.AssertExpectations(suite.T())
 
 	// test second set panics

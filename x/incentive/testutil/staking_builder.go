@@ -18,7 +18,7 @@ var _ GenesisBuilder = (*StakingGenesisBuilder)(nil)
 
 func NewStakingGenesisBuilder() StakingGenesisBuilder {
 	gen := stakingtypes.DefaultGenesisState()
-	gen.Params.BondDenom = "uMage"
+	gen.Params.BondDenom = "umage"
 
 	return StakingGenesisBuilder{
 		GenesisState: *gen,

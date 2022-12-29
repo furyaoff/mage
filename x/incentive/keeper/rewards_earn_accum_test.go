@@ -53,7 +53,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -70,7 +70,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 		vaultDenom,
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
-		cs(c("earn", 2000), c("uMage", 1000)), // same denoms as in global indexes
+		cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
 	)
 
 	suite.keeper.AccumulateEarnRewards(suite.ctx, period)
@@ -84,7 +84,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 			RewardFactor:   d("7.22"),
 		},
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			RewardFactor:   d("3.64"),
 		},
 	})
@@ -116,7 +116,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -129,7 +129,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -148,7 +148,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 		"bMage",         // reward period is set for "bMage" to apply to all vaults
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
-		cs(c("earn", 2000), c("uMage", 1000)), // same denoms as in global indexes
+		cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
 	)
 	suite.keeper.AccumulateEarnRewards(suite.ctx, rewardPeriod)
 
@@ -157,7 +157,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 	suite.storedTimeEquals(vaultDenom1, newAccrualTime)
 	suite.storedTimeEquals(vaultDenom2, newAccrualTime)
 
-	// Each vault gets the same uMage per second, assuming shares prices are the same.
+	// Each vault gets the same umage per second, assuming shares prices are the same.
 	// The share amount determines how much is actually distributed to the vault.
 	expectedIndexes := types.RewardIndexes{
 		{
@@ -165,7 +165,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 			RewardFactor:   d("7.22"),
 		},
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			RewardFactor: d("3.64"). // base incentive
 							Add(d("360")), // staking rewards, 10% of total bMage per second
 		},
@@ -209,7 +209,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -222,7 +222,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -242,7 +242,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 		"bMage",         // reward period is set for "bMage" to apply to all vaults
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
-		cs(c("earn", 2000), c("uMage", 1000)), // same denoms as in global indexes
+		cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
 	)
 	suite.keeper.AccumulateEarnRewards(suite.ctx, rewardPeriod)
 
@@ -258,7 +258,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 			RewardFactor:   d("8.248571428571428571"),
 		},
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			RewardFactor: d("4.154285714285714286"). // base incentive
 									Add(vaultDenom1Supply.ToDec(). // staking rewards
 													QuoInt64(10).
@@ -275,13 +275,13 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 	// Fixed amount total rewards distributed to the vault
 	// Fewer shares deposited -> higher rewards per share
 
-	// 7.2uMage shares per second for 1 hour (started with 0.04)
-	// total rewards claimable = 7.2 * 100000 shares = 720000 uMage
+	// 7.2umage shares per second for 1 hour (started with 0.04)
+	// total rewards claimable = 7.2 * 100000 shares = 720000 umage
 
-	// 720000uMage distributed which is 20% of total bMage uMage rewards
+	// 720000umage distributed which is 20% of total bMage umage rewards
 	// total rewards for *all* bMage vaults for 1 hour
-	// = 1000uMage per second * 3600 == 3600000uMage
-	// vaultDenom2 has 20% of the total bMage amount so it should get 20% of 3600000uMage == 720000uMage
+	// = 1000umage per second * 3600 == 3600000umage
+	// vaultDenom2 has 20% of the total bMage amount so it should get 20% of 3600000umage == 720000umage
 
 	vault2expectedIndexes := types.RewardIndexes{
 		{
@@ -289,7 +289,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 			RewardFactor:   d("14.42"),
 		},
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			RewardFactor: d("7.24").
 				Add(vaultDenom2Supply.ToDec().
 					QuoInt64(10).
@@ -316,7 +316,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUnchangedWhenBlockTimeHasNotIn
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -333,7 +333,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUnchangedWhenBlockTimeHasNotIn
 		vaultDenom,
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
-		cs(c("earn", 2000), c("uMage", 1000)), // same denoms as in global indexes
+		cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
 	)
 
 	suite.keeper.AccumulateEarnRewards(suite.ctx, period)
@@ -372,7 +372,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUnchangedWhenBlockTimeHasNotIn
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -385,7 +385,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUnchangedWhenBlockTimeHasNotIn
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -401,7 +401,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUnchangedWhenBlockTimeHasNotIn
 		"bMage",
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
-		cs(c("earn", 2000), c("uMage", 1000)), // same denoms as in global indexes
+		cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
 	)
 
 	suite.keeper.AccumulateEarnRewards(suite.ctx, period)
@@ -437,7 +437,7 @@ func (suite *AccumulateEarnRewardsTests) TestNoAccumulationWhenSourceSharesAreZe
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -455,7 +455,7 @@ func (suite *AccumulateEarnRewardsTests) TestNoAccumulationWhenSourceSharesAreZe
 		vaultDenom,
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
-		cs(c("earn", 2000), c("uMage", 1000)), // same denoms as in global indexes
+		cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
 	)
 
 	suite.keeper.AccumulateEarnRewards(suite.ctx, period)
@@ -486,7 +486,7 @@ func (suite *AccumulateEarnRewardsTests) TestNoAccumulationWhenSourceSharesAreZe
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -499,7 +499,7 @@ func (suite *AccumulateEarnRewardsTests) TestNoAccumulationWhenSourceSharesAreZe
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -518,7 +518,7 @@ func (suite *AccumulateEarnRewardsTests) TestNoAccumulationWhenSourceSharesAreZe
 		"bMage",
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
-		cs(c("earn", 2000), c("uMage", 1000)), // same denoms as in global indexes
+		cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
 	)
 
 	// TODO: There are no bMage vaults to iterate over, so the accrual times are
@@ -550,7 +550,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateAddedWhenStateDoesNotExist() {
 		vaultDenom,
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
-		cs(c("earn", 2000), c("uMage", 1000)),
+		cs(c("earn", 2000), c("umage", 1000)),
 	)
 
 	firstAccrualTime := time.Date(1998, 1, 1, 0, 0, 0, 0, time.UTC)
@@ -576,7 +576,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateAddedWhenStateDoesNotExist() {
 			RewardFactor:   d("0.02"),
 		},
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			RewardFactor:   d("0.01"),
 		},
 	})
@@ -604,7 +604,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateAddedWhenStateDoesNotExist_bMa
 		"bMage",
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
-		cs(c("earn", 2000), c("uMage", 1000)),
+		cs(c("earn", 2000), c("umage", 1000)),
 	)
 
 	suite.keeper.AccumulateEarnRewards(suite.ctx, period)
@@ -632,9 +632,9 @@ func (suite *AccumulateEarnRewardsTests) TestStateAddedWhenStateDoesNotExist_bMa
 			RewardFactor:   d("0.01"),
 		},
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			// 10% of total bMage for rewards per second for 10 seconds
-			// 1uMage per share per second + regular 0.005uMage incentive rewards
+			// 1umage per share per second + regular 0.005umage incentive rewards
 			RewardFactor: d("1.005"),
 		},
 	}
@@ -722,7 +722,7 @@ func (suite *AccumulateEarnRewardsTests) TestNoAccumulationWhenBeforeStartTime()
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -739,7 +739,7 @@ func (suite *AccumulateEarnRewardsTests) TestNoAccumulationWhenBeforeStartTime()
 		vaultDenom,
 		firstAccrualTime.Add(time.Nanosecond), // start time after accrual time
 		distantFuture,
-		cs(c("earn", 2000), c("uMage", 1000)),
+		cs(c("earn", 2000), c("umage", 1000)),
 	)
 
 	suite.ctx = suite.ctx.WithBlockTime(firstAccrualTime)
@@ -769,7 +769,7 @@ func (suite *AccumulateEarnRewardsTests) TestPanicWhenCurrentTimeLessThanPreviou
 		vaultDenom,
 		time.Time{}, // start time after accrual time
 		distantFuture,
-		cs(c("earn", 2000), c("uMage", 1000)),
+		cs(c("earn", 2000), c("umage", 1000)),
 	)
 
 	suite.ctx = suite.ctx.WithBlockTime(firstAccrualTime)

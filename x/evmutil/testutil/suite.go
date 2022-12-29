@@ -90,7 +90,7 @@ func (suite *Suite) SetupTest() {
 	feemarketGenesis.Params.NoBaseFee = false
 
 	cdc := suite.App.AppCodec()
-	coins := sdk.NewCoins(sdk.NewInt64Coin("uMage", 1000_000_000_000_000_000))
+	coins := sdk.NewCoins(sdk.NewInt64Coin("umage", 1000_000_000_000_000_000))
 	authGS := app.NewFundedGenStateWithSameCoins(cdc, coins, []sdk.AccAddress{
 		sdk.AccAddress(suite.Key1.PubKey().Address()),
 		sdk.AccAddress(suite.Key2.PubKey().Address()),
@@ -182,9 +182,9 @@ func (suite *Suite) Commit() {
 }
 
 func (suite *Suite) FundAccountWithMage(addr sdk.AccAddress, coins sdk.Coins) {
-	uMage := coins.AmountOf("uMage")
-	if uMage.IsPositive() {
-		err := suite.App.FundAccount(suite.Ctx, addr, sdk.NewCoins(sdk.NewCoin("uMage", uMage)))
+	umage := coins.AmountOf("umage")
+	if umage.IsPositive() {
+		err := suite.App.FundAccount(suite.Ctx, addr, sdk.NewCoins(sdk.NewCoin("umage", umage)))
 		suite.Require().NoError(err)
 	}
 	aMage := coins.AmountOf("aMage")
@@ -195,9 +195,9 @@ func (suite *Suite) FundAccountWithMage(addr sdk.AccAddress, coins sdk.Coins) {
 }
 
 func (suite *Suite) FundModuleAccountWithMage(moduleName string, coins sdk.Coins) {
-	uMage := coins.AmountOf("uMage")
-	if uMage.IsPositive() {
-		err := suite.App.FundModuleAccount(suite.Ctx, moduleName, sdk.NewCoins(sdk.NewCoin("uMage", uMage)))
+	umage := coins.AmountOf("umage")
+	if umage.IsPositive() {
+		err := suite.App.FundModuleAccount(suite.Ctx, moduleName, sdk.NewCoins(sdk.NewCoin("umage", umage)))
 		suite.Require().NoError(err)
 	}
 	aMage := coins.AmountOf("aMage")
@@ -214,7 +214,7 @@ func (suite *Suite) DeployERC20() types.InternalEVMAddress {
 	suite.App.FundModuleAccount(
 		suite.Ctx,
 		types.ModuleName,
-		sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(0))),
+		sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(0))),
 	)
 
 	contractAddr, err := suite.Keeper.DeployTestMintableERC20Contract(suite.Ctx, "USDC", "USDC", uint8(18))
@@ -315,7 +315,7 @@ func (suite *Suite) SendTx(
 	// Mint the max gas to the FeeCollector to ensure balance in case of refund
 	suite.MintFeeCollector(sdk.NewCoins(
 		sdk.NewCoin(
-			"uMage",
+			"umage",
 			sdk.NewInt(baseFee.Int64()*int64(gasRes.Gas*2)),
 		)))
 

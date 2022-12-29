@@ -23,10 +23,10 @@ func (suite *HandlerTestSuite) TestEarnLiquidClaim() {
 	valAddr2 := sdk.ValAddress(validatorAddr2)
 
 	authBuilder := suite.authBuilder().
-		WithSimpleAccount(userAddr1, cs(c("uMage", 1e12))).
-		WithSimpleAccount(userAddr2, cs(c("uMage", 1e12))).
-		WithSimpleAccount(validatorAddr1, cs(c("uMage", 1e12))).
-		WithSimpleAccount(validatorAddr2, cs(c("uMage", 1e12)))
+		WithSimpleAccount(userAddr1, cs(c("umage", 1e12))).
+		WithSimpleAccount(userAddr2, cs(c("umage", 1e12))).
+		WithSimpleAccount(validatorAddr1, cs(c("umage", 1e12))).
+		WithSimpleAccount(validatorAddr2, cs(c("umage", 1e12)))
 
 	incentBuilder := suite.incentiveBuilder().
 		WithSimpleEarnRewardPeriod("bMage", cs())
@@ -70,14 +70,14 @@ func (suite *HandlerTestSuite) TestEarnLiquidClaim() {
 	bMageDenom1 := lq.GetLiquidStakingTokenDenom(valAddr1)
 	bMageDenom2 := lq.GetLiquidStakingTokenDenom(valAddr2)
 
-	err := suite.App.FundModuleAccount(suite.Ctx, distrtypes.ModuleName, cs(c("uMage", 1e12)))
+	err := suite.App.FundModuleAccount(suite.Ctx, distrtypes.ModuleName, cs(c("umage", 1e12)))
 	suite.NoError(err)
 
 	// Create validators
-	err = suite.DeliverMsgCreateValidator(valAddr1, c("uMage", 1e9))
+	err = suite.DeliverMsgCreateValidator(valAddr1, c("umage", 1e9))
 	suite.Require().NoError(err)
 
-	err = suite.DeliverMsgCreateValidator(valAddr2, c("uMage", 1e9))
+	err = suite.DeliverMsgCreateValidator(valAddr2, c("umage", 1e9))
 	suite.Require().NoError(err)
 
 	// new block required to bond validator
@@ -86,25 +86,25 @@ func (suite *HandlerTestSuite) TestEarnLiquidClaim() {
 	suite.NextBlockAfter(7 * time.Second)
 
 	// Create delegations from users
-	// User 1: 1e9 uMage to validator 1
-	// User 2: 99e9 uMage to validator 1 AND 2
-	err = suite.DeliverMsgDelegate(userAddr1, valAddr1, c("uMage", 1e9))
+	// User 1: 1e9 umage to validator 1
+	// User 2: 99e9 umage to validator 1 AND 2
+	err = suite.DeliverMsgDelegate(userAddr1, valAddr1, c("umage", 1e9))
 	suite.Require().NoError(err)
 
-	err = suite.DeliverMsgDelegate(userAddr2, valAddr1, c("uMage", 99e9))
+	err = suite.DeliverMsgDelegate(userAddr2, valAddr1, c("umage", 99e9))
 	suite.Require().NoError(err)
 
-	err = suite.DeliverMsgDelegate(userAddr2, valAddr2, c("uMage", 99e9))
+	err = suite.DeliverMsgDelegate(userAddr2, valAddr2, c("umage", 99e9))
 	suite.Require().NoError(err)
 
 	// Mint liquid tokens
-	_, err = suite.DeliverMsgMintDerivative(userAddr1, valAddr1, c("uMage", 1e9))
+	_, err = suite.DeliverMsgMintDerivative(userAddr1, valAddr1, c("umage", 1e9))
 	suite.Require().NoError(err)
 
-	_, err = suite.DeliverMsgMintDerivative(userAddr2, valAddr1, c("uMage", 99e9))
+	_, err = suite.DeliverMsgMintDerivative(userAddr2, valAddr1, c("umage", 99e9))
 	suite.Require().NoError(err)
 
-	_, err = suite.DeliverMsgMintDerivative(userAddr2, valAddr2, c("uMage", 99e9))
+	_, err = suite.DeliverMsgMintDerivative(userAddr2, valAddr2, c("umage", 99e9))
 	suite.Require().NoError(err)
 
 	// Deposit liquid tokens to earn
@@ -182,8 +182,8 @@ func (suite *HandlerTestSuite) TestEarnLiquidClaim() {
 	preClaimBal1 := suite.GetBalance(userAddr1)
 	preClaimBal2 := suite.GetBalance(userAddr2)
 
-	// Claim uMage staking rewards
-	denomsToClaim := map[string]string{"uMage": "large"}
+	// Claim umage staking rewards
+	denomsToClaim := map[string]string{"umage": "large"}
 	selections := types.NewSelectionsFromMap(denomsToClaim)
 
 	msg1 := types.NewMsgClaimEarnReward(userAddr1.String(), selections)
@@ -199,20 +199,20 @@ func (suite *HandlerTestSuite) TestEarnLiquidClaim() {
 	// User 1 gets 1% of rewards
 	// User 2 gets 99% of rewards
 	stakingRewards1 := delegationRewards.
-		AmountOf("uMage").
+		AmountOf("umage").
 		Quo(sdk.NewDec(100)).
 		RoundInt()
-	suite.BalanceEquals(userAddr1, preClaimBal1.Add(sdk.NewCoin("uMage", stakingRewards1)))
+	suite.BalanceEquals(userAddr1, preClaimBal1.Add(sdk.NewCoin("umage", stakingRewards1)))
 
 	// Total * 99 / 100
 	stakingRewards2 := delegationRewards.
-		AmountOf("uMage").
+		AmountOf("umage").
 		Mul(sdk.NewDec(99)).
 		Quo(sdk.NewDec(100)).
 		TruncateInt()
-	suite.BalanceEquals(userAddr2, preClaimBal2.Add(sdk.NewCoin("uMage", stakingRewards2)))
+	suite.BalanceEquals(userAddr2, preClaimBal2.Add(sdk.NewCoin("umage", stakingRewards2)))
 
-	suite.Equal(delegationRewards.AmountOf("uMage").TruncateInt(), stakingRewards1.Add(stakingRewards2))
+	suite.Equal(delegationRewards.AmountOf("umage").TruncateInt(), stakingRewards1.Add(stakingRewards2))
 
 	// Check that claimed coins have been removed from a claim's reward
 	suite.EarnRewardEquals(userAddr1, cs())

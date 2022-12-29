@@ -49,33 +49,33 @@ $BINARY config keyring-backend test
 # Create validator keys and add account to genesis
 validatorKeyName="validator"
 printf "$validatorMnemonic\n" | $BINARY keys add $validatorKeyName --recover
-$BINARY add-genesis-account $validatorKeyName 2000000000uMage,100000000000bnb
+$BINARY add-genesis-account $validatorKeyName 2000000000umage,100000000000bnb
 
 # Create faucet keys and add account to genesis
 faucetKeyName="faucet"
 printf "$faucetMnemonic\n" | $BINARY keys add $faucetKeyName --recover
-$BINARY add-genesis-account $faucetKeyName 1000000000uMage,100000000000bnb
+$BINARY add-genesis-account $faucetKeyName 1000000000umage,100000000000bnb
 
 evmFaucetKeyName="evm-faucet"
 printf "$evmFaucetMnemonic\n" | $BINARY keys add $evmFaucetKeyName --eth --recover
-$BINARY add-genesis-account $evmFaucetKeyName 1000000000uMage
+$BINARY add-genesis-account $evmFaucetKeyName 1000000000umage
 
 userKeyName="user"
 printf "$userMnemonic\n" | $BINARY keys add $userKeyName --eth --recover
-$BINARY add-genesis-account $userKeyName 1000000000uMage,1000000000usdx
+$BINARY add-genesis-account $userKeyName 1000000000umage,1000000000usdx
 
 relayerKeyName="relayer"
 printf "$relayerMnemonic\n" | $BINARY keys add $relayerKeyName --eth --recover
-$BINARY add-genesis-account $relayerKeyName 1000000000uMage
+$BINARY add-genesis-account $relayerKeyName 1000000000umage
 
 # Create a delegation tx for the validator and add to genesis
-$BINARY gentx $validatorKeyName 1000000000uMage --keyring-backend test --chain-id $chainID
+$BINARY gentx $validatorKeyName 1000000000umage --keyring-backend test --chain-id $chainID
 $BINARY collect-gentxs
 
-# Replace stake with uMage
-sed -in-place='' 's/stake/uMage/g' $DATA/config/genesis.json
+# Replace stake with umage
+sed -in-place='' 's/stake/umage/g' $DATA/config/genesis.json
 
-# Replace the default evm denom of aphoton with uMage
+# Replace the default evm denom of aphoton with umage
 sed -in-place='' 's/aphoton/aMage/g' $DATA/config/genesis.json
 
 # Zero out the total supply so it gets recalculated during InitGenesis

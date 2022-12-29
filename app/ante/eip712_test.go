@@ -257,10 +257,10 @@ func (suite *EIP712TestSuite) SetupTest() {
 		pricefeedtypes.ModuleName: cdc.MustMarshalJSON(&pricefeedGenState),
 	}
 
-	// funds our test accounts with some uMage
+	// funds our test accounts with some umage
 	coinsGenState := app.NewFundedGenStateWithSameCoins(
 		tApp.AppCodec(),
-		sdk.NewCoins(sdk.NewInt64Coin("uMage", 1e9)),
+		sdk.NewCoins(sdk.NewInt64Coin("umage", 1e9)),
 		[]sdk.AccAddress{suite.testAddr, suite.testAddr2},
 	)
 
@@ -449,7 +449,7 @@ func (suite *EIP712TestSuite) deployUSDCERC20(app app.TestApp, ctx sdk.Context) 
 	suite.tApp.FundModuleAccount(
 		suite.ctx,
 		evmutiltypes.ModuleName,
-		sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(0))),
+		sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(0))),
 	)
 
 	contractAddr, err := suite.evmutilKeeper.DeployTestMintableERC20Contract(suite.ctx, "USDC", "USDC", uint8(18))
@@ -546,7 +546,7 @@ func (suite *EIP712TestSuite) TestEIP712Tx() {
 			errMsg:         "insufficient funds",
 			updateTx: func(txBuilder client.TxBuilder, msgs []sdk.Msg) client.TxBuilder {
 				bk := suite.tApp.GetBankKeeper()
-				gasCoins := bk.GetBalance(suite.ctx, suite.testAddr, "uMage")
+				gasCoins := bk.GetBalance(suite.ctx, suite.testAddr, "umage")
 				suite.tApp.GetBankKeeper().SendCoins(suite.ctx, suite.testAddr, suite.testAddr2, sdk.NewCoins(gasCoins))
 				return txBuilder
 			},
@@ -558,7 +558,7 @@ func (suite *EIP712TestSuite) TestEIP712Tx() {
 			failCheckTx:    true,
 			errMsg:         "invalid chain-id",
 			updateTx: func(txBuilder client.TxBuilder, msgs []sdk.Msg) client.TxBuilder {
-				gasAmt := sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20)))
+				gasAmt := sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20)))
 				return suite.createTestEIP712CosmosTxBuilder(
 					suite.testAddr, suite.testPrivKey, "Magetest_12-1", uint64(helpers.DefaultGenTxGas*10), gasAmt, msgs,
 				)
@@ -571,7 +571,7 @@ func (suite *EIP712TestSuite) TestEIP712Tx() {
 			failCheckTx:    true,
 			errMsg:         "invalid pubkey",
 			updateTx: func(txBuilder client.TxBuilder, msgs []sdk.Msg) client.TxBuilder {
-				gasAmt := sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20)))
+				gasAmt := sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20)))
 				return suite.createTestEIP712CosmosTxBuilder(
 					suite.testAddr2, suite.testPrivKey2, ChainID, uint64(helpers.DefaultGenTxGas*10), gasAmt, msgs,
 				)
@@ -611,7 +611,7 @@ func (suite *EIP712TestSuite) TestEIP712Tx() {
 				msgs = tc.updateMsgs(msgs)
 			}
 
-			gasAmt := sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20)))
+			gasAmt := sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20)))
 			txBuilder := suite.createTestEIP712CosmosTxBuilder(
 				suite.testAddr, suite.testPrivKey, ChainID, uint64(helpers.DefaultGenTxGas*10), gasAmt, msgs,
 			)
@@ -697,7 +697,7 @@ func (suite *EIP712TestSuite) TestEIP712Tx_DepositAndWithdraw() {
 	}
 
 	// deliver deposit msg
-	gasAmt := sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(20)))
+	gasAmt := sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20)))
 	txBuilder := suite.createTestEIP712CosmosTxBuilder(
 		suite.testAddr, suite.testPrivKey, ChainID, uint64(helpers.DefaultGenTxGas*10), gasAmt, depositMsgs,
 	)

@@ -31,9 +31,9 @@ func TestMsgServerTestSuite(t *testing.T) {
 }
 
 func (suite *msgServerTestSuite) TestMsgFundCommunityPool() {
-	singleCoin := sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(2e6)))
+	singleCoin := sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(2e6)))
 	multipleCoins := sdk.NewCoins(
-		sdk.NewCoin("uMage", sdk.NewInt(3e6)),
+		sdk.NewCoin("umage", sdk.NewInt(3e6)),
 		sdk.NewCoin("usdx", sdk.NewInt(1e7)),
 	)
 	testCases := []struct {

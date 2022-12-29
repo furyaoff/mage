@@ -44,29 +44,29 @@ func TestEvmMinGasFilter(t *testing.T) {
 			mustParseDecCoins(""),
 		},
 		{
-			"zero uMage gas price",
-			mustParseDecCoins("0uMage"),
-			mustParseDecCoins("0uMage"),
+			"zero umage gas price",
+			mustParseDecCoins("0umage"),
+			mustParseDecCoins("0umage"),
 		},
 		{
-			"non-zero uMage gas price",
-			mustParseDecCoins("0.001uMage"),
-			mustParseDecCoins("0.001uMage"),
+			"non-zero umage gas price",
+			mustParseDecCoins("0.001umage"),
+			mustParseDecCoins("0.001umage"),
 		},
 		{
-			"zero uMage gas price, min aMage price",
-			mustParseDecCoins("0uMage;100000aMage"),
-			mustParseDecCoins("0uMage"), // aMage is removed
+			"zero umage gas price, min aMage price",
+			mustParseDecCoins("0umage;100000aMage"),
+			mustParseDecCoins("0umage"), // aMage is removed
 		},
 		{
-			"zero uMage gas price, min aMage price, other token",
-			mustParseDecCoins("0uMage;100000aMage;0.001other"),
-			mustParseDecCoins("0uMage;0.001other"), // aMage is removed
+			"zero umage gas price, min aMage price, other token",
+			mustParseDecCoins("0umage;100000aMage;0.001other"),
+			mustParseDecCoins("0umage;0.001other"), // aMage is removed
 		},
 		{
-			"non-zero uMage gas price, min aMage price",
-			mustParseDecCoins("0.25uMage;100000aMage;0.001other"),
-			mustParseDecCoins("0.25uMage;0.001other"), // aMage is removed
+			"non-zero umage gas price, min aMage price",
+			mustParseDecCoins("0.25umage;100000aMage;0.001other"),
+			mustParseDecCoins("0.25umage;0.001other"), // aMage is removed
 		},
 	}
 

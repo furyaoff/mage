@@ -43,7 +43,7 @@ func (suite *tallyHandlerSuite) SetupTest() {
 	suite.ctx = suite.app.NewContext(false, tmproto.Header{Height: 1, Time: genesisTime})
 
 	suite.staking = stakingHelper{suite.app.GetStakingKeeper()}
-	suite.staking.setBondDenom(suite.ctx, "uMage")
+	suite.staking.setBondDenom(suite.ctx, "umage")
 
 	suite.tallier = NewTallyHandler(
 		suite.app.GetGovKeeper(),

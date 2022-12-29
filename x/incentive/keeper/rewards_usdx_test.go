@@ -289,7 +289,7 @@ func (suite *USDXRewardsTestSuite) TestAccumulateUSDXMintingRewards() {
 			"7 seconds",
 			args{
 				ctype:                 "bnb-a",
-				rewardsPerSecond:      c("uMage", 122354),
+				rewardsPerSecond:      c("umage", 122354),
 				initialTotalPrincipal: c("usdx", 1000000000000),
 				timeElapsed:           7,
 				expectedRewardFactor:  d("0.000000856478000000"),
@@ -299,7 +299,7 @@ func (suite *USDXRewardsTestSuite) TestAccumulateUSDXMintingRewards() {
 			"1 day",
 			args{
 				ctype:                 "bnb-a",
-				rewardsPerSecond:      c("uMage", 122354),
+				rewardsPerSecond:      c("umage", 122354),
 				initialTotalPrincipal: c("usdx", 1000000000000),
 				timeElapsed:           86400,
 				expectedRewardFactor:  d("0.0105713856"),
@@ -309,7 +309,7 @@ func (suite *USDXRewardsTestSuite) TestAccumulateUSDXMintingRewards() {
 			"0 seconds",
 			args{
 				ctype:                 "bnb-a",
-				rewardsPerSecond:      c("uMage", 122354),
+				rewardsPerSecond:      c("umage", 122354),
 				initialTotalPrincipal: c("usdx", 1000000000000),
 				timeElapsed:           0,
 				expectedRewardFactor:  d("0.0"),
@@ -357,24 +357,24 @@ func (suite *USDXRewardsTestSuite) TestSynchronizeUSDXMintingReward() {
 			"10 blocks",
 			args{
 				ctype:                "bnb-a",
-				rewardsPerSecond:     c("uMage", 122354),
+				rewardsPerSecond:     c("umage", 122354),
 				initialCollateral:    c("bnb", 1000000000000),
 				initialPrincipal:     c("usdx", 10000000000),
 				blockTimes:           []int{10, 10, 10, 10, 10, 10, 10, 10, 10, 10},
 				expectedRewardFactor: d("0.001223540000000000"),
-				expectedRewards:      c("uMage", 12235400),
+				expectedRewards:      c("umage", 12235400),
 			},
 		},
 		{
 			"10 blocks - long block time",
 			args{
 				ctype:                "bnb-a",
-				rewardsPerSecond:     c("uMage", 122354),
+				rewardsPerSecond:     c("umage", 122354),
 				initialCollateral:    c("bnb", 1000000000000),
 				initialPrincipal:     c("usdx", 10000000000),
 				blockTimes:           []int{86400, 86400, 86400, 86400, 86400, 86400, 86400, 86400, 86400, 86400},
 				expectedRewardFactor: d("10.57138560000000000"),
-				expectedRewards:      c("uMage", 105713856000),
+				expectedRewards:      c("umage", 105713856000),
 			},
 		},
 	}
@@ -443,24 +443,24 @@ func (suite *USDXRewardsTestSuite) TestSimulateUSDXMintingRewardSynchronization(
 			"10 blocks",
 			args{
 				ctype:                "bnb-a",
-				rewardsPerSecond:     c("uMage", 122354),
+				rewardsPerSecond:     c("umage", 122354),
 				initialCollateral:    c("bnb", 1000000000000),
 				initialPrincipal:     c("usdx", 10000000000),
 				blockTimes:           []int{10, 10, 10, 10, 10, 10, 10, 10, 10, 10},
 				expectedRewardFactor: d("0.001223540000000000"),
-				expectedRewards:      c("uMage", 12235400),
+				expectedRewards:      c("umage", 12235400),
 			},
 		},
 		{
 			"10 blocks - long block time",
 			args{
 				ctype:                "bnb-a",
-				rewardsPerSecond:     c("uMage", 122354),
+				rewardsPerSecond:     c("umage", 122354),
 				initialCollateral:    c("bnb", 1000000000000),
 				initialPrincipal:     c("usdx", 10000000000),
 				blockTimes:           []int{86400, 86400, 86400, 86400, 86400, 86400, 86400, 86400, 86400, 86400},
 				expectedRewardFactor: d("10.57138560000000000"),
-				expectedRewards:      c("uMage", 105713856000),
+				expectedRewards:      c("umage", 105713856000),
 			},
 		},
 	}
@@ -496,7 +496,7 @@ func (suite *USDXRewardsTestSuite) TestSimulateUSDXMintingRewardSynchronization(
 			claim, found = suite.keeper.GetUSDXMintingClaim(suite.ctx, suite.addrs[0])
 			suite.Require().True(found)
 			suite.Require().Equal(claim.RewardIndexes[0].RewardFactor, sdk.ZeroDec())
-			suite.Require().Equal(claim.Reward, sdk.NewCoin("uMage", sdk.ZeroInt()))
+			suite.Require().Equal(claim.Reward, sdk.NewCoin("umage", sdk.ZeroInt()))
 
 			updatedClaim := suite.keeper.SimulateUSDXMintingSynchronization(suite.ctx, claim)
 			suite.Require().Equal(tc.args.expectedRewardFactor, updatedClaim.RewardIndexes[0].RewardFactor)

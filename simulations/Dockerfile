@@ -29,4 +29,4 @@ COPY Makefile .
 
 COPY simulations simulations
 
-# kvd and kcli binaries are not necessary for running the simulations
+# mgd and kcli binaries are not necessary for running the simulations

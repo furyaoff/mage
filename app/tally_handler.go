@@ -116,7 +116,7 @@ func (th TallyHandler) Tally(ctx sdk.Context, proposal types.Proposal) (passes b
 				currValidators[valAddrStr] = val
 			}
 
-			// votingPower = amount of uMage coin
+			// votingPower = amount of umage coin
 			stakedCoins, err := th.lk.GetStakedTokensForDerivatives(ctx, sdk.NewCoins(coin))
 			if err != nil {
 				// error is returned only if the bMage denom is incorrect, which should never happen here.

@@ -22,8 +22,8 @@ import (
 
 const chainID = "Magetest_2221-1"
 
-func uMage(amt int64) sdk.Coins {
-	return sdk.NewCoins(sdk.NewInt64Coin("uMage", amt))
+func umage(amt int64) sdk.Coins {
+	return sdk.NewCoins(sdk.NewInt64Coin("umage", amt))
 }
 func usdx(amt int64) sdk.Coins {
 	return sdk.NewCoins(sdk.NewInt64Coin("usdx", amt))
@@ -53,7 +53,7 @@ func (suite *proposalTestSuite) SetupTest() {
 	genTime := tmtime.Now()
 
 	hardGS, pricefeedGS := testutil.NewLendGenesisBuilder().
-		WithMarket("uMage", "mage:usd", sdk.OneDec()).
+		WithMarket("umage", "mage:usd", sdk.OneDec()).
 		WithMarket("usdx", "usdx:usd", sdk.OneDec()).
 		Build()
 
@@ -77,8 +77,8 @@ func (suite *proposalTestSuite) SetupTest() {
 	suite.hardKeeper = suite.App.GetHardKeeper()
 
 	// give the community pool some funds
-	// uMage
-	err := suite.App.FundModuleAccount(suite.Ctx, types.ModuleAccountName, uMage(1e10))
+	// umage
+	err := suite.App.FundModuleAccount(suite.Ctx, types.ModuleAccountName, umage(1e10))
 	suite.NoError(err)
 
 	// usdx
@@ -109,43 +109,43 @@ func (suite *proposalTestSuite) TestCommunityLendDepositProposal() {
 		{
 			name: "valid - one proposal, one denom",
 			proposals: []*types.CommunityPoolLendDepositProposal{
-				{Amount: uMage(1e8)},
+				{Amount: umage(1e8)},
 			},
 			expectedErr:      "",
-			expectedDeposits: []sdk.Coins{uMage(1e8)},
+			expectedDeposits: []sdk.Coins{umage(1e8)},
 		},
 		{
 			name: "valid - one proposal, multiple denoms",
 			proposals: []*types.CommunityPoolLendDepositProposal{
-				{Amount: uMage(1e8).Add(usdx(1e8)...)},
+				{Amount: umage(1e8).Add(usdx(1e8)...)},
 			},
 			expectedErr:      "",
-			expectedDeposits: []sdk.Coins{uMage(1e8).Add(usdx(1e8)...)},
+			expectedDeposits: []sdk.Coins{umage(1e8).Add(usdx(1e8)...)},
 		},
 		{
 			name: "valid - multiple proposals, same denom",
 			proposals: []*types.CommunityPoolLendDepositProposal{
-				{Amount: uMage(1e8)},
-				{Amount: uMage(1e9)},
+				{Amount: umage(1e8)},
+				{Amount: umage(1e9)},
 			},
 			expectedErr:      "",
-			expectedDeposits: []sdk.Coins{uMage(1e8 + 1e9)},
+			expectedDeposits: []sdk.Coins{umage(1e8 + 1e9)},
 		},
 		{
 			name: "valid - multiple proposals, different denoms",
 			proposals: []*types.CommunityPoolLendDepositProposal{
-				{Amount: uMage(1e8)},
+				{Amount: umage(1e8)},
 				{Amount: usdx(1e8)},
 			},
 			expectedErr:      "",
-			expectedDeposits: []sdk.Coins{uMage(1e8).Add(usdx(1e8)...)},
+			expectedDeposits: []sdk.Coins{umage(1e8).Add(usdx(1e8)...)},
 		},
 		{
 			name: "invalid - insufficient balance",
 			proposals: []*types.CommunityPoolLendDepositProposal{
 				{
 					Description: "more coins than i have!",
-					Amount:      uMage(1e11),
+					Amount:      umage(1e11),
 				},
 			},
 			expectedErr:      "insufficient funds",
@@ -195,72 +195,72 @@ func (suite *proposalTestSuite) TestCommunityLendWithdrawProposal() {
 			// in the week it would take a proposal to pass, the position would have grown
 			// to withdraw the entire position, it'd be safest to set a very high withdraw
 			name:           "valid - requesting withdrawal of more than total will withdraw all",
-			initialDeposit: uMage(1e9),
+			initialDeposit: umage(1e9),
 			proposals: []*types.CommunityPoolLendWithdrawProposal{
-				{Amount: uMage(1e12)},
+				{Amount: umage(1e12)},
 			},
 			expectedErr:        "",
-			expectedWithdrawal: uMage(1e9),
+			expectedWithdrawal: umage(1e9),
 		},
 		{
 			name:           "valid - single proposal, single denom, full withdrawal",
-			initialDeposit: uMage(1e9),
+			initialDeposit: umage(1e9),
 			proposals: []*types.CommunityPoolLendWithdrawProposal{
-				{Amount: uMage(1e9)},
+				{Amount: umage(1e9)},
 			},
 			expectedErr:        "",
-			expectedWithdrawal: uMage(1e9),
+			expectedWithdrawal: umage(1e9),
 		},
 		{
 			name:           "valid - single proposal, multiple denoms, full withdrawal",
-			initialDeposit: uMage(1e9).Add(usdx(1e9)...),
+			initialDeposit: umage(1e9).Add(usdx(1e9)...),
 			proposals: []*types.CommunityPoolLendWithdrawProposal{
-				{Amount: uMage(1e9).Add(usdx(1e9)...)},
+				{Amount: umage(1e9).Add(usdx(1e9)...)},
 			},
 			expectedErr:        "",
-			expectedWithdrawal: uMage(1e9).Add(usdx(1e9)...),
+			expectedWithdrawal: umage(1e9).Add(usdx(1e9)...),
 		},
 		{
 			name:           "valid - single proposal, partial withdrawal",
-			initialDeposit: uMage(1e9).Add(usdx(1e9)...),
+			initialDeposit: umage(1e9).Add(usdx(1e9)...),
 			proposals: []*types.CommunityPoolLendWithdrawProposal{
-				{Amount: uMage(1e8).Add(usdx(1e9)...)},
+				{Amount: umage(1e8).Add(usdx(1e9)...)},
 			},
 			expectedErr:        "",
-			expectedWithdrawal: uMage(1e8).Add(usdx(1e9)...),
+			expectedWithdrawal: umage(1e8).Add(usdx(1e9)...),
 		},
 		{
 			name:           "valid - multiple proposals, full withdrawal",
-			initialDeposit: uMage(1e9).Add(usdx(1e9)...),
+			initialDeposit: umage(1e9).Add(usdx(1e9)...),
 			proposals: []*types.CommunityPoolLendWithdrawProposal{
-				{Amount: uMage(1e9)},
+				{Amount: umage(1e9)},
 				{Amount: usdx(1e9)},
 			},
 			expectedErr:        "",
-			expectedWithdrawal: uMage(1e9).Add(usdx(1e9)...),
+			expectedWithdrawal: umage(1e9).Add(usdx(1e9)...),
 		},
 		{
 			name:           "valid - multiple proposals, partial withdrawal",
-			initialDeposit: uMage(1e9).Add(usdx(1e9)...),
+			initialDeposit: umage(1e9).Add(usdx(1e9)...),
 			proposals: []*types.CommunityPoolLendWithdrawProposal{
-				{Amount: uMage(1e8)},
+				{Amount: umage(1e8)},
 				{Amount: usdx(1e8)},
 			},
 			expectedErr:        "",
-			expectedWithdrawal: uMage(1e8).Add(usdx(1e8)...),
+			expectedWithdrawal: umage(1e8).Add(usdx(1e8)...),
 		},
 		{
 			name:           "invalid - nonexistent position, has no deposits",
 			initialDeposit: sdk.NewCoins(),
 			proposals: []*types.CommunityPoolLendWithdrawProposal{
-				{Amount: uMage(1e8)},
+				{Amount: umage(1e8)},
 			},
 			expectedErr:        "deposit not found",
 			expectedWithdrawal: sdk.NewCoins(),
 		},
 		{
 			name:           "invalid - nonexistent position, has deposits of different denom",
-			initialDeposit: uMage(1e8),
+			initialDeposit: umage(1e8),
 			proposals: []*types.CommunityPoolLendWithdrawProposal{
 				{Amount: usdx(1e8)},
 			},

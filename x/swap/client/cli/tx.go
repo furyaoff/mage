@@ -46,7 +46,7 @@ func getCmdDeposit() *cobra.Command {
 		Use:   "deposit [tokenA] [tokenB] [slippage] [deadline]",
 		Short: "deposit coins to a swap liquidity pool",
 		Example: fmt.Sprintf(
-			`%s tx %s deposit 10000000uMage 10000000usdx 0.01 1624224736 --from <key>`,
+			`%s tx %s deposit 10000000umage 10000000usdx 0.01 1624224736 --from <key>`,
 			version.AppName, types.ModuleName,
 		),
 		Args: cobra.ExactArgs(4),
@@ -92,7 +92,7 @@ func getCmdWithdraw() *cobra.Command {
 		Use:   "withdraw [shares] [minCoinA] [minCoinB] [deadline]",
 		Short: "withdraw coins from a swap liquidity pool",
 		Example: fmt.Sprintf(
-			`%s tx %s withdraw 153000 10000000uMage 20000000usdx 176293740 --from <key>`,
+			`%s tx %s withdraw 153000 10000000umage 20000000usdx 176293740 --from <key>`,
 			version.AppName, types.ModuleName,
 		),
 		Args: cobra.ExactArgs(4),
@@ -139,7 +139,7 @@ func getCmdSwapExactForTokens() *cobra.Command {
 		Use:   "swap-exact-for-tokens [exactCoinA] [coinB] [slippage] [deadline]",
 		Short: "swap an exact amount of token a for token b",
 		Example: fmt.Sprintf(
-			`%s tx %s swap-exact-for-tokens 1000000uMage 5000000usdx 0.01 1624224736 --from <key>`,
+			`%s tx %s swap-exact-for-tokens 1000000umage 5000000usdx 0.01 1624224736 --from <key>`,
 			version.AppName, types.ModuleName,
 		),
 		Args: cobra.ExactArgs(4),
@@ -185,7 +185,7 @@ func getCmdSwapForExactTokens() *cobra.Command {
 		Use:   "swap-for-exact-tokens [coinA] [exactCoinB] [slippage] [deadline]",
 		Short: "swap token a for exact amount of token b",
 		Example: fmt.Sprintf(
-			`%s tx %s swap-for-exact-tokens 1000000uMage 5000000usdx 0.01 1624224736 --from <key>`,
+			`%s tx %s swap-for-exact-tokens 1000000umage 5000000usdx 0.01 1624224736 --from <key>`,
 			version.AppName, types.ModuleName,
 		),
 		Args: cobra.ExactArgs(4),

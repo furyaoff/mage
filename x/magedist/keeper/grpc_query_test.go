@@ -89,7 +89,7 @@ func (suite *keeperTestSuite) TestGRPCBalance() {
 			"response with balance",
 			func() {
 				expCoins = sdk.Coins{
-					sdk.NewCoin("uMage", sdk.NewInt(100)),
+					sdk.NewCoin("umage", sdk.NewInt(100)),
 				}
 				suite.App.FundModuleAccount(ctx, types.ModuleName, expCoins)
 				req = &types.QueryBalanceRequest{}

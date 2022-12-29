@@ -206,7 +206,7 @@
           "address": "Mage1xg3g4gadzvlgfqwnsfufnsv6r0gmtnhl9f09p5",
           "coins": [
             {
-              "denom": "uMage",
+              "denom": "umage",
               "amount": "1000000000000000000"
             }
           ]
@@ -215,7 +215,7 @@
           "address": "Mage1fy5zeuutmxzwcx5hncu5q83ug3zcqmxcpwrjsn",
           "coins": [
             {
-              "denom": "uMage",
+              "denom": "umage",
               "amount": "100000000000000"
             }
           ]
@@ -232,7 +232,7 @@
               "amount": "100000000000000"
             },
             {
-              "denom": "uMage",
+              "denom": "umage",
               "amount": "100000000000000"
             }
           ]
@@ -241,7 +241,7 @@
           "address": "Mage1xcgtffvv2yeqmgs3yz4gv29kgjrj8usxw9ehkk",
           "coins": [
             {
-              "denom": "uMage",
+              "denom": "umage",
               "amount": "1000000000"
             }
           ]
@@ -250,7 +250,7 @@
           "address": "Mage1g3kdcr8ah7rs07dk00elnkpmk34e6dcj94306a",
           "coins": [
             {
-              "denom": "uMage",
+              "denom": "umage",
               "amount": "10000000000000000000000"
             }
           ]
@@ -275,7 +275,7 @@
               "amount": "5000000000"
             },
             {
-              "denom": "uMage",
+              "denom": "umage",
               "amount": "10000000000000"
             },
             {
@@ -288,7 +288,7 @@
           "address": "Mage1w66m9hdzwgd6uc8g93zqkcumgwzrpcw9e32lf8",
           "coins": [
             {
-              "denom": "uMage",
+              "denom": "umage",
               "amount": "1000000000"
             }
           ]
@@ -297,7 +297,7 @@
           "address": "Mage1kq0kfnnffkna9hknzg8kgx89ljczjtjdt8qrv7",
           "coins": [
             {
-              "denom": "uMage",
+              "denom": "umage",
               "amount": "1000000000000000000"
             }
           ]
@@ -318,7 +318,7 @@
               "amount": "5000000000"
             },
             {
-              "denom": "uMage",
+              "denom": "umage",
               "amount": "5000000000"
             },
             {
@@ -346,7 +346,7 @@
           "amount": "100010000000000"
         },
         {
-          "denom": "uMage",
+          "denom": "umage",
           "amount": "10002000210007000000000"
         },
         {
@@ -466,7 +466,7 @@
       "cdps": [],
       "debt_denom": "debt",
       "deposits": [],
-      "gov_denom": "uMage",
+      "gov_denom": "umage",
       "params": {
         "circuit_breaker": false,
         "collateral_params": [
@@ -562,7 +562,7 @@
               "amount": "2000000000000",
               "denom": "usdx"
             },
-            "denom": "uMage",
+            "denom": "umage",
             "liquidation_market_id": "mage:usd:30",
             "liquidation_penalty": "0.050000000000000000",
             "liquidation_ratio": "1.500000000000000000",
@@ -570,7 +570,7 @@
             "check_collateralization_index_count": "10",
             "spot_market_id": "mage:usd",
             "stability_fee": "1.000000000782997700",
-            "type": "uMage-a"
+            "type": "umage-a"
           },
           {
             "auction_size": "50000000000",
@@ -938,7 +938,7 @@
     },
     "crisis": {
       "constant_fee": {
-        "denom": "uMage",
+        "denom": "umage",
         "amount": "1000"
       }
     },
@@ -971,7 +971,7 @@
             ]
           },
           {
-            "denom": "uMage",
+            "denom": "umage",
             "strategies": [
               "STRATEGY_TYPE_SAVINGS"
             ]
@@ -1367,7 +1367,7 @@
                   "key": "e//2Cz3zvPXpYe2XJi1b8W7QdTc7Dmc0gCc0P8n78Ns="
                 },
                 "value": {
-                  "denom": "uMage",
+                  "denom": "umage",
                   "amount": "500000000"
                 }
               }
@@ -1428,7 +1428,7 @@
                   "key": "DcSKRFZOtEnpW9M0sD8VVYh+aQF1P7ri3KSgjGAYHqc="
                 },
                 "value": {
-                  "denom": "uMage",
+                  "denom": "umage",
                   "amount": "500000000"
                 }
               }
@@ -1474,7 +1474,7 @@
       "deposit_params": {
         "min_deposit": [
           {
-            "denom": "uMage",
+            "denom": "umage",
             "amount": "10000000"
           }
         ],
@@ -1583,7 +1583,7 @@
             "keeper_reward_percentage": "0.020000000000000000"
           },
           {
-            "denom": "uMage",
+            "denom": "umage",
             "borrow_limit": {
               "has_max_limit": true,
               "maximum_limit": "500000000000.000000000000000000",
@@ -1704,7 +1704,7 @@
             "active": true,
             "rewards_per_second": {
               "amount": "122354",
-              "denom": "uMage"
+              "denom": "umage"
             },
             "collateral_type": "bnb-a",
             "start": "2021-12-08T14:00:00Z",
@@ -1714,7 +1714,7 @@
             "active": true,
             "rewards_per_second": {
               "amount": "122354",
-              "denom": "uMage"
+              "denom": "umage"
             },
             "collateral_type": "luna-a",
             "start": "2021-12-08T14:00:00Z",
@@ -1724,7 +1724,7 @@
             "active": true,
             "rewards_per_second": {
               "amount": "122354",
-              "denom": "uMage"
+              "denom": "umage"
             },
             "collateral_type": "btcb-a",
             "start": "2021-12-08T14:00:00Z",
@@ -1734,7 +1734,7 @@
             "active": true,
             "rewards_per_second": {
               "amount": "30588",
-              "denom": "uMage"
+              "denom": "umage"
             },
             "collateral_type": "busd-a",
             "start": "2021-12-08T14:00:00Z",
@@ -1744,7 +1744,7 @@
             "active": true,
             "rewards_per_second": {
               "amount": "31746",
-              "denom": "uMage"
+              "denom": "umage"
             },
             "collateral_type": "xrpb-a",
             "start": "2021-12-08T14:00:00Z",
@@ -1754,9 +1754,9 @@
             "active": true,
             "rewards_per_second": {
               "amount": "31746",
-              "denom": "uMage"
+              "denom": "umage"
             },
-            "collateral_type": "uMage-a",
+            "collateral_type": "umage-a",
             "start": "2021-12-08T14:00:00Z",
             "end": "2024-10-16T14:00:00Z"
           },
@@ -1764,7 +1764,7 @@
             "active": true,
             "rewards_per_second": {
               "amount": "23809",
-              "denom": "uMage"
+              "denom": "umage"
             },
             "collateral_type": "hard-a",
             "start": "2021-12-08T14:00:00Z",
@@ -1844,7 +1844,7 @@
               },
               {
                 "amount": "12355",
-                "denom": "uMage"
+                "denom": "umage"
               }
             ]
           },
@@ -1860,7 +1860,7 @@
               },
               {
                 "amount": "12355",
-                "denom": "uMage"
+                "denom": "umage"
               }
             ]
           },
@@ -1876,7 +1876,7 @@
               },
               {
                 "amount": "12355",
-                "denom": "uMage"
+                "denom": "umage"
               }
             ]
           },
@@ -1892,13 +1892,13 @@
               },
               {
                 "amount": "12355",
-                "denom": "uMage"
+                "denom": "umage"
               }
             ]
           },
           {
             "active": true,
-            "collateral_type": "uMage",
+            "collateral_type": "umage",
             "start": "2021-12-08T14:00:00Z",
             "end": "2024-01-01T00:00:00Z",
             "rewards_per_second": [
@@ -1996,7 +1996,7 @@
           },
           {
             "active": true,
-            "collateral_type": "uMage",
+            "collateral_type": "umage",
             "start": "2021-12-08T14:00:00Z",
             "end": "2024-01-01T00:00:00Z",
             "rewards_per_second": [
@@ -2034,7 +2034,7 @@
         "delegator_reward_periods": [
           {
             "active": true,
-            "collateral_type": "uMage",
+            "collateral_type": "umage",
             "start": "2021-12-08T14:00:00Z",
             "end": "2024-01-01T00:00:00Z",
             "rewards_per_second": [
@@ -2052,13 +2052,13 @@
         "savings_reward_periods": [
           {
             "active": true,
-            "collateral_type": "uMage",
+            "collateral_type": "umage",
             "start": "2022-04-21T14:00:00Z",
             "end": "2024-01-01T00:00:00Z",
             "rewards_per_second": [
               {
                 "amount": "31688",
-                "denom": "uMage"
+                "denom": "umage"
               }
             ]
           },
@@ -2070,7 +2070,7 @@
             "rewards_per_second": [
               {
                 "amount": "31688",
-                "denom": "uMage"
+                "denom": "umage"
               }
             ]
           }
@@ -2078,7 +2078,7 @@
         "swap_reward_periods": [
           {
             "active": true,
-            "collateral_type": "uMage:usdx",
+            "collateral_type": "umage:usdx",
             "start": "2021-12-08T14:00:00Z",
             "end": "2024-01-01T00:00:00Z",
             "rewards_per_second": [
@@ -2088,7 +2088,7 @@
               },
               {
                 "amount": "31688",
-                "denom": "uMage"
+                "denom": "umage"
               }
             ]
           },
@@ -2104,7 +2104,7 @@
               },
               {
                 "amount": "31688",
-                "denom": "uMage"
+                "denom": "umage"
               }
             ]
           },
@@ -2184,13 +2184,13 @@
         "earn_reward_periods": [
           {
             "active": true,
-            "collateral_type": "uMage",
+            "collateral_type": "umage",
             "start": "2021-12-08T14:00:00Z",
             "end": "2024-01-01T00:00:00Z",
             "rewards_per_second": [
               {
                 "amount": "31688",
-                "denom": "uMage"
+                "denom": "umage"
               }
             ]
           },
@@ -2202,7 +2202,7 @@
             "rewards_per_second": [
               {
                 "amount": "31688",
-                "denom": "uMage"
+                "denom": "umage"
               }
             ]
           },
@@ -2214,7 +2214,7 @@
             "rewards_per_second": [
               {
                 "amount": "31688",
-                "denom": "uMage"
+                "denom": "umage"
               }
             ]
           },
@@ -2226,7 +2226,7 @@
             "rewards_per_second": [
               {
                 "amount": "31688",
-                "denom": "uMage"
+                "denom": "umage"
               }
             ]
           }
@@ -2263,7 +2263,7 @@
             ]
           },
           {
-            "denom": "uMage",
+            "denom": "umage",
             "multipliers": [
               {
                 "name": "MULTIPLIER_NAME_LARGE",
@@ -2310,7 +2310,7 @@
           },
           "reward_indexes": [
             {
-              "collateral_type": "uMage:usdx",
+              "collateral_type": "umage:usdx",
               "reward_indexes": []
             }
           ]
@@ -2330,7 +2330,7 @@
               "reward_indexes": []
             },
             {
-              "collateral_type": "uMage:usdx",
+              "collateral_type": "umage:usdx",
               "reward_indexes": []
             }
           ]
@@ -2343,7 +2343,7 @@
         "assets": [
           {
             "owner": "Mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
-            "denom": "uMage",
+            "denom": "umage",
             "blocked_addresses": [],
             "paused": false,
             "blockable": false,
@@ -2928,7 +2928,7 @@
       "params": {
         "supported_denoms": [
           "usdx",
-          "uMage",
+          "umage",
           "hard",
           "swp",
           "bMage",
@@ -2955,7 +2955,7 @@
         "max_validators": 100,
         "max_entries": 7,
         "historical_entries": 10000,
-        "bond_denom": "uMage"
+        "bond_denom": "umage"
       },
       "last_total_power": "0",
       "last_validator_powers": [],
@@ -2969,7 +2969,7 @@
       "params": {
         "allowed_pools": [
           {
-            "token_a": "uMage",
+            "token_a": "umage",
             "token_b": "usdx"
           },
           {
@@ -3053,10 +3053,10 @@
           "total_shares": "2236067977"
         },
         {
-          "pool_id": "uMage:usdx",
+          "pool_id": "umage:usdx",
           "reserves_a": {
             "amount": "5000000000",
-            "denom": "uMage"
+            "denom": "umage"
           },
           "reserves_b": {
             "amount": "1000000000",
@@ -3083,7 +3083,7 @@
         },
         {
           "depositor": "Mage173w2zz287s36ewnnkf4mjansnthnnsz7rtrxqc",
-          "pool_id": "uMage:usdx",
+          "pool_id": "umage:usdx",
           "shares_owned": "2236067977"
         }
       ]

@@ -77,12 +77,12 @@ func init() {
 type Fixtures struct {
 	BuildDir    string
 	RootDir     string
-	KvdBinary   string
+	MgdBinary   string
 	KvcliBinary string
 	ChainID     string
 	RPCAddr     string
 	Port        string
-	KvdHome     string
+	MgdHome     string
 	KvcliHome   string
 	P2PAddr     string
 	T           *testing.T
@@ -113,9 +113,9 @@ func NewFixtures(t *testing.T) *Fixtures {
 		T:           t,
 		BuildDir:    buildDir,
 		RootDir:     tmpDir,
-		KvdBinary:   filepath.Join(buildDir, "kvd"),
+		MgdBinary:   filepath.Join(buildDir, "mgd"),
 		KvcliBinary: filepath.Join(buildDir, "kvcli"),
-		KvdHome:     filepath.Join(tmpDir, ".kvd"),
+		MgdHome:     filepath.Join(tmpDir, ".mgd"),
 		KvcliHome:   filepath.Join(tmpDir, ".kvcli"),
 		RPCAddr:     servAddr,
 		P2PAddr:     p2pAddr,
@@ -126,7 +126,7 @@ func NewFixtures(t *testing.T) *Fixtures {
 
 // GenesisFile returns the path of the genesis file
 func (f Fixtures) GenesisFile() string {
-	return filepath.Join(f.KvdHome, "config", "genesis.json")
+	return filepath.Join(f.MgdHome, "config", "genesis.json")
 }
 
 // GenesisState returns the application's genesis state
@@ -205,16 +205,16 @@ func (f *Fixtures) Flags() string {
 
 // UnsafeResetAll is Maged unsafe-reset-all
 func (f *Fixtures) UnsafeResetAll(flags ...string) {
-	cmd := fmt.Sprintf("%s --home=%s unsafe-reset-all", f.KvdBinary, f.KvdHome)
+	cmd := fmt.Sprintf("%s --home=%s unsafe-reset-all", f.MgdBinary, f.MgdHome)
 	executeWrite(f.T, addFlags(cmd, flags))
-	err := os.RemoveAll(filepath.Join(f.KvdHome, "config", "gentx"))
+	err := os.RemoveAll(filepath.Join(f.MgdHome, "config", "gentx"))
 	require.NoError(f.T, err)
 }
 
 // KvInit is Maged init
 // NOTE: KvInit sets the ChainID for the Fixtures instance
 func (f *Fixtures) KvInit(moniker string, flags ...string) {
-	cmd := fmt.Sprintf("%s init -o --home=%s %s", f.KvdBinary, f.KvdHome, moniker)
+	cmd := fmt.Sprintf("%s init -o --home=%s %s", f.MgdBinary, f.MgdHome, moniker)
 	_, stderr := tests.ExecuteT(f.T, addFlags(cmd, flags), clientkeys.DefaultKeyPass)
 
 	var chainID string
@@ -231,25 +231,25 @@ func (f *Fixtures) KvInit(moniker string, flags ...string) {
 
 // AddGenesisAccount is Maged add-genesis-account
 func (f *Fixtures) AddGenesisAccount(address sdk.AccAddress, coins sdk.Coins, flags ...string) {
-	cmd := fmt.Sprintf("%s add-genesis-account %s %s --home=%s --keyring-backend=test", f.KvdBinary, address, coins, f.KvdHome)
+	cmd := fmt.Sprintf("%s add-genesis-account %s %s --home=%s --keyring-backend=test", f.MgdBinary, address, coins, f.MgdHome)
 	executeWriteCheckErr(f.T, addFlags(cmd, flags))
 }
 
 // GenTx is Maged gentx
 func (f *Fixtures) GenTx(name string, flags ...string) {
-	cmd := fmt.Sprintf("%s gentx --name=%s --home=%s --home-client=%s --keyring-backend=test", f.KvdBinary, name, f.KvdHome, f.KvcliHome)
+	cmd := fmt.Sprintf("%s gentx --name=%s --home=%s --home-client=%s --keyring-backend=test", f.MgdBinary, name, f.MgdHome, f.KvcliHome)
 	executeWriteCheckErr(f.T, addFlags(cmd, flags))
 }
 
 // CollectGenTxs is Maged collect-gentxs
 func (f *Fixtures) CollectGenTxs(flags ...string) {
-	cmd := fmt.Sprintf("%s collect-gentxs --home=%s", f.KvdBinary, f.KvdHome)
+	cmd := fmt.Sprintf("%s collect-gentxs --home=%s", f.MgdBinary, f.MgdHome)
 	executeWriteCheckErr(f.T, addFlags(cmd, flags))
 }
 
 // GDStart runs Maged start with the appropriate flags and returns a process
 func (f *Fixtures) GDStart(flags ...string) *tests.Process {
-	cmd := fmt.Sprintf("%s start --home=%s --rpc.laddr=%v --p2p.laddr=%v --pruning=everything", f.KvdBinary, f.KvdHome, f.RPCAddr, f.P2PAddr)
+	cmd := fmt.Sprintf("%s start --home=%s --rpc.laddr=%v --p2p.laddr=%v --pruning=everything", f.MgdBinary, f.MgdHome, f.RPCAddr, f.P2PAddr)
 	proc := tests.GoExecuteTWithStdout(f.T, addFlags(cmd, flags))
 	tests.WaitForTMStart(f.Port)
 	tests.WaitForNextNBlocksTM(1, f.Port)
@@ -258,7 +258,7 @@ func (f *Fixtures) GDStart(flags ...string) *tests.Process {
 
 // GDTendermint returns the results of Maged tendermint [query]
 func (f *Fixtures) GDTendermint(query string) string {
-	cmd := fmt.Sprintf("%s tendermint %s --home=%s", f.KvdBinary, query, f.KvdHome)
+	cmd := fmt.Sprintf("%s tendermint %s --home=%s", f.MgdBinary, query, f.MgdHome)
 	success, stdout, stderr := executeWriteRetStdStreams(f.T, cmd)
 	require.Empty(f.T, stderr)
 	require.True(f.T, success)
@@ -267,7 +267,7 @@ func (f *Fixtures) GDTendermint(query string) string {
 
 // ValidateGenesis runs Maged validate-genesis
 func (f *Fixtures) ValidateGenesis() {
-	cmd := fmt.Sprintf("%s validate-genesis --home=%s", f.KvdBinary, f.KvdHome)
+	cmd := fmt.Sprintf("%s validate-genesis --home=%s", f.MgdBinary, f.MgdHome)
 	executeWriteCheckErr(f.T, cmd)
 }
 

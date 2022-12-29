@@ -67,7 +67,7 @@ func (suite queryTestSuite) CheckCommunityPoolBalance(expected sdk.Coins, result
 }
 
 func (suite *queryTestSuite) Test_CommunityPoolOverride() {
-	singleDenom := sdk.NewCoins(sdk.NewInt64Coin("uMage", 1e10))
+	singleDenom := sdk.NewCoins(sdk.NewInt64Coin("umage", 1e10))
 	multiDenom := singleDenom.Add(sdk.NewInt64Coin("other-denom", 1e9))
 
 	testCases := []struct {

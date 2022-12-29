@@ -19,12 +19,12 @@ func TestMsgMintDerivative_Signing(t *testing.T) {
 	msg := types.NewMsgMintDerivative(
 		address,
 		validatorAddress,
-		sdk.NewCoin("uMage", sdk.NewInt(1e9)),
+		sdk.NewCoin("umage", sdk.NewInt(1e9)),
 	)
 
 	// checking for the "type" field ensures the msg is registered on the amino codec
 	signBytes := []byte(
-		`{"type":"liquid/MsgMintDerivative","value":{"amount":{"amount":"1000000000","denom":"uMage"},"sender":"Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","validator":"Magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42"}}`,
+		`{"type":"liquid/MsgMintDerivative","value":{"amount":{"amount":"1000000000","denom":"umage"},"sender":"Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","validator":"Magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42"}}`,
 	)
 
 	assert.Equal(t, []sdk.AccAddress{address}, msg.GetSigners())
@@ -53,7 +53,7 @@ func TestMsgBurnDerivative_Signing(t *testing.T) {
 func TestMsg_Validate(t *testing.T) {
 	validAddress := mustAccAddressFromBech32("Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
 	validValidatorAddress := mustValAddressFromBech32("Magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42")
-	validCoin := sdk.NewInt64Coin("uMage", 1e9)
+	validCoin := sdk.NewInt64Coin("umage", 1e9)
 
 	type msgArgs struct {
 		sender    string
@@ -114,7 +114,7 @@ func TestMsg_Validate(t *testing.T) {
 			msgArgs: msgArgs{
 				sender:    validAddress.String(),
 				validator: validValidatorAddress.String(),
-				amount:    sdk.NewInt64Coin("uMage", 0),
+				amount:    sdk.NewInt64Coin("umage", 0),
 			},
 			expectedErr: sdkerrors.ErrInvalidCoins,
 		},

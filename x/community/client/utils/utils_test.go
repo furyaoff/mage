@@ -20,7 +20,7 @@ func TestParseDepositProposal(t *testing.T) {
   "description": "Deposit some MAGE from community pool to Lend!",
   "amount": [
     {
-      "denom": "uMage",
+      "denom": "umage",
       "amount": "100000000000"
     }
   ]
@@ -29,7 +29,7 @@ func TestParseDepositProposal(t *testing.T) {
 	proposal, err := utils.ParseCommunityPoolLendDepositProposal(cdc, okJSON.Name())
 	require.NoError(t, err)
 
-	expectedAmount, err := sdk.ParseCoinsNormalized("100000000000uMage")
+	expectedAmount, err := sdk.ParseCoinsNormalized("100000000000umage")
 	require.NoError(t, err)
 
 	require.Equal(t, "Community Pool Lend Deposit", proposal.Title)
@@ -45,7 +45,7 @@ func TestParseWithdrawProposal(t *testing.T) {
   "description": "Withdraw some MAGE from community pool to Lend!",
   "amount": [
     {
-      "denom": "uMage",
+      "denom": "umage",
       "amount": "100000000000"
     }
   ]
@@ -54,7 +54,7 @@ func TestParseWithdrawProposal(t *testing.T) {
 	proposal, err := utils.ParseCommunityPoolLendWithdrawProposal(cdc, okJSON.Name())
 	require.NoError(t, err)
 
-	expectedAmount, err := sdk.ParseCoinsNormalized("100000000000uMage")
+	expectedAmount, err := sdk.ParseCoinsNormalized("100000000000umage")
 	require.NoError(t, err)
 
 	require.Equal(t, "Community Pool Lend Withdraw", proposal.Title)

@@ -90,7 +90,7 @@ func (s *migrateTestSuite) TestMigrate_PoolRecords() {
 		{
 			PoolID:      "pool-2",
 			ReservesA:   sdk.NewCoin("usdx", sdk.NewInt(500)),
-			ReservesB:   sdk.NewCoin("uMage", sdk.NewInt(500)),
+			ReservesB:   sdk.NewCoin("umage", sdk.NewInt(500)),
 			TotalShares: sdk.NewInt(1000),
 		},
 	}
@@ -104,7 +104,7 @@ func (s *migrateTestSuite) TestMigrate_PoolRecords() {
 		{
 			PoolID:      "pool-2",
 			ReservesA:   sdk.NewCoin("usdx", sdk.NewInt(500)),
-			ReservesB:   sdk.NewCoin("uMage", sdk.NewInt(500)),
+			ReservesB:   sdk.NewCoin("umage", sdk.NewInt(500)),
 			TotalShares: sdk.NewInt(1000),
 		},
 	}

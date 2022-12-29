@@ -24,7 +24,7 @@ The evmutil module provides additional functionalities on top of the evm module.
 ### EVM `aMage` Usage
 
 evmutil stores additional state data for evm accounts and exposes an `EvmBankKeeper` that should be used by the `x/evm` keeper for bank operations.
-The purpose of the `EvmBankKeeper` is to allow the usage of the `aMage` balance on the EVM via an account's existing `uMage` balance. This is needed because the EVM gas token use 18 decimals, and since `uMage` has 6 decimals, it cannot be used as the EVM gas denom directly.
+The purpose of the `EvmBankKeeper` is to allow the usage of the `aMage` balance on the EVM via an account's existing `umage` balance. This is needed because the EVM gas token use 18 decimals, and since `umage` has 6 decimals, it cannot be used as the EVM gas denom directly.
 
 For additional details on how balance conversions work, see **[Concepts](01_concepts.md)**.
 

@@ -353,7 +353,7 @@ func (suite *SynchronizeEarnRewardTests) TestGetSyncedClaim_ClaimUnchangedWhenNo
 
 func (suite *SynchronizeEarnRewardTests) TestGetSyncedClaim_ClaimUpdatedWhenMissingIndexAndHasNoSourceShares() {
 	vaultDenom_1 := "usdx"
-	vaultDenom_2 := "uMage"
+	vaultDenom_2 := "umage"
 	owner := arbitraryAddress()
 
 	// owner has no shares in any vault
@@ -411,7 +411,7 @@ func (suite *SynchronizeEarnRewardTests) TestGetSyncedClaim_ClaimUpdatedWhenMiss
 
 func (suite *SynchronizeEarnRewardTests) TestGetSyncedClaim_ClaimUpdatedWhenMissingIndexButHasSourceShares() {
 	VaultDenom_1 := "usdx"
-	VaultDenom_2 := "uMage"
+	VaultDenom_2 := "umage"
 	owner := arbitraryAddress()
 
 	earnKeeper := newFakeEarnKeeper().

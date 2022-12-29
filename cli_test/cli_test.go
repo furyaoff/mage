@@ -113,7 +113,7 @@ func TestKvCLIMinimumFees(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server with minimum fees
+	// start mgd server with minimum fees
 	minGasPrice, _ := sdk.NewDecFromStr("0.000006")
 	fees := fmt.Sprintf(
 		"--minimum-gas-prices=%s,%s",
@@ -151,7 +151,7 @@ func TestKvCLIGasPrices(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server with minimum fees
+	// start mgd server with minimum fees
 	minGasPrice, _ := sdk.NewDecFromStr("0.000006")
 	proc := f.GDStart(fmt.Sprintf("--minimum-gas-prices=%s", sdk.NewDecCoinFromDec(feeDenom, minGasPrice)))
 	defer proc.Stop(false)
@@ -185,7 +185,7 @@ func TestKvCLIFeesDeduction(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server with minimum fees
+	// start mgd server with minimum fees
 	minGasPrice, _ := sdk.NewDecFromStr("0.000006")
 	proc := f.GDStart(fmt.Sprintf("--minimum-gas-prices=%s", sdk.NewDecCoinFromDec(feeDenom, minGasPrice)))
 	defer proc.Stop(false)
@@ -238,7 +238,7 @@ func TestKvCLISend(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server
+	// start mgd server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -307,7 +307,7 @@ func TestKvCLISendMultiplePerBlock(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server
+	// start mgd server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -343,7 +343,7 @@ func TestKvCLIGasAuto(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server
+	// start mgd server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -402,7 +402,7 @@ func TestKvCLICreateValidator(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server
+	// start mgd server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -486,13 +486,13 @@ func TestKvCLIQueryRewards(t *testing.T) {
 	require.NoError(t, err)
 	genesisState[mint.ModuleName] = mintDataBz
 
-	genFile := filepath.Join(f.KvdHome, "config", "genesis.json")
+	genFile := filepath.Join(f.MgdHome, "config", "genesis.json")
 	genDoc, err := tmtypes.GenesisDocFromFile(genFile)
 	require.NoError(t, err)
 	genDoc.AppState, err = f.cdc.MarshalJSON(genesisState)
 	require.NoError(t, genDoc.SaveAs(genFile))
 
-	// start kvd server
+	// start mgd server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -507,7 +507,7 @@ func TestKvCLIQuerySupply(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server
+	// start mgd server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -524,7 +524,7 @@ func TestKvCLISubmitProposal(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server
+	// start mgd server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -745,7 +745,7 @@ func TestKvCLISubmitCommunityPoolSpendProposal(t *testing.T) {
 	require.NoError(t, err)
 	genesisState[mint.ModuleName] = mintDataBz
 
-	genFile := filepath.Join(f.KvdHome, "config", "genesis.json")
+	genFile := filepath.Join(f.MgdHome, "config", "genesis.json")
 	genDoc, err := tmtypes.GenesisDocFromFile(genFile)
 	require.NoError(t, err)
 	genDoc.AppState, err = f.cdc.MarshalJSON(genesisState)
@@ -820,7 +820,7 @@ func TestKvCLIQueryTxPagination(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server
+	// start mgd server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -874,7 +874,7 @@ func TestKvCLIValidateSignatures(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server
+	// start mgd server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -923,7 +923,7 @@ func TestKvCLISendGenerateSignAndBroadcast(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server
+	// start mgd server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -1007,7 +1007,7 @@ func TestKvCLIMultisignInsufficientCosigners(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server with minimum fees
+	// start mgd server with minimum fees
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -1060,7 +1060,7 @@ func TestKvCLIEncode(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server
+	// start mgd server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -1096,7 +1096,7 @@ func TestKvCLIMultisignSortSignatures(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server with minimum fees
+	// start mgd server with minimum fees
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -1162,7 +1162,7 @@ func TestKvCLIMultisign(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server with minimum fees
+	// start mgd server with minimum fees
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -1265,7 +1265,7 @@ trust-node = true
 	f.Cleanup()
 }
 
-func TestKvdCollectGentxs(t *testing.T) {
+func TestMgdCollectGentxs(t *testing.T) {
 	t.Parallel()
 	var customMaxBytes, customMaxGas int64 = 99999999, 1234567
 	f := NewFixtures(t)
@@ -1313,7 +1313,7 @@ func TestKvdCollectGentxs(t *testing.T) {
 	f.Cleanup(gentxDir)
 }
 
-func TestKvdAddGenesisAccount(t *testing.T) {
+func TestMgdAddGenesisAccount(t *testing.T) {
 	t.Parallel()
 	f := NewFixtures(t)
 
@@ -1360,7 +1360,7 @@ func TestSlashingGetParams(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server
+	// start mgd server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -1380,7 +1380,7 @@ func TestValidateGenesis(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start kvd server
+	// start mgd server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 

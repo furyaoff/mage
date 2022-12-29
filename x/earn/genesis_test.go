@@ -59,7 +59,7 @@ func (suite *genesisTestSuite) Test_InitAndExportGenesis() {
 					nil,
 				),
 				types.NewAllowedVault(
-					"uMage",
+					"umage",
 					types.StrategyTypes{types.STRATEGY_TYPE_SAVINGS},
 					true,
 					[]sdk.AccAddress{suite.AccountKeeper.GetModuleAddress("distribution")},
@@ -68,7 +68,7 @@ func (suite *genesisTestSuite) Test_InitAndExportGenesis() {
 		},
 		types.VaultRecords{
 			types.VaultRecord{
-				TotalShares: types.NewVaultShare("uMage", sdk.NewDec(3800000)),
+				TotalShares: types.NewVaultShare("umage", sdk.NewDec(3800000)),
 			},
 			types.VaultRecord{
 				TotalShares: types.NewVaultShare("usdx", sdk.NewDec(1000000)),
@@ -79,14 +79,14 @@ func (suite *genesisTestSuite) Test_InitAndExportGenesis() {
 				Depositor: depositor_1,
 				Shares: types.NewVaultShares(
 					types.NewVaultShare("usdx", sdk.NewDec(500000)),
-					types.NewVaultShare("uMage", sdk.NewDec(1900000)),
+					types.NewVaultShare("umage", sdk.NewDec(1900000)),
 				),
 			},
 			types.VaultShareRecord{
 				Depositor: depositor_2,
 				Shares: types.NewVaultShares(
 					types.NewVaultShare("usdx", sdk.NewDec(500000)),
-					types.NewVaultShare("uMage", sdk.NewDec(1900000)),
+					types.NewVaultShare("umage", sdk.NewDec(1900000)),
 				),
 			},
 		},
@@ -95,7 +95,7 @@ func (suite *genesisTestSuite) Test_InitAndExportGenesis() {
 	earn.InitGenesis(suite.Ctx, suite.Keeper, suite.AccountKeeper, state)
 	suite.Equal(state.Params, suite.Keeper.GetParams(suite.Ctx))
 
-	vaultRecord1, _ := suite.Keeper.GetVaultRecord(suite.Ctx, "uMage")
+	vaultRecord1, _ := suite.Keeper.GetVaultRecord(suite.Ctx, "umage")
 	vaultRecord2, _ := suite.Keeper.GetVaultRecord(suite.Ctx, "usdx")
 	suite.Equal(state.VaultRecords[0], vaultRecord1)
 	suite.Equal(state.VaultRecords[1], vaultRecord2)
@@ -127,7 +127,7 @@ func (suite *genesisTestSuite) Test_Marshall() {
 					nil,
 				),
 				types.NewAllowedVault(
-					"uMage",
+					"umage",
 					types.StrategyTypes{types.STRATEGY_TYPE_SAVINGS},
 					true,
 					[]sdk.AccAddress{suite.AccountKeeper.GetModuleAddress("distribution")},
@@ -136,7 +136,7 @@ func (suite *genesisTestSuite) Test_Marshall() {
 		},
 		types.VaultRecords{
 			types.VaultRecord{
-				TotalShares: types.NewVaultShare("uMage", sdk.NewDec(3800000)),
+				TotalShares: types.NewVaultShare("umage", sdk.NewDec(3800000)),
 			},
 			types.VaultRecord{
 				TotalShares: types.NewVaultShare("usdx", sdk.NewDec(1000000)),
@@ -147,14 +147,14 @@ func (suite *genesisTestSuite) Test_Marshall() {
 				Depositor: depositor_1,
 				Shares: types.NewVaultShares(
 					types.NewVaultShare("usdx", sdk.NewDec(500000)),
-					types.NewVaultShare("uMage", sdk.NewDec(1900000)),
+					types.NewVaultShare("umage", sdk.NewDec(1900000)),
 				),
 			},
 			types.VaultShareRecord{
 				Depositor: depositor_2,
 				Shares: types.NewVaultShares(
 					types.NewVaultShare("usdx", sdk.NewDec(500000)),
-					types.NewVaultShare("uMage", sdk.NewDec(1900000)),
+					types.NewVaultShare("umage", sdk.NewDec(1900000)),
 				),
 			},
 		},

@@ -39,15 +39,15 @@ func (suite *GenesisTestSuite) SetupTest() {
 
 func (suite *GenesisTestSuite) TestInitExportGenesis() {
 	params := types.NewParams(
-		[]string{"btc", "uMage", "bnb"},
+		[]string{"btc", "umage", "bnb"},
 	)
 
-	depositAmt := sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1e8)))
+	depositAmt := sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1e8)))
 
 	deposits := types.Deposits{
 		types.NewDeposit(
 			suite.addrs[0],
-			depositAmt, // 100 uMage
+			depositAmt, // 100 umage
 		),
 	}
 	savingsGenesis := types.NewGenesisState(params, deposits)

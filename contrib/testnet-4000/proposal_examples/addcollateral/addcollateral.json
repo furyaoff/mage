@@ -43,7 +43,7 @@
     ],
     "deposit": [
       {
-        "denom": "uMage",
+        "denom": "umage",
         "amount": "1000000"
       }
     ]

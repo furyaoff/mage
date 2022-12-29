@@ -19,7 +19,7 @@ import (
 
 func TestParams_UnmarshalJSON(t *testing.T) {
 	pools := types.NewAllowedPools(
-		types.NewAllowedPool("hard", "uMage"),
+		types.NewAllowedPool("hard", "umage"),
 		types.NewAllowedPool("hard", "usdx"),
 	)
 	poolData, err := json.Marshal(pools)
@@ -45,7 +45,7 @@ func TestParams_UnmarshalJSON(t *testing.T) {
 
 func TestParams_MarshalYAML(t *testing.T) {
 	pools := types.NewAllowedPools(
-		types.NewAllowedPool("hard", "uMage"),
+		types.NewAllowedPool("hard", "umage"),
 		types.NewAllowedPool("hard", "usdx"),
 	)
 	fee, err := sdk.NewDecFromStr("0.5")
@@ -134,9 +134,9 @@ func TestParams_Validation(t *testing.T) {
 			name: "duplicate pools",
 			key:  types.KeyAllowedPools,
 			testFn: func(params *types.Params) {
-				params.AllowedPools = types.NewAllowedPools(types.NewAllowedPool("uMage", "uMage"))
+				params.AllowedPools = types.NewAllowedPools(types.NewAllowedPool("umage", "umage"))
 			},
-			expectedErr: "pool cannot have two tokens of the same type, received 'uMage' and 'uMage'",
+			expectedErr: "pool cannot have two tokens of the same type, received 'umage' and 'umage'",
 		},
 		{
 			name: "nil swap fee",
@@ -212,8 +212,8 @@ func TestParams_Validation(t *testing.T) {
 func TestParams_String(t *testing.T) {
 	params := types.NewParams(
 		types.NewAllowedPools(
-			types.NewAllowedPool("hard", "uMage"),
-			types.NewAllowedPool("uMage", "usdx"),
+			types.NewAllowedPool("hard", "umage"),
+			types.NewAllowedPool("umage", "usdx"),
 		),
 		sdk.MustNewDecFromStr("0.5"),
 	)
@@ -221,8 +221,8 @@ func TestParams_String(t *testing.T) {
 	require.NoError(t, params.Validate())
 
 	output := params.String()
-	assert.Contains(t, output, types.PoolID("hard", "uMage"))
-	assert.Contains(t, output, types.PoolID("uMage", "usdx"))
+	assert.Contains(t, output, types.PoolID("hard", "umage"))
+	assert.Contains(t, output, types.PoolID("umage", "usdx"))
 	assert.Contains(t, output, "0.5")
 }
 
@@ -234,38 +234,38 @@ func TestAllowedPool_Validation(t *testing.T) {
 	}{
 		{
 			name:        "blank token a",
-			allowedPool: types.NewAllowedPool("", "uMage"),
+			allowedPool: types.NewAllowedPool("", "umage"),
 			expectedErr: "invalid denom: ",
 		},
 		{
 			name:        "blank token b",
-			allowedPool: types.NewAllowedPool("uMage", ""),
+			allowedPool: types.NewAllowedPool("umage", ""),
 			expectedErr: "invalid denom: ",
 		},
 		{
 			name:        "invalid token a",
-			allowedPool: types.NewAllowedPool("1uMage", "uMage"),
-			expectedErr: "invalid denom: 1uMage",
+			allowedPool: types.NewAllowedPool("1umage", "umage"),
+			expectedErr: "invalid denom: 1umage",
 		},
 		{
 			name:        "invalid token b",
-			allowedPool: types.NewAllowedPool("uMage", "1uMage"),
-			expectedErr: "invalid denom: 1uMage",
+			allowedPool: types.NewAllowedPool("umage", "1umage"),
+			expectedErr: "invalid denom: 1umage",
 		},
 		{
 			name:        "matching tokens",
-			allowedPool: types.NewAllowedPool("uMage", "uMage"),
-			expectedErr: "pool cannot have two tokens of the same type, received 'uMage' and 'uMage'",
+			allowedPool: types.NewAllowedPool("umage", "umage"),
+			expectedErr: "pool cannot have two tokens of the same type, received 'umage' and 'umage'",
 		},
 		{
 			name:        "invalid token order",
-			allowedPool: types.NewAllowedPool("usdx", "uMage"),
-			expectedErr: "invalid token order: 'uMage' must come before 'usdx'",
+			allowedPool: types.NewAllowedPool("usdx", "umage"),
+			expectedErr: "invalid token order: 'umage' must come before 'usdx'",
 		},
 		{
 			name:        "invalid token order due to capitalization",
-			allowedPool: types.NewAllowedPool("uMage", "UMAGA"),
-			expectedErr: "invalid token order: 'UMAGA' must come before 'uMage'",
+			allowedPool: types.NewAllowedPool("umage", "UMAGA"),
+			expectedErr: "invalid token order: 'UMAGA' must come before 'umage'",
 		},
 	}
 
@@ -278,7 +278,7 @@ func TestAllowedPool_Validation(t *testing.T) {
 }
 
 func TestAllowedPool_TokenMatch_CaseSensitive(t *testing.T) {
-	allowedPool := types.NewAllowedPool("UMAGA", "uMage")
+	allowedPool := types.NewAllowedPool("UMAGA", "umage")
 	err := allowedPool.Validate()
 	assert.NoError(t, err)
 
@@ -292,13 +292,13 @@ func TestAllowedPool_TokenMatch_CaseSensitive(t *testing.T) {
 }
 
 func TestAllowedPool_String(t *testing.T) {
-	allowedPool := types.NewAllowedPool("hard", "uMage")
+	allowedPool := types.NewAllowedPool("hard", "umage")
 	require.NoError(t, allowedPool.Validate())
 
 	output := `AllowedPool:
-  Name: hard:uMage
+  Name: hard:umage
 	Token A: hard
-	Token B: uMage
+	Token B: umage
 `
 	assert.Equal(t, output, allowedPool.String())
 }
@@ -325,8 +325,8 @@ func TestAllowedPool_Name(t *testing.T) {
 			name:   "a001:a002",
 		},
 		{
-			tokens: "hard uMage",
-			name:   "hard:uMage",
+			tokens: "hard umage",
+			name:   "hard:umage",
 		},
 		{
 			tokens: "bnb hard",
@@ -360,15 +360,15 @@ func TestAllowedPools_Validate(t *testing.T) {
 		{
 			name: "duplicate pool",
 			allowedPools: types.NewAllowedPools(
-				types.NewAllowedPool("hard", "uMage"),
-				types.NewAllowedPool("hard", "uMage"),
+				types.NewAllowedPool("hard", "umage"),
+				types.NewAllowedPool("hard", "umage"),
 			),
-			expectedErr: "duplicate pool: hard:uMage",
+			expectedErr: "duplicate pool: hard:umage",
 		},
 		{
 			name: "duplicate pools",
 			allowedPools: types.NewAllowedPools(
-				types.NewAllowedPool("hard", "uMage"),
+				types.NewAllowedPool("hard", "umage"),
 				types.NewAllowedPool("bnb", "usdx"),
 				types.NewAllowedPool("btcb", "xrpb"),
 				types.NewAllowedPool("bnb", "usdx"),

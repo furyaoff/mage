@@ -157,7 +157,7 @@ func (k Keeper) GetTotalDelegated(ctx sdk.Context, delegator sdk.AccAddress, val
 // SimulateDelegatorSynchronization calculates a user's outstanding delegator rewards by simulating reward synchronization
 func (k Keeper) SimulateDelegatorSynchronization(ctx sdk.Context, claim types.DelegatorClaim) types.DelegatorClaim {
 	for _, ri := range claim.RewardIndexes {
-		// For each Delegator reward index (there's only one: the bond denom 'uMage')
+		// For each Delegator reward index (there's only one: the bond denom 'umage')
 		globalRewardIndexes, foundGlobalRewardIndexes := k.GetDelegatorRewardIndexes(ctx, ri.CollateralType)
 		if !foundGlobalRewardIndexes {
 			continue

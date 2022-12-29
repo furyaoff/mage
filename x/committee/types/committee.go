@@ -18,7 +18,7 @@ const (
 	BaseCommitteeType   = "furya-official/mageBaseCommittee"
 	MemberCommitteeType = "furya-official/mageMemberCommittee" // Committee is composed of member addresses that vote to enact proposals within their permissions
 	TokenCommitteeType  = "furya-official/mageTokenCommittee"  // Committee is composed of token holders with voting power determined by total token balance
-	BondDenom           = "uMage"
+	BondDenom           = "umage"
 )
 
 func init() {

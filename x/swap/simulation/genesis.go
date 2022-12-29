@@ -17,7 +17,7 @@ package simulation
 // var (
 // 	//nolint
 // 	accs            []simulation.Account
-// 	consistentPools = [2][2]string{{"uMage", "usdx"}, {"bnb", "xrp"}}
+// 	consistentPools = [2][2]string{{"umage", "usdx"}, {"bnb", "xrp"}}
 // )
 
 // // GenSwapFee generates a random SwapFee in range [0.01, 1.00]

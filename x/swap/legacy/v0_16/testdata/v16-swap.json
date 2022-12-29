@@ -6,15 +6,15 @@
       { "token_a": "busd", "token_b": "usdx" },
       { "token_a": "hard", "token_b": "usdx" },
       { "token_a": "swp", "token_b": "usdx" },
-      { "token_a": "uMage", "token_b": "usdx" },
+      { "token_a": "umage", "token_b": "usdx" },
       { "token_a": "usdx", "token_b": "xrpb" }
     ],
     "swap_fee": "0.001500000000000000"
   },
   "pool_records": [
     {
-      "pool_id": "uMage:usdx",
-      "reserves_a": { "denom": "uMage", "amount": "583616549439" },
+      "pool_id": "umage:usdx",
+      "reserves_a": { "denom": "umage", "amount": "583616549439" },
       "reserves_b": { "denom": "usdx", "amount": "3431399443511" },
       "total_shares": "1398497336200"
     },
@@ -43,7 +43,7 @@
     },
     {
       "depositor": "Mage1ll3ndyv333aet6mzqltu5wdepqhyme8umv34es",
-      "pool_id": "uMage:usdx",
+      "pool_id": "umage:usdx",
       "shares_owned": "3427014047"
     }
   ]

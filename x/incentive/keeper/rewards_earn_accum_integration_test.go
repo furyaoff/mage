@@ -42,10 +42,10 @@ func (suite *AccumulateEarnRewardsIntegrationTests) SetupTest() {
 
 	// Setup app with test state
 	authBuilder := app.NewAuthBankGenesisBuilder().
-		WithSimpleAccount(addrs[0], cs(c("uMage", 1e12))).
-		WithSimpleAccount(addrs[1], cs(c("uMage", 1e12))).
-		WithSimpleAccount(addrs[2], cs(c("uMage", 1e12))).
-		WithSimpleAccount(addrs[3], cs(c("uMage", 1e12)))
+		WithSimpleAccount(addrs[0], cs(c("umage", 1e12))).
+		WithSimpleAccount(addrs[1], cs(c("umage", 1e12))).
+		WithSimpleAccount(addrs[2], cs(c("umage", 1e12))).
+		WithSimpleAccount(addrs[3], cs(c("umage", 1e12)))
 
 	incentiveBuilder := testutil.NewIncentiveGenesisBuilder().
 		WithGenesisTime(suite.GenesisTime).
@@ -85,13 +85,13 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUpdatedWhenBlockTim
 			"bMage",         // reward period is set for "bMage" to apply to all vaults
 			time.Unix(0, 0), // ensure the test is within start and end times
 			distantFuture,
-			cs(c("earn", 2000), c("uMage", 1000)), // same denoms as in global indexes
+			cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
 		),
 	)
 
-	derivative0, err := suite.MintLiquidAnyValAddr(suite.userAddrs[0], suite.valAddrs[0], c("uMage", 800000))
+	derivative0, err := suite.MintLiquidAnyValAddr(suite.userAddrs[0], suite.valAddrs[0], c("umage", 800000))
 	suite.NoError(err)
-	derivative1, err := suite.MintLiquidAnyValAddr(suite.userAddrs[1], suite.valAddrs[1], c("uMage", 200000))
+	derivative1, err := suite.MintLiquidAnyValAddr(suite.userAddrs[1], suite.valAddrs[1], c("umage", 200000))
 	suite.NoError(err)
 
 	err = suite.DeliverEarnMsgDeposit(suite.userAddrs[0], derivative0, earntypes.STRATEGY_TYPE_SAVINGS)
@@ -108,7 +108,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUpdatedWhenBlockTim
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -121,7 +121,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUpdatedWhenBlockTim
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -167,12 +167,12 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUpdatedWhenBlockTim
 	suite.StoredEarnTimeEquals(derivative1.Denom, suite.Ctx.BlockTime())
 
 	stakingRewardIndexes0 := validatorRewards[suite.valAddrs[0].String()].
-		AmountOf("uMage").
+		AmountOf("umage").
 		ToDec().
 		Quo(derivative0.Amount.ToDec())
 
 	stakingRewardIndexes1 := validatorRewards[suite.valAddrs[1].String()].
-		AmountOf("uMage").
+		AmountOf("umage").
 		ToDec().
 		Quo(derivative1.Amount.ToDec())
 
@@ -182,7 +182,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUpdatedWhenBlockTim
 			RewardFactor:   d("7.22"),
 		},
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			RewardFactor:   d("3.64").Add(stakingRewardIndexes0),
 		},
 	})
@@ -192,7 +192,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUpdatedWhenBlockTim
 			RewardFactor:   d("7.22"),
 		},
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			RewardFactor:   d("3.64").Add(stakingRewardIndexes1),
 		},
 	})
@@ -205,15 +205,15 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUpdatedWhenBlockTim
 			"bMage",         // reward period is set for "bMage" to apply to all vaults
 			time.Unix(0, 0), // ensure the test is within start and end times
 			distantFuture,
-			cs(c("earn", 2000), c("uMage", 1000)), // same denoms as in global indexes
+			cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
 		),
 	)
 
 	// 800000bMage0 minted, 700000 deposited
 	// 200000bMage1 minted, 100000 deposited
-	derivative0, err := suite.MintLiquidAnyValAddr(suite.userAddrs[0], suite.valAddrs[0], c("uMage", 800000))
+	derivative0, err := suite.MintLiquidAnyValAddr(suite.userAddrs[0], suite.valAddrs[0], c("umage", 800000))
 	suite.NoError(err)
-	derivative1, err := suite.MintLiquidAnyValAddr(suite.userAddrs[1], suite.valAddrs[1], c("uMage", 200000))
+	derivative1, err := suite.MintLiquidAnyValAddr(suite.userAddrs[1], suite.valAddrs[1], c("umage", 200000))
 	suite.NoError(err)
 
 	depositAmount0 := c(derivative0.Denom, 700000)
@@ -233,7 +233,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUpdatedWhenBlockTim
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -246,7 +246,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUpdatedWhenBlockTim
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -294,12 +294,12 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUpdatedWhenBlockTim
 
 	// Divided by deposit amounts, not bank supply amounts
 	stakingRewardIndexes0 := validatorRewards[suite.valAddrs[0].String()].
-		AmountOf("uMage").
+		AmountOf("umage").
 		ToDec().
 		Quo(depositAmount0.Amount.ToDec())
 
 	stakingRewardIndexes1 := validatorRewards[suite.valAddrs[1].String()].
-		AmountOf("uMage").
+		AmountOf("umage").
 		ToDec().
 		Quo(depositAmount1.Amount.ToDec())
 
@@ -310,7 +310,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUpdatedWhenBlockTim
 			RewardFactor:   d("8.248571428571428571"),
 		},
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			RewardFactor:   d("4.154285714285714286").Add(stakingRewardIndexes0),
 		},
 	})
@@ -321,16 +321,16 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUpdatedWhenBlockTim
 			RewardFactor:   d("14.42"),
 		},
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			RewardFactor:   d("7.24").Add(stakingRewardIndexes1),
 		},
 	})
 }
 
 func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUnchangedWhenBlockTimeHasNotIncreased() {
-	derivative0, err := suite.MintLiquidAnyValAddr(suite.userAddrs[0], suite.valAddrs[0], c("uMage", 1000000))
+	derivative0, err := suite.MintLiquidAnyValAddr(suite.userAddrs[0], suite.valAddrs[0], c("umage", 1000000))
 	suite.NoError(err)
-	derivative1, err := suite.MintLiquidAnyValAddr(suite.userAddrs[1], suite.valAddrs[1], c("uMage", 1000000))
+	derivative1, err := suite.MintLiquidAnyValAddr(suite.userAddrs[1], suite.valAddrs[1], c("umage", 1000000))
 	suite.NoError(err)
 
 	err = suite.DeliverEarnMsgDeposit(suite.userAddrs[0], derivative0, earntypes.STRATEGY_TYPE_SAVINGS)
@@ -347,7 +347,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUnchangedWhenBlockT
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -360,7 +360,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUnchangedWhenBlockT
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -376,7 +376,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUnchangedWhenBlockT
 		"bMage",
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
-		cs(c("earn", 2000), c("uMage", 1000)), // same denoms as in global indexes
+		cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
 	)
 
 	// Must manually accumulate rewards as BeginBlockers only run when the block time increases
@@ -404,13 +404,13 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestNoAccumulationWhenSource
 			"bMage",         // reward period is set for "bMage" to apply to all vaults
 			time.Unix(0, 0), // ensure the test is within start and end times
 			distantFuture,
-			cs(c("earn", 2000), c("uMage", 1000)), // same denoms as in global indexes
+			cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
 		),
 	)
 
-	derivative0, err := suite.MintLiquidAnyValAddr(suite.userAddrs[0], suite.valAddrs[0], c("uMage", 1000000))
+	derivative0, err := suite.MintLiquidAnyValAddr(suite.userAddrs[0], suite.valAddrs[0], c("umage", 1000000))
 	suite.NoError(err)
-	derivative1, err := suite.MintLiquidAnyValAddr(suite.userAddrs[1], suite.valAddrs[1], c("uMage", 1000000))
+	derivative1, err := suite.MintLiquidAnyValAddr(suite.userAddrs[1], suite.valAddrs[1], c("umage", 1000000))
 	suite.NoError(err)
 
 	// No earn deposits
@@ -424,7 +424,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestNoAccumulationWhenSource
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -437,7 +437,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestNoAccumulationWhenSource
 					RewardFactor:   d("0.02"),
 				},
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   d("0.04"),
 				},
 			},
@@ -492,13 +492,13 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateAddedWhenStateDoesN
 			"bMage",         // reward period is set for "bMage" to apply to all vaults
 			time.Unix(0, 0), // ensure the test is within start and end times
 			distantFuture,
-			cs(c("earn", 2000), c("uMage", 1000)), // same denoms as in global indexes
+			cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
 		),
 	)
 
-	derivative0, err := suite.MintLiquidAnyValAddr(suite.userAddrs[0], suite.valAddrs[0], c("uMage", 1000000))
+	derivative0, err := suite.MintLiquidAnyValAddr(suite.userAddrs[0], suite.valAddrs[0], c("umage", 1000000))
 	suite.NoError(err)
-	derivative1, err := suite.MintLiquidAnyValAddr(suite.userAddrs[1], suite.valAddrs[1], c("uMage", 1000000))
+	derivative1, err := suite.MintLiquidAnyValAddr(suite.userAddrs[1], suite.valAddrs[1], c("umage", 1000000))
 	suite.NoError(err)
 
 	err = suite.DeliverEarnMsgDeposit(suite.userAddrs[0], derivative0, earntypes.STRATEGY_TYPE_SAVINGS)
@@ -535,12 +535,12 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateAddedWhenStateDoesN
 	validatorRewards0, _ := suite.GetBeginBlockClaimedStakingRewards(resBeginBlock)
 
 	firstStakingRewardIndexes0 := validatorRewards0[suite.valAddrs[0].String()].
-		AmountOf("uMage").
+		AmountOf("umage").
 		ToDec().
 		Quo(derivative0.Amount.ToDec())
 
 	firstStakingRewardIndexes1 := validatorRewards0[suite.valAddrs[1].String()].
-		AmountOf("uMage").
+		AmountOf("umage").
 		ToDec().
 		Quo(derivative1.Amount.ToDec())
 
@@ -552,13 +552,13 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateAddedWhenStateDoesN
 	// First accumulation can have staking rewards, but no other rewards
 	suite.StoredEarnIndexesEqual(derivative0.Denom, types.RewardIndexes{
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			RewardFactor:   firstStakingRewardIndexes0,
 		},
 	})
 	suite.StoredEarnIndexesEqual(derivative1.Denom, types.RewardIndexes{
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			RewardFactor:   firstStakingRewardIndexes1,
 		},
 	})
@@ -589,20 +589,20 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateAddedWhenStateDoesN
 	validatorRewards1, _ := suite.GetBeginBlockClaimedStakingRewards(resBeginBlock)
 
 	secondStakingRewardIndexes0 := validatorRewards1[suite.valAddrs[0].String()].
-		AmountOf("uMage").
+		AmountOf("umage").
 		ToDec().
 		Quo(derivative0.Amount.ToDec())
 
 	secondStakingRewardIndexes1 := validatorRewards1[suite.valAddrs[1].String()].
-		AmountOf("uMage").
+		AmountOf("umage").
 		ToDec().
 		Quo(derivative1.Amount.ToDec())
 
 	// Second accumulation has both staking rewards and incentive rewards
-	// uMage incentive rewards: 3600 * 1000 / (2 * 1000000) == 1.8
+	// umage incentive rewards: 3600 * 1000 / (2 * 1000000) == 1.8
 	suite.StoredEarnIndexesEqual(derivative0.Denom, types.RewardIndexes{
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			// Incentive rewards + both staking rewards
 			RewardFactor: d("1.8").Add(firstStakingRewardIndexes0).Add(secondStakingRewardIndexes0),
 		},
@@ -613,7 +613,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateAddedWhenStateDoesN
 	})
 	suite.StoredEarnIndexesEqual(derivative1.Denom, types.RewardIndexes{
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			// Incentive rewards + both staking rewards
 			RewardFactor: d("1.8").Add(firstStakingRewardIndexes1).Add(secondStakingRewardIndexes1),
 		},
@@ -625,9 +625,9 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateAddedWhenStateDoesN
 }
 
 func (suite *AccumulateEarnRewardsIntegrationTests) TestNoPanicWhenStateDoesNotExist() {
-	derivative0, err := suite.MintLiquidAnyValAddr(suite.userAddrs[0], suite.valAddrs[0], c("uMage", 1000000))
+	derivative0, err := suite.MintLiquidAnyValAddr(suite.userAddrs[0], suite.valAddrs[0], c("umage", 1000000))
 	suite.NoError(err)
-	derivative1, err := suite.MintLiquidAnyValAddr(suite.userAddrs[1], suite.valAddrs[1], c("uMage", 1000000))
+	derivative1, err := suite.MintLiquidAnyValAddr(suite.userAddrs[1], suite.valAddrs[1], c("umage", 1000000))
 	suite.NoError(err)
 
 	period := types.NewMultiRewardPeriod(

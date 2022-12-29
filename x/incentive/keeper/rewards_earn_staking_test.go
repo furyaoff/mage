@@ -40,7 +40,7 @@ func (suite *AccumulateEarnRewardsTests) TestStakingRewardsDistributed() {
 			CollateralType: vaultDenom1,
 			RewardIndexes: types.RewardIndexes{
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   initialVault1RewardFactor,
 				},
 			},
@@ -49,7 +49,7 @@ func (suite *AccumulateEarnRewardsTests) TestStakingRewardsDistributed() {
 			CollateralType: vaultDenom2,
 			RewardIndexes: types.RewardIndexes{
 				{
-					CollateralType: "uMage",
+					CollateralType: "umage",
 					RewardFactor:   initialVault2RewardFactor,
 				},
 			},
@@ -81,7 +81,7 @@ func (suite *AccumulateEarnRewardsTests) TestStakingRewardsDistributed() {
 	// Only contains staking rewards
 	suite.storedIndexesEqual(vaultDenom1, types.RewardIndexes{
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			RewardFactor: initialVault1RewardFactor.
 				Add(vaultDenom1Supply.ToDec().
 					QuoInt64(10).
@@ -92,7 +92,7 @@ func (suite *AccumulateEarnRewardsTests) TestStakingRewardsDistributed() {
 
 	suite.storedIndexesEqual(vaultDenom2, types.RewardIndexes{
 		{
-			CollateralType: "uMage",
+			CollateralType: "umage",
 			RewardFactor: initialVault2RewardFactor.
 				Add(vaultDenom2Supply.ToDec().
 					QuoInt64(10).

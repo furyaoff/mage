@@ -45,7 +45,7 @@ func (suite *KeeperTestSuite) SetupTest() {
 	suite.addrs = addrs
 
 	stakingParams := stakingtypes.DefaultParams()
-	stakingParams.BondDenom = "uMage"
+	stakingParams.BondDenom = "umage"
 	suite.app.GetStakingKeeper().SetParams(suite.ctx, stakingParams)
 }
 
@@ -162,7 +162,7 @@ func (suite *KeeperTestSuite) deliverMsgCreateValidator(ctx sdk.Context, address
 // New validators are unbonded until the end blocker is run.
 func (suite *KeeperTestSuite) CreateNewUnbondedValidator(addr sdk.ValAddress, selfDelegation sdk.Int) stakingtypes.Validator {
 	// Create a validator
-	err := suite.deliverMsgCreateValidator(suite.ctx, addr, sdk.NewCoin("uMage", selfDelegation))
+	err := suite.deliverMsgCreateValidator(suite.ctx, addr, sdk.NewCoin("umage", selfDelegation))
 	suite.Require().NoError(err)
 
 	// New validators are created in an unbonded state. Note if the end blocker is run later this validator could become bonded.

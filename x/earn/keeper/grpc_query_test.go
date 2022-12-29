@@ -232,7 +232,7 @@ func (suite *grpcQueryTestSuite) TestDeposits() {
 
 	initialUMageBalance := sdk.NewInt(1e9)
 	startBalance := sdk.NewCoins(
-		sdk.NewCoin("uMage", initialUMageBalance),
+		sdk.NewCoin("umage", initialUMageBalance),
 		sdk.NewInt64Coin(vault1Denom, 1000),
 		sdk.NewInt64Coin(vault2Denom, 1000),
 		// BMage isn't actually minted via x/liquid
@@ -353,7 +353,7 @@ func (suite *grpcQueryTestSuite) TestDeposits() {
 				),
 				// Only the specified vault denom value
 				Value: sdk.NewCoins(
-					sdk.NewCoin("uMage", deposit3Amount.Amount),
+					sdk.NewCoin("umage", deposit3Amount.Amount),
 				),
 			},
 			res.Deposits[0],
@@ -410,8 +410,8 @@ func (suite *grpcQueryTestSuite) TestDeposits() {
 				},
 				Value: sdk.Coins{
 					// Does not include non-bMage vaults
-					sdk.NewCoin("uMage", deposit4Amount.Amount),
-					sdk.NewCoin("uMage", deposit3Amount.Amount),
+					sdk.NewCoin("umage", deposit4Amount.Amount),
+					sdk.NewCoin("umage", deposit3Amount.Amount),
 				},
 			},
 			res.Deposits[0],
@@ -507,7 +507,7 @@ func (suite *grpcQueryTestSuite) TestDeposits_bMage() {
 	)
 
 	suite.CreateVault(
-		"uMage",
+		"umage",
 		types.StrategyTypes{types.STRATEGY_TYPE_SAVINGS},
 		false,
 		[]sdk.AccAddress{},
@@ -516,7 +516,7 @@ func (suite *grpcQueryTestSuite) TestDeposits_bMage() {
 	address1, derivatives1, _ := suite.createAccountWithDerivatives(testutil.TestBMageDenoms[0], sdk.NewInt(1e9))
 	address2, derivatives2, _ := suite.createAccountWithDerivatives(testutil.TestBMageDenoms[1], sdk.NewInt(1e9))
 
-	err := suite.App.FundAccount(suite.Ctx, address1, sdk.NewCoins(sdk.NewCoin("uMage", sdk.NewInt(1e9))))
+	err := suite.App.FundAccount(suite.Ctx, address1, sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(1e9))))
 	suite.Require().NoError(err)
 
 	// Slash the last validator to reduce the value of it's derivatives to test bMage to underlying token conversion.
@@ -557,7 +557,7 @@ func (suite *grpcQueryTestSuite) TestDeposits_bMage() {
 	err = suite.Keeper.Deposit(suite.Ctx, address1, derivatives2, types.STRATEGY_TYPE_SAVINGS)
 	suite.Require().NoError(err)
 
-	err = suite.Keeper.Deposit(suite.Ctx, address1, sdk.NewInt64Coin("uMage", 1e6), types.STRATEGY_TYPE_SAVINGS)
+	err = suite.Keeper.Deposit(suite.Ctx, address1, sdk.NewInt64Coin("umage", 1e6), types.STRATEGY_TYPE_SAVINGS)
 	suite.Require().NoError(err)
 
 	suite.Run("multiple deposits", func() {
@@ -754,7 +754,7 @@ func (suite *grpcQueryTestSuite) TestTotalSupply() {
 		{
 			name: "calculates supply of savings vaults, even when private",
 			setup: func() {
-				vault1Denom := "uMage"
+				vault1Denom := "umage"
 				vault2Denom := "busd"
 
 				acc1 := suite.CreateAccount(sdk.NewCoins(
@@ -783,7 +783,7 @@ func (suite *grpcQueryTestSuite) TestTotalSupply() {
 				deposit(acc2.GetAddress(), vault2Denom, 2e5)
 			},
 			expectedSupply: sdk.NewCoins(
-				sdk.NewInt64Coin("uMage", 1e5),
+				sdk.NewInt64Coin("umage", 1e5),
 				sdk.NewInt64Coin("busd", 3e5),
 			),
 		},

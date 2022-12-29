@@ -153,7 +153,7 @@ func (suite *Suite) SetupTest() {
 	savingsGS := savingstypes.NewGenesisState(
 		savingstypes.NewParams(
 			[]string{
-				"uMage",
+				"umage",
 				"busd",
 				"usdx",
 				TestBMageDenoms[0],
@@ -165,7 +165,7 @@ func (suite *Suite) SetupTest() {
 	)
 
 	stakingParams := stakingtypes.DefaultParams()
-	stakingParams.BondDenom = "uMage"
+	stakingParams.BondDenom = "umage"
 
 	stakingGs := stakingtypes.GenesisState{
 		Params: stakingParams,

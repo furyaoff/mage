@@ -31,8 +31,8 @@ var (
 	DefaultMultipliers        = MultipliersPerDenoms{}
 	DefaultClaimEnd           = tmtime.Canonical(time.Unix(1, 0))
 
-	BondDenom              = "uMage"
-	USDXMintingRewardDenom = "uMage"
+	BondDenom              = "umage"
+	USDXMintingRewardDenom = "umage"
 
 	IncentiveMacc = MagedistTypes.ModuleName
 )

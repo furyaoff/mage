@@ -27,11 +27,11 @@ func TestProposalTestSuite(t *testing.T) {
 func (suite *proposalTestSuite) TestCommunityDepositProposal() {
 	ctx := suite.Ctx
 	macc := suite.App.GetAccountKeeper().GetModuleAccount(ctx, communitytypes.ModuleAccountName)
-	fundAmount := sdk.NewCoins(sdk.NewInt64Coin("uMage", 100000000))
-	depositAmount := sdk.NewCoin("uMage", sdk.NewInt(10000000))
+	fundAmount := sdk.NewCoins(sdk.NewInt64Coin("umage", 100000000))
+	depositAmount := sdk.NewCoin("umage", sdk.NewInt(10000000))
 	suite.Require().NoError(suite.App.FundModuleAccount(ctx, macc.GetName(), fundAmount))
 
-	suite.CreateVault("uMage", types.StrategyTypes{types.STRATEGY_TYPE_SAVINGS}, false, nil)
+	suite.CreateVault("umage", types.StrategyTypes{types.STRATEGY_TYPE_SAVINGS}, false, nil)
 	prop := types.NewCommunityPoolDepositProposal("test title",
 		"desc", depositAmount)
 	err := keeper.HandleCommunityPoolDepositProposal(ctx, suite.Keeper, prop)
@@ -47,11 +47,11 @@ func (suite *proposalTestSuite) TestCommunityDepositProposal() {
 func (suite *proposalTestSuite) TestCommunityWithdrawProposal() {
 	ctx := suite.Ctx
 	macc := suite.App.GetAccountKeeper().GetModuleAccount(ctx, communitytypes.ModuleAccountName)
-	fundAmount := sdk.NewCoins(sdk.NewInt64Coin("uMage", 100000000))
-	depositAmount := sdk.NewCoin("uMage", sdk.NewInt(10000000))
+	fundAmount := sdk.NewCoins(sdk.NewInt64Coin("umage", 100000000))
+	depositAmount := sdk.NewCoin("umage", sdk.NewInt(10000000))
 	suite.Require().NoError(suite.App.FundModuleAccount(ctx, macc.GetName(), fundAmount))
 
-	suite.CreateVault("uMage", types.StrategyTypes{types.STRATEGY_TYPE_SAVINGS}, false, nil)
+	suite.CreateVault("umage", types.StrategyTypes{types.STRATEGY_TYPE_SAVINGS}, false, nil)
 	deposit := types.NewCommunityPoolDepositProposal("test title",
 		"desc", depositAmount)
 	err := keeper.HandleCommunityPoolDepositProposal(ctx, suite.Keeper, deposit)

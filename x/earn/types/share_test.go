@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	testDenom1 = "uMage"
+	testDenom1 = "umage"
 	testDenom2 = "usdx"
 )
 

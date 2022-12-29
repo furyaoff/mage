@@ -53,7 +53,7 @@ func (suite *AccumulateUSDXRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 		cType,
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
-		c("uMage", 1000),
+		c("umage", 1000),
 	)
 
 	suite.keeper.AccumulateUSDXMintingRewards(suite.ctx, period)
@@ -87,7 +87,7 @@ func (suite *AccumulateUSDXRewardsTests) TestStateUnchangedWhenBlockTimeHasNotIn
 		cType,
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
-		c("uMage", 2000),
+		c("umage", 2000),
 	)
 
 	suite.keeper.AccumulateUSDXMintingRewards(suite.ctx, period)
@@ -124,7 +124,7 @@ func (suite *AccumulateUSDXRewardsTests) TestNoAccumulationWhenSourceSharesAreZe
 		cType,
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
-		c("uMage", 1000),
+		c("umage", 1000),
 	)
 
 	suite.keeper.AccumulateUSDXMintingRewards(suite.ctx, period)
@@ -148,7 +148,7 @@ func (suite *AccumulateUSDXRewardsTests) TestStateAddedWhenStateDoesNotExist() {
 		cType,
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
-		c("uMage", 1000),
+		c("umage", 1000),
 	)
 
 	firstAccrualTime := time.Date(1998, 1, 1, 0, 0, 0, 0, time.UTC)
@@ -193,7 +193,7 @@ func (suite *AccumulateUSDXRewardsTests) TestNoAccumulationWhenBeforeStartTime()
 		cType,
 		firstAccrualTime.Add(time.Nanosecond), // start time after accrual time
 		distantFuture,
-		c("uMage", 1000),
+		c("umage", 1000),
 	)
 
 	suite.ctx = suite.ctx.WithBlockTime(firstAccrualTime)
@@ -223,7 +223,7 @@ func (suite *AccumulateUSDXRewardsTests) TestPanicWhenCurrentTimeLessThanPreviou
 		cType,
 		time.Time{}, // start time after accrual time
 		distantFuture,
-		c("uMage", 1000),
+		c("umage", 1000),
 	)
 
 	suite.ctx = suite.ctx.WithBlockTime(firstAccrualTime)

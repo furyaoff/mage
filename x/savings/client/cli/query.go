@@ -77,7 +77,7 @@ func queryDepositsCmd() *cobra.Command {
 		Long:  "query for all savings module deposits or a specific deposit using flags",
 		Example: fmt.Sprintf(`%[1]s q %[2]s deposits
 %[1]s q %[2]s deposits --owner Mage1l0xsq2z7gqd7yly0g40y5836g0appumark77ny --denom bnb
-%[1]s q %[2]s deposits --denom uMage
+%[1]s q %[2]s deposits --denom umage
 %[1]s q %[2]s deposits --denom btcb`, version.AppName, types.ModuleName),
 		Args: cobra.NoArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
