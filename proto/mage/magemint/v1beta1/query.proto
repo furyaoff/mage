@@ -1,0 +1,44 @@
+syntax = "proto3";
+package mage.Magemint.v1beta1;
+
+import "cosmos_proto/cosmos.proto";
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+import "Furya-Official/mageMagemint/v1beta1/Magemint.proto";
+
+option go_package = "github.com/furya-official/mage/x/Magemint/types";
+
+// Query defines the gRPC querier service for Magemint.
+service Query {
+  // Params queries the parameters of x/Magemint module.
+  rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
+    option (google.api.http).get = "/Furya-Official/mageMagemint/v1beta1/params";
+  }
+
+  // Inflation queries x/Magemint for the overall cumulative inflation rate of MAGE.
+  rpc Inflation(QueryInflationRequest) returns (QueryInflationResponse) {
+    option (google.api.http).get = "/Furya-Official/mageMagemint/v1beta1/inflation";
+  }
+}
+
+// QueryParamsRequest defines the request type for querying x/Magemint parameters.
+message QueryParamsRequest {}
+
+// QueryParamsResponse defines the response type for querying x/Magemint parameters.
+message QueryParamsResponse {
+  Params params = 1 [(gogoproto.nullable) = false];
+}
+
+// QueryInflationRequest is the request type for the Query/Inflation RPC method.
+message QueryInflationRequest {}
+
+// QueryInflationResponse is the response type for the Query/Inflation RPC method.
+message QueryInflationResponse {
+  // inflation is the current minting inflation value.
+  // example "0.990000000000000000" - 99% inflation
+  string inflation = 1 [
+    (cosmos_proto.scalar) = "cosmos.Dec",
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+}

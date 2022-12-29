@@ -1,0 +1,15 @@
+syntax = "proto3";
+package mage.earn.v1beta1;
+
+import "gogoproto/gogo.proto";
+import "Furya-Official/mageearn/v1beta1/vault.proto";
+
+option go_package = "github.com/furya-official/mage/x/earn/types";
+
+// Params defines the parameters of the earn module.
+message Params {
+  repeated AllowedVault allowed_vaults = 1 [
+    (gogoproto.castrepeated) = "AllowedVaults",
+    (gogoproto.nullable) = false
+  ];
+}
