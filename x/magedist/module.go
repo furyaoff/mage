@@ -1,4 +1,4 @@
-package Magedist
+package magedist
 
 import (
 	"context"
@@ -19,11 +19,11 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/furya-official/mage/x/Magedist/client/cli"
-	"github.com/furya-official/mage/x/Magedist/client/rest"
-	"github.com/furya-official/mage/x/Magedist/keeper"
-	"github.com/furya-official/mage/x/Magedist/simulation"
-	"github.com/furya-official/mage/x/Magedist/types"
+	"github.com/furya-official/mage/x/magedist/client/cli"
+	"github.com/furya-official/mage/x/magedist/client/rest"
+	"github.com/furya-official/mage/x/magedist/keeper"
+	"github.com/furya-official/mage/x/magedist/simulation"
+	"github.com/furya-official/mage/x/magedist/types"
 )
 
 var (
@@ -72,20 +72,20 @@ func (AppModuleBasic) ValidateGenesis(cdc codec.JSONCodec, config client.TxEncod
 	return genState.Validate()
 }
 
-// RegisterRESTRoutes registers Magedist module's REST service handlers.
+// RegisterRESTRoutes registers magedist module's REST service handlers.
 func (AppModuleBasic) RegisterRESTRoutes(clientCtx client.Context, rtr *mux.Router) {
 	rest.RegisterRoutes(clientCtx, rtr)
 }
 
-// RegisterGRPCGatewayRoutes registers the gRPC Gateway routes for Magedist module.
+// RegisterGRPCGatewayRoutes registers the gRPC Gateway routes for magedist module.
 func (AppModuleBasic) RegisterGRPCGatewayRoutes(clientCtx client.Context, mux *runtime.ServeMux) {
 	types.RegisterQueryHandlerClient(context.Background(), mux, types.NewQueryClient(clientCtx))
 }
 
-// GetTxCmd returns Magedist module's root tx command.
+// GetTxCmd returns magedist module's root tx command.
 func (a AppModuleBasic) GetTxCmd() *cobra.Command { return nil }
 
-// GetQueryCmd returns Magedist module's root query command.
+// GetQueryCmd returns magedist module's root query command.
 func (AppModuleBasic) GetQueryCmd() *cobra.Command {
 	return cli.GetQueryCmd()
 }
@@ -94,7 +94,7 @@ func (AppModuleBasic) GetQueryCmd() *cobra.Command {
 // AppModule
 // ----------------------------------------------------------------------------
 
-// AppModule implements the AppModule interface for Magedist module.
+// AppModule implements the AppModule interface for magedist module.
 type AppModule struct {
 	AppModuleBasic
 
@@ -111,18 +111,18 @@ func NewAppModule(keeper keeper.Keeper, accountKeeper types.AccountKeeper) AppMo
 	}
 }
 
-// Name returns Magedist module's name.
+// Name returns magedist module's name.
 func (am AppModule) Name() string {
 	return am.AppModuleBasic.Name()
 }
 
-// Route returns Magedist module's message route.
+// Route returns magedist module's message route.
 func (am AppModule) Route() sdk.Route { return sdk.Route{} }
 
-// QuerierRoute returns Magedist module's query routing key.
+// QuerierRoute returns magedist module's query routing key.
 func (AppModule) QuerierRoute() string { return types.QuerierRoute }
 
-// LegacyQuerierHandler returns Magedist module's Querier.
+// LegacyQuerierHandler returns magedist module's Querier.
 func (am AppModule) LegacyQuerierHandler(legacyQuerierCdc *codec.LegacyAmino) sdk.Querier {
 	return keeper.NewQuerier(am.keeper, legacyQuerierCdc)
 }
@@ -133,10 +133,10 @@ func (am AppModule) RegisterServices(cfg module.Configurator) {
 	types.RegisterQueryServer(cfg.QueryServer(), keeper.NewQueryServerImpl(am.keeper))
 }
 
-// RegisterInvariants registers Magedist module's invariants.
+// RegisterInvariants registers magedist module's invariants.
 func (am AppModule) RegisterInvariants(_ sdk.InvariantRegistry) {}
 
-// InitGenesis performs Magedist module's genesis initialization It returns
+// InitGenesis performs magedist module's genesis initialization It returns
 // no validator updates.
 func (am AppModule) InitGenesis(ctx sdk.Context, cdc codec.JSONCodec, gs json.RawMessage) []abci.ValidatorUpdate {
 	var genState types.GenesisState
@@ -145,7 +145,7 @@ func (am AppModule) InitGenesis(ctx sdk.Context, cdc codec.JSONCodec, gs json.Ra
 	return []abci.ValidatorUpdate{}
 }
 
-// ExportGenesis returns Magedist module's exported genesis state as raw JSON bytes.
+// ExportGenesis returns magedist module's exported genesis state as raw JSON bytes.
 func (am AppModule) ExportGenesis(ctx sdk.Context, cdc codec.JSONCodec) json.RawMessage {
 	genState := ExportGenesis(ctx, am.keeper)
 	return cdc.MustMarshalJSON(genState)
@@ -154,12 +154,12 @@ func (am AppModule) ExportGenesis(ctx sdk.Context, cdc codec.JSONCodec) json.Raw
 // ConsensusVersion implements ConsensusVersion.
 func (AppModule) ConsensusVersion() uint64 { return 1 }
 
-// BeginBlock executes all ABCI BeginBlock logic respective to Magedist module.
+// BeginBlock executes all ABCI BeginBlock logic respective to magedist module.
 func (am AppModule) BeginBlock(ctx sdk.Context, _ abci.RequestBeginBlock) {
 	BeginBlocker(ctx, am.keeper)
 }
 
-// EndBlock executes all ABCI EndBlock logic respective to Magedist module. It
+// EndBlock executes all ABCI EndBlock logic respective to magedist module. It
 // returns no validator updates.
 func (am AppModule) EndBlock(_ sdk.Context, _ abci.RequestEndBlock) []abci.ValidatorUpdate {
 	return []abci.ValidatorUpdate{}
@@ -182,7 +182,7 @@ func (AppModule) RandomizedParams(r *rand.Rand) []simtypes.ParamChange {
 	return simulation.ParamChanges(r)
 }
 
-// RegisterStoreDecoder registers a decoder for Magedist module's types
+// RegisterStoreDecoder registers a decoder for magedist module's types
 func (AppModuleBasic) RegisterStoreDecoder(sdr sdk.StoreDecoderRegistry) {
 	sdr[types.StoreKey] = simulation.DecodeStore
 }

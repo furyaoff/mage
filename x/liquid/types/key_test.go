@@ -22,19 +22,19 @@ func TestParseLiquidStakingTokenDenom(t *testing.T) {
 	}{
 		{
 			name:        "valid denom",
-			giveDenom:   "bMage-Magevaloper1ze7y9qwdddejmy7jlw4cymqqlt2wh05y6cpt5a",
-			wantAddress: mustValAddressFromBech32("Magevaloper1ze7y9qwdddejmy7jlw4cymqqlt2wh05y6cpt5a"),
+			giveDenom:   "bmage-magevaloper1ze7y9qwdddejmy7jlw4cymqqlt2wh05y6cpt5a",
+			wantAddress: mustValAddressFromBech32("magevaloper1ze7y9qwdddejmy7jlw4cymqqlt2wh05y6cpt5a"),
 			wantErr:     nil,
 		},
 		{
 			name:        "invalid prefix",
-			giveDenom:   "umage-Magevaloper1ze7y9qwdddejmy7jlw4cymqqlt2wh05y6cpt5a",
-			wantAddress: mustValAddressFromBech32("Magevaloper1ze7y9qwdddejmy7jlw4cymqqlt2wh05y6cpt5a"),
+			giveDenom:   "umage-magevaloper1ze7y9qwdddejmy7jlw4cymqqlt2wh05y6cpt5a",
+			wantAddress: mustValAddressFromBech32("magevaloper1ze7y9qwdddejmy7jlw4cymqqlt2wh05y6cpt5a"),
 			wantErr:     fmt.Errorf("invalid denom prefix, expected %s, got %s", types.DefaultDerivativeDenom, "umage"),
 		},
 		{
 			name:        "invalid validator address",
-			giveDenom:   "bMage-Magevaloper1ze7y9qw",
+			giveDenom:   "bmage-magevaloper1ze7y9qw",
 			wantAddress: sdk.ValAddress{},
 			wantErr:     fmt.Errorf("invalid denom validator address: decoding bech32 failed: invalid checksum"),
 		},

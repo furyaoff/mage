@@ -20,7 +20,7 @@ import (
 	pricefeedtypes "github.com/furya-official/mage/x/pricefeed/types"
 )
 
-const chainID = "Magetest_2221-1"
+const chainID = "magetest_2221-1"
 
 func umage(amt int64) sdk.Coins {
 	return sdk.NewCoins(sdk.NewInt64Coin("umage", amt))

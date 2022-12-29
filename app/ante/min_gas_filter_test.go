@@ -30,7 +30,7 @@ func TestEvmMinGasFilter(t *testing.T) {
 
 	ctx := tApp.NewContext(true, tmproto.Header{Height: 1, Time: tmtime.Now()})
 	tApp.GetEvmKeeper().SetParams(ctx, evmtypes.Params{
-		EvmDenom: "aMage",
+		EvmDenom: "amage",
 	})
 
 	testCases := []struct {
@@ -54,19 +54,19 @@ func TestEvmMinGasFilter(t *testing.T) {
 			mustParseDecCoins("0.001umage"),
 		},
 		{
-			"zero umage gas price, min aMage price",
-			mustParseDecCoins("0umage;100000aMage"),
-			mustParseDecCoins("0umage"), // aMage is removed
+			"zero umage gas price, min amage price",
+			mustParseDecCoins("0umage;100000amage"),
+			mustParseDecCoins("0umage"), // amage is removed
 		},
 		{
-			"zero umage gas price, min aMage price, other token",
-			mustParseDecCoins("0umage;100000aMage;0.001other"),
-			mustParseDecCoins("0umage;0.001other"), // aMage is removed
+			"zero umage gas price, min amage price, other token",
+			mustParseDecCoins("0umage;100000amage;0.001other"),
+			mustParseDecCoins("0umage;0.001other"), // amage is removed
 		},
 		{
-			"non-zero umage gas price, min aMage price",
-			mustParseDecCoins("0.25umage;100000aMage;0.001other"),
-			mustParseDecCoins("0.25umage;0.001other"), // aMage is removed
+			"non-zero umage gas price, min amage price",
+			mustParseDecCoins("0.25umage;100000amage;0.001other"),
+			mustParseDecCoins("0.25umage;0.001other"), // amage is removed
 		},
 	}
 

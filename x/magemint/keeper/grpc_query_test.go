@@ -13,20 +13,20 @@ import (
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
 	"github.com/cosmos/cosmos-sdk/x/staking"
 
-	"github.com/furya-official/mage/x/Magemint/keeper"
-	"github.com/furya-official/mage/x/Magemint/testutil"
-	"github.com/furya-official/mage/x/Magemint/types"
+	"github.com/furya-official/mage/x/magemint/keeper"
+	"github.com/furya-official/mage/x/magemint/testutil"
+	"github.com/furya-official/mage/x/magemint/types"
 )
 
 type grpcQueryTestSuite struct {
-	testutil.MagemintTestSuite
+	testutil.magemintTestSuite
 
 	queryClient     types.QueryClient
 	mintQueryClient minttypes.QueryClient
 }
 
 func (suite *grpcQueryTestSuite) SetupTest() {
-	suite.MagemintTestSuite.SetupTest()
+	suite.magemintTestSuite.SetupTest()
 
 	queryHelper := baseapp.NewQueryServerTestHelper(suite.Ctx, suite.App.InterfaceRegistry())
 	types.RegisterQueryServer(queryHelper, suite.Keeper)
@@ -44,11 +44,11 @@ func TestGRPCQueryTestSuite(t *testing.T) {
 func (suite *grpcQueryTestSuite) TestGRPCQueryParams() {
 	app, ctx, queryClient := suite.App, suite.Ctx, suite.queryClient
 
-	MagemintKeeper := app.GetMagemintKeeper()
+	magemintKeeper := app.GetmagemintKeeper()
 
 	params, err := queryClient.Params(context.Background(), &types.QueryParamsRequest{})
 	suite.Require().NoError(err)
-	suite.Require().Equal(params.Params, MagemintKeeper.GetParams(ctx))
+	suite.Require().Equal(params.Params, magemintKeeper.GetParams(ctx))
 }
 
 func (suite *grpcQueryTestSuite) TestGRPCInflationQuery() {
@@ -111,10 +111,10 @@ func (suite *grpcQueryTestSuite) TestGRPCInflationQuery() {
 
 			app, ctx, queryClient := suite.App, suite.Ctx, suite.queryClient
 
-			MagemintKeeper := app.GetMagemintKeeper()
+			magemintKeeper := app.GetmagemintKeeper()
 
 			// set desired params
-			MagemintKeeper.SetParams(ctx, types.NewParams(tc.communityInflation, tc.stakingApy))
+			magemintKeeper.SetParams(ctx, types.NewParams(tc.communityInflation, tc.stakingApy))
 
 			// set bonded token ratio
 			suite.SetBondedTokenRatio(tc.bondedRatio)
@@ -123,7 +123,7 @@ func (suite *grpcQueryTestSuite) TestGRPCInflationQuery() {
 			// query inflation & check for expected results
 			inflation, err := queryClient.Inflation(context.Background(), &types.QueryInflationRequest{})
 			suite.Require().NoError(err)
-			suite.Require().Equal(inflation.Inflation, MagemintKeeper.CumulativeInflation(ctx))
+			suite.Require().Equal(inflation.Inflation, magemintKeeper.CumulativeInflation(ctx))
 			suite.Require().Equal(inflation.Inflation, tc.expectedInflation)
 
 			// ensure overridden x/mint query for inflation returns the adjusted inflation

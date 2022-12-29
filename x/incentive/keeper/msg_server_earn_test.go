@@ -12,7 +12,7 @@ import (
 	"github.com/furya-official/mage/x/incentive"
 	"github.com/furya-official/mage/x/incentive/testutil"
 	"github.com/furya-official/mage/x/incentive/types"
-	"github.com/furya-official/mage/x/Magemint"
+	"github.com/furya-official/mage/x/magemint"
 	liquidtypes "github.com/furya-official/mage/x/liquid/types"
 )
 
@@ -29,14 +29,14 @@ func (suite *HandlerTestSuite) TestEarnLiquidClaim() {
 		WithSimpleAccount(validatorAddr2, cs(c("umage", 1e12)))
 
 	incentBuilder := suite.incentiveBuilder().
-		WithSimpleEarnRewardPeriod("bMage", cs())
+		WithSimpleEarnRewardPeriod("bmage", cs())
 
 	savingsBuilder := testutil.NewSavingsGenesisBuilder().
-		WithSupportedDenoms("bMage")
+		WithSupportedDenoms("bmage")
 
 	earnBuilder := testutil.NewEarnGenesisBuilder().
 		WithAllowedVaults(earntypes.AllowedVault{
-			Denom:             "bMage",
+			Denom:             "bmage",
 			Strategies:        earntypes.StrategyTypes{earntypes.STRATEGY_TYPE_SAVINGS},
 			IsPrivateVault:    false,
 			AllowedDepositors: nil,
@@ -53,22 +53,22 @@ func (suite *HandlerTestSuite) TestEarnLiquidClaim() {
 	// bk := suite.App.GetBankKeeper()
 	sk := suite.App.GetStakingKeeper()
 	lq := suite.App.GetLiquidKeeper()
-	mk := suite.App.GetMagemintKeeper()
+	mk := suite.App.GetmagemintKeeper()
 	dk := suite.App.GetDistrKeeper()
 	ik := suite.App.GetIncentiveKeeper()
 
 	iParams := ik.GetParams(suite.Ctx)
-	period, found := iParams.EarnRewardPeriods.GetMultiRewardPeriod("bMage")
+	period, found := iParams.EarnRewardPeriods.GetMultiRewardPeriod("bmage")
 	suite.Require().True(found)
-	suite.Require().Equal("bMage", period.CollateralType)
+	suite.Require().Equal("bmage", period.CollateralType)
 
 	// Ensure nonzero staking APY
 	mParams := mk.GetParams(suite.Ctx)
 	mParams.StakingRewardsApy = sdk.NewDecWithPrec(20, 2)
 	mk.SetParams(suite.Ctx, mParams)
 
-	bMageDenom1 := lq.GetLiquidStakingTokenDenom(valAddr1)
-	bMageDenom2 := lq.GetLiquidStakingTokenDenom(valAddr2)
+	bmageDenom1 := lq.GetLiquidStakingTokenDenom(valAddr1)
+	bmageDenom2 := lq.GetLiquidStakingTokenDenom(valAddr2)
 
 	err := suite.App.FundModuleAccount(suite.Ctx, distrtypes.ModuleName, cs(c("umage", 1e12)))
 	suite.NoError(err)
@@ -108,12 +108,12 @@ func (suite *HandlerTestSuite) TestEarnLiquidClaim() {
 	suite.Require().NoError(err)
 
 	// Deposit liquid tokens to earn
-	err = suite.DeliverEarnMsgDeposit(userAddr1, c(bMageDenom1, 1e9), earntypes.STRATEGY_TYPE_SAVINGS)
+	err = suite.DeliverEarnMsgDeposit(userAddr1, c(bmageDenom1, 1e9), earntypes.STRATEGY_TYPE_SAVINGS)
 	suite.Require().NoError(err)
 
-	err = suite.DeliverEarnMsgDeposit(userAddr2, c(bMageDenom1, 99e9), earntypes.STRATEGY_TYPE_SAVINGS)
+	err = suite.DeliverEarnMsgDeposit(userAddr2, c(bmageDenom1, 99e9), earntypes.STRATEGY_TYPE_SAVINGS)
 	suite.Require().NoError(err)
-	err = suite.DeliverEarnMsgDeposit(userAddr2, c(bMageDenom2, 99e9), earntypes.STRATEGY_TYPE_SAVINGS)
+	err = suite.DeliverEarnMsgDeposit(userAddr2, c(bmageDenom2, 99e9), earntypes.STRATEGY_TYPE_SAVINGS)
 	suite.Require().NoError(err)
 
 	// BeginBlocker to update minter annual provisions as it starts at 0 which results in no minted coins
@@ -138,7 +138,7 @@ func (suite *HandlerTestSuite) TestEarnLiquidClaim() {
 		WithBlockTime(suite.Ctx.BlockTime().Add(7 * time.Second))
 
 	// Mint tokens
-	Magemint.BeginBlocker(suite.Ctx, suite.App.GetMagemintKeeper())
+	magemint.BeginBlocker(suite.Ctx, suite.App.GetmagemintKeeper())
 	// Distribute to validators, block needs votes
 	distribution.BeginBlocker(
 		suite.Ctx,
@@ -163,10 +163,10 @@ func (suite *HandlerTestSuite) TestEarnLiquidClaim() {
 	// Zero rewards since this block is the same as the block it was last claimed
 
 	// This needs to run **after** staking rewards are minted/distributed in
-	// x/Magemint + x/distribution but **before** the x/incentive BeginBlocker.
+	// x/magemint + x/distribution but **before** the x/incentive BeginBlocker.
 
 	// Order of operations:
-	// 1. x/Magemint + x/distribution BeginBlocker
+	// 1. x/magemint + x/distribution BeginBlocker
 	// 2. CalculateDelegationRewards
 	// 3. x/incentive BeginBlocker to claim staking rewards
 	delegationRewards := dk.CalculateDelegationRewards(suite.Ctx, validator1, delegation, endingPeriod)

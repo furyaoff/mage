@@ -11,7 +11,7 @@
           "base_asset": "btc",
           "market_id": "btc-usd",
           "oracles": [
-            "Mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw"
+            "mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw"
           ],
           "quote_asset": "usd"
         },
@@ -20,7 +20,7 @@
           "base_asset": "xrp",
           "market_id": "xrp-usd",
           "oracles": [
-            "Mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw"
+            "mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw"
           ],
           "quote_asset": "usd"
         },
@@ -29,7 +29,7 @@
             "base_asset": "bnb",
             "market_id": "bnb-usd",
             "oracles": [
-              "Mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw"
+              "mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw"
             ],
             "quote_asset": "usd"
         }          

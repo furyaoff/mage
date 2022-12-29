@@ -19,7 +19,7 @@ import (
 	"github.com/furya-official/mage/x/incentive/keeper"
 	"github.com/furya-official/mage/x/incentive/testutil"
 	"github.com/furya-official/mage/x/incentive/types"
-	Magedisttypes "github.com/furya-official/mage/x/Magedist/types"
+	magedisttypes "github.com/furya-official/mage/x/magedist/types"
 )
 
 type BorrowIntegrationTests struct {
@@ -44,7 +44,7 @@ func (suite *BorrowIntegrationTests) TestSingleUserAccumulatesRewardsAfterSyncin
 	userA := suite.addrs[0]
 
 	authBulder := app.NewAuthBankGenesisBuilder().
-		WithSimpleModuleAccount(Magedisttypes.ModuleName, cs(c("hard", 1e18))). // Fill Magedist with enough coins to pay out any reward
+		WithSimpleModuleAccount(magedisttypes.ModuleName, cs(c("hard", 1e18))). // Fill magedist with enough coins to pay out any reward
 		WithSimpleAccount(userA, cs(c("bnb", 1e12)))                            // give the user some coins
 
 	incentBuilder := testutil.NewIncentiveGenesisBuilder().

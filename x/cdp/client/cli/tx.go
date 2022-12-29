@@ -85,7 +85,7 @@ func GetCmdDeposit() *cobra.Command {
 			fmt.Sprintf(`Add collateral to an existing cdp.
 
 Example:
-$ %s tx %s deposit Mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw 10000000uatom atom-a --from myKeyName
+$ %s tx %s deposit mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw 10000000uatom atom-a --from myKeyName
 `, version.AppName, types.ModuleName)),
 		Args: cobra.ExactArgs(3),
 		RunE: func(cmd *cobra.Command, args []string) error {
@@ -121,7 +121,7 @@ func GetCmdWithdraw() *cobra.Command {
 			fmt.Sprintf(`Remove collateral from an existing cdp.
 
 Example:
-$ %s tx %s withdraw Mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw 10000000uatom atom-a --from myKeyName
+$ %s tx %s withdraw mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw 10000000uatom atom-a --from myKeyName
 `, version.AppName, types.ModuleName)),
 		Args: cobra.ExactArgs(3),
 		RunE: func(cmd *cobra.Command, args []string) error {
@@ -221,7 +221,7 @@ func GetCmdLiquidate() *cobra.Command {
 			fmt.Sprintf(`Liquidate a cdp if it is below the required liquidation ratio
 
 Example:
-$ %s tx %s liquidate Mage1y70y90wzmnf00e63efk2lycgqwepthdmyzsfzm  btcb-a --from myKeyName
+$ %s tx %s liquidate mage1y70y90wzmnf00e63efk2lycgqwepthdmyzsfzm  btcb-a --from myKeyName
 `, version.AppName, types.ModuleName)),
 		Args: cobra.ExactArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) error {

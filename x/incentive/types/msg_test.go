@@ -14,7 +14,7 @@ import (
 )
 
 func TestMsgClaim_Validate(t *testing.T) {
-	validAddress := sdk.AccAddress(crypto.AddressHash([]byte("MageTest1"))).String()
+	validAddress := sdk.AccAddress(crypto.AddressHash([]byte("mageTest1"))).String()
 
 	type expectedErr struct {
 		wraps error
@@ -160,7 +160,7 @@ func TestMsgClaim_Validate(t *testing.T) {
 }
 
 func TestMsgClaimUSDXMintingReward_Validate(t *testing.T) {
-	validAddress := sdk.AccAddress(crypto.AddressHash([]byte("MageTest1"))).String()
+	validAddress := sdk.AccAddress(crypto.AddressHash([]byte("mageTest1"))).String()
 
 	type expectedErr struct {
 		wraps error

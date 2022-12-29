@@ -93,8 +93,8 @@ type AccountKeeper interface {
 	GetModuleAccount(ctx sdk.Context, name string) authtypes.ModuleAccountI
 }
 
-// MagemintKeeper defines the required methods needed by this modules keeper
-type MagemintKeeper interface {
+// magemintKeeper defines the required methods needed by this modules keeper
+type magemintKeeper interface {
 	GetStakingApy(ctx sdk.Context) sdk.Dec
 }
 

@@ -40,9 +40,9 @@ import (
 	hardkeeper "github.com/furya-official/mage/x/hard/keeper"
 	incentivekeeper "github.com/furya-official/mage/x/incentive/keeper"
 	issuancekeeper "github.com/furya-official/mage/x/issuance/keeper"
-	Magedistkeeper "github.com/furya-official/mage/x/Magedist/keeper"
-	Magemintkeeper "github.com/furya-official/mage/x/Magemint/keeper"
-	Mageminttypes "github.com/furya-official/mage/x/Magemint/types"
+	magedistkeeper "github.com/furya-official/mage/x/magedist/keeper"
+	magemintkeeper "github.com/furya-official/mage/x/magemint/keeper"
+	mageminttypes "github.com/furya-official/mage/x/magemint/types"
 	liquidkeeper "github.com/furya-official/mage/x/liquid/keeper"
 	pricefeedkeeper "github.com/furya-official/mage/x/pricefeed/keeper"
 	routerkeeper "github.com/furya-official/mage/x/router/keeper"
@@ -52,7 +52,7 @@ import (
 
 var (
 	emptyTime            time.Time
-	testChainID                = "Magetest_1-1"
+	testChainID                = "magetest_1-1"
 	defaultInitialHeight int64 = 1
 )
 
@@ -99,7 +99,7 @@ func (tApp TestApp) GetGovKeeper() govkeeper.Keeper             { return tApp.go
 func (tApp TestApp) GetCrisisKeeper() crisiskeeper.Keeper       { return tApp.crisisKeeper }
 func (tApp TestApp) GetParamsKeeper() paramskeeper.Keeper       { return tApp.paramsKeeper }
 
-func (tApp TestApp) GetMagedistKeeper() Magedistkeeper.Keeper   { return tApp.MagedistKeeper }
+func (tApp TestApp) GetmagedistKeeper() magedistkeeper.Keeper   { return tApp.magedistKeeper }
 func (tApp TestApp) GetAuctionKeeper() auctionkeeper.Keeper     { return tApp.auctionKeeper }
 func (tApp TestApp) GetIssuanceKeeper() issuancekeeper.Keeper   { return tApp.issuanceKeeper }
 func (tApp TestApp) GetBep3Keeper() bep3keeper.Keeper           { return tApp.bep3Keeper }
@@ -116,7 +116,7 @@ func (tApp TestApp) GetFeeMarketKeeper() feemarketkeeper.Keeper { return tApp.fe
 func (tApp TestApp) GetLiquidKeeper() liquidkeeper.Keeper       { return tApp.liquidKeeper }
 func (tApp TestApp) GetEarnKeeper() earnkeeper.Keeper           { return tApp.earnKeeper }
 func (tApp TestApp) GetRouterKeeper() routerkeeper.Keeper       { return tApp.routerKeeper }
-func (tApp TestApp) GetMagemintKeeper() Magemintkeeper.Keeper   { return tApp.MagemintKeeper }
+func (tApp TestApp) GetmagemintKeeper() magemintkeeper.Keeper   { return tApp.magemintKeeper }
 func (tApp TestApp) GetCommunityKeeper() communitykeeper.Keeper { return tApp.communityKeeper }
 
 // LegacyAmino returns the app's amino codec.
@@ -203,11 +203,11 @@ func (tApp TestApp) GetModuleAccountBalance(ctx sdk.Context, moduleName string, 
 
 // FundAccount is a utility function that funds an account by minting and sending the coins to the address.
 func (tApp TestApp) FundAccount(ctx sdk.Context, addr sdk.AccAddress, amounts sdk.Coins) error {
-	if err := tApp.bankKeeper.MintCoins(ctx, Mageminttypes.ModuleAccountName, amounts); err != nil {
+	if err := tApp.bankKeeper.MintCoins(ctx, mageminttypes.ModuleAccountName, amounts); err != nil {
 		return err
 	}
 
-	return tApp.bankKeeper.SendCoinsFromModuleToAccount(ctx, Mageminttypes.ModuleAccountName, addr, amounts)
+	return tApp.bankKeeper.SendCoinsFromModuleToAccount(ctx, mageminttypes.ModuleAccountName, addr, amounts)
 }
 
 // NewQueryServerTestHelper creates a new QueryServiceTestHelper that wraps the provided sdk.Context.
@@ -217,11 +217,11 @@ func (tApp TestApp) NewQueryServerTestHelper(ctx sdk.Context) *baseapp.QueryServ
 
 // FundModuleAccount is a utility function that funds a module account by minting and sending the coins to the address.
 func (tApp TestApp) FundModuleAccount(ctx sdk.Context, recipientMod string, amounts sdk.Coins) error {
-	if err := tApp.bankKeeper.MintCoins(ctx, Mageminttypes.ModuleAccountName, amounts); err != nil {
+	if err := tApp.bankKeeper.MintCoins(ctx, mageminttypes.ModuleAccountName, amounts); err != nil {
 		return err
 	}
 
-	return tApp.bankKeeper.SendCoinsFromModuleToModule(ctx, Mageminttypes.ModuleAccountName, recipientMod, amounts)
+	return tApp.bankKeeper.SendCoinsFromModuleToModule(ctx, mageminttypes.ModuleAccountName, recipientMod, amounts)
 }
 
 // CreateNewUnbondedValidator creates a new validator in the staking module.

@@ -1,5 +1,5 @@
 [Unit]
-Description=Mage daemon
+Description=mage daemon
 After=network-online.target
 
 [Service]

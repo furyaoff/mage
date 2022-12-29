@@ -159,14 +159,14 @@ func NewPricefeedGenStateMultiFromTime(cdc codec.JSONCodec, t time.Time) app.Gen
 }
 
 func NewHardGenStateMulti(genTime time.Time) testutil.HardGenesisBuilder {
-	MageMM := testutil.NewStandardMoneyMarket("umage")
-	MageMM.SpotMarketID = "mage:usd"
+	mageMM := testutil.NewStandardMoneyMarket("umage")
+	mageMM.SpotMarketID = "mage:usd"
 	btcMM := testutil.NewStandardMoneyMarket("btcb")
 	btcMM.SpotMarketID = "btc:usd"
 
 	builder := testutil.NewHardGenesisBuilder().WithGenesisTime(genTime).
 		WithInitializedMoneyMarket(testutil.NewStandardMoneyMarket("usdx")).
-		WithInitializedMoneyMarket(MageMM).
+		WithInitializedMoneyMarket(mageMM).
 		WithInitializedMoneyMarket(testutil.NewStandardMoneyMarket("bnb")).
 		WithInitializedMoneyMarket(btcMM).
 		WithInitializedMoneyMarket(testutil.NewStandardMoneyMarket("xrp")).

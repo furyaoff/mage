@@ -1,12 +1,12 @@
-package Magemint_test
+package magemint_test
 
 import (
 	"testing"
 	"time"
 
-	"github.com/furya-official/mage/x/Magemint"
-	"github.com/furya-official/mage/x/Magemint/testutil"
-	"github.com/furya-official/mage/x/Magemint/types"
+	"github.com/furya-official/mage/x/magemint"
+	"github.com/furya-official/mage/x/magemint/testutil"
+	"github.com/furya-official/mage/x/magemint/types"
 	"github.com/stretchr/testify/suite"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -14,7 +14,7 @@ import (
 )
 
 type genesisTestSuite struct {
-	testutil.MagemintTestSuite
+	testutil.magemintTestSuite
 }
 
 func (suite *genesisTestSuite) Test_InitGenesis_ValidationPanic() {
@@ -24,7 +24,7 @@ func (suite *genesisTestSuite) Test_InitGenesis_ValidationPanic() {
 	)
 
 	suite.Panics(func() {
-		Magemint.InitGenesis(suite.Ctx, suite.Keeper, suite.App.GetAccountKeeper(), invalidState)
+		magemint.InitGenesis(suite.Ctx, suite.Keeper, suite.App.GetAccountKeeper(), invalidState)
 	}, "expected init genesis to panic with invalid state")
 }
 
@@ -41,8 +41,8 @@ func (suite *genesisTestSuite) Test_InitGenesis_ModuleAccountDoesNotHaveMinterPe
 	m.Permissions = []string{}
 	ak.SetAccount(suite.Ctx, m)
 
-	suite.PanicsWithValue("Magemint module account does not have minter permissions", func() {
-		Magemint.InitGenesis(suite.Ctx, suite.Keeper, suite.App.GetAccountKeeper(), gs)
+	suite.PanicsWithValue("magemint module account does not have minter permissions", func() {
+		magemint.InitGenesis(suite.Ctx, suite.Keeper, suite.App.GetAccountKeeper(), gs)
 	})
 }
 
@@ -50,7 +50,7 @@ func (suite *genesisTestSuite) Test_InitGenesis_CreatesModuleAccountWithPermissi
 	gs := types.DefaultGenesisState()
 	ak := suite.App.GetAccountKeeper()
 
-	Magemint.InitGenesis(suite.Ctx, suite.Keeper, ak, gs)
+	magemint.InitGenesis(suite.Ctx, suite.Keeper, ak, gs)
 
 	// by pass auto creation of module accounts
 	addr, _ := ak.GetModuleAddressAndPermissions(types.ModuleName)
@@ -66,14 +66,14 @@ func (suite *genesisTestSuite) Test_InitGenesis_CreatesModuleAccountWithPermissi
 func (suite *genesisTestSuite) Test_InitAndExportGenesis_DefaultValues() {
 	state := types.DefaultGenesisState()
 
-	Magemint.InitGenesis(suite.Ctx, suite.Keeper, suite.App.GetAccountKeeper(), state)
+	magemint.InitGenesis(suite.Ctx, suite.Keeper, suite.App.GetAccountKeeper(), state)
 
 	suite.Equal(types.DefaultParams(), suite.Keeper.GetParams(suite.Ctx), "expected default params to bet set in store")
 
 	storeTime := suite.Keeper.GetPreviousBlockTime(suite.Ctx)
 	suite.Equal(types.DefaultPreviousBlockTime, storeTime, "expected default previous block time to be set in store")
 
-	exportedState := Magemint.ExportGenesis(suite.Ctx, suite.Keeper)
+	exportedState := magemint.ExportGenesis(suite.Ctx, suite.Keeper)
 	suite.Equal(state, exportedState, "expected exported state to match imported state")
 }
 
@@ -84,14 +84,14 @@ func (suite *genesisTestSuite) Test_InitAndExportGenesis_SetValues() {
 		prevBlockTime,
 	)
 
-	Magemint.InitGenesis(suite.Ctx, suite.Keeper, suite.App.GetAccountKeeper(), state)
+	magemint.InitGenesis(suite.Ctx, suite.Keeper, suite.App.GetAccountKeeper(), state)
 
 	suite.Equal(state.Params, suite.Keeper.GetParams(suite.Ctx), "expected params to bet set in store")
 
 	storeTime := suite.Keeper.GetPreviousBlockTime(suite.Ctx)
 	suite.Equal(state.PreviousBlockTime, storeTime, "expected previous block time to be set in store")
 
-	exportedState := Magemint.ExportGenesis(suite.Ctx, suite.Keeper)
+	exportedState := magemint.ExportGenesis(suite.Ctx, suite.Keeper)
 	suite.Equal(state, exportedState, "expected exported state to match imported state")
 }
 
@@ -101,14 +101,14 @@ func (suite *genesisTestSuite) Test_InitAndExportGenesis_ZeroValues() {
 		time.Time{},
 	)
 
-	Magemint.InitGenesis(suite.Ctx, suite.Keeper, suite.App.GetAccountKeeper(), state)
+	magemint.InitGenesis(suite.Ctx, suite.Keeper, suite.App.GetAccountKeeper(), state)
 
 	suite.Equal(state.Params, suite.Keeper.GetParams(suite.Ctx), "expected params to bet set in store")
 
 	storeTime := suite.Keeper.GetPreviousBlockTime(suite.Ctx)
 	suite.Equal(state.PreviousBlockTime, storeTime, "expected previous block time to be set in store")
 
-	exportedState := Magemint.ExportGenesis(suite.Ctx, suite.Keeper)
+	exportedState := magemint.ExportGenesis(suite.Ctx, suite.Keeper)
 	suite.Equal(state, exportedState, "expected exported state to match imported state")
 }
 

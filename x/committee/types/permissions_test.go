@@ -88,7 +88,7 @@ func TestParamsChangePermission_SimpleParamsChange_Allows(t *testing.T) {
 			pubProposal: newTestParamsChangeProposalWithChanges(
 				[]paramsproposal.ParamChange{
 					{
-						Subspace: "Magedist",
+						Subspace: "magedist",
 						Key:      "TestKey",
 						Value:    `100`,
 					},

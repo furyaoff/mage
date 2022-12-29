@@ -12,13 +12,13 @@ Before making a request, query account information for the signing account. Note
     kvcli q auth account $(kvcli keys show accB -a)
 ```
 
-If testing locally, start the Mage rest server:
+If testing locally, start the mage rest server:
 
 ```bash
     kvcli rest-server
 ```
 
-Now we'll create an unsigned request, sign it, and broadcast it to the Mage blockchain via the rest server. Note that if you're using the mainnet or testnet, the host IP address will need to be updated to point at an active rest server instead of http://127.0.0.1.
+Now we'll create an unsigned request, sign it, and broadcast it to the mage blockchain via the rest server. Note that if you're using the mainnet or testnet, the host IP address will need to be updated to point at an active rest server instead of http://127.0.0.1.
 
 ### Create CDP example request
 
@@ -35,11 +35,11 @@ Format the base request in create-cdp.json. You'll need to update the 'from', 'c
     kvcli tx broadcast ./contrib/testnet-4000/rest_examples/cdp/broadcast-create-cdp.json
 ```
 
-Congratulations, you've just created a CDP on Mage using the rest server!
+Congratulations, you've just created a CDP on mage using the rest server!
 
 ### Post market price example request
 
-Note that only market oracles can post prices, other senders will have their transactions rejected by Mage.
+Note that only market oracles can post prices, other senders will have their transactions rejected by mage.
 
 Format the base request in post-price.json. You'll need to update the 'from', 'chain-id', 'account_number', 'sequence', and 'gas' as appropriate. Then, populate the post price request's params 'from', 'market_id', 'price', and 'expiry'. An example formatted request can be found in `example-post-price.json`.
 
@@ -55,7 +55,7 @@ Format the base request in post-price.json. You'll need to update the 'from', 'c
     kvcli tx broadcast ./contrib/testnet-4000/rest_examples/pricefeed/broadcast-post-price.json
 ```
 
-Congratulations, you've just posted a current market price on Mage using the rest server!
+Congratulations, you've just posted a current market price on mage using the rest server!
 
 ## Governance proposals
 

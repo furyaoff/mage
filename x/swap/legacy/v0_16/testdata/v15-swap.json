@@ -60,22 +60,22 @@
   ],
   "share_records": [
     {
-      "depositor": "Mage1l77xymdt2ya0rl2mludkny5aqmr67u88ymgdje",
+      "depositor": "mage1l77xymdt2ya0rl2mludkny5aqmr67u88ymgdje",
       "pool_id": "usdx:xrpb",
       "shares_owned": "29034728969"
     },
     {
-      "depositor": "Mage1llqkrdr69wc76cuxpx6j06x9pt63f52f7mlcye",
+      "depositor": "mage1llqkrdr69wc76cuxpx6j06x9pt63f52f7mlcye",
       "pool_id": "busd:usdx",
       "shares_owned": "24905307583"
     },
     {
-      "depositor": "Mage1ll3ndyv333aet6mzqltu5wdepqhyme8umv34es",
+      "depositor": "mage1ll3ndyv333aet6mzqltu5wdepqhyme8umv34es",
       "pool_id": "hard:usdx",
       "shares_owned": "708138421"
     },
     {
-      "depositor": "Mage1ll3ndyv333aet6mzqltu5wdepqhyme8umv34es",
+      "depositor": "mage1ll3ndyv333aet6mzqltu5wdepqhyme8umv34es",
       "pool_id": "umage:usdx",
       "shares_owned": "3427014047"
     }

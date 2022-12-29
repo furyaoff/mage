@@ -131,7 +131,7 @@ func queryDepositsCmd() *cobra.Command {
 		Long:  "Get earn vault deposits for all or specific accounts and vaults.",
 		Args:  cobra.NoArgs,
 		Example: fmt.Sprintf(`%[1]s q %[2]s deposits
-%[1]s q %[2]s deposits --owner Mage1l0xsq2z7gqd7yly0g40y5836g0appumark77ny --denom usdx
+%[1]s q %[2]s deposits --owner mage1l0xsq2z7gqd7yly0g40y5836g0appumark77ny --denom usdx
 %[1]s q %[2]s deposits --denom usdx`, version.AppName, types.ModuleName),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			clientCtx, err := client.GetClientQueryContext(cmd)

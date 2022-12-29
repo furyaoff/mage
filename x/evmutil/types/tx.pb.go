@@ -31,11 +31,11 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
-// MsgConvertCoinToERC20 defines a conversion from sdk.Coin to Mage ERC20.
+// MsgConvertCoinToERC20 defines a conversion from sdk.Coin to mage ERC20.
 type MsgConvertCoinToERC20 struct {
-	// Mage bech32 address initiating the conversion.
+	// mage bech32 address initiating the conversion.
 	Initiator string `protobuf:"bytes,1,opt,name=initiator,proto3" json:"initiator,omitempty"`
-	// EVM 0x hex address that will receive the converted Mage ERC20 tokens.
+	// EVM 0x hex address that will receive the converted mage ERC20 tokens.
 	Receiver string `protobuf:"bytes,2,opt,name=receiver,proto3" json:"receiver,omitempty"`
 	// Amount is the sdk.Coin amount to convert.
 	Amount *types.Coin `protobuf:"bytes,3,opt,name=amount,proto3" json:"amount,omitempty"`
@@ -132,14 +132,14 @@ func (m *MsgConvertCoinToERC20Response) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MsgConvertCoinToERC20Response proto.InternalMessageInfo
 
-// MsgConvertERC20ToCoin defines a conversion from Mage ERC20 to sdk.Coin.
+// MsgConvertERC20ToCoin defines a conversion from mage ERC20 to sdk.Coin.
 type MsgConvertERC20ToCoin struct {
 	// EVM 0x hex address initiating the conversion.
 	Initiator string `protobuf:"bytes,1,opt,name=initiator,proto3" json:"initiator,omitempty"`
-	// Mage bech32 address that will receive the converted sdk.Coin.
+	// mage bech32 address that will receive the converted sdk.Coin.
 	Receiver string `protobuf:"bytes,2,opt,name=receiver,proto3" json:"receiver,omitempty"`
 	// EVM 0x hex address of the ERC20 contract.
-	MageERC20Address string `protobuf:"bytes,3,opt,name=Mage_erc20_address,json=MageErc20Address,proto3" json:"Mage_erc20_address,omitempty"`
+	mageERC20Address string `protobuf:"bytes,3,opt,name=mage_erc20_address,json=mageErc20Address,proto3" json:"mage_erc20_address,omitempty"`
 	// ERC20 token amount to convert.
 	Amount github_com_cosmos_cosmos_sdk_types.Int `protobuf:"bytes,4,opt,name=amount,proto3,customtype=github.com/cosmos/cosmos-sdk/types.Int" json:"amount"`
 }
@@ -191,9 +191,9 @@ func (m *MsgConvertERC20ToCoin) GetReceiver() string {
 	return ""
 }
 
-func (m *MsgConvertERC20ToCoin) GetMageERC20Address() string {
+func (m *MsgConvertERC20ToCoin) GetmageERC20Address() string {
 	if m != nil {
-		return m.MageERC20Address
+		return m.mageERC20Address
 	}
 	return ""
 }
@@ -424,8 +424,8 @@ func (this *MsgConvertERC20ToCoin) VerboseEqual(that interface{}) error {
 	if this.Receiver != that1.Receiver {
 		return fmt.Errorf("Receiver this(%v) Not Equal that(%v)", this.Receiver, that1.Receiver)
 	}
-	if this.MageERC20Address != that1.MageERC20Address {
-		return fmt.Errorf("MageERC20Address this(%v) Not Equal that(%v)", this.MageERC20Address, that1.MageERC20Address)
+	if this.mageERC20Address != that1.mageERC20Address {
+		return fmt.Errorf("mageERC20Address this(%v) Not Equal that(%v)", this.mageERC20Address, that1.mageERC20Address)
 	}
 	if !this.Amount.Equal(that1.Amount) {
 		return fmt.Errorf("Amount this(%v) Not Equal that(%v)", this.Amount, that1.Amount)
@@ -457,7 +457,7 @@ func (this *MsgConvertERC20ToCoin) Equal(that interface{}) bool {
 	if this.Receiver != that1.Receiver {
 		return false
 	}
-	if this.MageERC20Address != that1.MageERC20Address {
+	if this.mageERC20Address != that1.mageERC20Address {
 		return false
 	}
 	if !this.Amount.Equal(that1.Amount) {
@@ -526,9 +526,9 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type MsgClient interface {
-	// ConvertCoinToERC20 defines a method for converting sdk.Coin to Mage ERC20.
+	// ConvertCoinToERC20 defines a method for converting sdk.Coin to mage ERC20.
 	ConvertCoinToERC20(ctx context.Context, in *MsgConvertCoinToERC20, opts ...grpc.CallOption) (*MsgConvertCoinToERC20Response, error)
-	// ConvertERC20ToCoin defines a method for converting Mage ERC20 to sdk.Coin.
+	// ConvertERC20ToCoin defines a method for converting mage ERC20 to sdk.Coin.
 	ConvertERC20ToCoin(ctx context.Context, in *MsgConvertERC20ToCoin, opts ...grpc.CallOption) (*MsgConvertERC20ToCoinResponse, error)
 }
 
@@ -560,9 +560,9 @@ func (c *msgClient) ConvertERC20ToCoin(ctx context.Context, in *MsgConvertERC20T
 
 // MsgServer is the server API for Msg service.
 type MsgServer interface {
-	// ConvertCoinToERC20 defines a method for converting sdk.Coin to Mage ERC20.
+	// ConvertCoinToERC20 defines a method for converting sdk.Coin to mage ERC20.
 	ConvertCoinToERC20(context.Context, *MsgConvertCoinToERC20) (*MsgConvertCoinToERC20Response, error)
-	// ConvertERC20ToCoin defines a method for converting Mage ERC20 to sdk.Coin.
+	// ConvertERC20ToCoin defines a method for converting mage ERC20 to sdk.Coin.
 	ConvertERC20ToCoin(context.Context, *MsgConvertERC20ToCoin) (*MsgConvertERC20ToCoinResponse, error)
 }
 
@@ -736,10 +736,10 @@ func (m *MsgConvertERC20ToCoin) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	}
 	i--
 	dAtA[i] = 0x22
-	if len(m.MageERC20Address) > 0 {
-		i -= len(m.MageERC20Address)
-		copy(dAtA[i:], m.MageERC20Address)
-		i = encodeVarintTx(dAtA, i, uint64(len(m.MageERC20Address)))
+	if len(m.mageERC20Address) > 0 {
+		i -= len(m.mageERC20Address)
+		copy(dAtA[i:], m.mageERC20Address)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.mageERC20Address)))
 		i--
 		dAtA[i] = 0x1a
 	}
@@ -838,7 +838,7 @@ func (m *MsgConvertERC20ToCoin) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovTx(uint64(l))
 	}
-	l = len(m.MageERC20Address)
+	l = len(m.mageERC20Address)
 	if l > 0 {
 		n += 1 + l + sovTx(uint64(l))
 	}
@@ -1157,7 +1157,7 @@ func (m *MsgConvertERC20ToCoin) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field MageERC20Address", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field mageERC20Address", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -1185,7 +1185,7 @@ func (m *MsgConvertERC20ToCoin) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.MageERC20Address = string(dAtA[iNdEx:postIndex])
+			m.mageERC20Address = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
 			if wireType != 2 {

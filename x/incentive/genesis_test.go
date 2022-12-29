@@ -15,7 +15,7 @@ import (
 	"github.com/furya-official/mage/x/incentive"
 	"github.com/furya-official/mage/x/incentive/keeper"
 	"github.com/furya-official/mage/x/incentive/types"
-	Magedisttypes "github.com/furya-official/mage/x/Magedist/types"
+	magedisttypes "github.com/furya-official/mage/x/magedist/types"
 )
 
 const (
@@ -43,7 +43,7 @@ func (suite *GenesisTestSuite) SetupTest() {
 
 	authBuilder := app.NewAuthBankGenesisBuilder().
 		WithSimpleAccount(addrs[0], cs(c("bnb", 1e10), c("umage", 1e10))).
-		WithSimpleModuleAccount(Magedisttypes.MageDistMacc, cs(c("hard", 1e15), c("umage", 1e15)))
+		WithSimpleModuleAccount(magedisttypes.mageDistMacc, cs(c("hard", 1e15), c("umage", 1e15)))
 
 	loanToValue, _ := sdk.NewDecFromStr("0.6")
 	borrowLimit := sdk.NewDec(1000000000000000)

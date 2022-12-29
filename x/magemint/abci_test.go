@@ -1,4 +1,4 @@
-package Magemint_test
+package magemint_test
 
 import (
 	"testing"
@@ -10,18 +10,18 @@ import (
 	"github.com/stretchr/testify/suite"
 
 	communitytypes "github.com/furya-official/mage/x/community/types"
-	"github.com/furya-official/mage/x/Magemint"
-	"github.com/furya-official/mage/x/Magemint/keeper"
-	"github.com/furya-official/mage/x/Magemint/testutil"
-	"github.com/furya-official/mage/x/Magemint/types"
+	"github.com/furya-official/mage/x/magemint"
+	"github.com/furya-official/mage/x/magemint/keeper"
+	"github.com/furya-official/mage/x/magemint/testutil"
+	"github.com/furya-official/mage/x/magemint/types"
 )
 
 type abciTestSuite struct {
-	testutil.MagemintTestSuite
+	testutil.magemintTestSuite
 }
 
 func (suite *abciTestSuite) SetupTest() {
-	suite.MagemintTestSuite.SetupTest()
+	suite.magemintTestSuite.SetupTest()
 }
 
 func (suite abciTestSuite) CheckModuleBalance(ctx sdk.Context, moduleName string, expectedAmount sdk.Int) {
@@ -34,7 +34,7 @@ func (suite *abciTestSuite) CheckFeeCollectorBalance(ctx sdk.Context, expectedAm
 	suite.CheckModuleBalance(ctx, authtypes.FeeCollectorName, expectedAmount)
 }
 
-func (suite *abciTestSuite) CheckMagemintBalance(ctx sdk.Context, expectedAmount sdk.Int) {
+func (suite *abciTestSuite) CheckmagemintBalance(ctx sdk.Context, expectedAmount sdk.Int) {
 	suite.CheckModuleBalance(ctx, types.ModuleName, expectedAmount)
 }
 
@@ -169,11 +169,11 @@ func (suite *abciTestSuite) Test_BeginBlocker_MintsExpectedTokens() {
 			staking.EndBlocker(suite.Ctx, suite.StakingKeeper)
 
 			// run begin blocker
-			Magemint.BeginBlocker(suite.Ctx, suite.Keeper)
+			magemint.BeginBlocker(suite.Ctx, suite.Keeper)
 
 			// expect everything empty to start
 			suite.CheckFeeCollectorBalance(suite.Ctx, sdk.ZeroInt())
-			suite.CheckMagemintBalance(suite.Ctx, sdk.ZeroInt())
+			suite.CheckmagemintBalance(suite.Ctx, sdk.ZeroInt())
 			suite.CheckCommunityPoolBalance(suite.Ctx, sdk.ZeroInt())
 
 			// expect initial block time set
@@ -183,14 +183,14 @@ func (suite *abciTestSuite) Test_BeginBlocker_MintsExpectedTokens() {
 
 			// run begin blocker again to mint inflation
 			ctx2 := suite.Ctx.WithBlockTime(suite.Ctx.BlockTime().Add(time.Second * time.Duration(tc.blockTime)))
-			Magemint.BeginBlocker(ctx2, suite.Keeper)
+			magemint.BeginBlocker(ctx2, suite.Keeper)
 
 			// check expected balances
 			suite.CheckCommunityPoolBalance(ctx2, tc.expCommunityPoolBalance)
 			suite.CheckFeeCollectorBalance(ctx2, tc.expFeeCollectorBalance)
 
-			// x/Magemint balance should always be 0 because 100% should be transferred out every block
-			suite.CheckMagemintBalance(ctx2, sdk.ZeroInt())
+			// x/magemint balance should always be 0 because 100% should be transferred out every block
+			suite.CheckmagemintBalance(ctx2, sdk.ZeroInt())
 
 			// expect time to be updated
 			endBlockTime := suite.Keeper.GetPreviousBlockTime(ctx2)
@@ -207,7 +207,7 @@ func (suite *abciTestSuite) Test_BeginBlocker_DefaultsToBlockTime() {
 	suite.Keeper.SetPreviousBlockTime(suite.Ctx, time.Time{})
 
 	// run begin blocker
-	Magemint.BeginBlocker(suite.Ctx, suite.Keeper)
+	magemint.BeginBlocker(suite.Ctx, suite.Keeper)
 
 	// ensure block time gets set
 	blockTime := suite.Keeper.GetPreviousBlockTime(suite.Ctx)

@@ -8,8 +8,8 @@ import (
 )
 
 func (suite *AccumulateEarnRewardsTests) TestStakingRewardsDistributed() {
-	vaultDenom1 := "bMage-meow"
-	vaultDenom2 := "bMage-woof"
+	vaultDenom1 := "bmage-meow"
+	vaultDenom2 := "bmage-woof"
 
 	previousAccrualTime := time.Date(1998, 1, 1, 0, 0, 0, 0, time.UTC)
 	suite.ctx = suite.ctx.WithBlockTime(previousAccrualTime)
@@ -24,7 +24,7 @@ func (suite *AccumulateEarnRewardsTests) TestStakingRewardsDistributed() {
 	vault1Shares := d("700000")
 	vault2Shares := d("100000")
 
-	// More bMage minted than deposited into earn
+	// More bmage minted than deposited into earn
 	// Rewards are higher per-share as a result
 	earnKeeper := newFakeEarnKeeper().
 		addVault(vaultDenom1, earntypes.NewVaultShare(vaultDenom1, vault1Shares)).
@@ -66,7 +66,7 @@ func (suite *AccumulateEarnRewardsTests) TestStakingRewardsDistributed() {
 
 	rewardPeriod := types.NewMultiRewardPeriod(
 		true,
-		"bMage",         // reward period is set for "bMage" to apply to all vaults
+		"bmage",         // reward period is set for "bmage" to apply to all vaults
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
 		cs(), // no incentives, so only the staking rewards are distributed

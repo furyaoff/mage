@@ -23,7 +23,7 @@
       "corresponding_debt": { "denom": "debt", "amount": "0" },
       "max_bid": { "denom": "bnb", "amount": "1" },
       "lot_returns": {
-        "addresses": ["Mage1eevfnzkf2mt6feyttyzh6ektclauq7zlayefwf"],
+        "addresses": ["mage1eevfnzkf2mt6feyttyzh6ektclauq7zlayefwf"],
         "weights": ["100"]
       }
     },

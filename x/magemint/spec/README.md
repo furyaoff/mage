@@ -1,11 +1,11 @@
 <!--
 order: 0
-title: "Magemint Overview"
+title: "magemint Overview"
 parent:
-  title: "Magemint"
+  title: "magemint"
 -->
 
-# `Magemint`
+# `magemint`
 
 <!-- TOC -->
 
@@ -18,4 +18,4 @@ parent:
 
 ## Abstract
 
-`x/Magemint` is an implementation of a Cosmos SDK Module that provides for functionality and governance of overall inflation of the MAGE staking token.
+`x/magemint` is an implementation of a Cosmos SDK Module that provides for functionality and governance of overall inflation of the MAGE staking token.

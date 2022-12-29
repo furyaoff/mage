@@ -129,7 +129,7 @@ func (suite *keeperTestSuite) TestPool_PanicsWhenInvalid() {
 
 func (suite *keeperTestSuite) TestShare_Persistance() {
 	poolID := types.PoolID("umage", "usdx")
-	depositor, err := sdk.AccAddressFromBech32("Mage1skpsgk5cnrarn69ql2tfun47fyjssataz0g07l")
+	depositor, err := sdk.AccAddressFromBech32("mage1skpsgk5cnrarn69ql2tfun47fyjssataz0g07l")
 	suite.NoError(err)
 	shares := sdk.NewInt(3126432331)
 
@@ -151,7 +151,7 @@ func (suite *keeperTestSuite) TestShare_Persistance() {
 }
 
 func (suite *keeperTestSuite) TestShare_PanicsWhenInvalid() {
-	depositor, err := sdk.AccAddressFromBech32("Mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
+	depositor, err := sdk.AccAddressFromBech32("mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
 	suite.Require().NoError(err)
 
 	invalidRecord := types.NewShareRecord(
@@ -170,7 +170,7 @@ func (suite *keeperTestSuite) TestHooks() {
 	suite.Keeper.ClearHooks()
 
 	// data
-	depositor, err := sdk.AccAddressFromBech32("Mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
+	depositor, err := sdk.AccAddressFromBech32("mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
 	suite.Require().NoError(err)
 
 	// hooks can be called when not set

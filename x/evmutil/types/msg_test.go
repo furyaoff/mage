@@ -27,7 +27,7 @@ func TestMsgConvertCoinToERC20(t *testing.T) {
 	}{
 		{
 			"valid",
-			"Mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
+			"mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
 			"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
 			sdk.NewCoin("erc20/weth", sdk.NewInt(1234)),
 			errArgs{
@@ -36,7 +36,7 @@ func TestMsgConvertCoinToERC20(t *testing.T) {
 		},
 		{
 			"invalid - odd length hex address",
-			"Mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
+			"mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
 			"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc",
 			sdk.NewCoin("erc20/weth", sdk.NewInt(1234)),
 			errArgs{
@@ -46,7 +46,7 @@ func TestMsgConvertCoinToERC20(t *testing.T) {
 		},
 		{
 			"invalid - zero amount",
-			"Mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
+			"mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
 			"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
 			sdk.NewCoin("erc20/weth", sdk.NewInt(0)),
 			errArgs{
@@ -56,7 +56,7 @@ func TestMsgConvertCoinToERC20(t *testing.T) {
 		},
 		{
 			"invalid - negative amount",
-			"Mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
+			"mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
 			"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
 			// Create manually so there is no validation
 			sdk.Coin{Denom: "erc20/weth", Amount: sdk.NewInt(-1234)},
@@ -67,7 +67,7 @@ func TestMsgConvertCoinToERC20(t *testing.T) {
 		},
 		{
 			"invalid - empty denom",
-			"Mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
+			"mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
 			"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
 			sdk.Coin{Denom: "", Amount: sdk.NewInt(-1234)},
 			errArgs{
@@ -77,7 +77,7 @@ func TestMsgConvertCoinToERC20(t *testing.T) {
 		},
 		{
 			"invalid - invalid denom",
-			"Mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
+			"mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
 			"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
 			sdk.Coin{Denom: "h", Amount: sdk.NewInt(-1234)},
 			errArgs{
@@ -124,7 +124,7 @@ func TestMsgConvertERC20ToCoin(t *testing.T) {
 	}{
 		{
 			"valid",
-			"Mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
+			"mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
 			"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
 			"0x404F9466d758eA33eA84CeBE9E444b06533b369e",
 			sdk.NewInt(1234),
@@ -134,7 +134,7 @@ func TestMsgConvertERC20ToCoin(t *testing.T) {
 		},
 		{
 			"invalid - odd length hex address",
-			"Mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
+			"mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
 			"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc",
 			"0x404F9466d758eA33eA84CeBE9E444b06533b369e",
 			sdk.NewInt(1234),
@@ -145,7 +145,7 @@ func TestMsgConvertERC20ToCoin(t *testing.T) {
 		},
 		{
 			"invalid - zero amount",
-			"Mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
+			"mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
 			"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
 			"0x404F9466d758eA33eA84CeBE9E444b06533b369e",
 			sdk.NewInt(0),
@@ -156,7 +156,7 @@ func TestMsgConvertERC20ToCoin(t *testing.T) {
 		},
 		{
 			"invalid - negative amount",
-			"Mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
+			"mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
 			"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
 			"0x404F9466d758eA33eA84CeBE9E444b06533b369e",
 			sdk.NewInt(-1234),
@@ -167,7 +167,7 @@ func TestMsgConvertERC20ToCoin(t *testing.T) {
 		},
 		{
 			"invalid - invalid contract address",
-			"Mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
+			"mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
 			"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
 			"0x404F9466d758eA33eA84CeBE9E444b06533b369",
 			sdk.NewInt(1234),
@@ -183,7 +183,7 @@ func TestMsgConvertERC20ToCoin(t *testing.T) {
 			msg := types.MsgConvertERC20ToCoin{
 				Initiator:        tc.initiator,
 				Receiver:         tc.receiver,
-				MageERC20Address: tc.contractAddr,
+				mageERC20Address: tc.contractAddr,
 				Amount:           tc.amount,
 			}
 			err := msg.ValidateBasic()

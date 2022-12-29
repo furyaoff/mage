@@ -153,7 +153,7 @@ type TestKeeperBuilder struct {
 	earnKeeper    types.EarnKeeper
 
 	// Keepers used for APY queries
-	MagemintKeeper  types.MagemintKeeper
+	magemintKeeper  types.magemintKeeper
 	distrKeeper     types.DistrKeeper
 	pricefeedKeeper types.PricefeedKeeper
 }
@@ -203,8 +203,8 @@ func (tk *TestKeeperBuilder) WithStakingKeeper(k types.StakingKeeper) *TestKeepe
 	return tk
 }
 
-func (tk *TestKeeperBuilder) WithMagemintKeeper(k types.MagemintKeeper) *TestKeeperBuilder {
-	tk.MagemintKeeper = k
+func (tk *TestKeeperBuilder) WithmagemintKeeper(k types.magemintKeeper) *TestKeeperBuilder {
+	tk.magemintKeeper = k
 	return tk
 }
 
@@ -223,7 +223,7 @@ func (tk *TestKeeperBuilder) Build() keeper.Keeper {
 		tk.cdc, tk.key, tk.paramSubspace,
 		tk.bankKeeper, tk.cdpKeeper, tk.hardKeeper, tk.accountKeeper,
 		tk.stakingKeeper, tk.swapKeeper, tk.savingsKeeper, tk.liquidKeeper,
-		tk.earnKeeper, tk.MagemintKeeper, tk.distrKeeper, tk.pricefeedKeeper,
+		tk.earnKeeper, tk.magemintKeeper, tk.distrKeeper, tk.pricefeedKeeper,
 	)
 }
 
@@ -559,7 +559,7 @@ func (k *fakeLiquidKeeper) addDerivative(
 }
 
 func (k *fakeLiquidKeeper) IsDerivativeDenom(ctx sdk.Context, denom string) bool {
-	return strings.HasPrefix(denom, "bMage-")
+	return strings.HasPrefix(denom, "bmage-")
 }
 
 func (k *fakeLiquidKeeper) GetAllDerivativeDenoms(ctx sdk.Context) (denoms []string) {
@@ -641,28 +641,28 @@ func (k *fakeDistrKeeper) GetCommunityTax(ctx sdk.Context) (percent sdk.Dec) {
 	return k.communityTax
 }
 
-type fakeMagemintKeeper struct {
+type fakemagemintKeeper struct {
 	stakingApy         sdk.Dec
 	communityInflation sdk.Dec
 }
 
-var _ types.MagemintKeeper = newFakeMagemintKeeper()
+var _ types.magemintKeeper = newFakemagemintKeeper()
 
-func newFakeMagemintKeeper() *fakeMagemintKeeper {
-	return &fakeMagemintKeeper{}
+func newFakemagemintKeeper() *fakemagemintKeeper {
+	return &fakemagemintKeeper{}
 }
 
-func (k *fakeMagemintKeeper) setStakingApy(apy sdk.Dec) *fakeMagemintKeeper {
+func (k *fakemagemintKeeper) setStakingApy(apy sdk.Dec) *fakemagemintKeeper {
 	k.stakingApy = apy
 	return k
 }
 
-func (k *fakeMagemintKeeper) setCommunityInflation(inflation sdk.Dec) *fakeMagemintKeeper {
+func (k *fakemagemintKeeper) setCommunityInflation(inflation sdk.Dec) *fakemagemintKeeper {
 	k.communityInflation = inflation
 	return k
 }
 
-func (k *fakeMagemintKeeper) GetStakingApy(ctx sdk.Context) (apy sdk.Dec) {
+func (k *fakemagemintKeeper) GetStakingApy(ctx sdk.Context) (apy sdk.Dec) {
 	return k.stakingApy
 }
 

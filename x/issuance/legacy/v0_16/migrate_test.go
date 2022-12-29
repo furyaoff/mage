@@ -49,7 +49,7 @@ func (s *migrateTestSuite) TestMigrate_JSON() {
 					"blockable": true,
 					"blocked_addresses": null,
 					"denom": "hbtc",
-					"owner": "Mage1dmm9zpdnm6mfhywzt9sstm4p33y0cnsd0m673z",
+					"owner": "mage1dmm9zpdnm6mfhywzt9sstm4p33y0cnsd0m673z",
 					"paused": false,
 					"rate_limit": {
 						"active": false,
@@ -82,7 +82,7 @@ func (s *migrateTestSuite) TestMigrate_JSON() {
 					"blockable": true,
 					"blocked_addresses": [],
 					"denom": "hbtc",
-					"owner": "Mage1dmm9zpdnm6mfhywzt9sstm4p33y0cnsd0m673z",
+					"owner": "mage1dmm9zpdnm6mfhywzt9sstm4p33y0cnsd0m673z",
 					"paused": false,
 					"rate_limit": {
 						"active": false,

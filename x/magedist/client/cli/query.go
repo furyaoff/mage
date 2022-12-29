@@ -9,12 +9,12 @@ import (
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 
-	"github.com/furya-official/mage/x/Magedist/types"
+	"github.com/furya-official/mage/x/magedist/types"
 )
 
 // GetQueryCmd returns the cli query commands for this module
 func GetQueryCmd() *cobra.Command {
-	// Group Magedist queries under a subcommand
+	// Group magedist queries under a subcommand
 	cmd := &cobra.Command{
 		Use:                        types.ModuleName,
 		Short:                      fmt.Sprintf("Querying commands for the %s module", types.ModuleName),
@@ -34,8 +34,8 @@ func GetQueryCmd() *cobra.Command {
 func queryParamsCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "params",
-		Short: "get the Magedist module parameters",
-		Long:  "Get the current global Magedist module parameters.",
+		Short: "get the magedist module parameters",
+		Long:  "Get the current global magedist module parameters.",
 		Args:  cobra.NoArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			cliCtx, err := client.GetClientQueryContext(cmd)
@@ -58,8 +58,8 @@ func queryParamsCmd() *cobra.Command {
 func queryBalanceCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "balance",
-		Short: "get the Magedist module balance",
-		Long:  "Get the current Magedist module account balance.",
+		Short: "get the magedist module balance",
+		Long:  "Get the current magedist module account balance.",
 		Args:  cobra.NoArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			cliCtx, err := client.GetClientQueryContext(cmd)

@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/furya-official/mage/x/Magemint/types"
+	"github.com/furya-official/mage/x/magemint/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	paramstypes "github.com/cosmos/cosmos-sdk/x/params/types"

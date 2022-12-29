@@ -1,4 +1,4 @@
-package Magedist_test
+package magedist_test
 
 import (
 	"testing"
@@ -10,9 +10,9 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/furya-official/mage/x/Magedist"
-	testutil "github.com/furya-official/mage/x/Magedist/testutil"
-	"github.com/furya-official/mage/x/Magedist/types"
+	"github.com/furya-official/mage/x/magedist"
+	testutil "github.com/furya-official/mage/x/magedist/testutil"
+	"github.com/furya-official/mage/x/magedist/types"
 )
 
 type genesisTestSuite struct {
@@ -35,7 +35,7 @@ func (suite *genesisTestSuite) TestInitGenesis_ValidationPanic() {
 	)
 
 	suite.Require().Panics(func() {
-		Magedist.InitGenesis(suite.Ctx, suite.Keeper, suite.AccountKeeper, invalidState)
+		magedist.InitGenesis(suite.Ctx, suite.Keeper, suite.AccountKeeper, invalidState)
 	}, "expected init genesis to panic with invalid state")
 }
 
@@ -54,10 +54,10 @@ func (suite *genesisTestSuite) TestInitAndExportGenesis() {
 		time.Date(2020, 1, 2, 1, 1, 1, 1, time.UTC),
 	)
 
-	Magedist.InitGenesis(suite.Ctx, suite.Keeper, suite.AccountKeeper, state)
+	magedist.InitGenesis(suite.Ctx, suite.Keeper, suite.AccountKeeper, state)
 	suite.Require().Equal(state.Params, suite.Keeper.GetParams(suite.Ctx))
 
-	exportedState := Magedist.ExportGenesis(suite.Ctx, suite.Keeper)
+	exportedState := magedist.ExportGenesis(suite.Ctx, suite.Keeper)
 	suite.Require().Equal(state, exportedState)
 }
 

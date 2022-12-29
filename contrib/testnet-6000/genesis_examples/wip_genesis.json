@@ -47,7 +47,7 @@
       "assets_supplies": [],
       "atomic_swaps": [],
       "params": {
-        "bnb_deputy_address": "Mage1tfvn5t8qwngqd2q427za2mel48pcus3z9u73fl",
+        "bnb_deputy_address": "mage1tfvn5t8qwngqd2q427za2mel48pcus3z9u73fl",
         "bnb_deputy_fixed_fee": "1000",
         "max_block_lock": "600",
         "min_block_lock": "80",
@@ -116,7 +116,7 @@
           "id": "0",
           "description": "This committee is for adjusting parameters of the cdp system.",
           "members": [
-            "Mage109fpwjvq6un86tw8f8emav2l0e0dha924scrj9"
+            "mage109fpwjvq6un86tw8f8emav2l0e0dha924scrj9"
           ],
           "permissions": [
             {
@@ -180,7 +180,7 @@
                     "key": "Active"
                   },
                   {
-                    "subspace": "Magedist",
+                    "subspace": "magedist",
                     "key": "Active"
                   }
                 ],
@@ -231,7 +231,7 @@
           "id": "1",
           "description": "This committee is for testnet",
           "members": [
-            "Mage109fpwjvq6un86tw8f8emav2l0e0dha924scrj9"
+            "mage109fpwjvq6un86tw8f8emav2l0e0dha924scrj9"
           ],
           "permissions": [
             {
@@ -322,7 +322,7 @@
       },
       "previous_block_time": "1970-01-01T00:00:00Z"
     },
-    "Magedist": {
+    "magedist": {
       "params": {
         "active": true,
         "periods": [
@@ -358,8 +358,8 @@
             "base_asset": "bnb",
             "market_id": "bnb:usd",
             "oracles": [
-              "Mage1nyqy04x3ecpcuss3llmyu4fc2v4ma99h8vffjz",
-              "Mage1znuktqgtjr8g85tetu2wt9wd33gstqr7pad92h"
+              "mage1nyqy04x3ecpcuss3llmyu4fc2v4ma99h8vffjz",
+              "mage1znuktqgtjr8g85tetu2wt9wd33gstqr7pad92h"
             ],
             "quote_asset": "usd"
           }
@@ -369,7 +369,7 @@
         {
           "expiry": "2021-06-20T00:00:00Z",
           "market_id": "bnb:usd",
-          "oracle_address": "Mage1znuktqgtjr8g85tetu2wt9wd33gstqr7pad92h",
+          "oracle_address": "mage1znuktqgtjr8g85tetu2wt9wd33gstqr7pad92h",
           "price": "15.929061184"
         }
       ]

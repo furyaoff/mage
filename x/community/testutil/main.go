@@ -35,7 +35,7 @@ func (suite *Suite) SetupTest() {
 	suite.Keeper = tApp.GetCommunityKeeper()
 	communityPoolAddress := tApp.GetAccountKeeper().GetModuleAddress(types.ModuleAccountName)
 	// hello, greppers!
-	suite.Equal("Mage17d2wax0zhjrrecvaszuyxdf5wcu5a0p4qlx3t5", communityPoolAddress.String())
+	suite.Equal("mage17d2wax0zhjrrecvaszuyxdf5wcu5a0p4qlx3t5", communityPoolAddress.String())
 	suite.MaccAddress = communityPoolAddress
 }
 

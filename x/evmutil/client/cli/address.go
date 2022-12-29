@@ -46,12 +46,12 @@ func ParseOrQueryConversionPairAddress(
 
 	if err := sdk.ValidateDenom(addrOrDenom); err != nil {
 		return common.Address{}, fmt.Errorf(
-			"Mage ERC20 '%s' is not a valid hex address or denom",
+			"mage ERC20 '%s' is not a valid hex address or denom",
 			addrOrDenom,
 		)
 	}
 
-	// Valid denom, try looking up as denom to get corresponding Mage ERC20 address
+	// Valid denom, try looking up as denom to get corresponding mage ERC20 address
 	paramsRes, err := queryClient.Params(
 		context.Background(),
 		&types.QueryParamsRequest{},
@@ -67,7 +67,7 @@ func ParseOrQueryConversionPairAddress(
 	}
 
 	return common.Address{}, fmt.Errorf(
-		"Mage ERC20 '%s' is not a valid hex address or denom (did not match any denoms in queried enabled conversion pairs)",
+		"mage ERC20 '%s' is not a valid hex address or denom (did not match any denoms in queried enabled conversion pairs)",
 		addrOrDenom,
 	)
 }

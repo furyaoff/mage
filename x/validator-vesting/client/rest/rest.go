@@ -7,7 +7,7 @@ import (
 	clientrest "github.com/cosmos/cosmos-sdk/client/rest"
 )
 
-// RegisterRoutes registers Magedist-related REST handlers to a router
+// RegisterRoutes registers magedist-related REST handlers to a router
 func RegisterRoutes(cliCtx client.Context, rtr *mux.Router) {
 	r := clientrest.WithHTTPDeprecationHeaders(rtr)
 	registerQueryRoutes(cliCtx, r)

@@ -93,7 +93,7 @@ func (suite *grpcQueryTestSuite) TestQueryDelegatedBalance() {
 		{
 			name: "no account returns zeros",
 			setup: func() string {
-				return "Mage10wlnqzyss4accfqmyxwx5jy5x9nfkwh6qm7n4t"
+				return "mage10wlnqzyss4accfqmyxwx5jy5x9nfkwh6qm7n4t"
 			},
 			expectedRes: zeroResponse,
 		},
@@ -181,7 +181,7 @@ func (suite *grpcQueryTestSuite) TestQueryTotalSupply() {
 			expectedErr:   nil,
 		},
 		{
-			name: "returns TVL from one bMage denom",
+			name: "returns TVL from one bmage denom",
 			setup: func() {
 				initBalance := suite.NewBondCoin(i(1e9))
 				valAcc := suite.CreateAccount(sdk.NewCoins(initBalance), 0)
@@ -203,7 +203,7 @@ func (suite *grpcQueryTestSuite) TestQueryTotalSupply() {
 			expectedErr:   nil,
 		},
 		{
-			name: "returns TVL from multiple bMage denoms",
+			name: "returns TVL from multiple bmage denoms",
 			setup: func() {
 				initBalance := suite.NewBondCoin(i(1e9))
 				val1Acc := suite.CreateAccount(sdk.NewCoins(initBalance), 0)

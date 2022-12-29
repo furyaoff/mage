@@ -11,7 +11,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/version"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 
-	"github.com/furya-official/mage/x/Magedist/types"
+	"github.com/furya-official/mage/x/magedist/types"
 )
 
 // GetCmdSubmitProposal implements the command to submit a community-pool multi-spend proposal
@@ -34,7 +34,7 @@ Where proposal.json contains:
   "description": "Pay many users some MAGE!",
   "recipient_list": [
 		{
-			"address": "Mage1mz2003lathm95n5vnlthmtfvrzrjkrr53j4464",
+			"address": "mage1mz2003lathm95n5vnlthmtfvrzrjkrr53j4464",
 			"amount": [
 				{
 					"denom": "umage",
@@ -43,7 +43,7 @@ Where proposal.json contains:
 			]
 		},
 		{
-			"address": "Mage1zqezafa0luyetvtj8j67g336vaqtuudnsjq7vm",
+			"address": "mage1zqezafa0luyetvtj8j67g336vaqtuudnsjq7vm",
 			"amount": [
 				{
 					"denom": "umage",

@@ -4,7 +4,7 @@ order: 5
 
 # Parameters
 
-The Magedist module has the following parameters:
+The magedist module has the following parameters:
 
 | Key                  | Type                 | Example       | Description                                              |
 | -------------------- | -------------------- | ------------- | -------------------------------------------------------- |
@@ -32,12 +32,12 @@ Each `CoreReward` has the following properties
 
 | Key     | Type           | Example                                       | Description                                              |
 | ------- | -------------- | --------------------------------------------- | -------------------------------------------------------- |
-| Address | sdk.AccAddress | "Mage1x07eng0q9027j7wayap8nvqegpf625uu0w90tq" | address of core infrastructure provider                  |
+| Address | sdk.AccAddress | "mage1x07eng0q9027j7wayap8nvqegpf625uu0w90tq" | address of core infrastructure provider                  |
 | Weight  | sdk.Dec        | "0.912345678907654321"                        | % of remaining minted rewards allocated to this provider |
 
 Each `PartnerReward` has the following properties
 
 | Key              | Type           | Example                                       | Description                        |
 | ---------------- | -------------- | --------------------------------------------- | ---------------------------------- |
-| Address          | sdk.AccAddress | "Mage1x0cztstumgcfrw69s5nd5qtu9vdcg7alqtyhgr" | address of infrastructure partner  |
+| Address          | sdk.AccAddress | "mage1x0cztstumgcfrw69s5nd5qtu9vdcg7alqtyhgr" | address of infrastructure partner  |
 | RewardsPerSecond | object (coin)  | {"denom": "umage", "amount": "1285" }         | per second reward for this partner |

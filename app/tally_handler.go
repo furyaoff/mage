@@ -101,15 +101,15 @@ func (th TallyHandler) Tally(ctx sdk.Context, proposal types.Proposal) (passes b
 			return false
 		})
 
-		// get voter bMage and update total voting power and results
-		addrBMage := th.getAddrBMage(ctx, voter).toCoins()
-		for _, coin := range addrBMage {
+		// get voter bmage and update total voting power and results
+		addrBmage := th.getAddrBmage(ctx, voter).toCoins()
+		for _, coin := range addrBmage {
 			valAddr, err := liquidtypes.ParseLiquidStakingTokenDenom(coin.Denom)
 			if err != nil {
 				break
 			}
 
-			// reduce delegator shares by the amount of voter bMage for the validator
+			// reduce delegator shares by the amount of voter bmage for the validator
 			valAddrStr := valAddr.String()
 			if val, ok := currValidators[valAddrStr]; ok {
 				val.DelegatorDeductions = val.DelegatorDeductions.Add(coin.Amount.ToDec())
@@ -119,7 +119,7 @@ func (th TallyHandler) Tally(ctx sdk.Context, proposal types.Proposal) (passes b
 			// votingPower = amount of umage coin
 			stakedCoins, err := th.lk.GetStakedTokensForDerivatives(ctx, sdk.NewCoins(coin))
 			if err != nil {
-				// error is returned only if the bMage denom is incorrect, which should never happen here.
+				// error is returned only if the bmage denom is incorrect, which should never happen here.
 				panic(err)
 			}
 			votingPower := stakedCoins.Amount.ToDec()
@@ -185,60 +185,60 @@ func (th TallyHandler) Tally(ctx sdk.Context, proposal types.Proposal) (passes b
 	return false, false, tallyResults
 }
 
-// bMageByDenom a map of the bMage denom and the amount of bMage for that denom.
-type bMageByDenom map[string]sdk.Int
+// bmageByDenom a map of the bmage denom and the amount of bmage for that denom.
+type bmageByDenom map[string]sdk.Int
 
-func (bMageMap bMageByDenom) add(coin sdk.Coin) {
-	_, found := bMageMap[coin.Denom]
+func (bmageMap bmageByDenom) add(coin sdk.Coin) {
+	_, found := bmageMap[coin.Denom]
 	if !found {
-		bMageMap[coin.Denom] = sdk.ZeroInt()
+		bmageMap[coin.Denom] = sdk.ZeroInt()
 	}
-	bMageMap[coin.Denom] = bMageMap[coin.Denom].Add(coin.Amount)
+	bmageMap[coin.Denom] = bmageMap[coin.Denom].Add(coin.Amount)
 }
 
-func (bMageMap bMageByDenom) toCoins() sdk.Coins {
+func (bmageMap bmageByDenom) toCoins() sdk.Coins {
 	coins := sdk.Coins{}
-	for denom, amt := range bMageMap {
+	for denom, amt := range bmageMap {
 		coins = coins.Add(sdk.NewCoin(denom, amt))
 	}
 	return coins.Sort()
 }
 
-// getAddrBMage returns a map of validator address & the amount of bMage
+// getAddrBmage returns a map of validator address & the amount of bmage
 // of the addr for each validator.
-func (th TallyHandler) getAddrBMage(ctx sdk.Context, addr sdk.AccAddress) bMageByDenom {
-	results := make(bMageByDenom)
-	th.addBMageFromWallet(ctx, addr, results)
-	th.addBMageFromSavings(ctx, addr, results)
-	th.addBMageFromEarn(ctx, addr, results)
+func (th TallyHandler) getAddrBmage(ctx sdk.Context, addr sdk.AccAddress) bmageByDenom {
+	results := make(bmageByDenom)
+	th.addBmageFromWallet(ctx, addr, results)
+	th.addBmageFromSavings(ctx, addr, results)
+	th.addBmageFromEarn(ctx, addr, results)
 	return results
 }
 
-// addBMageFromWallet adds all addr balances of bMage in x/bank.
-func (th TallyHandler) addBMageFromWallet(ctx sdk.Context, addr sdk.AccAddress, bMage bMageByDenom) {
+// addBmageFromWallet adds all addr balances of bmage in x/bank.
+func (th TallyHandler) addBmageFromWallet(ctx sdk.Context, addr sdk.AccAddress, bmage bmageByDenom) {
 	coins := th.bk.GetAllBalances(ctx, addr)
 	for _, coin := range coins {
 		if th.lk.IsDerivativeDenom(ctx, coin.Denom) {
-			bMage.add(coin)
+			bmage.add(coin)
 		}
 	}
 }
 
-// addBMageFromSavings adds all addr deposits of bMage in x/savings.
-func (th TallyHandler) addBMageFromSavings(ctx sdk.Context, addr sdk.AccAddress, bMage bMageByDenom) {
+// addBmageFromSavings adds all addr deposits of bmage in x/savings.
+func (th TallyHandler) addBmageFromSavings(ctx sdk.Context, addr sdk.AccAddress, bmage bmageByDenom) {
 	deposit, found := th.svk.GetDeposit(ctx, addr)
 	if !found {
 		return
 	}
 	for _, coin := range deposit.Amount {
 		if th.lk.IsDerivativeDenom(ctx, coin.Denom) {
-			bMage.add(coin)
+			bmage.add(coin)
 		}
 	}
 }
 
-// addBMageFromEarn adds all addr deposits of bMage in x/earn.
-func (th TallyHandler) addBMageFromEarn(ctx sdk.Context, addr sdk.AccAddress, bMage bMageByDenom) {
+// addBmageFromEarn adds all addr deposits of bmage in x/earn.
+func (th TallyHandler) addBmageFromEarn(ctx sdk.Context, addr sdk.AccAddress, bmage bmageByDenom) {
 	shares, found := th.ek.GetVaultAccountShares(ctx, addr)
 	if !found {
 		return
@@ -246,7 +246,7 @@ func (th TallyHandler) addBMageFromEarn(ctx sdk.Context, addr sdk.AccAddress, bM
 	for _, share := range shares {
 		if th.lk.IsDerivativeDenom(ctx, share.Denom) {
 			if coin, err := th.ek.ConvertToAssets(ctx, share); err == nil {
-				bMage.add(coin)
+				bmage.add(coin)
 			}
 		}
 	}

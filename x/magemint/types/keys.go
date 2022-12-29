@@ -2,7 +2,7 @@ package types
 
 const (
 	// module name
-	ModuleName = "Magemint"
+	ModuleName = "magemint"
 
 	// ModuleAccountName is the name of the module's account
 	ModuleAccountName = ModuleName

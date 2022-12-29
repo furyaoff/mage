@@ -22,8 +22,8 @@ func (suite *KeeperTestSuite) TestDeposit() {
 	valAddr := sdk.ValAddress(valAccAddr)
 	initialBalance := sdk.NewInt(1e9)
 
-	bMageDenom := fmt.Sprintf("bMage-%s", valAddr.String())
-	invalidBMageDenom := fmt.Sprintf("bMage-%s", sdk.ValAddress(addrs[2]).String())
+	bmageDenom := fmt.Sprintf("bmage-%s", valAddr.String())
+	invalidBmageDenom := fmt.Sprintf("bmage-%s", sdk.ValAddress(addrs[2]).String())
 
 	type args struct {
 		allowedDenoms             []string
@@ -80,16 +80,16 @@ func (suite *KeeperTestSuite) TestDeposit() {
 			},
 		},
 		{
-			"valid bMage",
+			"valid bmage",
 			args{
-				allowedDenoms:             []string{"bnb", "btcb", "umage", "bMage"},
+				allowedDenoms:             []string{"bnb", "btcb", "umage", "bmage"},
 				depositor:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialDepositorBalance:   sdk.NewCoins(sdk.NewCoin(bMageDenom, sdk.NewInt(1000)), sdk.NewCoin("btcb", sdk.NewInt(1000))),
-				depositAmount:             sdk.NewCoins(sdk.NewCoin(bMageDenom, sdk.NewInt(100))),
+				initialDepositorBalance:   sdk.NewCoins(sdk.NewCoin(bmageDenom, sdk.NewInt(1000)), sdk.NewCoin("btcb", sdk.NewInt(1000))),
+				depositAmount:             sdk.NewCoins(sdk.NewCoin(bmageDenom, sdk.NewInt(100))),
 				numberDeposits:            1,
-				expectedAccountBalance:    sdk.NewCoins(sdk.NewCoin(bMageDenom, sdk.NewInt(900)), sdk.NewCoin("btcb", sdk.NewInt(1000))),
-				expectedModAccountBalance: sdk.NewCoins(sdk.NewCoin(bMageDenom, sdk.NewInt(100))),
-				expectedDepositCoins:      sdk.NewCoins(sdk.NewCoin(bMageDenom, sdk.NewInt(100))),
+				expectedAccountBalance:    sdk.NewCoins(sdk.NewCoin(bmageDenom, sdk.NewInt(900)), sdk.NewCoin("btcb", sdk.NewInt(1000))),
+				expectedModAccountBalance: sdk.NewCoins(sdk.NewCoin(bmageDenom, sdk.NewInt(100))),
+				expectedDepositCoins:      sdk.NewCoins(sdk.NewCoin(bmageDenom, sdk.NewInt(100))),
 			},
 			errArgs{
 				expectPass: true,
@@ -114,12 +114,12 @@ func (suite *KeeperTestSuite) TestDeposit() {
 			},
 		},
 		{
-			"invalid bMage",
+			"invalid bmage",
 			args{
-				allowedDenoms:             []string{"bnb", "btcb", "umage", "bMage"},
+				allowedDenoms:             []string{"bnb", "btcb", "umage", "bmage"},
 				depositor:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialDepositorBalance:   sdk.NewCoins(sdk.NewCoin(invalidBMageDenom, sdk.NewInt(1000)), sdk.NewCoin("btcb", sdk.NewInt(1000))),
-				depositAmount:             sdk.NewCoins(sdk.NewCoin(invalidBMageDenom, sdk.NewInt(100))),
+				initialDepositorBalance:   sdk.NewCoins(sdk.NewCoin(invalidBmageDenom, sdk.NewInt(1000)), sdk.NewCoin("btcb", sdk.NewInt(1000))),
+				depositAmount:             sdk.NewCoins(sdk.NewCoin(invalidBmageDenom, sdk.NewInt(100))),
 				numberDeposits:            1,
 				expectedAccountBalance:    sdk.Coins{},
 				expectedModAccountBalance: sdk.Coins{},
@@ -177,7 +177,7 @@ func (suite *KeeperTestSuite) TestDeposit() {
 			suite.ctx = ctx
 			suite.keeper = keeper
 
-			// Create validator and delegate for bMage
+			// Create validator and delegate for bmage
 			suite.CreateAccountWithAddress(valAccAddr, cs(c("umage", 100e10)))
 			suite.CreateAccountWithAddress(delegator, cs(c("umage", 100e10)))
 

@@ -8,7 +8,7 @@ import (
 	pricefeedtypes "github.com/furya-official/mage/x/pricefeed/types"
 )
 
-// lendGenesisBuilder builds the Hard and Pricefeed genesis states for setting up Mage Lend
+// lendGenesisBuilder builds the Hard and Pricefeed genesis states for setting up mage Lend
 type lendGenesisBuilder struct {
 	hardMarkets []hardtypes.MoneyMarket
 	pfMarkets   []pricefeedtypes.Market

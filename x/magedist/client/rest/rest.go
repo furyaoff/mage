@@ -12,10 +12,10 @@ import (
 	govrest "github.com/cosmos/cosmos-sdk/x/gov/client/rest"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 
-	"github.com/furya-official/mage/x/Magedist/types"
+	"github.com/furya-official/mage/x/magedist/types"
 )
 
-// RegisterRoutes registers Magedist-related REST handlers to a router
+// RegisterRoutes registers magedist-related REST handlers to a router
 func RegisterRoutes(cliCtx client.Context, rtr *mux.Router) {
 	r := clientrest.WithHTTPDeprecationHeaders(rtr)
 	registerQueryRoutes(cliCtx, r)

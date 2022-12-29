@@ -13,7 +13,7 @@ import (
 	"github.com/furya-official/mage/x/community/types"
 )
 
-const legacyCommunityPoolAddr = "Mage1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8m2splc"
+const legacyCommunityPoolAddr = "mage1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8m2splc"
 
 type grpcQueryTestSuite struct {
 	KeeperTestSuite

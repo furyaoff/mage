@@ -17,5 +17,5 @@ Each `Market` has the following parameters
 | MarketID   | string             | "bnb:usd"                | identifier for the market -- **must** be unique across markets |
 | BaseAsset  | string             | "bnb"                    | the base asset for the market pair                             |
 | QuoteAsset | string             | "usd"                    | the quote asset for the market pair                            |
-| Oracles    | array (AccAddress) | ["Mage1...", "Mage1..."] | addresses which can post prices for the market                 |
+| Oracles    | array (AccAddress) | ["mage1...", "mage1..."] | addresses which can post prices for the market                 |
 | Active     | bool               | true                     | flag to disable oracle interactions with the module            |

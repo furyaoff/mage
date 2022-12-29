@@ -5,7 +5,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/furya-official/mage/x/Magemint/types"
+	"github.com/furya-official/mage/x/magemint/types"
 )
 
 // this is the same value used in the x/hard

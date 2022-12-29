@@ -9,15 +9,15 @@ import (
 	"github.com/cosmos/cosmos-sdk/store/prefix"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
-	"github.com/furya-official/mage/x/Magemint/types"
+	"github.com/furya-official/mage/x/magemint/types"
 )
 
-// KeeperI is the required keeper interface for x/Magemint's begin blocker
+// KeeperI is the required keeper interface for x/magemint's begin blocker
 type KeeperI interface {
 	AccumulateAndMintInflation(ctx sdk.Context) error
 }
 
-// Keeper of the Magemint store
+// Keeper of the magemint store
 type Keeper struct {
 	cdc                            codec.BinaryCodec
 	storeKey                       sdk.StoreKey
@@ -30,7 +30,7 @@ type Keeper struct {
 
 var _ KeeperI = Keeper{}
 
-// NewKeeper creates a new Magemint Keeper instance
+// NewKeeper creates a new magemint Keeper instance
 func NewKeeper(
 	cdc codec.BinaryCodec, key sdk.StoreKey, paramSpace paramtypes.Subspace,
 	sk types.StakingKeeper, ak types.AccountKeeper, bk types.BankKeeper,
@@ -85,7 +85,7 @@ func (k Keeper) totalBondedTokens(ctx sdk.Context) sdk.Int {
 	return k.stakingKeeper.TotalBondedTokens(ctx)
 }
 
-// mintCoinsToModule mints teh desired coins to the x/Magemint module account and then
+// mintCoinsToModule mints teh desired coins to the x/magemint module account and then
 // transfers them to the designated module account.
 // if `newCoins` is empty or zero, this method is a noop.
 func (k Keeper) mintCoinsToModule(ctx sdk.Context, newCoins sdk.Coins, destMaccName string) error {

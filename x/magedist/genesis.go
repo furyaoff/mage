@@ -1,12 +1,12 @@
-package Magedist
+package magedist
 
 import (
 	"fmt"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/furya-official/mage/x/Magedist/keeper"
-	"github.com/furya-official/mage/x/Magedist/types"
+	"github.com/furya-official/mage/x/magedist/keeper"
+	"github.com/furya-official/mage/x/magedist/types"
 )
 
 // InitGenesis initializes the store state from a genesis state.
@@ -23,9 +23,9 @@ func InitGenesis(ctx sdk.Context, k keeper.Keeper, accountKeeper types.AccountKe
 	}
 
 	// check if the module account exists
-	moduleAcc := accountKeeper.GetModuleAccount(ctx, types.MageDistMacc)
+	moduleAcc := accountKeeper.GetModuleAccount(ctx, types.mageDistMacc)
 	if moduleAcc == nil {
-		panic(fmt.Sprintf("%s module account has not been set", types.MageDistMacc))
+		panic(fmt.Sprintf("%s module account has not been set", types.mageDistMacc))
 	}
 
 	// check if the fund account exists

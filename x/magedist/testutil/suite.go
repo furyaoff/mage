@@ -16,11 +16,11 @@ import (
 	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
 
 	"github.com/furya-official/mage/app"
-	"github.com/furya-official/mage/x/Magedist/keeper"
-	"github.com/furya-official/mage/x/Magedist/types"
+	"github.com/furya-official/mage/x/magedist/keeper"
+	"github.com/furya-official/mage/x/magedist/types"
 )
 
-// Suite implements a test suite for the Magedist module integration tests
+// Suite implements a test suite for the magedist module integration tests
 type Suite struct {
 	suite.Suite
 
@@ -59,7 +59,7 @@ func (suite *Suite) SetupTest() {
 	suite.App = tApp
 	suite.Ctx = ctx
 	suite.Addrs = addrs
-	suite.Keeper = tApp.GetMagedistKeeper()
+	suite.Keeper = tApp.GetmagedistKeeper()
 	suite.BankKeeper = tApp.GetBankKeeper()
 	suite.AccountKeeper = tApp.GetAccountKeeper()
 	suite.TestPeriods = testPeriods

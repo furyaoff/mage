@@ -90,7 +90,7 @@ func NewMsgConvertERC20ToCoin(
 	return MsgConvertERC20ToCoin{
 		Initiator:        initiator.String(),
 		Receiver:         receiver.String(),
-		MageERC20Address: contractAddr.String(),
+		mageERC20Address: contractAddr.String(),
 		Amount:           amount,
 	}
 }
@@ -111,7 +111,7 @@ func (msg MsgConvertERC20ToCoin) ValidateBasic() error {
 		)
 	}
 
-	if !common.IsHexAddress(msg.MageERC20Address) {
+	if !common.IsHexAddress(msg.mageERC20Address) {
 		return sdkerrors.Wrap(
 			sdkerrors.ErrInvalidAddress,
 			"erc20 contract address is not a valid hex address",

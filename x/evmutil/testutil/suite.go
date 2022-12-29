@@ -38,7 +38,7 @@ import (
 	"github.com/furya-official/mage/app"
 	"github.com/furya-official/mage/x/evmutil/keeper"
 	"github.com/furya-official/mage/x/evmutil/types"
-	Mageminttypes "github.com/furya-official/mage/x/Magemint/types"
+	mageminttypes "github.com/furya-official/mage/x/magemint/types"
 )
 
 type Suite struct {
@@ -83,7 +83,7 @@ func (suite *Suite) SetupTest() {
 	suite.Addrs = addrs
 
 	evmGenesis := evmtypes.DefaultGenesisState()
-	evmGenesis.Params.EvmDenom = "aMage"
+	evmGenesis.Params.EvmDenom = "amage"
 
 	feemarketGenesis := feemarkettypes.DefaultGenesisState()
 	feemarketGenesis.Params.EnableHeight = 1
@@ -110,7 +110,7 @@ func (suite *Suite) SetupTest() {
 	// InitializeFromGenesisStates commits first block so we start at 2 here
 	suite.Ctx = suite.App.NewContext(false, tmproto.Header{
 		Height:          suite.App.LastBlockHeight() + 1,
-		ChainID:         "Magetest_1-1",
+		ChainID:         "magetest_1-1",
 		Time:            time.Now().UTC(),
 		ProposerAddress: consAddress.Bytes(),
 		Version: tmversion.Consensus{
@@ -181,29 +181,29 @@ func (suite *Suite) Commit() {
 	suite.Ctx = suite.App.NewContext(false, header)
 }
 
-func (suite *Suite) FundAccountWithMage(addr sdk.AccAddress, coins sdk.Coins) {
+func (suite *Suite) FundAccountWithmage(addr sdk.AccAddress, coins sdk.Coins) {
 	umage := coins.AmountOf("umage")
 	if umage.IsPositive() {
 		err := suite.App.FundAccount(suite.Ctx, addr, sdk.NewCoins(sdk.NewCoin("umage", umage)))
 		suite.Require().NoError(err)
 	}
-	aMage := coins.AmountOf("aMage")
-	if aMage.IsPositive() {
-		err := suite.Keeper.SetBalance(suite.Ctx, addr, aMage)
+	amage := coins.AmountOf("amage")
+	if amage.IsPositive() {
+		err := suite.Keeper.SetBalance(suite.Ctx, addr, amage)
 		suite.Require().NoError(err)
 	}
 }
 
-func (suite *Suite) FundModuleAccountWithMage(moduleName string, coins sdk.Coins) {
+func (suite *Suite) FundModuleAccountWithmage(moduleName string, coins sdk.Coins) {
 	umage := coins.AmountOf("umage")
 	if umage.IsPositive() {
 		err := suite.App.FundModuleAccount(suite.Ctx, moduleName, sdk.NewCoins(sdk.NewCoin("umage", umage)))
 		suite.Require().NoError(err)
 	}
-	aMage := coins.AmountOf("aMage")
-	if aMage.IsPositive() {
+	amage := coins.AmountOf("amage")
+	if amage.IsPositive() {
 		addr := suite.AccountKeeper.GetModuleAddress(moduleName)
-		err := suite.Keeper.SetBalance(suite.Ctx, addr, aMage)
+		err := suite.Keeper.SetBalance(suite.Ctx, addr, amage)
 		suite.Require().NoError(err)
 	}
 }
@@ -348,11 +348,11 @@ func (suite *Suite) SendTx(
 }
 
 func (suite *Suite) MintFeeCollector(coins sdk.Coins) {
-	err := suite.App.GetBankKeeper().MintCoins(suite.Ctx, Mageminttypes.ModuleAccountName, coins)
+	err := suite.App.GetBankKeeper().MintCoins(suite.Ctx, mageminttypes.ModuleAccountName, coins)
 	suite.Require().NoError(err)
 	err = suite.App.GetBankKeeper().SendCoinsFromModuleToModule(
 		suite.Ctx,
-		Mageminttypes.ModuleAccountName,
+		mageminttypes.ModuleAccountName,
 		authtypes.FeeCollectorName,
 		coins,
 	)

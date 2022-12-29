@@ -10,7 +10,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	"github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/furya-official/mage/x/Magedist/types"
+	"github.com/furya-official/mage/x/magedist/types"
 )
 
 // SecondsPerYear is the number of seconds in a year
@@ -20,24 +20,24 @@ const (
 	BaseAprPadding = "0.000000003022265980"
 )
 
-// RandomizedGenState generates a random GenesisState for Magedist module
+// RandomizedGenState generates a random GenesisState for magedist module
 func RandomizedGenState(simState *module.SimulationState) {
 	params := genRandomParams(simState)
 	if err := params.Validate(); err != nil {
 		panic(err)
 	}
 
-	MagedistGenesis := types.NewGenesisState(params, types.DefaultPreviousBlockTime)
-	if err := MagedistGenesis.Validate(); err != nil {
+	magedistGenesis := types.NewGenesisState(params, types.DefaultPreviousBlockTime)
+	if err := magedistGenesis.Validate(); err != nil {
 		panic(err)
 	}
 
-	bz, err := json.MarshalIndent(&MagedistGenesis, "", " ")
+	bz, err := json.MarshalIndent(&magedistGenesis, "", " ")
 	if err != nil {
 		panic(err)
 	}
 	fmt.Printf("Selected randomly generated %s parameters:\n%s\n", types.ModuleName, bz)
-	simState.GenState[types.ModuleName] = simState.Cdc.MustMarshalJSON(MagedistGenesis)
+	simState.GenState[types.ModuleName] = simState.Cdc.MustMarshalJSON(magedistGenesis)
 }
 
 func genRandomParams(simState *module.SimulationState) types.Params {

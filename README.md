@@ -9,25 +9,25 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/furya-official/mage)](https://goreportcard.com/report/github.com/furya-official/mage)
 [![API Reference](https://godoc.org/github.com/furya-official/mage?status.svg)](https://godoc.org/github.com/furya-official/mage)
 [![GitHub](https://img.shields.io/github/license/furya-official/mage.svg)](https://github.com/furya-official/mage/blob/master/LICENSE.md)
-[![Twitter Follow](https://img.shields.io/twitter/follow/Mage_platform.svg?label=Follow&style=social)](https://twitter.com/Mage_platform)
+[![Twitter Follow](https://img.shields.io/twitter/follow/mage_platform.svg?label=Follow&style=social)](https://twitter.com/mage_platform)
 [![Discord Chat](https://img.shields.io/discord/704389840614981673.svg)](https://discord.com/invite/kQzh3Uv)
 
 </div>
 
 <div align="center">
 
-### [Telegram](https://t.me/Magelabs) | [Medium](https://medium.com/kava-labs) | [Discord](https://discord.gg/JJYnuCx)
+### [Telegram](https://t.me/magelabs) | [Medium](https://medium.com/kava-labs) | [Discord](https://discord.gg/JJYnuCx)
 
 </div>
 
-Reference implementation of Mage, a blockchain for cross-chain DeFi. Built using the [cosmos-sdk](https://github.com/cosmos/cosmos-sdk).
+Reference implementation of mage, a blockchain for cross-chain DeFi. Built using the [cosmos-sdk](https://github.com/cosmos/cosmos-sdk).
 
 ## Mainnet
 
 The current recommended version of the software for mainnet is [v0.19.0](https://github.com/furya-official/mage/releases/tag/v0.19.0). The master branch of this repository often contains considerable development work since the last mainnet release and is __not__ runnable on mainnet.
 
 ### Installation and Setup
-For detailed instructions see [the Mage docs](https://docs.mage.io/docs/participate/validator-node).
+For detailed instructions see [the mage docs](https://docs.mage.io/docs/participate/validator-node).
 
 ```bash
 git checkout v0.19.0
@@ -40,13 +40,13 @@ For further information on joining the testnet, head over to the [testnet repo](
 
 ## Docs
 
-Mage protocol and client documentation can be found in the [Mage docs](https://docs.mage.io).
+mage protocol and client documentation can be found in the [mage docs](https://docs.mage.io).
 
-If you have technical questions or concerns, ask a developer or community member in the [Mage discord](https://discord.com/invite/kQzh3Uv).
+If you have technical questions or concerns, ask a developer or community member in the [mage discord](https://discord.com/invite/kQzh3Uv).
 
 ## License
 
-Copyright © Mage Labs, Inc. All rights reserved.
+Copyright © mage Labs, Inc. All rights reserved.
 
 Licensed under the [Apache v2 License](LICENSE.md).
 # mage

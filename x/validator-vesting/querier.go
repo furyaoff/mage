@@ -287,7 +287,7 @@ func getCirculatingSupplySWP(ctx sdk.Context, req abci.RequestQuery, legacyQueri
 	monthlyStakersSwp := int64(520_833)
 	monthlyLPIncentivesSwp := int64(2_343_750)
 
-	// []{Ecosystem, Team, Treasury, Mage Stakers, LP Incentives}
+	// []{Ecosystem, Team, Treasury, mage Stakers, LP Incentives}
 	scheduleAmounts := [][]int64{
 		{12_500_000, 0, 15_625_000, monthlyStakersSwp, monthlyLPIncentivesSwp},  // *** Year ONE ***
 		{0, 0, 0, monthlyStakersSwp, monthlyLPIncentivesSwp},                    // 1

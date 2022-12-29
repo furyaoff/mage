@@ -1,13 +1,13 @@
 syntax = "proto3";
-package mage.Magedist.v1beta1;
+package mage.magedist.v1beta1;
 
 import "gogoproto/gogo.proto";
 import "google/protobuf/timestamp.proto";
-import "furya-official/mageMagedist/v1beta1/params.proto";
+import "furya-official/magemagedist/v1beta1/params.proto";
 
-option go_package = "github.com/furya-official/mage/x/Magedist/types";
+option go_package = "github.com/furya-official/mage/x/magedist/types";
 
-// GenesisState defines the Magedist module's genesis state.
+// GenesisState defines the magedist module's genesis state.
 message GenesisState {
   Params params = 1 [(gogoproto.nullable) = false];
 

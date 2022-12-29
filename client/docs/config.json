@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Mage - Legacy REST and gRPC Gateway docs",
+    "title": "mage - Legacy REST and gRPC Gateway docs",
     "description": "A REST interface for state queries",
     "version": "1.0.0"
   },
@@ -132,10 +132,10 @@
       }
     },
     {
-      "url": "./out/swagger/furya-official/mageMagedist/v1beta1/query.swagger.json",
+      "url": "./out/swagger/furya-official/magemagedist/v1beta1/query.swagger.json",
       "tags": {
         "rename": {
-          "Query": "Magedist"
+          "Query": "magedist"
         }
       },
       "operationIds": {
@@ -143,7 +143,7 @@
           {
             "type": "regex",
             "from": "(.*)",
-            "to": "Magedist$1"
+            "to": "magedist$1"
           }
         ]
       }
@@ -217,10 +217,10 @@
       }
     },
     {
-      "url": "./out/swagger/furya-official/mageMagemint/v1beta1/query.swagger.json",
+      "url": "./out/swagger/furya-official/magemagemint/v1beta1/query.swagger.json",
       "tags": {
         "rename": {
-          "Query": "Magemint"
+          "Query": "magemint"
         }
       },
       "operationIds": {
@@ -228,7 +228,7 @@
           {
             "type": "regex",
             "from": "(.*)",
-            "to": "Magemint$1"
+            "to": "magemint$1"
           }
         ]
       }

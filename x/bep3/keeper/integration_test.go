@@ -17,13 +17,13 @@ import (
 const (
 	TestSenderOtherChain    = "bnb1uky3me9ggqypmrsvxk7ur6hqkzq7zmv4ed4ng7"
 	TestRecipientOtherChain = "bnb1urfermcg92dwq36572cx4xg84wpk3lfpksr5g7"
-	TestDeputy              = "Mage1xy7hrjy9r0algz9w3gzm8u6mrpq97kwta747gj"
+	TestDeputy              = "mage1xy7hrjy9r0algz9w3gzm8u6mrpq97kwta747gj"
 )
 
 var (
 	DenomMap  = map[int]string{0: "btc", 1: "eth", 2: "bnb", 3: "xrp", 4: "dai"}
-	TestUser1 = sdk.AccAddress(crypto.AddressHash([]byte("MageTestUser1")))
-	TestUser2 = sdk.AccAddress(crypto.AddressHash([]byte("MageTestUser2")))
+	TestUser1 = sdk.AccAddress(crypto.AddressHash([]byte("mageTestUser1")))
+	TestUser2 = sdk.AccAddress(crypto.AddressHash([]byte("mageTestUser2")))
 )
 
 func c(denom string, amount int64) sdk.Coin { return sdk.NewInt64Coin(denom, amount) }

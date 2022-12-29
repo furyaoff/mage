@@ -1,6 +1,6 @@
 {
   "genesis_time": "2022-05-25T17:00:00Z",
-  "chain_id": "Mage_2221-17000",
+  "chain_id": "mage_2221-17000",
   "initial_height": "1",
   "consensus_params": {
     "block": {
@@ -46,19 +46,19 @@
         {
           "@type": "/cosmos.auth.v1beta1.ModuleAccount",
           "base_account": {
-            "address": "Mage1cj7njkw2g9fqx4e768zc75dp9sks8u9znxrf0w",
+            "address": "mage1cj7njkw2g9fqx4e768zc75dp9sks8u9znxrf0w",
             "pub_key": null,
             "account_number": "0",
             "sequence": "0"
           },
-          "name": "Magedist",
+          "name": "magedist",
           "permissions": [
             "minter"
           ]
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "Mage1fy5zeuutmxzwcx5hncu5q83ug3zcqmxcpwrjsn",
+          "address": "mage1fy5zeuutmxzwcx5hncu5q83ug3zcqmxcpwrjsn",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
@@ -66,7 +66,7 @@
         {
           "@type": "/cosmos.auth.v1beta1.ModuleAccount",
           "base_account": {
-            "address": "Mage1mfru9azs5nua2wxcd4sq64g5nt7nn4n8s2w8cu",
+            "address": "mage1mfru9azs5nua2wxcd4sq64g5nt7nn4n8s2w8cu",
             "pub_key": null,
             "account_number": "0",
             "sequence": "0"
@@ -77,7 +77,7 @@
         {
           "@type": "/ethermint.types.v1.EthAccount",
           "base_account": {
-            "address": "Mage1ak4pa9z2aty94ze2cs06wsdnkg9hsvfkp40r02",
+            "address": "mage1ak4pa9z2aty94ze2cs06wsdnkg9hsvfkp40r02",
             "pub_key": null,
             "account_number": "0",
             "sequence": "0"
@@ -87,7 +87,7 @@
         {
           "@type": "/ethermint.types.v1.EthAccount",
           "base_account": {
-            "address": "Mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
+            "address": "mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz",
             "pub_key": null,
             "account_number": "0",
             "sequence": "0"
@@ -97,7 +97,7 @@
         {
           "@type": "/ethermint.types.v1.EthAccount",
           "base_account": {
-            "address": "Mage10wlnqzyss4accfqmyxwx5jy5x9nfkwh6qm7n4t",
+            "address": "mage10wlnqzyss4accfqmyxwx5jy5x9nfkwh6qm7n4t",
             "pub_key": null,
             "account_number": "0",
             "sequence": "0"
@@ -107,7 +107,7 @@
         {
           "@type": "/ethermint.types.v1.EthAccount",
           "base_account": {
-            "address": "Mage1vtf08rd2z9fm8qwxa54y3el5vues8ty64qcdyr",
+            "address": "mage1vtf08rd2z9fm8qwxa54y3el5vues8ty64qcdyr",
             "pub_key": null,
             "account_number": "0",
             "sequence": "1"
@@ -117,7 +117,7 @@
         {
           "@type": "/ethermint.types.v1.EthAccount",
           "base_account": {
-            "address": "Mage1wrrekcy2h0zs9shkruuwqsvsldq8hm70yad4ke",
+            "address": "mage1wrrekcy2h0zs9shkruuwqsvsldq8hm70yad4ke",
             "pub_key": null,
             "account_number": "0",
             "sequence": "1"
@@ -127,7 +127,7 @@
         {
           "@type": "/ethermint.types.v1.EthAccount",
           "base_account": {
-            "address": "Mage1g3kdcr8ah7rs07dk00elnkpmk34e6dcj94306a",
+            "address": "mage1g3kdcr8ah7rs07dk00elnkpmk34e6dcj94306a",
             "pub_key": null,
             "account_number": "0",
             "sequence": "1"
@@ -137,7 +137,7 @@
         {
           "@type": "/ethermint.types.v1.EthAccount",
           "base_account": {
-            "address": "Mage1xg3g4gadzvlgfqwnsfufnsv6r0gmtnhl9f09p5",
+            "address": "mage1xg3g4gadzvlgfqwnsfufnsv6r0gmtnhl9f09p5",
             "pub_key": null,
             "account_number": "0",
             "sequence": "0"
@@ -147,7 +147,7 @@
         {
           "@type": "/ethermint.types.v1.EthAccount",
           "base_account": {
-            "address": "Mage1kq0kfnnffkna9hknzg8kgx89ljczjtjdt8qrv7",
+            "address": "mage1kq0kfnnffkna9hknzg8kgx89ljczjtjdt8qrv7",
             "pub_key": null,
             "account_number": "0",
             "sequence": "0"
@@ -157,7 +157,7 @@
         {
           "@type": "/ethermint.types.v1.EthAccount",
           "base_account": {
-            "address": "Mage1xcgtffvv2yeqmgs3yz4gv29kgjrj8usxw9ehkk",
+            "address": "mage1xcgtffvv2yeqmgs3yz4gv29kgjrj8usxw9ehkk",
             "pub_key": null,
             "account_number": "0",
             "sequence": "0"
@@ -166,7 +166,7 @@
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "Mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
+          "address": "mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
@@ -174,7 +174,7 @@
         {
           "@type": "/ethermint.types.v1.EthAccount",
           "base_account": {
-            "address": "Mage1w66m9hdzwgd6uc8g93zqkcumgwzrpcw9e32lf8",
+            "address": "mage1w66m9hdzwgd6uc8g93zqkcumgwzrpcw9e32lf8",
             "pub_key": null,
             "account_number": "0",
             "sequence": "0"
@@ -185,7 +185,7 @@
           "@type": "/ethermint.types.v1.EthAccount",
           "base_account": {
             "account_number": "23",
-            "address": "Mage1seqjrgakfgzasu5g8gwsmgzwacg85e8nnxeqxl",
+            "address": "mage1seqjrgakfgzasu5g8gwsmgzwacg85e8nnxeqxl",
             "pub_key": null,
             "sequence": "1"
           },
@@ -203,7 +203,7 @@
       },
       "balances": [
         {
-          "address": "Mage1xg3g4gadzvlgfqwnsfufnsv6r0gmtnhl9f09p5",
+          "address": "mage1xg3g4gadzvlgfqwnsfufnsv6r0gmtnhl9f09p5",
           "coins": [
             {
               "denom": "umage",
@@ -212,7 +212,7 @@
           ]
         },
         {
-          "address": "Mage1fy5zeuutmxzwcx5hncu5q83ug3zcqmxcpwrjsn",
+          "address": "mage1fy5zeuutmxzwcx5hncu5q83ug3zcqmxcpwrjsn",
           "coins": [
             {
               "denom": "umage",
@@ -221,7 +221,7 @@
           ]
         },
         {
-          "address": "Mage1cj7njkw2g9fqx4e768zc75dp9sks8u9znxrf0w",
+          "address": "mage1cj7njkw2g9fqx4e768zc75dp9sks8u9znxrf0w",
           "coins": [
             {
               "denom": "hard",
@@ -238,7 +238,7 @@
           ]
         },
         {
-          "address": "Mage1xcgtffvv2yeqmgs3yz4gv29kgjrj8usxw9ehkk",
+          "address": "mage1xcgtffvv2yeqmgs3yz4gv29kgjrj8usxw9ehkk",
           "coins": [
             {
               "denom": "umage",
@@ -247,7 +247,7 @@
           ]
         },
         {
-          "address": "Mage1g3kdcr8ah7rs07dk00elnkpmk34e6dcj94306a",
+          "address": "mage1g3kdcr8ah7rs07dk00elnkpmk34e6dcj94306a",
           "coins": [
             {
               "denom": "umage",
@@ -256,7 +256,7 @@
           ]
         },
         {
-          "address": "Mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
+          "address": "mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
           "coins": [
             {
               "denom": "btcb",
@@ -285,7 +285,7 @@
           ]
         },
         {
-          "address": "Mage1w66m9hdzwgd6uc8g93zqkcumgwzrpcw9e32lf8",
+          "address": "mage1w66m9hdzwgd6uc8g93zqkcumgwzrpcw9e32lf8",
           "coins": [
             {
               "denom": "umage",
@@ -294,7 +294,7 @@
           ]
         },
         {
-          "address": "Mage1kq0kfnnffkna9hknzg8kgx89ljczjtjdt8qrv7",
+          "address": "mage1kq0kfnnffkna9hknzg8kgx89ljczjtjdt8qrv7",
           "coins": [
             {
               "denom": "umage",
@@ -303,7 +303,7 @@
           ]
         },
         {
-          "address": "Mage1mfru9azs5nua2wxcd4sq64g5nt7nn4n8s2w8cu",
+          "address": "mage1mfru9azs5nua2wxcd4sq64g5nt7nn4n8s2w8cu",
           "coins": [
             {
               "denom": "btcb",
@@ -372,7 +372,7 @@
               "time_based_limit": "0"
             },
             "active": true,
-            "deputy_address": "Mage1kla4wl0ccv7u85cemvs3y987hqk0afcv7vue84",
+            "deputy_address": "mage1kla4wl0ccv7u85cemvs3y987hqk0afcv7vue84",
             "fixed_fee": "2",
             "min_swap_amount": "3",
             "max_swap_amount": "2000000000",
@@ -389,7 +389,7 @@
               "time_based_limit": "0"
             },
             "active": true,
-            "deputy_address": "Mage14q5sawxdxtpap5x5sgzj7v4sp3ucncjlpuk3hs",
+            "deputy_address": "mage14q5sawxdxtpap5x5sgzj7v4sp3ucncjlpuk3hs",
             "fixed_fee": "100000",
             "min_swap_amount": "100001",
             "max_swap_amount": "250000000000000",
@@ -406,7 +406,7 @@
               "time_based_limit": "0"
             },
             "active": true,
-            "deputy_address": "Mage1agcvt07tcw0tglu0hmwdecsnuxp2yd45f3avgm",
+            "deputy_address": "mage1agcvt07tcw0tglu0hmwdecsnuxp2yd45f3avgm",
             "fixed_fee": "1000",
             "min_swap_amount": "1001",
             "max_swap_amount": "500000000000",
@@ -423,7 +423,7 @@
               "time_based_limit": "0"
             },
             "active": true,
-            "deputy_address": "Mage1j9je7f6s0v6k7dmgv6u5k5ru202f5ffsc7af04",
+            "deputy_address": "mage1j9je7f6s0v6k7dmgv6u5k5ru202f5ffsc7af04",
             "fixed_fee": "20000",
             "min_swap_amount": "20001",
             "max_swap_amount": "100000000000000",
@@ -452,7 +452,7 @@
             "minimum_withdraw_amount": "10000000"
           }
         ],
-        "relayer": "Mage15tmj37vh7ch504px9fcfglmvx6y9m70646ev8t",
+        "relayer": "mage15tmj37vh7ch504px9fcfglmvx6y9m70646ev8t",
         "enabled_conversion_pairs": []
       },
       "erc20_bridge_pairs": [],
@@ -715,9 +715,9 @@
           "@type": "/mage.committee.v1beta1.MemberCommittee",
           "base_committee": {
             "id": "1",
-            "description": "Mage Stability Committee",
+            "description": "mage Stability Committee",
             "members": [
-              "Mage1fy5zeuutmxzwcx5hncu5q83ug3zcqmxcpwrjsn"
+              "mage1fy5zeuutmxzwcx5hncu5q83ug3zcqmxcpwrjsn"
             ],
             "permissions": [
               {
@@ -783,7 +783,7 @@
                     "key": "Active"
                   },
                   {
-                    "subspace": "Magedist",
+                    "subspace": "magedist",
                     "key": "Active"
                   },
                   {
@@ -810,9 +810,9 @@
           "@type": "/mage.committee.v1beta1.MemberCommittee",
           "base_committee": {
             "id": "2",
-            "description": "Mage Safety Committee",
+            "description": "mage Safety Committee",
             "members": [
-              "Mage1fy5zeuutmxzwcx5hncu5q83ug3zcqmxcpwrjsn"
+              "mage1fy5zeuutmxzwcx5hncu5q83ug3zcqmxcpwrjsn"
             ],
             "permissions": [
               {
@@ -828,9 +828,9 @@
           "@type": "/mage.committee.v1beta1.MemberCommittee",
           "base_committee": {
             "id": "3",
-            "description": "Mage God Committee (testing only)",
+            "description": "mage God Committee (testing only)",
             "members": [
-              "Mage1fy5zeuutmxzwcx5hncu5q83ug3zcqmxcpwrjsn"
+              "mage1fy5zeuutmxzwcx5hncu5q83ug3zcqmxcpwrjsn"
             ],
             "permissions": [
               {
@@ -848,7 +848,7 @@
             "id": "4",
             "description": "HARD Governance Committee",
             "members": [
-              "Mage1fy5zeuutmxzwcx5hncu5q83ug3zcqmxcpwrjsn"
+              "mage1fy5zeuutmxzwcx5hncu5q83ug3zcqmxcpwrjsn"
             ],
             "permissions": [
               {
@@ -893,7 +893,7 @@
             "id": "5",
             "description": "SWP Governance Committee",
             "members": [
-              "Mage1fy5zeuutmxzwcx5hncu5q83ug3zcqmxcpwrjsn"
+              "mage1fy5zeuutmxzwcx5hncu5q83ug3zcqmxcpwrjsn"
             ],
             "permissions": [
               {
@@ -985,7 +985,7 @@
             "allowed_depositors": []
           },
           {
-            "denom": "bMage",
+            "denom": "bmage",
             "strategies": [
               "STRATEGY_TYPE_SAVINGS"
             ]
@@ -1091,7 +1091,7 @@
         }
       ],
       "params": {
-        "evm_denom": "aMage",
+        "evm_denom": "amage",
         "enable_create": true,
         "enable_call": true,
         "extra_eips": [],
@@ -1127,7 +1127,7 @@
                 "type": "string"
               },
               {
-                "name": "Mage_erc20_address",
+                "name": "mage_erc20_address",
                 "type": "string"
               },
               {
@@ -1324,7 +1324,7 @@
       "params": {
         "enabled_conversion_pairs": [
           {
-            "Mage_erc20_address": "0x864121A3b64A05d872883a1D0DA04eEe107A64F3",
+            "mage_erc20_address": "0x864121A3b64A05d872883a1D0DA04eEe107A64F3",
             "denom": "erc20/multichain/usdc"
           }
         ]
@@ -1360,8 +1360,8 @@
                   "max_change_rate": "0.010000000000000000"
                 },
                 "min_self_delegation": "1",
-                "delegator_address": "Mage1xcgtffvv2yeqmgs3yz4gv29kgjrj8usxw9ehkk",
-                "validator_address": "Magevaloper1xcgtffvv2yeqmgs3yz4gv29kgjrj8usxrnrlwp",
+                "delegator_address": "mage1xcgtffvv2yeqmgs3yz4gv29kgjrj8usxw9ehkk",
+                "validator_address": "magevaloper1xcgtffvv2yeqmgs3yz4gv29kgjrj8usxrnrlwp",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
                   "key": "e//2Cz3zvPXpYe2XJi1b8W7QdTc7Dmc0gCc0P8n78Ns="
@@ -1421,8 +1421,8 @@
                   "max_change_rate": "0.010000000000000000"
                 },
                 "min_self_delegation": "1",
-                "delegator_address": "Mage1w66m9hdzwgd6uc8g93zqkcumgwzrpcw9e32lf8",
-                "validator_address": "Magevaloper1w66m9hdzwgd6uc8g93zqkcumgwzrpcw958sh3s",
+                "delegator_address": "mage1w66m9hdzwgd6uc8g93zqkcumgwzrpcw9e32lf8",
+                "validator_address": "magevaloper1w66m9hdzwgd6uc8g93zqkcumgwzrpcw958sh3s",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
                   "key": "DcSKRFZOtEnpW9M0sD8VVYh+aQF1P7ri3KSgjGAYHqc="
@@ -2208,7 +2208,7 @@
           },
           {
             "active": true,
-            "collateral_type": "bMage",
+            "collateral_type": "bmage",
             "start": "2021-12-08T14:00:00Z",
             "end": "2024-01-01T00:00:00Z",
             "rewards_per_second": [
@@ -2305,7 +2305,7 @@
       "swap_claims": [
         {
           "base_claim": {
-            "owner": "Mage1ektgdyy0z23qqnd67ns3qvfzgfgjd5xe82lf5c",
+            "owner": "mage1ektgdyy0z23qqnd67ns3qvfzgfgjd5xe82lf5c",
             "reward": []
           },
           "reward_indexes": [
@@ -2317,7 +2317,7 @@
         },
         {
           "base_claim": {
-            "owner": "Mage173w2zz287s36ewnnkf4mjansnthnnsz7rtrxqc",
+            "owner": "mage173w2zz287s36ewnnkf4mjansnthnnsz7rtrxqc",
             "reward": []
           },
           "reward_indexes": [
@@ -2342,7 +2342,7 @@
       "params": {
         "assets": [
           {
-            "owner": "Mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
+            "owner": "mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
             "denom": "umage",
             "blocked_addresses": [],
             "paused": false,
@@ -2354,7 +2354,7 @@
             }
           },
           {
-            "owner": "Mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
+            "owner": "mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
             "denom": "erc20/multichain/usdt",
             "blocked_addresses": [],
             "paused": false,
@@ -2366,7 +2366,7 @@
             }
           },
           {
-            "owner": "Mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
+            "owner": "mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
             "denom": "usdx",
             "blocked_addresses": [],
             "paused": false,
@@ -2378,7 +2378,7 @@
             }
           },
           {
-            "owner": "Mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
+            "owner": "mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
             "denom": "erc20/multichain/usdc",
             "blocked_addresses": [],
             "paused": false,
@@ -2390,7 +2390,7 @@
             }
           },
           {
-            "owner": "Mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
+            "owner": "mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
             "denom": "hard",
             "blocked_addresses": [],
             "paused": false,
@@ -2402,7 +2402,7 @@
             }
           },
           {
-            "owner": "Mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
+            "owner": "mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
             "denom": "swp",
             "blocked_addresses": [],
             "paused": false,
@@ -2414,7 +2414,7 @@
             }
           },
           {
-            "owner": "Mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
+            "owner": "mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
             "denom": "busd",
             "blocked_addresses": [],
             "paused": false,
@@ -2426,7 +2426,7 @@
             }
           },
           {
-            "owner": "Mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
+            "owner": "mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
             "denom": "btcb",
             "blocked_addresses": [],
             "paused": false,
@@ -2438,7 +2438,7 @@
             }
           },
           {
-            "owner": "Mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
+            "owner": "mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
             "denom": "bnb",
             "blocked_addresses": [],
             "paused": false,
@@ -2450,7 +2450,7 @@
             }
           },
           {
-            "owner": "Mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
+            "owner": "mage1vlpsrmdyuywvaqrv7rx6xga224sqfwz3fyfhwq",
             "denom": "xrpb",
             "blocked_addresses": [],
             "paused": false,
@@ -2465,14 +2465,14 @@
       },
       "supplies": []
     },
-    "Magedist": {
+    "magedist": {
       "params": {
         "active": false,
         "periods": []
       },
       "previous_block_time": "1970-01-01T00:00:01Z"
     },
-    "Magemint": {
+    "magemint": {
       "params": {
         "community_pool_inflation": "0.200000000000000000",
         "staking_rewards_apy": "0.150000000000000000"
@@ -2489,7 +2489,7 @@
             "base_asset": "bnb",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2498,7 +2498,7 @@
             "base_asset": "bnb",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2507,7 +2507,7 @@
             "base_asset": "btc",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2516,7 +2516,7 @@
             "base_asset": "btc",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2525,7 +2525,7 @@
             "base_asset": "xrp",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2534,7 +2534,7 @@
             "base_asset": "xrp",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2543,7 +2543,7 @@
             "base_asset": "busd",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2552,7 +2552,7 @@
             "base_asset": "busd",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2561,7 +2561,7 @@
             "base_asset": "usdc",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2570,7 +2570,7 @@
             "base_asset": "usdc",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2579,7 +2579,7 @@
             "base_asset": "usdt",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2588,7 +2588,7 @@
             "base_asset": "usdt",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2597,7 +2597,7 @@
             "base_asset": "mage",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2606,7 +2606,7 @@
             "base_asset": "mage",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2615,7 +2615,7 @@
             "base_asset": "hard",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2624,7 +2624,7 @@
             "base_asset": "hard",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2633,7 +2633,7 @@
             "base_asset": "atom",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2642,7 +2642,7 @@
             "base_asset": "atom",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2651,7 +2651,7 @@
             "base_asset": "osmo",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2660,7 +2660,7 @@
             "base_asset": "osmo",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2669,7 +2669,7 @@
             "base_asset": "akt",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2678,7 +2678,7 @@
             "base_asset": "akt",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2687,7 +2687,7 @@
             "base_asset": "luna",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2696,7 +2696,7 @@
             "base_asset": "luna",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2705,7 +2705,7 @@
             "base_asset": "usdx",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2714,7 +2714,7 @@
             "base_asset": "usdx",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2723,7 +2723,7 @@
             "base_asset": "usdx",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2732,7 +2732,7 @@
             "base_asset": "swp",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           },
@@ -2741,7 +2741,7 @@
             "base_asset": "swp",
             "quote_asset": "usd",
             "oracles": [
-              "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
+              "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h"
             ],
             "active": true
           }
@@ -2751,175 +2751,175 @@
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "bnb:usd",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "215.962650000000001782"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "bnb:usd:30",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "217.962650000000001782"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "btc:usd",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "29500.962650000000001782"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "btc:usd:30",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "28500.962650000000001782"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "akt:usd",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "1.962650000000001782"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "akt:usd:30",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "1.962650000000001782"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "osmo:usd",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "4.962650000000001782"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "osmo:usd:30",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "4.962650000000001782"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "luna:usd",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "92.962650000000001782"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "luna:usd:30",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "92.962650000000001782"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "atom:usd",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "24.962650000000001782"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "atom:usd:30",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "24.962650000000001782"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "xrp:usd",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "0.552650000000001782"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "xrp:usd:30",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "0.552650000000001782"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "busd:usd",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "1.000000000000000000"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "busd:usd:30",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "1.000000000000000000"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "usdx:usd",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "1.000000000000000000"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "usdx:usd:30",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "1.000000000000000000"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "usdx:usd:720",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "1.000000000000000000"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "mage:usd",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "3.000000000000000000"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "mage:usd:30",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "3.000000000000000000"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "hard:usd",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "0.500000000000000000"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "hard:usd:30",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "0.500000000000000000"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "swp:usd",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "2.150000000000000000"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "swp:usd:30",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "2.150000000000000000"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "usdt:usd",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "1.000000000000000000"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "usdc:usd",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "1.000000000000000000"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "usdt:usd:30",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "1.000000000000000000"
         },
         {
           "expiry": "2050-01-01T00:00:00Z",
           "market_id": "usdc:usd:30",
-          "oracle_address": "Mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
+          "oracle_address": "mage1hdn83q3srldcpan4ex2v4npuae8hmnfrps3e6h",
           "price": "1.000000000000000000"
         }
       ]
@@ -2931,9 +2931,9 @@
           "umage",
           "hard",
           "swp",
-          "bMage",
-          "bMage-Magevaloper1xcgtffvv2yeqmgs3yz4gv29kgjrj8usxrnrlwp",
-          "bMage-Magevaloper1w66m9hdzwgd6uc8g93zqkcumgwzrpcw958sh3s",
+          "bmage",
+          "bmage-magevaloper1xcgtffvv2yeqmgs3yz4gv29kgjrj8usxrnrlwp",
+          "bmage-magevaloper1w66m9hdzwgd6uc8g93zqkcumgwzrpcw958sh3s",
           "erc20/multichain/usdc"
         ]
       }
@@ -3067,22 +3067,22 @@
       ],
       "share_records": [
         {
-          "depositor": "Mage173w2zz287s36ewnnkf4mjansnthnnsz7rtrxqc",
+          "depositor": "mage173w2zz287s36ewnnkf4mjansnthnnsz7rtrxqc",
           "pool_id": "btcb:usdx",
           "shares_owned": "4472135954"
         },
         {
-          "depositor": "Mage173w2zz287s36ewnnkf4mjansnthnnsz7rtrxqc",
+          "depositor": "mage173w2zz287s36ewnnkf4mjansnthnnsz7rtrxqc",
           "pool_id": "hard:usdx",
           "shares_owned": "1000000000"
         },
         {
-          "depositor": "Mage173w2zz287s36ewnnkf4mjansnthnnsz7rtrxqc",
+          "depositor": "mage173w2zz287s36ewnnkf4mjansnthnnsz7rtrxqc",
           "pool_id": "swp:usdx",
           "shares_owned": "2236067977"
         },
         {
-          "depositor": "Mage173w2zz287s36ewnnkf4mjansnthnnsz7rtrxqc",
+          "depositor": "mage173w2zz287s36ewnnkf4mjansnthnnsz7rtrxqc",
           "pool_id": "umage:usdx",
           "shares_owned": "2236067977"
         }

@@ -383,7 +383,7 @@ func queryGetAPYs(ctx sdk.Context, req abci.RequestQuery, k Keeper, legacyQuerie
 	params := k.GetParams(ctx)
 	var apys types.APYs
 
-	// bMage APY (staking + incentive rewards)
+	// bmage APY (staking + incentive rewards)
 	stakingAPR, err := GetStakingAPR(ctx, k, params)
 	if err != nil {
 		return nil, err
@@ -393,7 +393,7 @@ func queryGetAPYs(ctx sdk.Context, req abci.RequestQuery, k Keeper, legacyQuerie
 
 	// Incentive only APYs
 	for _, param := range params.EarnRewardPeriods {
-		// Skip bMage as it's calculated earlier with staking rewards
+		// Skip bmage as it's calculated earlier with staking rewards
 		if param.CollateralType == liquidtypes.DefaultDerivativeDenom {
 			continue
 		}
@@ -423,18 +423,18 @@ func queryGetAPYs(ctx sdk.Context, req abci.RequestQuery, k Keeper, legacyQuerie
 // GetStakingAPR returns the total APR for staking and incentive rewards
 func GetStakingAPR(ctx sdk.Context, k Keeper, params types.Params) (sdk.Dec, error) {
 	// Get staking APR
-	stakingAPR := k.MagemintKeeper.GetStakingApy(ctx)
+	stakingAPR := k.magemintKeeper.GetStakingApy(ctx)
 
 	// Get incentive APR
-	bMageRewardPeriod, found := params.EarnRewardPeriods.GetMultiRewardPeriod(liquidtypes.DefaultDerivativeDenom)
+	bmageRewardPeriod, found := params.EarnRewardPeriods.GetMultiRewardPeriod(liquidtypes.DefaultDerivativeDenom)
 	if !found {
-		// No incentive rewards for bMage, only staking rewards
+		// No incentive rewards for bmage, only staking rewards
 		return stakingAPR, nil
 	}
 
-	// Total amount of bMage in earn vaults, this may be lower than total bank
-	// supply of bMage as some bMage may not be deposited in earn vaults
-	totalEarnBMageDeposited := sdk.ZeroInt()
+	// Total amount of bmage in earn vaults, this may be lower than total bank
+	// supply of bmage as some bmage may not be deposited in earn vaults
+	totalEarnBmageDeposited := sdk.ZeroInt()
 
 	var iterErr error
 	k.earnKeeper.IterateVaultRecords(ctx, func(record earntypes.VaultRecord) (stop bool) {
@@ -448,7 +448,7 @@ func GetStakingAPR(ctx sdk.Context, k Keeper, params types.Params) (sdk.Dec, err
 			return false
 		}
 
-		totalEarnBMageDeposited = totalEarnBMageDeposited.Add(vaultValue.Amount)
+		totalEarnBmageDeposited = totalEarnBmageDeposited.Add(vaultValue.Amount)
 
 		return false
 	})
@@ -458,8 +458,8 @@ func GetStakingAPR(ctx sdk.Context, k Keeper, params types.Params) (sdk.Dec, err
 	}
 
 	// Incentive APR = rewards per second * seconds per year / total supplied to earn vaults
-	// Override collateral type to use "mage" instead of "bMage" when fetching
-	incentiveAPY, err := GetAPYFromMultiRewardPeriod(ctx, k, types.BondDenom, bMageRewardPeriod, totalEarnBMageDeposited)
+	// Override collateral type to use "mage" instead of "bmage" when fetching
+	incentiveAPY, err := GetAPYFromMultiRewardPeriod(ctx, k, types.BondDenom, bmageRewardPeriod, totalEarnBmageDeposited)
 	if err != nil {
 		return sdk.ZeroDec(), err
 	}
@@ -519,7 +519,7 @@ func GetAPYFromMultiRewardPeriod(
 func getMarketID(denom string) string {
 	// Rewrite denoms as pricefeed has different names for some assets,
 	// e.g. "umage" -> "mage", "erc20/multichain/usdc" -> "usdc"
-	// bMage is not included as it is handled separately
+	// bmage is not included as it is handled separately
 
 	// TODO: Replace hardcoded conversion with possible params set somewhere
 	// to be more flexible. E.g. a map of denoms to pricefeed market denoms in

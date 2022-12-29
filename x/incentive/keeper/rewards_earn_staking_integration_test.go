@@ -48,14 +48,14 @@ func (suite *EarnStakingRewardsIntegrationTestSuite) SetupTest() {
 
 	incentiveBuilder := testutil.NewIncentiveGenesisBuilder().
 		WithGenesisTime(suite.GenesisTime).
-		WithSimpleEarnRewardPeriod("bMage", cs())
+		WithSimpleEarnRewardPeriod("bmage", cs())
 
 	savingsBuilder := testutil.NewSavingsGenesisBuilder().
-		WithSupportedDenoms("bMage")
+		WithSupportedDenoms("bmage")
 
 	earnBuilder := testutil.NewEarnGenesisBuilder().
 		WithAllowedVaults(earntypes.AllowedVault{
-			Denom:             "bMage",
+			Denom:             "bmage",
 			Strategies:        earntypes.StrategyTypes{earntypes.STRATEGY_TYPE_SAVINGS},
 			IsPrivateVault:    false,
 			AllowedDepositors: nil,
@@ -63,7 +63,7 @@ func (suite *EarnStakingRewardsIntegrationTestSuite) SetupTest() {
 
 	stakingBuilder := testutil.NewStakingGenesisBuilder()
 
-	MagemintBuilder := testutil.NewMagemintGenesisBuilder().
+	magemintBuilder := testutil.NewmagemintGenesisBuilder().
 		WithStakingRewardsApy(sdk.MustNewDecFromStr("0.2")).
 		WithPreviousBlockTime(suite.GenesisTime)
 
@@ -73,7 +73,7 @@ func (suite *EarnStakingRewardsIntegrationTestSuite) SetupTest() {
 		savingsBuilder,
 		earnBuilder,
 		stakingBuilder,
-		MagemintBuilder,
+		magemintBuilder,
 	)
 }
 
@@ -134,7 +134,7 @@ func (suite *EarnStakingRewardsIntegrationTestSuite) TestStakingRewardsDistribut
 
 	suite.keeper.SetEarnRewardAccrualTime(suite.Ctx, vaultDenom1, suite.Ctx.BlockTime())
 	suite.keeper.SetEarnRewardAccrualTime(suite.Ctx, vaultDenom2, suite.Ctx.BlockTime())
-	suite.App.GetMagemintKeeper().SetPreviousBlockTime(suite.Ctx, suite.Ctx.BlockTime())
+	suite.App.GetmagemintKeeper().SetPreviousBlockTime(suite.Ctx, suite.Ctx.BlockTime())
 
 	val := suite.GetAbciValidator(suite.valAddrs[0])
 

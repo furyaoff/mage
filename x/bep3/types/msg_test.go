@@ -15,7 +15,7 @@ import (
 var (
 	coinsSingle       = sdk.NewCoins(sdk.NewInt64Coin("bnb", 50000))
 	binanceAddrs      = []sdk.AccAddress{}
-	MageAddrs         = []sdk.AccAddress{}
+	mageAddrs         = []sdk.AccAddress{}
 	randomNumberBytes = []byte{15}
 	timestampInt64    = int64(100)
 	randomNumberHash  = tmbytes.HexBytes(types.CalculateRandomHash(randomNumberBytes, timestampInt64))
@@ -29,9 +29,9 @@ func init() {
 		sdk.AccAddress(crypto.AddressHash([]byte("BinanceTest1"))),
 		sdk.AccAddress(crypto.AddressHash([]byte("BinanceTest2"))),
 	}
-	MageAddrs = []sdk.AccAddress{
-		sdk.AccAddress(crypto.AddressHash([]byte("MageTest1"))),
-		sdk.AccAddress(crypto.AddressHash([]byte("MageTest2"))),
+	mageAddrs = []sdk.AccAddress{
+		sdk.AccAddress(crypto.AddressHash([]byte("mageTest1"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("mageTest2"))),
 	}
 }
 
@@ -57,12 +57,12 @@ func (suite *MsgTestSuite) TestMsgCreateAtomicSwap() {
 		heightSpan          uint64
 		expectPass          bool
 	}{
-		{"normal cross-chain", binanceAddrs[0], MageAddrs[0], MageAddrs[0].String(), binanceAddrs[0].String(), randomNumberHash.String(), timestampInt64, coinsSingle, 500, true},
-		{"without other chain fields", binanceAddrs[0], MageAddrs[0], "", "", randomNumberHash.String(), timestampInt64, coinsSingle, 500, false},
-		{"invalid amount", binanceAddrs[0], MageAddrs[0], MageAddrs[0].String(), binanceAddrs[0].String(), randomNumberHash.String(), timestampInt64, nil, 500, false},
-		{"invalid from address", sdk.AccAddress{}, MageAddrs[0], MageAddrs[0].String(), binanceAddrs[0].String(), randomNumberHash.String(), timestampInt64, coinsSingle, 500, false},
-		{"invalid to address", binanceAddrs[0], sdk.AccAddress{}, MageAddrs[0].String(), binanceAddrs[0].String(), randomNumberHash.String(), timestampInt64, coinsSingle, 500, false},
-		{"invalid rand hash", binanceAddrs[0], MageAddrs[0], MageAddrs[0].String(), binanceAddrs[0].String(), "ff", timestampInt64, coinsSingle, 500, false},
+		{"normal cross-chain", binanceAddrs[0], mageAddrs[0], mageAddrs[0].String(), binanceAddrs[0].String(), randomNumberHash.String(), timestampInt64, coinsSingle, 500, true},
+		{"without other chain fields", binanceAddrs[0], mageAddrs[0], "", "", randomNumberHash.String(), timestampInt64, coinsSingle, 500, false},
+		{"invalid amount", binanceAddrs[0], mageAddrs[0], mageAddrs[0].String(), binanceAddrs[0].String(), randomNumberHash.String(), timestampInt64, nil, 500, false},
+		{"invalid from address", sdk.AccAddress{}, mageAddrs[0], mageAddrs[0].String(), binanceAddrs[0].String(), randomNumberHash.String(), timestampInt64, coinsSingle, 500, false},
+		{"invalid to address", binanceAddrs[0], sdk.AccAddress{}, mageAddrs[0].String(), binanceAddrs[0].String(), randomNumberHash.String(), timestampInt64, coinsSingle, 500, false},
+		{"invalid rand hash", binanceAddrs[0], mageAddrs[0], mageAddrs[0].String(), binanceAddrs[0].String(), "ff", timestampInt64, coinsSingle, 500, false},
 	}
 
 	for i, tc := range tests {

@@ -10,7 +10,7 @@ import (
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
 	tmtime "github.com/tendermint/tendermint/types/time"
 
-	MagedistTypes "github.com/furya-official/mage/x/Magedist/types"
+	magedistTypes "github.com/furya-official/mage/x/magedist/types"
 )
 
 // Parameter keys and default values
@@ -34,7 +34,7 @@ var (
 	BondDenom              = "umage"
 	USDXMintingRewardDenom = "umage"
 
-	IncentiveMacc = MagedistTypes.ModuleName
+	IncentiveMacc = magedistTypes.ModuleName
 )
 
 // NewParams returns a new params object

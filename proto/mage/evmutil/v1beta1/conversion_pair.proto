@@ -7,14 +7,14 @@ option go_package = "github.com/furya-official/mage/x/evmutil/types";
 option (gogoproto.equal_all) = true;
 option (gogoproto.verbose_equal_all) = true;
 
-// ConversionPair defines a Mage ERC20 address and corresponding denom that is
+// ConversionPair defines a mage ERC20 address and corresponding denom that is
 // allowed to be converted between ERC20 and sdk.Coin
 message ConversionPair {
   option (gogoproto.goproto_getters) = false;
 
-  // ERC20 address of the token on the Mage EVM
-  bytes Mage_erc20_address = 1 [
-    (gogoproto.customname) = "MageERC20Address",
+  // ERC20 address of the token on the mage EVM
+  bytes mage_erc20_address = 1 [
+    (gogoproto.customname) = "mageERC20Address",
     (gogoproto.casttype) = "HexBytes"
   ];
 

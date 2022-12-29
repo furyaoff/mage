@@ -1,4 +1,4 @@
-package Magemint
+package magemint
 
 import (
 	"context"
@@ -17,9 +17,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
 
-	"github.com/furya-official/mage/x/Magemint/client/cli"
-	"github.com/furya-official/mage/x/Magemint/keeper"
-	"github.com/furya-official/mage/x/Magemint/types"
+	"github.com/furya-official/mage/x/magemint/client/cli"
+	"github.com/furya-official/mage/x/magemint/keeper"
+	"github.com/furya-official/mage/x/magemint/types"
 )
 
 var (
@@ -27,7 +27,7 @@ var (
 	_ module.AppModuleBasic = AppModuleBasic{}
 )
 
-// AppModuleBasic defines the basic application module used by the Magemint module.
+// AppModuleBasic defines the basic application module used by the magemint module.
 type AppModuleBasic struct {
 	cdc codec.Codec
 }
@@ -39,7 +39,7 @@ func (AppModuleBasic) Name() string {
 	return types.ModuleName
 }
 
-// RegisterLegacyAminoCodec registers the Magemint module's types on the given LegacyAmino codec.
+// RegisterLegacyAminoCodec registers the magemint module's types on the given LegacyAmino codec.
 func (AppModuleBasic) RegisterLegacyAminoCodec(cdc *codec.LegacyAmino) {}
 
 // RegisterInterfaces registers the module's interface types
@@ -51,7 +51,7 @@ func (AppModuleBasic) DefaultGenesis(cdc codec.JSONCodec) json.RawMessage {
 	return cdc.MustMarshalJSON(types.DefaultGenesisState())
 }
 
-// ValidateGenesis performs genesis state validation for the Magemint module.
+// ValidateGenesis performs genesis state validation for the magemint module.
 func (AppModuleBasic) ValidateGenesis(cdc codec.JSONCodec, config client.TxEncodingConfig, bz json.RawMessage) error {
 	var gs types.GenesisState
 	if err := cdc.UnmarshalJSON(bz, &gs); err != nil {
@@ -61,10 +61,10 @@ func (AppModuleBasic) ValidateGenesis(cdc codec.JSONCodec, config client.TxEncod
 	return gs.Validate()
 }
 
-// RegisterRESTRoutes registers the REST routes for the Magemint module.
+// RegisterRESTRoutes registers the REST routes for the magemint module.
 func (AppModuleBasic) RegisterRESTRoutes(clientCtx client.Context, rtr *mux.Router) {}
 
-// RegisterGRPCGatewayRoutes registers the gRPC Gateway routes for the Magemint module.
+// RegisterGRPCGatewayRoutes registers the gRPC Gateway routes for the magemint module.
 func (AppModuleBasic) RegisterGRPCGatewayRoutes(clientCtx client.Context, mux *runtime.ServeMux) {
 	types.RegisterQueryHandlerClient(context.Background(), mux, types.NewQueryClient(clientCtx))
 
@@ -72,15 +72,15 @@ func (AppModuleBasic) RegisterGRPCGatewayRoutes(clientCtx client.Context, mux *r
 	minttypes.RegisterQueryHandlerClient(context.Background(), mux, minttypes.NewQueryClient(clientCtx))
 }
 
-// GetTxCmd returns no root tx command for the Magemint module.
+// GetTxCmd returns no root tx command for the magemint module.
 func (AppModuleBasic) GetTxCmd() *cobra.Command { return nil }
 
-// GetQueryCmd returns the root query command for the Magemint module.
+// GetQueryCmd returns the root query command for the magemint module.
 func (AppModuleBasic) GetQueryCmd() *cobra.Command {
 	return cli.GetQueryCmd()
 }
 
-// AppModule implements an application module for the Magemint module.
+// AppModule implements an application module for the magemint module.
 type AppModule struct {
 	AppModuleBasic
 
@@ -97,23 +97,23 @@ func NewAppModule(cdc codec.Codec, keeper keeper.Keeper, ak types.AccountKeeper)
 	}
 }
 
-// Name returns the Magemint module's name.
+// Name returns the magemint module's name.
 func (AppModule) Name() string {
 	return types.ModuleName
 }
 
-// RegisterInvariants registers the Magemint module invariants.
+// RegisterInvariants registers the magemint module invariants.
 func (am AppModule) RegisterInvariants(_ sdk.InvariantRegistry) {}
 
-// Route returns the message routing key for the Magemint module.
+// Route returns the message routing key for the magemint module.
 func (AppModule) Route() sdk.Route { return sdk.Route{} }
 
-// QuerierRoute returns the Magemint module's querier route name.
+// QuerierRoute returns the magemint module's querier route name.
 func (AppModule) QuerierRoute() string {
 	return types.QuerierRoute
 }
 
-// LegacyQuerierHandler returns the Magemint module sdk.Querier.
+// LegacyQuerierHandler returns the magemint module sdk.Querier.
 func (am AppModule) LegacyQuerierHandler(legacyQuerierCdc *codec.LegacyAmino) sdk.Querier {
 	return nil
 }
@@ -129,7 +129,7 @@ func (am AppModule) RegisterServices(cfg module.Configurator) {
 	minttypes.RegisterQueryServer(cfg.QueryServer(), keeper.NewMintQueryServer(am.keeper))
 }
 
-// InitGenesis performs genesis initialization for the Magemint module. It returns
+// InitGenesis performs genesis initialization for the magemint module. It returns
 // no validator updates.
 func (am AppModule) InitGenesis(ctx sdk.Context, cdc codec.JSONCodec, data json.RawMessage) []abci.ValidatorUpdate {
 	var genesisState types.GenesisState
@@ -149,12 +149,12 @@ func (am AppModule) ExportGenesis(ctx sdk.Context, cdc codec.JSONCodec) json.Raw
 // ConsensusVersion implements AppModule/ConsensusVersion.
 func (AppModule) ConsensusVersion() uint64 { return 1 }
 
-// BeginBlock returns the begin blocker for the Magemint module.
+// BeginBlock returns the begin blocker for the magemint module.
 func (am AppModule) BeginBlock(ctx sdk.Context, _ abci.RequestBeginBlock) {
 	BeginBlocker(ctx, am.keeper)
 }
 
-// EndBlock returns the end blocker for the Magemint module. It returns no validator
+// EndBlock returns the end blocker for the magemint module. It returns no validator
 // updates.
 func (AppModule) EndBlock(_ sdk.Context, _ abci.RequestEndBlock) []abci.ValidatorUpdate {
 	return []abci.ValidatorUpdate{}

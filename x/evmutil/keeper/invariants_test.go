@@ -38,7 +38,7 @@ func (suite *invariantTestSuite) SetupValidState() {
 			keeper.ConversionMultiplier.QuoRaw(2),
 		))
 	}
-	suite.FundModuleAccountWithMage(
+	suite.FundModuleAccountWithmage(
 		types.ModuleName,
 		sdk.NewCoins(
 			sdk.NewCoin("umage", sdk.NewInt(2)), // ( sum of all minor balances ) / conversion multiplier

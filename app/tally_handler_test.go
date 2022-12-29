@@ -62,7 +62,7 @@ func (suite *tallyHandlerSuite) TestVotePower_AllSourcesCounted() {
 
 	derivatives := suite.mintDerivative(user.GetAddress(), validator.GetOperator(), sdk.NewInt(500e6))
 
-	suite.allowBMageEarnDeposits()
+	suite.allowBmageEarnDeposits()
 	suite.earnDeposit(
 		user.GetAddress(),
 		sdk.NewCoin(derivatives.Denom, sdk.NewInt(250e6)),
@@ -87,7 +87,7 @@ func (suite *tallyHandlerSuite) TestVotePower_UserOverridesValidator() {
 
 	derivatives := suite.mintDerivative(user.GetAddress(), validator.GetOperator(), sdk.NewInt(500e6))
 
-	suite.allowBMageEarnDeposits()
+	suite.allowBmageEarnDeposits()
 	suite.earnDeposit(
 		user.GetAddress(),
 		sdk.NewCoin(derivatives.Denom, sdk.NewInt(250e6)),
@@ -95,7 +95,7 @@ func (suite *tallyHandlerSuite) TestVotePower_UserOverridesValidator() {
 
 	proposal := suite.createProposal()
 
-	// Validator votes, inheriting user's stake and bMage.
+	// Validator votes, inheriting user's stake and bmage.
 	suite.voteOnProposal(validator.GetOperator().Bytes(), proposal.ProposalId, govtypes.OptionYes)
 
 	// use wrapped context to discard the state changes
@@ -257,7 +257,7 @@ func (suite *tallyHandlerSuite) newBondCoin(amount sdk.Int) sdk.Coin {
 	return suite.staking.newBondCoin(suite.ctx, amount)
 }
 
-func (suite *tallyHandlerSuite) allowBMageEarnDeposits() {
+func (suite *tallyHandlerSuite) allowBmageEarnDeposits() {
 	ek := suite.app.GetEarnKeeper()
 	earnParams := ek.GetParams(suite.ctx)
 

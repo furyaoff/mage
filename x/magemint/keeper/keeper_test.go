@@ -5,13 +5,13 @@ import (
 	"time"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/furya-official/mage/x/Magemint/testutil"
-	"github.com/furya-official/mage/x/Magemint/types"
+	"github.com/furya-official/mage/x/magemint/testutil"
+	"github.com/furya-official/mage/x/magemint/types"
 	"github.com/stretchr/testify/suite"
 )
 
 type keeperTestSuite struct {
-	testutil.MagemintTestSuite
+	testutil.magemintTestSuite
 }
 
 func TestKeeperTestSuite(t *testing.T) {

@@ -1,38 +1,38 @@
 syntax = "proto3";
-package mage.Magedist.v1beta1;
+package mage.magedist.v1beta1;
 
 import "cosmos/base/v1beta1/coin.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "furya-official/mageMagedist/v1beta1/params.proto";
+import "furya-official/magemagedist/v1beta1/params.proto";
 
-option go_package = "github.com/furya-official/mage/x/Magedist/types";
+option go_package = "github.com/furya-official/mage/x/magedist/types";
 
 // Query defines the gRPC querier service.
 service Query {
-  // Params queries the parameters of x/Magedist module.
+  // Params queries the parameters of x/magedist module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/furya-official/mageMagedist/v1beta1/parameters";
+    option (google.api.http).get = "/furya-official/magemagedist/v1beta1/parameters";
   }
 
-  // Balance queries the balance of all coins of x/Magedist module.
+  // Balance queries the balance of all coins of x/magedist module.
   rpc Balance(QueryBalanceRequest) returns (QueryBalanceResponse) {
-    option (google.api.http).get = "/furya-official/mageMagedist/v1beta1/balance";
+    option (google.api.http).get = "/furya-official/magemagedist/v1beta1/balance";
   }
 }
 
-// QueryParamsRequest defines the request type for querying x/Magedist parameters.
+// QueryParamsRequest defines the request type for querying x/magedist parameters.
 message QueryParamsRequest {}
 
-// QueryParamsResponse defines the response type for querying x/Magedist parameters.
+// QueryParamsResponse defines the response type for querying x/magedist parameters.
 message QueryParamsResponse {
   Params params = 1 [(gogoproto.nullable) = false];
 }
 
-// QueryBalanceRequest defines the request type for querying x/Magedist balance.
+// QueryBalanceRequest defines the request type for querying x/magedist balance.
 message QueryBalanceRequest {}
 
-// QueryBalanceResponse defines the response type for querying x/Magedist balance.
+// QueryBalanceResponse defines the response type for querying x/magedist balance.
 message QueryBalanceResponse {
   repeated cosmos.base.v1beta1.Coin coins = 1 [
     (gogoproto.nullable) = false,

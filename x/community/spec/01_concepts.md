@@ -10,10 +10,10 @@ The community pool is the module account of the x/community module. It replaces 
 
 ### Funding
 
-The community pool can be funded every block from the community pool inflation of the x/Magemint module.
+The community pool can be funded every block from the community pool inflation of the x/magemint module.
 
 Additionally, the pool can be funded by any account sending a community/FundCommunityPool message.
 
 ### Spending
 
-The community pool funds are spent via government proposals. The x/Magedist module includes a CommunityPoolMultiSpendProposal that, upon approval, distributes funds to a list of accounts.
+The community pool funds are spent via government proposals. The x/magedist module includes a CommunityPoolMultiSpendProposal that, upon approval, distributes funds to a list of accounts.

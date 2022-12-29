@@ -1,14 +1,14 @@
 # Testnet-5000
 
-Testnet-5000 introduces transfers between Mage and Bnbchain via BEP3.
+Testnet-5000 introduces transfers between mage and Bnbchain via BEP3.
 
-This guide will walk you through interacting with the blockchains and transferring coins via the rest server. To send transactions, we'll create an unsigned request, sign it, and broadcast it to the Mage blockchain.
+This guide will walk you through interacting with the blockchains and transferring coins via the rest server. To send transactions, we'll create an unsigned request, sign it, and broadcast it to the mage blockchain.
 
 ## Rest server requests
 
 ### Setup
 
-We'll be using Mage's CLI to build, sign, and broadcast the transactions:
+We'll be using mage's CLI to build, sign, and broadcast the transactions:
 
 ```bash
     # Download kvcli
@@ -72,7 +72,7 @@ The tx broadcast will log information in the terminal, including the txhash. Thi
     curl -H "Content-Type: application/json" -X GET http://localhost:1317/txs/81A1955216F6D985ECB4770E29B9BCED8F73A42D0C0FD566372CF673CCB81587
 ```
 
-Congratulations, you've just created a swap on Mage! The swap will be automatically relayed over to Bnbchain where it it can be claimed using the secret random number from above.
+Congratulations, you've just created a swap on mage! The swap will be automatically relayed over to Bnbchain where it it can be claimed using the secret random number from above.
 
 # Claim swap
 

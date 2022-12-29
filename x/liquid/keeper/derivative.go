@@ -127,7 +127,7 @@ func (k Keeper) GetStakedTokensForDerivatives(ctx sdk.Context, coins sdk.Coins) 
 			return sdk.Coin{}, fmt.Errorf("invalid derivative denom %s: validator not found", coin.Denom)
 		}
 
-		// bMage is 1:1 to delegation shares
+		// bmage is 1:1 to delegation shares
 		valTokens := validator.TokensFromSharesTruncated(coin.Amount.ToDec())
 		total = total.Add(valTokens.TruncateInt())
 	}
@@ -139,17 +139,17 @@ func (k Keeper) GetStakedTokensForDerivatives(ctx sdk.Context, coins sdk.Coins) 
 // GetTotalDerivativeValue returns the total sum value of all derivative coins
 // for all validators denominated by the bond token (umage).
 func (k Keeper) GetTotalDerivativeValue(ctx sdk.Context) (sdk.Coin, error) {
-	bMageCoins := sdk.NewCoins()
+	bmageCoins := sdk.NewCoins()
 
 	k.bankKeeper.IterateTotalSupply(ctx, func(c sdk.Coin) bool {
 		if k.IsDerivativeDenom(ctx, c.Denom) {
-			bMageCoins = bMageCoins.Add(c)
+			bmageCoins = bmageCoins.Add(c)
 		}
 
 		return false
 	})
 
-	return k.GetStakedTokensForDerivatives(ctx, bMageCoins)
+	return k.GetStakedTokensForDerivatives(ctx, bmageCoins)
 }
 
 // GetDerivativeValue returns the total underlying value of the provided

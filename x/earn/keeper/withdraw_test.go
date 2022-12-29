@@ -242,16 +242,16 @@ func (suite *withdrawTestSuite) TestWithdraw_Partial() {
 	)
 }
 
-func (suite *withdrawTestSuite) TestWithdraw_bMage() {
-	vaultDenom := "bMage"
-	coinDenom := testutil.TestBMageDenoms[0]
+func (suite *withdrawTestSuite) TestWithdraw_bmage() {
+	vaultDenom := "bmage"
+	coinDenom := testutil.TestBmageDenoms[0]
 
 	startBalance := sdk.NewInt64Coin(coinDenom, 1000)
 	depositAmount := sdk.NewInt64Coin(coinDenom, 100)
 
 	acc1 := suite.CreateAccount(sdk.NewCoins(startBalance), 0)
 
-	// vault denom is only "bMage" which has it's own special handler
+	// vault denom is only "bmage" which has it's own special handler
 	suite.CreateVault(
 		vaultDenom,
 		types.StrategyTypes{types.STRATEGY_TYPE_SAVINGS},
@@ -262,12 +262,12 @@ func (suite *withdrawTestSuite) TestWithdraw_bMage() {
 	err := suite.Keeper.Deposit(suite.Ctx, acc1.GetAddress(), depositAmount, types.STRATEGY_TYPE_SAVINGS)
 	suite.Require().NoError(
 		err,
-		"should be able to deposit bMage derivative denom in bMage vault",
+		"should be able to deposit bmage derivative denom in bmage vault",
 	)
 
 	_, err = suite.Keeper.Withdraw(suite.Ctx, acc1.GetAddress(), depositAmount, types.STRATEGY_TYPE_SAVINGS)
 	suite.Require().NoError(
 		err,
-		"should be able to withdraw bMage derivative denom from bMage vault",
+		"should be able to withdraw bmage derivative denom from bmage vault",
 	)
 }

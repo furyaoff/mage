@@ -112,7 +112,7 @@ func GetCmdQueryAuctions() *cobra.Command {
 		Long:  "Query for all paginated auctions that match optional filters.",
 		Example: strings.Join([]string{
 			fmt.Sprintf("  $ %s q %s auctions --type=(collateral|surplus|debt)", version.AppName, types.ModuleName),
-			fmt.Sprintf("  $ %s q %s auctions --owner=Mage1hatdq32u5x4wnxrtv5wzjzmq49sxgjgsj0mffm", version.AppName, types.ModuleName),
+			fmt.Sprintf("  $ %s q %s auctions --owner=mage1hatdq32u5x4wnxrtv5wzjzmq49sxgjgsj0mffm", version.AppName, types.ModuleName),
 			fmt.Sprintf("  $ %s q %s auctions --denom=bnb", version.AppName, types.ModuleName),
 			fmt.Sprintf("  $ %s q %s auctions --phase=(forward|reverse)", version.AppName, types.ModuleName),
 			fmt.Sprintf("  $ %s q %s auctions --page=2 --limit=100", version.AppName, types.ModuleName),

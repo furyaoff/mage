@@ -73,9 +73,9 @@ Ref: https://keepachangelog.com/en/1.0.0/
 
 [\#596](https://github.com/furya-official/mage/pull/596) Add REST client and CLI query to get module account information for the CDP module
 
-[\#590](https://github.com/furya-official/mage/pull/590) Add CLI query to return Magedist module account balance
+[\#590](https://github.com/furya-official/mage/pull/590) Add CLI query to return magedist module account balance
 
-[\#584](https://github.com/furya-official/mage/pulls/584) Add REST client and CLI queries for `Magedist` module
+[\#584](https://github.com/furya-official/mage/pulls/584) Add REST client and CLI queries for `magedist` module
 
 [\#578](https://github.com/furya-official/mage/pulls/578) Add v0.3 compatible REST client that supports
 
@@ -106,7 +106,7 @@ Ref: https://keepachangelog.com/en/1.0.0/
 
 ## [v0.8.1](https://github.com/furya-official/mage/releases/tag/v0.8.1) mage-3 Patch Release
 
-This version mitigates a memory leak in tendermint that was found prior to launching mage-3. It is fully compatible with v0.8.0 and is intended to replace that version as the canonical software version for upgrading the Mage mainnet from mage-2 to mage-3. Note that there are no breaking changes between the versions, but a safety check was added to this version to prevent starting the node with an unsafe configuration.
+This version mitigates a memory leak in tendermint that was found prior to launching mage-3. It is fully compatible with v0.8.0 and is intended to replace that version as the canonical software version for upgrading the mage mainnet from mage-2 to mage-3. Note that there are no breaking changes between the versions, but a safety check was added to this version to prevent starting the node with an unsafe configuration.
 
 ### Bugfix
 
@@ -116,7 +116,7 @@ The steps for upgrading to mage-3 can be found [here](https://github.com/furya-o
 
 ## [v0.8.0](https://github.com/furya-official/mage/releases/tag/v0.8.0) mage-3 Release
 
-This version is intended to be the canonical software version for upgrading the Mage mainnet from mage-2 to mage-3. As a result, no subsequent versions of Mage will be released until mage-3 launches unless necessary due to critical state-machine faults that require a new version to launch successfully.
+This version is intended to be the canonical software version for upgrading the mage mainnet from mage-2 to mage-3. As a result, no subsequent versions of mage will be released until mage-3 launches unless necessary due to critical state-machine faults that require a new version to launch successfully.
 
 ### Migration
 

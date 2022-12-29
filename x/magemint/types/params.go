@@ -28,7 +28,7 @@ func NewParams(communityPoolInflation sdk.Dec, stakingRewardsApy sdk.Dec) Params
 	}
 }
 
-// ParamKeyTable returns the key table for the Magemint module
+// ParamKeyTable returns the key table for the magemint module
 func ParamKeyTable() paramtypes.KeyTable {
 	return paramtypes.NewKeyTable().RegisterParamSet(&Params{})
 }
@@ -41,7 +41,7 @@ func (p *Params) ParamSetPairs() paramtypes.ParamSetPairs {
 	}
 }
 
-// DefaultParams returns default valid parameters for the Magemint module
+// DefaultParams returns default valid parameters for the magemint module
 func DefaultParams() Params {
 	return NewParams(DefaultCommunityPoolInflation, DefaultStakingRewardsApy)
 }

@@ -43,7 +43,7 @@ func (suite *KeeperTestSuite) TestBurnDerivative() {
 			name:             "error when denom cannot be parsed",
 			balance:          c(liquidDenom, 1e9),
 			moduleDelegation: i(1e9),
-			burnAmount:       c(fmt.Sprintf("cMage-%s", valAddr), 1e6),
+			burnAmount:       c(fmt.Sprintf("cmage-%s", valAddr), 1e6),
 			expectedErr:      types.ErrInvalidDenom,
 		},
 		{
@@ -297,7 +297,7 @@ func (suite *KeeperTestSuite) TestMintDerivative() {
 				return
 			}
 
-			derivative := sdk.NewCoins(sdk.NewCoin(fmt.Sprintf("bMage-%s", valAddr), tc.expectedDerivatives))
+			derivative := sdk.NewCoins(sdk.NewCoin(fmt.Sprintf("bmage-%s", valAddr), tc.expectedDerivatives))
 			suite.AccountBalanceEqual(delegator, derivative)
 
 			suite.DelegationSharesEqual(valAddr, delegator, tc.expectedSharesRemaining)
@@ -350,7 +350,7 @@ func (suite *KeeperTestSuite) TestIsDerivativeDenom() {
 		},
 		{
 			name:        "invalid - invalid val addr",
-			denom:       "bMage-asdfasdf",
+			denom:       "bmage-asdfasdf",
 			wantIsDenom: false,
 		},
 		{
@@ -359,13 +359,13 @@ func (suite *KeeperTestSuite) TestIsDerivativeDenom() {
 			wantIsDenom: false,
 		},
 		{
-			name:        "invalid - plain bMage",
-			denom:       "bMage",
+			name:        "invalid - plain bmage",
+			denom:       "bmage",
 			wantIsDenom: false,
 		},
 		{
-			name:        "invalid - bMage prefix",
-			denom:       "bMage-",
+			name:        "invalid - bmage prefix",
+			denom:       "bmage-",
 			wantIsDenom: false,
 		},
 	}
@@ -413,7 +413,7 @@ func (suite *KeeperTestSuite) TestGetStakedTokensForDerivatives() {
 	testCases := []struct {
 		name           string
 		derivatives    sdk.Coins
-		wantMageAmount sdk.Int
+		wantmageAmount sdk.Int
 		err            error
 	}{
 		{
@@ -421,7 +421,7 @@ func (suite *KeeperTestSuite) TestGetStakedTokensForDerivatives() {
 			derivatives: sdk.NewCoins(
 				sdk.NewCoin(suite.Keeper.GetLiquidStakingTokenDenom(valAddr1), vestedBalance),
 			),
-			wantMageAmount: vestedBalance,
+			wantmageAmount: vestedBalance,
 		},
 		{
 			name: "valid - slashed validator",
@@ -429,7 +429,7 @@ func (suite *KeeperTestSuite) TestGetStakedTokensForDerivatives() {
 				sdk.NewCoin(suite.Keeper.GetLiquidStakingTokenDenom(valAddr3), vestedBalance),
 			),
 			// vestedBalance * 95%
-			wantMageAmount: vestedBalance.Mul(sdk.NewInt(95)).Quo(sdk.NewInt(100)),
+			wantmageAmount: vestedBalance.Mul(sdk.NewInt(95)).Quo(sdk.NewInt(100)),
 		},
 		{
 			name: "valid - sum",
@@ -438,7 +438,7 @@ func (suite *KeeperTestSuite) TestGetStakedTokensForDerivatives() {
 				sdk.NewCoin(suite.Keeper.GetLiquidStakingTokenDenom(valAddr1), vestedBalance),
 			),
 			// vestedBalance + (vestedBalance * 95%)
-			wantMageAmount: vestedBalance.Mul(sdk.NewInt(95)).Quo(sdk.NewInt(100)).Add(vestedBalance),
+			wantmageAmount: vestedBalance.Mul(sdk.NewInt(95)).Quo(sdk.NewInt(100)).Add(vestedBalance),
 		},
 		{
 			name: "invalid - undelegated validator address denom",
@@ -458,13 +458,13 @@ func (suite *KeeperTestSuite) TestGetStakedTokensForDerivatives() {
 
 	for _, tc := range testCases {
 		suite.Run(tc.name, func() {
-			MageAmount, err := suite.Keeper.GetStakedTokensForDerivatives(suite.Ctx, tc.derivatives)
+			mageAmount, err := suite.Keeper.GetStakedTokensForDerivatives(suite.Ctx, tc.derivatives)
 
 			if tc.err != nil {
 				suite.Require().Error(err)
 			} else {
 				suite.Require().NoError(err)
-				suite.Require().Equal(suite.NewBondCoin(tc.wantMageAmount), MageAmount)
+				suite.Require().Equal(suite.NewBondCoin(tc.wantmageAmount), mageAmount)
 			}
 		})
 	}
@@ -545,6 +545,6 @@ func (suite *KeeperTestSuite) TestDerivativeFromTokens() {
 
 	derivatives, err := suite.Keeper.DerivativeFromTokens(suite.Ctx, valAddr, suite.NewBondCoin(initialBalance))
 	suite.NoError(err)
-	expected := sdk.NewCoin(fmt.Sprintf("bMage-%s", valAddr), initialBalance)
+	expected := sdk.NewCoin(fmt.Sprintf("bmage-%s", valAddr), initialBalance)
 	suite.Equal(expected, derivatives)
 }

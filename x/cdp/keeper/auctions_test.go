@@ -30,7 +30,7 @@ func (suite *AuctionTestSuite) SetupTest() {
 	config := sdk.GetConfig()
 	app.SetBech32AddressPrefixes(config)
 	tApp := app.NewTestApp()
-	taddr := sdk.AccAddress(crypto.AddressHash([]byte("MageTestUser1")))
+	taddr := sdk.AccAddress(crypto.AddressHash([]byte("mageTestUser1")))
 	ctx := tApp.NewContext(true, tmproto.Header{Height: 1, Time: tmtime.Now()})
 	authGS := app.NewFundedGenStateWithSameCoins(tApp.AppCodec(), cs(c("usdx", 21000000000)), []sdk.AccAddress{taddr})
 	tApp.InitializeFromGenesisStates(

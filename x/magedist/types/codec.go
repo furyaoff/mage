@@ -7,7 +7,7 @@ import (
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 )
 
-// RegisterLegacyAminoCodec registers the necessary Magedist interfaces and concrete types
+// RegisterLegacyAminoCodec registers the necessary magedist interfaces and concrete types
 // on the provided LegacyAmino codec. These types are used for Amino JSON serialization.
 func RegisterLegacyAminoCodec(cdc *codec.LegacyAmino) {
 	cdc.RegisterConcrete(&CommunityPoolMultiSpendProposal{}, "furya-official/mageCommunityPoolMultiSpendProposal", nil)

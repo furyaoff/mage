@@ -8,8 +8,8 @@ import (
 )
 
 const (
-	bMageDenom  = "bMage"
-	bMagePrefix = bMageDenom + "-"
+	bmageDenom  = "bmage"
+	bmagePrefix = bmageDenom + "-"
 )
 
 // GetParams returns the params from the store

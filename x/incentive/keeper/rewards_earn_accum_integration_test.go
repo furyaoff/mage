@@ -49,14 +49,14 @@ func (suite *AccumulateEarnRewardsIntegrationTests) SetupTest() {
 
 	incentiveBuilder := testutil.NewIncentiveGenesisBuilder().
 		WithGenesisTime(suite.GenesisTime).
-		WithSimpleEarnRewardPeriod("bMage", cs())
+		WithSimpleEarnRewardPeriod("bmage", cs())
 
 	savingsBuilder := testutil.NewSavingsGenesisBuilder().
-		WithSupportedDenoms("bMage")
+		WithSupportedDenoms("bmage")
 
 	earnBuilder := testutil.NewEarnGenesisBuilder().
 		WithAllowedVaults(earntypes.AllowedVault{
-			Denom:             "bMage",
+			Denom:             "bmage",
 			Strategies:        earntypes.StrategyTypes{earntypes.STRATEGY_TYPE_SAVINGS},
 			IsPrivateVault:    false,
 			AllowedDepositors: nil,
@@ -64,7 +64,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) SetupTest() {
 
 	stakingBuilder := testutil.NewStakingGenesisBuilder()
 
-	MagemintBuilder := testutil.NewMagemintGenesisBuilder().
+	magemintBuilder := testutil.NewmagemintGenesisBuilder().
 		WithStakingRewardsApy(sdk.MustNewDecFromStr("0.2")).
 		WithPreviousBlockTime(suite.GenesisTime)
 
@@ -74,7 +74,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) SetupTest() {
 		savingsBuilder,
 		earnBuilder,
 		stakingBuilder,
-		MagemintBuilder,
+		magemintBuilder,
 	)
 }
 
@@ -82,7 +82,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUpdatedWhenBlockTim
 	suite.AddIncentiveEarnMultiRewardPeriod(
 		types.NewMultiRewardPeriod(
 			true,
-			"bMage",         // reward period is set for "bMage" to apply to all vaults
+			"bmage",         // reward period is set for "bmage" to apply to all vaults
 			time.Unix(0, 0), // ensure the test is within start and end times
 			distantFuture,
 			cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
@@ -202,15 +202,15 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUpdatedWhenBlockTim
 	suite.AddIncentiveEarnMultiRewardPeriod(
 		types.NewMultiRewardPeriod(
 			true,
-			"bMage",         // reward period is set for "bMage" to apply to all vaults
+			"bmage",         // reward period is set for "bmage" to apply to all vaults
 			time.Unix(0, 0), // ensure the test is within start and end times
 			distantFuture,
 			cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
 		),
 	)
 
-	// 800000bMage0 minted, 700000 deposited
-	// 200000bMage1 minted, 100000 deposited
+	// 800000bmage0 minted, 700000 deposited
+	// 200000bmage1 minted, 100000 deposited
 	derivative0, err := suite.MintLiquidAnyValAddr(suite.userAddrs[0], suite.valAddrs[0], c("umage", 800000))
 	suite.NoError(err)
 	derivative1, err := suite.MintLiquidAnyValAddr(suite.userAddrs[1], suite.valAddrs[1], c("umage", 200000))
@@ -303,7 +303,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUpdatedWhenBlockTim
 		ToDec().
 		Quo(depositAmount1.Amount.ToDec())
 
-	// Slightly increased rewards due to less bMage deposited
+	// Slightly increased rewards due to less bmage deposited
 	suite.StoredEarnIndexesEqual(derivative0.Denom, types.RewardIndexes{
 		{
 			CollateralType: "earn",
@@ -373,7 +373,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateUnchangedWhenBlockT
 
 	period := types.NewMultiRewardPeriod(
 		true,
-		"bMage",
+		"bmage",
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
 		cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
@@ -401,7 +401,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestNoAccumulationWhenSource
 	suite.AddIncentiveEarnMultiRewardPeriod(
 		types.NewMultiRewardPeriod(
 			true,
-			"bMage",         // reward period is set for "bMage" to apply to all vaults
+			"bmage",         // reward period is set for "bmage" to apply to all vaults
 			time.Unix(0, 0), // ensure the test is within start and end times
 			distantFuture,
 			cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
@@ -489,7 +489,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestStateAddedWhenStateDoesN
 	suite.AddIncentiveEarnMultiRewardPeriod(
 		types.NewMultiRewardPeriod(
 			true,
-			"bMage",         // reward period is set for "bMage" to apply to all vaults
+			"bmage",         // reward period is set for "bmage" to apply to all vaults
 			time.Unix(0, 0), // ensure the test is within start and end times
 			distantFuture,
 			cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
@@ -632,7 +632,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestNoPanicWhenStateDoesNotE
 
 	period := types.NewMultiRewardPeriod(
 		true,
-		"bMage",
+		"bmage",
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
 		cs(),
@@ -642,7 +642,7 @@ func (suite *AccumulateEarnRewardsIntegrationTests) TestNoPanicWhenStateDoesNotE
 	// No increment and no previous indexes stored, results in an updated of nil. Setting this in the state panics.
 	// Check there is no panic.
 	suite.NotPanics(func() {
-		// This does not update any state, as there are no bMage vaults
+		// This does not update any state, as there are no bmage vaults
 		// to iterate over, denoms are unknown
 		suite.keeper.AccumulateEarnRewards(suite.Ctx, period)
 	})

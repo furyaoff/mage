@@ -26,7 +26,7 @@
         "tx_size_cost_per_byte": "10"
       }
     },
-    "Magedist": {
+    "magedist": {
       "params": {
         "active": true,
         "periods": [
@@ -193,7 +193,7 @@
             "active": true,
             "base_asset": "bnb",
             "market_id": "bnb:usd",
-            "oracles": ["Mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw"],
+            "oracles": ["mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw"],
             "quote_asset": "usd"
           }
         ]
@@ -202,7 +202,7 @@
         {
           "expiry": "2020-04-20T00:00:00Z",
           "market_id": "bnb:usd",
-          "oracle_address": "Mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw",
+          "oracle_address": "mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw",
           "price": "12.2639061184"
         }
       ]
@@ -220,7 +220,7 @@
     },
     "bep3": {
       "params": {
-        "bnb_deputy_address": "Mage15wmww3chakqllq4n3ksm37lx36qz067gxe6f0k",
+        "bnb_deputy_address": "mage15wmww3chakqllq4n3ksm37lx36qz067gxe6f0k",
         "min_block_lock": "80",
         "max_block_lock": "600",
         "supported_assets": [

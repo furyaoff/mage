@@ -28,7 +28,7 @@ message Account {
     (gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress"
   ];
 
-  // balance indicates the amount of aMage owned by the address.
+  // balance indicates the amount of amage owned by the address.
   string balance = 2 [
     (cosmos_proto.scalar) = "cosmos.Int",
     (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int",
@@ -39,7 +39,7 @@ message Account {
 // Params defines the evmutil module params
 message Params {
   // enabled_conversion_pairs defines the list of conversion pairs allowed to be
-  // converted between Mage ERC20 and sdk.Coin
+  // converted between mage ERC20 and sdk.Coin
   repeated ConversionPair enabled_conversion_pairs = 4 [
     (gogoproto.nullable) = false,
     (gogoproto.castrepeated) = "ConversionPairs"

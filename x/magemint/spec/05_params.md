@@ -4,7 +4,7 @@ order: 5
 
 # Parameters
 
-Example parameters for the Magemint module:
+Example parameters for the magemint module:
 
 | Key                    | Type    | Example                | Description                                                              |
 | ---------------------- | ------- | ---------------------- | ------------------------------------------------------------------------ |

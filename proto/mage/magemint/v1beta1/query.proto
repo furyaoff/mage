@@ -1,30 +1,30 @@
 syntax = "proto3";
-package mage.Magemint.v1beta1;
+package mage.magemint.v1beta1;
 
 import "cosmos_proto/cosmos.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "furya-official/mageMagemint/v1beta1/Magemint.proto";
+import "furya-official/magemagemint/v1beta1/magemint.proto";
 
-option go_package = "github.com/furya-official/mage/x/Magemint/types";
+option go_package = "github.com/furya-official/mage/x/magemint/types";
 
-// Query defines the gRPC querier service for Magemint.
+// Query defines the gRPC querier service for magemint.
 service Query {
-  // Params queries the parameters of x/Magemint module.
+  // Params queries the parameters of x/magemint module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/furya-official/mageMagemint/v1beta1/params";
+    option (google.api.http).get = "/furya-official/magemagemint/v1beta1/params";
   }
 
-  // Inflation queries x/Magemint for the overall cumulative inflation rate of MAGE.
+  // Inflation queries x/magemint for the overall cumulative inflation rate of MAGE.
   rpc Inflation(QueryInflationRequest) returns (QueryInflationResponse) {
-    option (google.api.http).get = "/furya-official/mageMagemint/v1beta1/inflation";
+    option (google.api.http).get = "/furya-official/magemagemint/v1beta1/inflation";
   }
 }
 
-// QueryParamsRequest defines the request type for querying x/Magemint parameters.
+// QueryParamsRequest defines the request type for querying x/magemint parameters.
 message QueryParamsRequest {}
 
-// QueryParamsResponse defines the response type for querying x/Magemint parameters.
+// QueryParamsResponse defines the response type for querying x/magemint parameters.
 message QueryParamsResponse {
   Params params = 1 [(gogoproto.nullable) = false];
 }

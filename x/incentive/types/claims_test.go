@@ -19,7 +19,7 @@ func c(denom string, amount int64) sdk.Coin { return sdk.NewInt64Coin(denom, amo
 func cs(coins ...sdk.Coin) sdk.Coins { return sdk.NewCoins(coins...) }
 
 func TestClaims_Validate(t *testing.T) {
-	owner := sdk.AccAddress(crypto.AddressHash([]byte("MageTestUser1")))
+	owner := sdk.AccAddress(crypto.AddressHash([]byte("mageTestUser1")))
 
 	t.Run("USDXMintingClaims", func(t *testing.T) {
 		testCases := []struct {

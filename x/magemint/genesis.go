@@ -1,12 +1,12 @@
-package Magemint
+package magemint
 
 import (
 	"fmt"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	"github.com/furya-official/mage/x/Magemint/keeper"
-	"github.com/furya-official/mage/x/Magemint/types"
+	"github.com/furya-official/mage/x/magemint/keeper"
+	"github.com/furya-official/mage/x/magemint/types"
 )
 
 // InitGenesis new mint genesis

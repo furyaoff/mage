@@ -9,10 +9,10 @@ import (
 	tmtime "github.com/tendermint/tendermint/types/time"
 
 	"github.com/furya-official/mage/app"
-	"github.com/furya-official/mage/x/Magemint/keeper"
+	"github.com/furya-official/mage/x/magemint/keeper"
 )
 
-type MagemintTestSuite struct {
+type magemintTestSuite struct {
 	suite.Suite
 
 	App           app.TestApp
@@ -23,12 +23,12 @@ type MagemintTestSuite struct {
 	BondDenom string
 }
 
-func (suite *MagemintTestSuite) SetupTest() {
+func (suite *magemintTestSuite) SetupTest() {
 	app.SetSDKConfig()
 	suite.App = app.NewTestApp()
 	suite.App.InitializeFromGenesisStates()
 	suite.Ctx = suite.App.BaseApp.NewContext(true, tmproto.Header{Height: 1, Time: tmtime.Now()})
-	suite.Keeper = suite.App.GetMagemintKeeper()
+	suite.Keeper = suite.App.GetmagemintKeeper()
 	suite.StakingKeeper = suite.App.GetStakingKeeper()
 
 	suite.BondDenom = suite.StakingKeeper.BondDenom(suite.Ctx)
@@ -38,7 +38,7 @@ func (suite *MagemintTestSuite) SetupTest() {
 // delegation that makes the total staked token ratio set as desired.
 // EndBlocker must be run in order for tokens to become bonded.
 // returns total supply coins
-func (suite *MagemintTestSuite) SetBondedTokenRatio(ratio sdk.Dec) sdk.Coins {
+func (suite *magemintTestSuite) SetBondedTokenRatio(ratio sdk.Dec) sdk.Coins {
 	address := app.RandomAddress()
 
 	supplyAmount := sdk.NewInt(1e10)

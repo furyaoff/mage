@@ -43,7 +43,7 @@ const COMMITTEE_CHANGE_PROPOSAL_EXAMPLE = `
     "base_committee": {
       "id": "34",
       "description": "member committee",
-      "members": ["Mage1ze7y9qwdddejmy7jlw4cymqqlt2wh05yhwmrv2"],
+      "members": ["mage1ze7y9qwdddejmy7jlw4cymqqlt2wh05yhwmrv2"],
       "permissions": [],
       "vote_threshold": "1.000000000000000000",
       "proposal_duration": "86400s",

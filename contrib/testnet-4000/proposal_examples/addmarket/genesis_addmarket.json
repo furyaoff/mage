@@ -137,9 +137,9 @@
                       "max_change_rate": "0.010000000000000000"
                     },
                     "min_self_delegation": "1",
-                    "delegator_address": "Mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw",
-                    "validator_address": "Magevaloper15qdefkmwswysgg4qxgqpqr35k3m49pkx8yhpte",
-                    "pubkey": "Magevalconspub1zcjduepq0ykwlzr3guncl5l8npqa5lmq8kc5y2aeqp8zc8e72t3stxujxvxsxqjqwt",
+                    "delegator_address": "mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw",
+                    "validator_address": "magevaloper15qdefkmwswysgg4qxgqpqr35k3m49pkx8yhpte",
+                    "pubkey": "magevalconspub1zcjduepq0ykwlzr3guncl5l8npqa5lmq8kc5y2aeqp8zc8e72t3stxujxvxsxqjqwt",
                     "value": {
                       "denom": "umage",
                       "amount": "100000000"
@@ -208,7 +208,7 @@
             "type": "cosmos-sdk/Account",
             "value": {
               "account_number": "0",
-              "address": "Mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw",
+              "address": "mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw",
               "coins": [
                 {
                   "amount": "10000000000",
@@ -231,7 +231,7 @@
             "type": "cosmos-sdk/Account",
             "value": {
               "account_number": "0",
-              "address": "Mage1xy7hrjy9r0algz9w3gzm8u6mrpq97kwta747gj",
+              "address": "mage1xy7hrjy9r0algz9w3gzm8u6mrpq97kwta747gj",
               "coins": [
                 {
                   "amount": "10000000000",
@@ -254,7 +254,7 @@
             "type": "cosmos-sdk/Account",
             "value": {
               "account_number": "0",
-              "address": "Mage12jk3szk45afmvjc3xc6kvj4e40tuy2m8ckgs03",
+              "address": "mage12jk3szk45afmvjc3xc6kvj4e40tuy2m8ckgs03",
               "coins": [
                 {
                   "amount": "10000000000",

@@ -343,7 +343,7 @@ func TestState_NewShareRecord(t *testing.T) {
 
 func TestState_ShareRecord_JSONEncoding(t *testing.T) {
 	raw := `{
-		"depositor": "Mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w",
+		"depositor": "mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w",
 		"pool_id": "umage:usdx",
 		"shares_owned": "3000000"
 	}`
@@ -352,17 +352,17 @@ func TestState_ShareRecord_JSONEncoding(t *testing.T) {
 	err := json.Unmarshal([]byte(raw), &record)
 	require.NoError(t, err)
 
-	assert.Equal(t, "Mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w", record.Depositor.String())
+	assert.Equal(t, "mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w", record.Depositor.String())
 	assert.Equal(t, types.PoolID("umage", "usdx"), record.PoolID)
 	assert.Equal(t, i(3e6), record.SharesOwned)
 }
 
 func TestState_ShareRecord_YamlEncoding(t *testing.T) {
-	expected := `depositor: Mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w
+	expected := `depositor: mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w
 pool_id: umage:usdx
 shares_owned: "3000000"
 `
-	depositor, err := sdk.AccAddressFromBech32("Mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
+	depositor, err := sdk.AccAddressFromBech32("mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
 	require.NoError(t, err)
 
 	record := types.NewShareRecord(depositor, "umage:usdx", i(3e6))
@@ -391,7 +391,7 @@ func TestState_InvalidShareRecordNegativeShares(t *testing.T) {
 }
 
 func TestState_ShareRecord_Validations(t *testing.T) {
-	depositor, err := sdk.AccAddressFromBech32("Mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
+	depositor, err := sdk.AccAddressFromBech32("mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
 	require.NoError(t, err)
 	validRecord := types.NewShareRecord(
 		depositor,
@@ -459,14 +459,14 @@ func TestState_ShareRecord_Validations(t *testing.T) {
 			depositor:   validRecord.Depositor,
 			poolID:      validRecord.PoolID,
 			sharesOwned: sdk.NewInt(-1),
-			expectedErr: "depositor 'Mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w' and pool 'umage:usdx' has invalid total shares: -1",
+			expectedErr: "depositor 'mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w' and pool 'umage:usdx' has invalid total shares: -1",
 		},
 		{
 			name:        "zero total shares",
 			depositor:   validRecord.Depositor,
 			poolID:      validRecord.PoolID,
 			sharesOwned: sdk.ZeroInt(),
-			expectedErr: "depositor 'Mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w' and pool 'umage:usdx' has invalid total shares: 0",
+			expectedErr: "depositor 'mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w' and pool 'umage:usdx' has invalid total shares: 0",
 		},
 	}
 
@@ -484,7 +484,7 @@ func TestState_ShareRecord_Validations(t *testing.T) {
 }
 
 func TestState_ShareRecords_Validation(t *testing.T) {
-	depositor, err := sdk.AccAddressFromBech32("Mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
+	depositor, err := sdk.AccAddressFromBech32("mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
 	require.NoError(t, err)
 
 	validRecord := types.NewShareRecord(
@@ -507,14 +507,14 @@ func TestState_ShareRecords_Validation(t *testing.T) {
 	records = append(records, invalidRecord)
 	err = records.Validate()
 	assert.Error(t, err)
-	assert.EqualError(t, err, "depositor 'Mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w' and pool 'hard:usdx' has invalid total shares: -1")
+	assert.EqualError(t, err, "depositor 'mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w' and pool 'hard:usdx' has invalid total shares: -1")
 }
 
 func TestState_ShareRecords_ValidateUniqueShareRecords(t *testing.T) {
-	depositor_1, err := sdk.AccAddressFromBech32("Mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
+	depositor_1, err := sdk.AccAddressFromBech32("mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
 	require.NoError(t, err)
 
-	depositor_2, err := sdk.AccAddressFromBech32("Mage1esagqd83rhqdtpy5sxhklaxgn58k2m3s3mnpea")
+	depositor_2, err := sdk.AccAddressFromBech32("mage1esagqd83rhqdtpy5sxhklaxgn58k2m3s3mnpea")
 	require.NoError(t, err)
 
 	record_1 := types.NewShareRecord(depositor_1, "umage:usdx", i(20e6))
@@ -526,5 +526,5 @@ func TestState_ShareRecords_ValidateUniqueShareRecords(t *testing.T) {
 	assert.NoError(t, validRecords.Validate())
 
 	invalidRecords := types.ShareRecords{record_1, record_3, record_2, record_4}
-	assert.EqualError(t, invalidRecords.Validate(), "duplicate depositor 'Mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w' and poolID 'umage:usdx'")
+	assert.EqualError(t, invalidRecords.Validate(), "duplicate depositor 'mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w' and poolID 'umage:usdx'")
 }

@@ -46,7 +46,7 @@
   "cdps": [
     {
       "id": "19",
-      "owner": "Mage1u4p6a2yse66ewfndw4j7ppsa777vdcex3m4n9s",
+      "owner": "mage1u4p6a2yse66ewfndw4j7ppsa777vdcex3m4n9s",
       "type": "bnb-a",
       "collateral": { "denom": "bnb", "amount": "40911876" },
       "principal": { "denom": "usdx", "amount": "10016831" },
@@ -56,7 +56,7 @@
     },
     {
       "id": "22",
-      "owner": "Mage1e8xjfylam4nvugcmkxwvuxh22uvvad5vknu4yh",
+      "owner": "mage1e8xjfylam4nvugcmkxwvuxh22uvvad5vknu4yh",
       "type": "bnb-a",
       "collateral": { "denom": "bnb", "amount": "88268546" },
       "principal": { "denom": "usdx", "amount": "10000000" },
@@ -68,12 +68,12 @@
   "deposits": [
     {
       "cdp_id": "19",
-      "depositor": "Mage1u4p6a2yse66ewfndw4j7ppsa777vdcex3m4n9s",
+      "depositor": "mage1u4p6a2yse66ewfndw4j7ppsa777vdcex3m4n9s",
       "amount": { "denom": "bnb", "amount": "40911876" }
     },
     {
       "cdp_id": "22",
-      "depositor": "Mage1e8xjfylam4nvugcmkxwvuxh22uvvad5vknu4yh",
+      "depositor": "mage1e8xjfylam4nvugcmkxwvuxh22uvvad5vknu4yh",
       "amount": { "denom": "bnb", "amount": "88268546" }
     }
   ],

@@ -2,23 +2,23 @@
 set -e
 
 validatorMnemonic="equip town gesture square tomorrow volume nephew minute witness beef rich gadget actress egg sing secret pole winter alarm law today check violin uncover"
-#        Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
-# Magevaloper1ffv7nhd3z6sych2qpqkk03ec6hzkmufyz4scd0
+#        mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+# magevaloper1ffv7nhd3z6sych2qpqkk03ec6hzkmufyz4scd0
 
 faucetMnemonic="crash sort dwarf disease change advice attract clump avoid mobile clump right junior axis book fresh mask tube front require until face effort vault"
-# Mage1adkm6svtzjsxxvg7g6rshg6kj9qwej8gwqadqd
+# mage1adkm6svtzjsxxvg7g6rshg6kj9qwej8gwqadqd
 
 evmFaucetMnemonic="hundred flash cattle inquiry gorilla quick enact lazy galaxy apple bitter liberty print sun hurdle oak town cash because round chalk marriage response success"
 # 0x3C854F92F726A7897C8B23F55B2D6E2C482EF3E0
-# Mage18jz5lyhhy6ncjlyty064kttw93yzaulq7rlptu
+# mage18jz5lyhhy6ncjlyty064kttw93yzaulq7rlptu
 
 userMnemonic="news tornado sponsor drastic dolphin awful plastic select true lizard width idle ability pigeon runway lift oppose isolate maple aspect safe jungle author hole"
 # 0x7Bbf300890857b8c241b219C6a489431669b3aFA
-# Mage10wlnqzyss4accfqmyxwx5jy5x9nfkwh6qm7n4t
+# mage10wlnqzyss4accfqmyxwx5jy5x9nfkwh6qm7n4t
 
 relayerMnemonic="never reject sniff east arctic funny twin feed upper series stay shoot vivid adapt defense economy pledge fetch invite approve ceiling admit gloom exit"
 # 0xa2F728F997f62F47D4262a70947F6c36885dF9fa
-# Mage15tmj37vh7ch504px9fcfglmvx6y9m70646ev8t
+# mage15tmj37vh7ch504px9fcfglmvx6y9m70646ev8t
 
 DATA=~/.mage
 # remove any old state and config
@@ -27,7 +27,7 @@ rm -rf $DATA
 BINARY=mage
 
 # Create new data directory, overwriting any that alread existed
-chainID="Magelocalnet_8888-1"
+chainID="magelocalnet_8888-1"
 $BINARY init validator --chain-id $chainID
 
 # hacky enable of rest api
@@ -41,7 +41,7 @@ sed -in-place='' '/iavl-cache-size/a\
 trace = true' $DATA/config/app.toml
 
 # Set client chain id
-sed -in-place='' 's/chain-id = ""/chain-id = "Magelocalnet_8888-1"/g' $DATA/config/client.toml
+sed -in-place='' 's/chain-id = ""/chain-id = "magelocalnet_8888-1"/g' $DATA/config/client.toml
 
 # avoid having to use password for keys
 $BINARY config keyring-backend test
@@ -76,7 +76,7 @@ $BINARY collect-gentxs
 sed -in-place='' 's/stake/umage/g' $DATA/config/genesis.json
 
 # Replace the default evm denom of aphoton with umage
-sed -in-place='' 's/aphoton/aMage/g' $DATA/config/genesis.json
+sed -in-place='' 's/aphoton/amage/g' $DATA/config/genesis.json
 
 # Zero out the total supply so it gets recalculated during InitGenesis
 jq '.app_state.bank.supply = []' $DATA/config/genesis.json|sponge $DATA/config/genesis.json
@@ -96,11 +96,11 @@ jq '.app_state.earn.params.allowed_vaults =  [
         strategies: ["STRATEGY_TYPE_HARD"],
     },
     {
-        denom: "bMage",
+        denom: "bmage",
         strategies: ["STRATEGY_TYPE_SAVINGS"],
     }]' $DATA/config/genesis.json | sponge $DATA/config/genesis.json
 
-jq '.app_state.savings.params.supported_denoms = ["bMage-Magevaloper1ffv7nhd3z6sych2qpqkk03ec6hzkmufyz4scd0"]' $DATA/config/genesis.json | sponge $DATA/config/genesis.json
+jq '.app_state.savings.params.supported_denoms = ["bmage-magevaloper1ffv7nhd3z6sych2qpqkk03ec6hzkmufyz4scd0"]' $DATA/config/genesis.json | sponge $DATA/config/genesis.json
 
 
 $BINARY config broadcast-mode block

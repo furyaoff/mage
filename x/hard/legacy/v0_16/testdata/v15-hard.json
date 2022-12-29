@@ -52,7 +52,7 @@
           "denom": "btcb"
         }
       ],
-      "depositor": "Mage1qq9ustlc0nv4aew275w93g4qy5zahqgxf5mwv9",
+      "depositor": "mage1qq9ustlc0nv4aew275w93g4qy5zahqgxf5mwv9",
       "index": [
         {
           "denom": "bnb",
@@ -73,7 +73,7 @@
           "denom": "xrpb"
         }
       ],
-      "borrower": "Mage1qq9ustlc0nv4aew275w93g4qy5zahqgxf5mwv9",
+      "borrower": "mage1qq9ustlc0nv4aew275w93g4qy5zahqgxf5mwv9",
       "index": [
         {
           "denom": "usdx",

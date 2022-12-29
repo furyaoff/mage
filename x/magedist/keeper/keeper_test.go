@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/furya-official/mage/x/Magedist/testutil"
+	"github.com/furya-official/mage/x/magedist/testutil"
 )
 
 type keeperTestSuite struct {

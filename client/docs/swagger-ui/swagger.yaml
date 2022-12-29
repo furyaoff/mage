@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  title: Mage - Legacy REST and gRPC Gateway docs
+  title: mage - Legacy REST and gRPC Gateway docs
   description: A REST interface for state queries
   version: 1.0.0
 externalDocs:
@@ -7065,7 +7065,7 @@ paths:
           required: false
           type: string
         - name: value_in_staked_tokens
-          description: respond with vault value in umage for bMage vaults.
+          description: respond with vault value in umage for bmage vaults.
           in: query
           required: false
           type: boolean
@@ -10728,10 +10728,10 @@ paths:
                       format: byte
       tags:
         - Issuance
-  /furya-official/mageMagedist/v1beta1/balance:
+  /furya-official/magemagedist/v1beta1/balance:
     get:
-      summary: Balance queries the balance of all coins of x/Magedist module.
-      operationId: MagedistBalance
+      summary: Balance queries the balance of all coins of x/magedist module.
+      operationId: magedistBalance
       responses:
         '200':
           description: A successful response.
@@ -10757,7 +10757,7 @@ paths:
                     signatures required by gogoproto.
             description: >-
               QueryBalanceResponse defines the response type for querying
-              x/Magedist balance.
+              x/magedist balance.
         default:
           description: An unexpected error response.
           schema:
@@ -10781,11 +10781,11 @@ paths:
                       type: string
                       format: byte
       tags:
-        - Magedist
-  /furya-official/mageMagedist/v1beta1/parameters:
+        - magedist
+  /furya-official/magemagedist/v1beta1/parameters:
     get:
-      summary: Params queries the parameters of x/Magedist module.
-      operationId: MagedistParams
+      summary: Params queries the parameters of x/magedist module.
+      operationId: magedistParams
       responses:
         '200':
           description: A successful response.
@@ -10889,10 +10889,10 @@ paths:
                     description: >-
                       InfrastructureParams define the parameters for
                       infrastructure rewards.
-                title: Params governance parameters for Magedist module
+                title: Params governance parameters for magedist module
             description: >-
               QueryParamsResponse defines the response type for querying
-              x/Magedist parameters.
+              x/magedist parameters.
         default:
           description: An unexpected error response.
           schema:
@@ -10916,7 +10916,7 @@ paths:
                       type: string
                       format: byte
       tags:
-        - Magedist
+        - magedist
   /furya-official/mageliquid/v1beta1/delegated_balance/{delegator}:
     get:
       summary: >-
@@ -12033,12 +12033,12 @@ paths:
                       format: byte
       tags:
         - Savings
-  /furya-official/mageMagemint/v1beta1/inflation:
+  /furya-official/magemagemint/v1beta1/inflation:
     get:
       summary: >-
-        Inflation queries x/Magemint for the overall cumulative inflation rate
+        Inflation queries x/magemint for the overall cumulative inflation rate
         of MAGE.
-      operationId: MagemintInflation
+      operationId: magemintInflation
       responses:
         '200':
           description: A successful response.
@@ -12076,11 +12076,11 @@ paths:
                       type: string
                       format: byte
       tags:
-        - Magemint
-  /furya-official/mageMagemint/v1beta1/params:
+        - magemint
+  /furya-official/magemagemint/v1beta1/params:
     get:
-      summary: Params queries the parameters of x/Magemint module.
-      operationId: MagemintParams
+      summary: Params queries the parameters of x/magemint module.
+      operationId: magemintParams
       responses:
         '200':
           description: A successful response.
@@ -12100,10 +12100,10 @@ paths:
                     description: >-
                       yearly inflation of bonded tokens minted for staking
                       rewards to validators.
-                title: Params wraps the governance parameters for the Magemint module
+                title: Params wraps the governance parameters for the magemint module
             description: >-
               QueryParamsResponse defines the response type for querying
-              x/Magemint parameters.
+              x/magemint parameters.
         default:
           description: An unexpected error response.
           schema:
@@ -12127,7 +12127,7 @@ paths:
                       type: string
                       format: byte
       tags:
-        - Magemint
+        - magemint
   /node_info:
     get:
       description: Information about the connected node
@@ -44386,7 +44386,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -44426,7 +44426,7 @@ paths:
               owner:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               collateral:
                 type: object
                 properties:
@@ -44467,10 +44467,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -44539,7 +44539,7 @@ paths:
           description: Owner address in bech32 format
           required: true
           type: string
-          x-example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+          x-example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
         - in: path
           name: collateral_type
           description: Collateral type
@@ -44558,7 +44558,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -44598,11 +44598,11 @@ paths:
               owner:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               depositor:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               collateral:
                 type: object
                 properties:
@@ -44634,10 +44634,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -44706,7 +44706,7 @@ paths:
           description: Owner address in bech32 format
           required: true
           type: string
-          x-example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+          x-example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
         - in: path
           name: collateral_type
           description: Collateral type
@@ -44725,7 +44725,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -44765,11 +44765,11 @@ paths:
               owner:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               depositor:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               collateral:
                 type: object
                 properties:
@@ -44801,10 +44801,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -44873,7 +44873,7 @@ paths:
           description: Owner address in bech32 format
           required: true
           type: string
-          x-example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+          x-example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
         - in: path
           name: collateral_type
           description: Collateral type
@@ -44892,7 +44892,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -44932,7 +44932,7 @@ paths:
               owner:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               principal:
                 type: object
                 properties:
@@ -44964,10 +44964,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -45036,7 +45036,7 @@ paths:
           description: Owner address in bech32 format
           required: true
           type: string
-          x-example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+          x-example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
         - in: path
           name: collateral_type
           description: Collateral type
@@ -45055,7 +45055,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -45095,7 +45095,7 @@ paths:
               owner:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               payment:
                 type: object
                 properties:
@@ -45127,10 +45127,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -45201,7 +45201,7 @@ paths:
           description: Owner address in bech32 format
           required: true
           type: string
-          x-example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+          x-example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
         - in: path
           name: collateral_type
           description: Collateral type
@@ -45220,7 +45220,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -45260,7 +45260,7 @@ paths:
               owner:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               collateral_type:
                 type: string
                 example: xrpb-a
@@ -45283,10 +45283,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -45366,7 +45366,7 @@ paths:
                     address:
                       type: string
                       description: bech32 encoded address
-                      example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                      example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     coins:
                       type: array
                       items:
@@ -45518,7 +45518,7 @@ paths:
           description: Owner address in bech32 format
           required: true
           type: string
-          x-example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+          x-example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
         - in: path
           name: collateral_type
           description: Collateral type
@@ -45536,7 +45536,7 @@ paths:
                 example: '1'
               owner:
                 type: string
-                example: Mage1q53rwutgpzx7szcrgzqguxyccjpzt9j4cyctn9
+                example: mage1q53rwutgpzx7szcrgzqguxyccjpzt9j4cyctn9
               collateral:
                 type: object
                 properties:
@@ -45619,7 +45619,7 @@ paths:
                       example: '1'
                     owner:
                       type: string
-                      example: Mage1q53rwutgpzx7szcrgzqguxyccjpzt9j4cyctn9
+                      example: mage1q53rwutgpzx7szcrgzqguxyccjpzt9j4cyctn9
                     collateral:
                       type: object
                       properties:
@@ -45712,7 +45712,7 @@ paths:
                       example: '1'
                     owner:
                       type: string
-                      example: Mage1q53rwutgpzx7szcrgzqguxyccjpzt9j4cyctn9
+                      example: mage1q53rwutgpzx7szcrgzqguxyccjpzt9j4cyctn9
                     collateral:
                       type: object
                       properties:
@@ -45776,7 +45776,7 @@ paths:
           description: Owner address in bech32 format
           required: true
           type: string
-          x-example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+          x-example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
         - in: path
           name: collateral_type
           description: Collateral type
@@ -45802,7 +45802,7 @@ paths:
                       example: '1'
                     depositor:
                       type: string
-                      example: Mage1q53rwutgpzx7szcrgzqguxyccjpzt9j4cyctn9
+                      example: mage1q53rwutgpzx7szcrgzqguxyccjpzt9j4cyctn9
                     amount:
                       type: object
                       properties:
@@ -45828,7 +45828,7 @@ paths:
           description: Owner address in bech32 format
           required: false
           type: string
-          x-example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+          x-example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
         - in: query
           name: collateral_type
           description: Collateral type
@@ -45866,7 +45866,7 @@ paths:
                       example: '1'
                     owner:
                       type: string
-                      example: Mage1q53rwutgpzx7szcrgzqguxyccjpzt9j4cyctn9
+                      example: mage1q53rwutgpzx7szcrgzqguxyccjpzt9j4cyctn9
                     collateral:
                       type: object
                       properties:
@@ -45934,7 +45934,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -45974,11 +45974,11 @@ paths:
               from:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               to:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               recipient_other_chain:
                 type: string
                 description: address on another chain (binance)
@@ -46022,10 +46022,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -46098,7 +46098,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -46138,7 +46138,7 @@ paths:
               from:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               swap_id:
                 type: string
                 example: >-
@@ -46166,10 +46166,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -46242,7 +46242,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -46282,7 +46282,7 @@ paths:
               from:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               swap_id:
                 type: string
                 example: >-
@@ -46306,10 +46306,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -46418,11 +46418,11 @@ paths:
                   sender:
                     type: string
                     description: bech32 encoded address
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                   recipient:
                     type: string
                     description: bech32 encoded address
-                    example: Mage1atsrkjac6ulgmwhudfc36lnjfgv340vlvm757z
+                    example: mage1atsrkjac6ulgmwhudfc36lnjfgv340vlvm757z
                   sender_other_chain:
                     type: string
                     description: address on another chain (binance)
@@ -46494,11 +46494,11 @@ paths:
                     sender:
                       type: string
                       description: bech32 encoded address
-                      example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                      example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     recipient:
                       type: string
                       description: bech32 encoded address
-                      example: Mage1atsrkjac6ulgmwhudfc36lnjfgv340vlvm757z
+                      example: mage1atsrkjac6ulgmwhudfc36lnjfgv340vlvm757z
                     sender_other_chain:
                       type: string
                       description: address on another chain (binance)
@@ -46607,7 +46607,7 @@ paths:
                 properties:
                   bnb_deputy_address:
                     type: string
-                    example: Mage1aphsdnz5hu2t5ty2au6znprug5kx3zpy6zwq29
+                    example: mage1aphsdnz5hu2t5ty2au6znprug5kx3zpy6zwq29
                   min_block_lock:
                     type: string
                     example: '80'
@@ -46659,7 +46659,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -46724,10 +46724,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -46852,7 +46852,7 @@ paths:
                     bidder:
                       type: string
                       description: bech32 encoded address
-                      example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                      example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     bid:
                       type: object
                       properties:
@@ -46919,7 +46919,7 @@ paths:
               bidder:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               bid:
                 type: object
                 properties:
@@ -46971,7 +46971,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -47036,10 +47036,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -47126,7 +47126,7 @@ paths:
                       items:
                         type: string
                         description: bech32 encoded address
-                        example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                        example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     active:
                       type: boolean
                       example: true
@@ -47169,7 +47169,7 @@ paths:
                       items:
                         type: string
                         description: bech32 encoded address
-                        example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                        example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     active:
                       type: boolean
                       example: true
@@ -47204,7 +47204,7 @@ paths:
                 items:
                   type: string
                   description: bech32 encoded address
-                  example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                  example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
         '500':
           description: Internal Server Error
   /pricefeed/rawprices/{market_id}:
@@ -47241,7 +47241,7 @@ paths:
                       example: xrp:usd
                     oracle_address:
                       type: string
-                      example: Mage10cw2m04528dwlc44k0myd7strj3eq5jr6s8pxs
+                      example: mage10cw2m04528dwlc44k0myd7strj3eq5jr6s8pxs
                     price:
                       type: string
                       example: '0.298758999999999997'
@@ -47299,7 +47299,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -47339,7 +47339,7 @@ paths:
               sender:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               multiplier_name:
                 type: string
                 example: small
@@ -47367,10 +47367,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -47443,7 +47443,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -47483,7 +47483,7 @@ paths:
               sender:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               multiplier_name:
                 type: string
                 example: small
@@ -47511,10 +47511,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -47570,7 +47570,7 @@ paths:
   /incentive/claim-delegator:
     post:
       deprecated: true
-      summary: Claim Mage delegation rewards
+      summary: Claim mage delegation rewards
       tags:
         - Incentive
       consumes:
@@ -47587,7 +47587,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -47627,7 +47627,7 @@ paths:
               sender:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               multiplier_name:
                 type: string
                 example: small
@@ -47655,10 +47655,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -47731,7 +47731,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -47771,7 +47771,7 @@ paths:
               sender:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               multiplier_name:
                 type: string
                 example: small
@@ -47799,10 +47799,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -47889,7 +47889,7 @@ paths:
                               owner:
                                 type: string
                                 description: bech32 encoded address
-                                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                               reward:
                                 type: array
                                 items:
@@ -47961,7 +47961,7 @@ paths:
                               owner:
                                 type: string
                                 description: bech32 encoded address
-                                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                               reward:
                                 type: object
                                 properties:
@@ -48306,7 +48306,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -48355,7 +48355,7 @@ paths:
               proposer:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
       responses:
         '200':
           description: The transaction was successfully generated
@@ -48375,10 +48375,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -48506,7 +48506,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -48546,7 +48546,7 @@ paths:
               voter:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               vote_type:
                 type: string
                 example: 'yes'
@@ -48569,10 +48569,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -48697,7 +48697,7 @@ paths:
                       items:
                         type: string
                         description: bech32 encoded address
-                        example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                        example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     permissions:
                       type: array
                       items:
@@ -48765,7 +48765,7 @@ paths:
                     items:
                       type: string
                       description: bech32 encoded address
-                      example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                      example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                   permissions:
                     type: array
                     items:
@@ -48876,7 +48876,7 @@ paths:
                     example: '1'
                   proposer:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
         '400':
           description: Invalid query parameters
         '500':
@@ -48932,7 +48932,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -48972,7 +48972,7 @@ paths:
               depositor:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               amount:
                 $ref: '#/definitions/LegacyCoins'
       responses:
@@ -48994,10 +48994,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -49070,7 +49070,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -49110,7 +49110,7 @@ paths:
               depositor:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               amount:
                 $ref: '#/definitions/LegacyCoins'
       responses:
@@ -49132,10 +49132,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -49208,7 +49208,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -49248,7 +49248,7 @@ paths:
               depositor:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               amount:
                 $ref: '#/definitions/LegacyCoins'
       responses:
@@ -49270,10 +49270,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -49346,7 +49346,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -49386,7 +49386,7 @@ paths:
               owner:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               amount:
                 $ref: '#/definitions/LegacyCoins'
       responses:
@@ -49408,10 +49408,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -49484,7 +49484,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -49524,7 +49524,7 @@ paths:
               borrower:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
       responses:
         '200':
           description: OK
@@ -49544,10 +49544,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -49857,7 +49857,7 @@ paths:
                     address:
                       type: string
                       description: bech32 encoded address
-                      example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                      example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     coins:
                       type: array
                       items:
@@ -49906,7 +49906,7 @@ paths:
           description: Owner address in bech32 format
           required: false
           type: string
-          x-example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+          x-example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
         - in: query
           name: page
           description: The page number.
@@ -49935,7 +49935,7 @@ paths:
                     depositor:
                       type: string
                       description: bech32 encoded address
-                      example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                      example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     amount:
                       type: array
                       items:
@@ -49980,7 +49980,7 @@ paths:
           description: Owner address in bech32 format
           required: false
           type: string
-          x-example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+          x-example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
         - in: query
           name: page
           description: The page number.
@@ -50009,7 +50009,7 @@ paths:
                     borrower:
                       type: string
                       description: bech32 encoded address
-                      example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                      example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     amount:
                       type: array
                       items:
@@ -50054,7 +50054,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -50094,7 +50094,7 @@ paths:
               sender:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               tokens:
                 type: object
                 properties:
@@ -50107,7 +50107,7 @@ paths:
               receiver:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
       responses:
         '200':
           description: OK
@@ -50127,10 +50127,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -50203,7 +50203,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -50243,7 +50243,7 @@ paths:
               sender:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               tokens:
                 type: object
                 properties:
@@ -50272,10 +50272,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -50348,7 +50348,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -50388,14 +50388,14 @@ paths:
               sender:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               denom:
                 type: string
                 example: usdt
               blocked_address:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
       responses:
         '200':
           description: OK
@@ -50415,10 +50415,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -50491,7 +50491,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -50531,14 +50531,14 @@ paths:
               sender:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               denom:
                 type: string
                 example: usdt
               address:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
       responses:
         '200':
           description: OK
@@ -50558,10 +50558,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -50634,7 +50634,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -50674,7 +50674,7 @@ paths:
               sender:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               denom:
                 type: string
                 example: usdt
@@ -50700,10 +50700,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -50787,7 +50787,7 @@ paths:
                           owner:
                             type: string
                             description: bech32 encoded address
-                            example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                            example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                           denom:
                             type: string
                             example: btc
@@ -50796,7 +50796,7 @@ paths:
                             items:
                               type: string
                               description: bech32 encoded address
-                              example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                              example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                           paused:
                             type: boolean
                             example: false
@@ -50837,7 +50837,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -50877,7 +50877,7 @@ paths:
               depositor:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               token_a:
                 type: object
                 properties:
@@ -50921,10 +50921,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -50997,7 +50997,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -51037,7 +51037,7 @@ paths:
               from:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               shares:
                 type: string
                 example: '5000'
@@ -51081,10 +51081,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -51159,7 +51159,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -51199,7 +51199,7 @@ paths:
               requester:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               exact_token_a:
                 type: object
                 properties:
@@ -51243,10 +51243,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -51321,7 +51321,7 @@ paths:
                 properties:
                   from:
                     type: string
-                    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                     description: Sender address or Keybase name to generate a transaction
                   memo:
                     type: string
@@ -51361,7 +51361,7 @@ paths:
               requester:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
               token_a:
                 type: object
                 properties:
@@ -51405,10 +51405,10 @@ paths:
                       properties:
                         from_address:
                           type: string
-                          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                         to_address:
                           type: string
-                          example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                          example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                         amount:
                           type: array
                           items:
@@ -51514,7 +51514,7 @@ paths:
           description: Owner address in bech32 format
           required: false
           type: string
-          x-example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+          x-example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
         - in: query
           name: pool
           description: Pool ID
@@ -51591,12 +51591,12 @@ paths:
                   $ref: '#/definitions/LegacySwapPoolStatsQueryResult'
         '500':
           description: Server internal error
-  /Magedist/parameters:
+  /magedist/parameters:
     get:
       deprecated: true
-      summary: Get the current Magedist parameter values
+      summary: Get the current magedist parameter values
       tags:
-        - Magedist
+        - magedist
       produces:
         - application/json
       responses:
@@ -56815,7 +56815,7 @@ definitions:
       time_period:
         type: string
     title: RateLimit parameters for rate-limiting the supply of an issued asset
-  mage.Magedist.v1beta1.CoreReward:
+  mage.magedist.v1beta1.CoreReward:
     type: object
     properties:
       address:
@@ -56824,7 +56824,7 @@ definitions:
       weight:
         type: string
     description: CoreReward defines the reward weights for core infrastructure providers.
-  mage.Magedist.v1beta1.InfrastructureParams:
+  mage.magedist.v1beta1.InfrastructureParams:
     type: object
     properties:
       infrastructure_periods:
@@ -56890,7 +56890,7 @@ definitions:
             PartnerRewards defines the reward schedule for partner
             infrastructure providers.
     description: InfrastructureParams define the parameters for infrastructure rewards.
-  mage.Magedist.v1beta1.Params:
+  mage.magedist.v1beta1.Params:
     type: object
     properties:
       active:
@@ -56984,8 +56984,8 @@ definitions:
                 PartnerRewards defines the reward schedule for partner
                 infrastructure providers.
         description: InfrastructureParams define the parameters for infrastructure rewards.
-    title: Params governance parameters for Magedist module
-  mage.Magedist.v1beta1.PartnerReward:
+    title: Params governance parameters for magedist module
+  mage.magedist.v1beta1.PartnerReward:
     type: object
     properties:
       address:
@@ -57006,7 +57006,7 @@ definitions:
     description: >-
       PartnerRewards defines the reward schedule for partner infrastructure
       providers.
-  mage.Magedist.v1beta1.Period:
+  mage.magedist.v1beta1.Period:
     type: object
     properties:
       start:
@@ -57027,7 +57027,7 @@ definitions:
 
       representing the yearly APR of MAGE tokens that will be minted during that
       period
-  mage.Magedist.v1beta1.QueryBalanceResponse:
+  mage.magedist.v1beta1.QueryBalanceResponse:
     type: object
     properties:
       coins:
@@ -57045,9 +57045,9 @@ definitions:
             NOTE: The amount field is an Int which implements the custom method
             signatures required by gogoproto.
     description: >-
-      QueryBalanceResponse defines the response type for querying x/Magedist
+      QueryBalanceResponse defines the response type for querying x/magedist
       balance.
-  mage.Magedist.v1beta1.QueryParamsResponse:
+  mage.magedist.v1beta1.QueryParamsResponse:
     type: object
     properties:
       params:
@@ -57146,9 +57146,9 @@ definitions:
             description: >-
               InfrastructureParams define the parameters for infrastructure
               rewards.
-        title: Params governance parameters for Magedist module
+        title: Params governance parameters for magedist module
     description: >-
-      QueryParamsResponse defines the response type for querying x/Magedist
+      QueryParamsResponse defines the response type for querying x/magedist
       parameters.
   mage.liquid.v1beta1.QueryDelegatedBalanceResponse:
     type: object
@@ -57766,7 +57766,7 @@ definitions:
     description: >-
       TotalSupplyResponse defines the response type for the Query/TotalSupply
       method.
-  mage.Magemint.v1beta1.Params:
+  mage.magemint.v1beta1.Params:
     type: object
     properties:
       community_pool_inflation:
@@ -57777,8 +57777,8 @@ definitions:
         description: >-
           yearly inflation of bonded tokens minted for staking rewards to
           validators.
-    title: Params wraps the governance parameters for the Magemint module
-  mage.Magemint.v1beta1.QueryInflationResponse:
+    title: Params wraps the governance parameters for the magemint module
+  mage.magemint.v1beta1.QueryInflationResponse:
     type: object
     properties:
       inflation:
@@ -57789,7 +57789,7 @@ definitions:
     description: >-
       QueryInflationResponse is the response type for the Query/Inflation RPC
       method.
-  mage.Magemint.v1beta1.QueryParamsResponse:
+  mage.magemint.v1beta1.QueryParamsResponse:
     type: object
     properties:
       params:
@@ -57805,9 +57805,9 @@ definitions:
             description: >-
               yearly inflation of bonded tokens minted for staking rewards to
               validators.
-        title: Params wraps the governance parameters for the Magemint module
+        title: Params wraps the governance parameters for the magemint module
     description: >-
-      QueryParamsResponse defines the response type for querying x/Magemint
+      QueryParamsResponse defines the response type for querying x/magemint
       parameters.
   CheckTxResult:
     type: object
@@ -78257,10 +78257,10 @@ definitions:
         properties:
           from_address:
             type: string
-            example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+            example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
           to_address:
             type: string
-            example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+            example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
           amount:
             type: array
             items:
@@ -78275,11 +78275,11 @@ definitions:
   LegacyAddress:
     type: string
     description: bech32 encoded address
-    example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+    example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
   LegacyAddress2:
     type: string
     description: bech32 encoded address
-    example: Mage1atsrkjac6ulgmwhudfc36lnjfgv340vlvm757z
+    example: mage1atsrkjac6ulgmwhudfc36lnjfgv340vlvm757z
   LegacyBinanceChainAddress:
     type: string
     description: address on another chain (binance)
@@ -78384,10 +78384,10 @@ definitions:
               properties:
                 from_address:
                   type: string
-                  example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                  example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                 to_address:
                   type: string
-                  example: Mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
+                  example: mage1ls82zzghsx0exkpr52m8vht5jqs3un0ceysshz
                 amount:
                   type: array
                   items:
@@ -78441,7 +78441,7 @@ definitions:
     properties:
       from:
         type: string
-        example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+        example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
         description: Sender address or Keybase name to generate a transaction
       memo:
         type: string
@@ -78508,11 +78508,11 @@ definitions:
       sender:
         type: string
         description: bech32 encoded address
-        example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+        example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
       recipient:
         type: string
         description: bech32 encoded address
-        example: Mage1atsrkjac6ulgmwhudfc36lnjfgv340vlvm757z
+        example: mage1atsrkjac6ulgmwhudfc36lnjfgv340vlvm757z
       sender_other_chain:
         type: string
         description: address on another chain (binance)
@@ -78577,7 +78577,7 @@ definitions:
     properties:
       bnb_deputy_address:
         type: string
-        example: Mage1aphsdnz5hu2t5ty2au6znprug5kx3zpy6zwq29
+        example: mage1aphsdnz5hu2t5ty2au6znprug5kx3zpy6zwq29
       min_block_lock:
         type: string
         example: '80'
@@ -78630,7 +78630,7 @@ definitions:
                 owner:
                   type: string
                   description: bech32 encoded address
-                  example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                  example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                 reward:
                   type: array
                   items:
@@ -78702,7 +78702,7 @@ definitions:
                 owner:
                   type: string
                   description: bech32 encoded address
-                  example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                  example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
                 reward:
                   type: object
                   properties:
@@ -78732,7 +78732,7 @@ definitions:
           owner:
             type: string
             description: bech32 encoded address
-            example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+            example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
           reward:
             type: array
             items:
@@ -78802,7 +78802,7 @@ definitions:
           owner:
             type: string
             description: bech32 encoded address
-            example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+            example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
           reward:
             type: object
             properties:
@@ -78829,7 +78829,7 @@ definitions:
       owner:
         type: string
         description: bech32 encoded address
-        example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+        example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
       reward:
         type: object
         properties:
@@ -78845,7 +78845,7 @@ definitions:
       owner:
         type: string
         description: bech32 encoded address
-        example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+        example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
       reward:
         type: array
         items:
@@ -79078,7 +79078,7 @@ definitions:
         example: '1'
       owner:
         type: string
-        example: Mage1q53rwutgpzx7szcrgzqguxyccjpzt9j4cyctn9
+        example: mage1q53rwutgpzx7szcrgzqguxyccjpzt9j4cyctn9
       collateral:
         type: object
         properties:
@@ -79132,7 +79132,7 @@ definitions:
         example: '1'
       depositor:
         type: string
-        example: Mage1q53rwutgpzx7szcrgzqguxyccjpzt9j4cyctn9
+        example: mage1q53rwutgpzx7szcrgzqguxyccjpzt9j4cyctn9
       amount:
         type: object
         properties:
@@ -79165,7 +79165,7 @@ definitions:
               items:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
             active:
               type: boolean
               example: true
@@ -79186,7 +79186,7 @@ definitions:
         example: xrp:usd
       oracle_address:
         type: string
-        example: Mage10cw2m04528dwlc44k0myd7strj3eq5jr6s8pxs
+        example: mage10cw2m04528dwlc44k0myd7strj3eq5jr6s8pxs
       price:
         type: string
         example: '0.298758999999999997'
@@ -79211,7 +79211,7 @@ definitions:
         items:
           type: string
           description: bech32 encoded address
-          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
       active:
         type: boolean
         example: true
@@ -79247,7 +79247,7 @@ definitions:
       depositor:
         type: string
         description: bech32 encoded address
-        example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+        example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
       pool_id:
         type: string
         example: abc:xyz
@@ -79398,7 +79398,7 @@ definitions:
       depositor:
         type: string
         description: bech32 encoded address
-        example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+        example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
       amount:
         type: array
         items:
@@ -79427,7 +79427,7 @@ definitions:
       borrower:
         type: string
         description: bech32 encoded address
-        example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+        example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
       amount:
         type: array
         items:
@@ -79506,7 +79506,7 @@ definitions:
             owner:
               type: string
               description: bech32 encoded address
-              example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+              example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
             denom:
               type: string
               example: btc
@@ -79515,7 +79515,7 @@ definitions:
               items:
                 type: string
                 description: bech32 encoded address
-                example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+                example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
             paused:
               type: boolean
               example: false
@@ -79540,7 +79540,7 @@ definitions:
       owner:
         type: string
         description: bech32 encoded address
-        example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+        example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
       denom:
         type: string
         example: btc
@@ -79549,7 +79549,7 @@ definitions:
         items:
           type: string
           description: bech32 encoded address
-          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
       paused:
         type: boolean
         example: false
@@ -79619,7 +79619,7 @@ definitions:
       bidder:
         type: string
         description: bech32 encoded address
-        example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+        example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
       bid:
         type: object
         properties:
@@ -79715,7 +79715,7 @@ definitions:
         example: '1'
       proposer:
         type: string
-        example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+        example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
   LegacyCommitteeVote:
     type: object
     properties:
@@ -79760,7 +79760,7 @@ definitions:
         items:
           type: string
           description: bech32 encoded address
-          example: Mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
+          example: mage1ffv7nhd3z6sych2qpqkk03ec6hzkmufy0r2s4c
       permissions:
         type: array
         items:
@@ -79832,7 +79832,7 @@ definitions:
         type: string
       value:
         type: string
-  LegacyMagedistPeriod:
+  LegacymagedistPeriod:
     type: object
     properties:
       start:

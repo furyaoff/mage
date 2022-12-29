@@ -4,8 +4,8 @@ package keeper_test
 // 	sdk "github.com/cosmos/cosmos-sdk/types"
 // 	abci "github.com/tendermint/tendermint/abci/types"
 
-// 	"github.com/furya-official/mage/x/Magedist/keeper"
-// 	"github.com/furya-official/mage/x/Magedist/types"
+// 	"github.com/furya-official/mage/x/magedist/keeper"
+// 	"github.com/furya-official/mage/x/magedist/types"
 // )
 
 // func (suite *KeeperTestSuite) TestQuerierGetParams() {
@@ -23,7 +23,7 @@ package keeper_test
 // func (suite *KeeperTestSuite) TestQuerierGetBalance() {
 // 	sk := suite.supplyKeeper
 
-// 	sk.MintCoins(suite.ctx, types.MageDistMacc, sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100e6))))
+// 	sk.MintCoins(suite.ctx, types.mageDistMacc, sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(100e6))))
 
 // 	querier := keeper.NewQuerier(suite.keeper)
 // 	bz, err := querier(suite.ctx, []string{types.QueryGetBalance}, abci.RequestQuery{})

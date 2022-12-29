@@ -7,53 +7,53 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/furya-official/mage/app"
 
-	Mageminttypes "github.com/furya-official/mage/x/Magemint/types"
+	mageminttypes "github.com/furya-official/mage/x/magemint/types"
 )
 
-// MagemintGenesisBuilder is a tool for creating a mint genesis state.
+// magemintGenesisBuilder is a tool for creating a mint genesis state.
 // Helper methods add values onto a default genesis state.
 // All methods are immutable and return updated copies of the builder.
-type MagemintGenesisBuilder struct {
-	Mageminttypes.GenesisState
+type magemintGenesisBuilder struct {
+	mageminttypes.GenesisState
 }
 
-var _ GenesisBuilder = (*MagemintGenesisBuilder)(nil)
+var _ GenesisBuilder = (*magemintGenesisBuilder)(nil)
 
-func NewMagemintGenesisBuilder() MagemintGenesisBuilder {
-	gen := Mageminttypes.DefaultGenesisState()
+func NewmagemintGenesisBuilder() magemintGenesisBuilder {
+	gen := mageminttypes.DefaultGenesisState()
 	gen.Params.CommunityPoolInflation = sdk.ZeroDec()
 	gen.Params.StakingRewardsApy = sdk.ZeroDec()
 
-	return MagemintGenesisBuilder{
+	return magemintGenesisBuilder{
 		GenesisState: *gen,
 	}
 }
 
-func (builder MagemintGenesisBuilder) Build() Mageminttypes.GenesisState {
+func (builder magemintGenesisBuilder) Build() mageminttypes.GenesisState {
 	return builder.GenesisState
 }
 
-func (builder MagemintGenesisBuilder) BuildMarshalled(cdc codec.JSONCodec) app.GenesisState {
+func (builder magemintGenesisBuilder) BuildMarshalled(cdc codec.JSONCodec) app.GenesisState {
 	built := builder.Build()
 
 	return app.GenesisState{
-		Mageminttypes.ModuleName: cdc.MustMarshalJSON(&built),
+		mageminttypes.ModuleName: cdc.MustMarshalJSON(&built),
 	}
 }
 
-func (builder MagemintGenesisBuilder) WithPreviousBlockTime(t time.Time) MagemintGenesisBuilder {
+func (builder magemintGenesisBuilder) WithPreviousBlockTime(t time.Time) magemintGenesisBuilder {
 	builder.PreviousBlockTime = t
 	return builder
 }
 
-func (builder MagemintGenesisBuilder) WithStakingRewardsApy(apy sdk.Dec) MagemintGenesisBuilder {
+func (builder magemintGenesisBuilder) WithStakingRewardsApy(apy sdk.Dec) magemintGenesisBuilder {
 	builder.Params.StakingRewardsApy = apy
 	return builder
 }
 
-func (builder MagemintGenesisBuilder) WithCommunityPoolInflation(
+func (builder magemintGenesisBuilder) WithCommunityPoolInflation(
 	inflation sdk.Dec,
-) MagemintGenesisBuilder {
+) magemintGenesisBuilder {
 	builder.Params.CommunityPoolInflation = inflation
 	return builder
 }

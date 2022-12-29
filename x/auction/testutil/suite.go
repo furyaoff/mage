@@ -17,7 +17,7 @@ import (
 	"github.com/furya-official/mage/x/auction/types"
 )
 
-// Suite implements a test suite for the Magedist module integration tests
+// Suite implements a test suite for the magedist module integration tests
 type Suite struct {
 	suite.Suite
 

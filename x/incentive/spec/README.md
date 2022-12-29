@@ -22,4 +22,4 @@ parent:
 
 ### Dependencies
 
-This module uses hooks to update user rewards. Currently, `incentive` implements hooks from the `cdp`, `hard`, `swap`, and `staking` (comsos-sdk) modules. All rewards are paid out from the `Magedist` module account.
+This module uses hooks to update user rewards. Currently, `incentive` implements hooks from the `cdp`, `hard`, `swap`, and `staking` (comsos-sdk) modules. All rewards are paid out from the `magedist` module account.
