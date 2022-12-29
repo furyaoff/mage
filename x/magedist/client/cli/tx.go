@@ -11,7 +11,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/version"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 
-	"github.com/furya-official/mage/x/magedist/types"
+	"github.com/furya-official/mage/x/Magedist/types"
 )
 
 // GetCmdSubmitProposal implements the command to submit a community-pool multi-spend proposal

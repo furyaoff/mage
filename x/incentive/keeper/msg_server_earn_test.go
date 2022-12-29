@@ -12,7 +12,7 @@ import (
 	"github.com/furya-official/mage/x/incentive"
 	"github.com/furya-official/mage/x/incentive/testutil"
 	"github.com/furya-official/mage/x/incentive/types"
-	"github.com/furya-official/mage/x/magemint"
+	"github.com/furya-official/mage/x/Magemint"
 	liquidtypes "github.com/furya-official/mage/x/liquid/types"
 )
 
@@ -138,7 +138,7 @@ func (suite *HandlerTestSuite) TestEarnLiquidClaim() {
 		WithBlockTime(suite.Ctx.BlockTime().Add(7 * time.Second))
 
 	// Mint tokens
-	magemint.BeginBlocker(suite.Ctx, suite.App.GetMagemintKeeper())
+	Magemint.BeginBlocker(suite.Ctx, suite.App.GetMagemintKeeper())
 	// Distribute to validators, block needs votes
 	distribution.BeginBlocker(
 		suite.Ctx,
@@ -163,10 +163,10 @@ func (suite *HandlerTestSuite) TestEarnLiquidClaim() {
 	// Zero rewards since this block is the same as the block it was last claimed
 
 	// This needs to run **after** staking rewards are minted/distributed in
-	// x/magemint + x/distribution but **before** the x/incentive BeginBlocker.
+	// x/Magemint + x/distribution but **before** the x/incentive BeginBlocker.
 
 	// Order of operations:
-	// 1. x/magemint + x/distribution BeginBlocker
+	// 1. x/Magemint + x/distribution BeginBlocker
 	// 2. CalculateDelegationRewards
 	// 3. x/incentive BeginBlocker to claim staking rewards
 	delegationRewards := dk.CalculateDelegationRewards(suite.Ctx, validator1, delegation, endingPeriod)

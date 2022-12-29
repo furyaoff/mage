@@ -29,7 +29,7 @@ func (suite *QuerierTestSuite) TestGetStakingAPR() {
 	liquidStakedTokens := int64(60_000_000_000000)
 	totalSupply := int64(289_138_414_286684)
 
-	// inflation values below are used to regression test the switch from x/mint to x/magemint
+	// inflation values below are used to regression test the switch from x/mint to x/Magemint
 	// rather than define the total inflation w/ a community tax, we now directly define
 	// inflation for staking rewards & inflation for the community pool.
 	// derive these values from the above values in order to verify no change to output

@@ -62,7 +62,7 @@ func (suite *tallyHandlerSuite) TestVotePower_AllSourcesCounted() {
 
 	derivatives := suite.mintDerivative(user.GetAddress(), validator.GetOperator(), sdk.NewInt(500e6))
 
-	suite.allowBmageEarnDeposits()
+	suite.allowBMageEarnDeposits()
 	suite.earnDeposit(
 		user.GetAddress(),
 		sdk.NewCoin(derivatives.Denom, sdk.NewInt(250e6)),
@@ -87,7 +87,7 @@ func (suite *tallyHandlerSuite) TestVotePower_UserOverridesValidator() {
 
 	derivatives := suite.mintDerivative(user.GetAddress(), validator.GetOperator(), sdk.NewInt(500e6))
 
-	suite.allowBmageEarnDeposits()
+	suite.allowBMageEarnDeposits()
 	suite.earnDeposit(
 		user.GetAddress(),
 		sdk.NewCoin(derivatives.Denom, sdk.NewInt(250e6)),
@@ -257,7 +257,7 @@ func (suite *tallyHandlerSuite) newBondCoin(amount sdk.Int) sdk.Coin {
 	return suite.staking.newBondCoin(suite.ctx, amount)
 }
 
-func (suite *tallyHandlerSuite) allowBmageEarnDeposits() {
+func (suite *tallyHandlerSuite) allowBMageEarnDeposits() {
 	ek := suite.app.GetEarnKeeper()
 	earnParams := ek.GetParams(suite.ctx)
 

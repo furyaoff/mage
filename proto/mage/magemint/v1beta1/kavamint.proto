@@ -1,12 +1,12 @@
 syntax = "proto3";
-package mage.magemint.v1beta1;
+package mage.Magemint.v1beta1;
 
 import "cosmos_proto/cosmos.proto";
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/furya-official/mage/x/magemint/types";
+option go_package = "github.com/furya-official/mage/x/Magemint/types";
 
-// Params wraps the governance parameters for the magemint module
+// Params wraps the governance parameters for the Magemint module
 message Params {
   option (gogoproto.goproto_stringer) = false;
   option (gogoproto.goproto_getters) = false;

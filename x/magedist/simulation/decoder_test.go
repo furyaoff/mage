@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/furya-official/mage/x/magedist/types"
+	"github.com/furya-official/mage/x/Magedist/types"
 
 	"github.com/cosmos/cosmos-sdk/types/kv"
 )

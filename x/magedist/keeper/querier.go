@@ -7,7 +7,7 @@ import (
 
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/furya-official/mage/x/magedist/types"
+	"github.com/furya-official/mage/x/Magedist/types"
 )
 
 // NewQuerier is the module level router for state queries
@@ -37,9 +37,9 @@ func queryGetParams(ctx sdk.Context, req abci.RequestQuery, k Keeper, legacyQuer
 	return bz, nil
 }
 
-// queryGetBalance returns current balance of magedist module account
+// queryGetBalance returns current balance of Magedist module account
 func queryGetBalance(ctx sdk.Context, req abci.RequestQuery, k Keeper, legacyQuerierCdc *codec.LegacyAmino) ([]byte, error) {
-	acc := k.accountKeeper.GetModuleAccount(ctx, types.mageDistMacc)
+	acc := k.accountKeeper.GetModuleAccount(ctx, types.MageDistMacc)
 	balance := k.bankKeeper.GetAllBalances(ctx, acc.GetAddress())
 	bz, err := codec.MarshalJSONIndent(legacyQuerierCdc, balance)
 	if err != nil {

@@ -90,7 +90,7 @@ import (
 
 	"github.com/furya-official/mage/app/ante"
 	mageparams "github.com/furya-official/mage/app/params"
-	magedistrquery "github.com/furya-official/mage/app/query/distribution"
+	Magedistrquery "github.com/furya-official/mage/app/query/distribution"
 	"github.com/furya-official/mage/x/auction"
 	auctionkeeper "github.com/furya-official/mage/x/auction/keeper"
 	auctiontypes "github.com/furya-official/mage/x/auction/types"
@@ -124,13 +124,13 @@ import (
 	issuance "github.com/furya-official/mage/x/issuance"
 	issuancekeeper "github.com/furya-official/mage/x/issuance/keeper"
 	issuancetypes "github.com/furya-official/mage/x/issuance/types"
-	"github.com/furya-official/mage/x/magedist"
-	magedistclient "github.com/furya-official/mage/x/magedist/client"
-	magedistkeeper "github.com/furya-official/mage/x/magedist/keeper"
-	magedisttypes "github.com/furya-official/mage/x/magedist/types"
-	"github.com/furya-official/mage/x/magemint"
-	magemintkeeper "github.com/furya-official/mage/x/magemint/keeper"
-	mageminttypes "github.com/furya-official/mage/x/magemint/types"
+	"github.com/furya-official/mage/x/Magedist"
+	Magedistclient "github.com/furya-official/mage/x/Magedist/client"
+	Magedistkeeper "github.com/furya-official/mage/x/Magedist/keeper"
+	Magedisttypes "github.com/furya-official/mage/x/Magedist/types"
+	"github.com/furya-official/mage/x/Magemint"
+	Magemintkeeper "github.com/furya-official/mage/x/Magemint/keeper"
+	Mageminttypes "github.com/furya-official/mage/x/Magemint/types"
 	"github.com/furya-official/mage/x/liquid"
 	liquidkeeper "github.com/furya-official/mage/x/liquid/keeper"
 	liquidtypes "github.com/furya-official/mage/x/liquid/types"
@@ -174,7 +174,7 @@ var (
 			upgradeclient.CancelProposalHandler,
 			ibcclientclient.UpdateClientProposalHandler,
 			ibcclientclient.UpgradeProposalHandler,
-			magedistclient.ProposalHandler,
+			Magedistclient.ProposalHandler,
 			committeeclient.ProposalHandler,
 			earnclient.DepositProposalHandler,
 			earnclient.WithdrawProposalHandler,
@@ -192,7 +192,7 @@ var (
 		vesting.AppModuleBasic{},
 		evm.AppModuleBasic{},
 		feemarket.AppModuleBasic{},
-		magedist.AppModuleBasic{},
+		Magedist.AppModuleBasic{},
 		auction.AppModuleBasic{},
 		issuance.AppModuleBasic{},
 		bep3.AppModuleBasic{},
@@ -208,7 +208,7 @@ var (
 		liquid.AppModuleBasic{},
 		earn.AppModuleBasic{},
 		router.AppModuleBasic{},
-		magemint.AppModuleBasic{},
+		Magemint.AppModuleBasic{},
 		community.AppModuleBasic{},
 	)
 
@@ -224,7 +224,7 @@ var (
 		ibctransfertypes.ModuleName:     {authtypes.Minter, authtypes.Burner},
 		evmtypes.ModuleName:             {authtypes.Minter, authtypes.Burner}, // used for secure addition and subtraction of balance using module account
 		evmutiltypes.ModuleName:         {authtypes.Minter, authtypes.Burner},
-		magedisttypes.mageDistMacc:      {authtypes.Minter},
+		Magedisttypes.MageDistMacc:      {authtypes.Minter},
 		auctiontypes.ModuleName:         nil,
 		issuancetypes.ModuleAccountName: {authtypes.Minter, authtypes.Burner},
 		bep3types.ModuleName:            {authtypes.Burner, authtypes.Minter},
@@ -235,8 +235,8 @@ var (
 		savingstypes.ModuleAccountName:  nil,
 		liquidtypes.ModuleAccountName:   {authtypes.Minter, authtypes.Burner},
 		earntypes.ModuleAccountName:     nil,
-		magedisttypes.FundModuleAccount: nil,
-		mageminttypes.ModuleAccountName: {authtypes.Minter},
+		Magedisttypes.FundModuleAccount: nil,
+		Mageminttypes.ModuleAccountName: {authtypes.Minter},
 		communitytypes.ModuleName:       nil,
 	}
 )
@@ -294,7 +294,7 @@ type App struct {
 	upgradeKeeper    upgradekeeper.Keeper
 	evidenceKeeper   evidencekeeper.Keeper
 	transferKeeper   ibctransferkeeper.Keeper
-	magedistKeeper   magedistkeeper.Keeper
+	MagedistKeeper   Magedistkeeper.Keeper
 	auctionKeeper    auctionkeeper.Keeper
 	issuanceKeeper   issuancekeeper.Keeper
 	bep3Keeper       bep3keeper.Keeper
@@ -308,7 +308,7 @@ type App struct {
 	liquidKeeper     liquidkeeper.Keeper
 	earnKeeper       earnkeeper.Keeper
 	routerKeeper     routerkeeper.Keeper
-	MagemintKeeper   magemintkeeper.Keeper
+	MagemintKeeper   Magemintkeeper.Keeper
 	communityKeeper  communitykeeper.Keeper
 
 	// make scoped keepers public for test purposes
@@ -359,11 +359,11 @@ func NewApp(
 		govtypes.StoreKey, paramstypes.StoreKey, ibchost.StoreKey,
 		upgradetypes.StoreKey, evidencetypes.StoreKey, ibctransfertypes.StoreKey,
 		evmtypes.StoreKey, feemarkettypes.StoreKey, authzkeeper.StoreKey,
-		capabilitytypes.StoreKey, magedisttypes.StoreKey, auctiontypes.StoreKey,
+		capabilitytypes.StoreKey, Magedisttypes.StoreKey, auctiontypes.StoreKey,
 		issuancetypes.StoreKey, bep3types.StoreKey, pricefeedtypes.StoreKey,
 		swaptypes.StoreKey, cdptypes.StoreKey, hardtypes.StoreKey,
 		committeetypes.StoreKey, incentivetypes.StoreKey, evmutiltypes.StoreKey,
-		savingstypes.StoreKey, earntypes.StoreKey, mageminttypes.StoreKey,
+		savingstypes.StoreKey, earntypes.StoreKey, Mageminttypes.StoreKey,
 	)
 	tkeys := sdk.NewTransientStoreKeys(paramstypes.TStoreKey, evmtypes.TransientKey)
 	memKeys := sdk.NewMemoryStoreKeys(capabilitytypes.MemStoreKey)
@@ -392,7 +392,7 @@ func NewApp(
 	slashingSubspace := app.paramsKeeper.Subspace(slashingtypes.ModuleName)
 	govSubspace := app.paramsKeeper.Subspace(govtypes.ModuleName).WithKeyTable(govtypes.ParamKeyTable())
 	crisisSubspace := app.paramsKeeper.Subspace(crisistypes.ModuleName)
-	magedistSubspace := app.paramsKeeper.Subspace(magedisttypes.ModuleName)
+	MagedistSubspace := app.paramsKeeper.Subspace(Magedisttypes.ModuleName)
 	auctionSubspace := app.paramsKeeper.Subspace(auctiontypes.ModuleName)
 	issuanceSubspace := app.paramsKeeper.Subspace(issuancetypes.ModuleName)
 	bep3Subspace := app.paramsKeeper.Subspace(bep3types.ModuleName)
@@ -408,7 +408,7 @@ func NewApp(
 	evmSubspace := app.paramsKeeper.Subspace(evmtypes.ModuleName)
 	evmutilSubspace := app.paramsKeeper.Subspace(evmutiltypes.ModuleName)
 	earnSubspace := app.paramsKeeper.Subspace(earntypes.ModuleName)
-	magemintSubspace := app.paramsKeeper.Subspace(mageminttypes.ModuleName)
+	MagemintSubspace := app.paramsKeeper.Subspace(Mageminttypes.ModuleName)
 
 	bApp.SetParamStore(
 		app.paramsKeeper.Subspace(baseapp.Paramspace).WithKeyTable(paramskeeper.ConsensusParamsKeyTable()),
@@ -618,20 +618,20 @@ func NewApp(
 		app.distrKeeper,
 		hardKeeper,
 	)
-	app.magedistKeeper = magedistkeeper.NewKeeper(
+	app.MagedistKeeper = Magedistkeeper.NewKeeper(
 		appCodec,
-		keys[magedisttypes.StoreKey],
-		magedistSubspace,
+		keys[Magedisttypes.StoreKey],
+		MagedistSubspace,
 		app.bankKeeper,
 		app.accountKeeper,
 		app.communityKeeper,
 		app.loadBlockedMaccAddrs(),
 	)
 
-	app.MagemintKeeper = magemintkeeper.NewKeeper(
+	app.MagemintKeeper = Magemintkeeper.NewKeeper(
 		appCodec,
-		keys[mageminttypes.StoreKey],
-		magemintSubspace,
+		keys[Mageminttypes.StoreKey],
+		MagemintSubspace,
 		app.stakingKeeper,
 		app.accountKeeper,
 		app.bankKeeper,
@@ -700,7 +700,7 @@ func NewApp(
 		AddRoute(upgradetypes.RouterKey, upgrade.NewSoftwareUpgradeProposalHandler(app.upgradeKeeper)).
 		AddRoute(ibcclienttypes.RouterKey, ibcclient.NewClientProposalHandler(app.ibcKeeper.ClientKeeper)).
 		AddRoute(distrtypes.RouterKey, distr.NewCommunityPoolSpendProposalHandler(app.distrKeeper)).
-		AddRoute(magedisttypes.RouterKey, magedist.NewCommunityPoolMultiSpendProposalHandler(app.magedistKeeper)).
+		AddRoute(Magedisttypes.RouterKey, Magedist.NewCommunityPoolMultiSpendProposalHandler(app.MagedistKeeper)).
 		AddRoute(earntypes.RouterKey, earn.NewCommunityPoolProposalHandler(app.earnKeeper)).
 		AddRoute(communitytypes.RouterKey, community.NewCommunityPoolProposalHandler(app.communityKeeper)).
 		AddRoute(committeetypes.RouterKey, committee.NewProposalHandler(app.committeeKeeper))
@@ -742,7 +742,7 @@ func NewApp(
 		transferModule,
 		vesting.NewAppModule(app.accountKeeper, app.bankKeeper),
 		authzmodule.NewAppModule(appCodec, app.authzKeeper, app.accountKeeper, app.bankKeeper, app.interfaceRegistry),
-		magedist.NewAppModule(app.magedistKeeper, app.accountKeeper),
+		Magedist.NewAppModule(app.MagedistKeeper, app.accountKeeper),
 		auction.NewAppModule(app.auctionKeeper, app.accountKeeper, app.bankKeeper),
 		issuance.NewAppModule(app.issuanceKeeper, app.accountKeeper, app.bankKeeper),
 		bep3.NewAppModule(app.bep3Keeper, app.accountKeeper, app.bankKeeper),
@@ -758,7 +758,7 @@ func NewApp(
 		liquid.NewAppModule(app.liquidKeeper),
 		earn.NewAppModule(app.earnKeeper, app.accountKeeper, app.bankKeeper),
 		router.NewAppModule(app.routerKeeper),
-		magemint.NewAppModule(appCodec, app.MagemintKeeper, app.accountKeeper),
+		Magemint.NewAppModule(appCodec, app.MagemintKeeper, app.accountKeeper),
 		community.NewAppModule(app.communityKeeper, app.accountKeeper),
 	)
 
@@ -771,8 +771,8 @@ func NewApp(
 		// Committee begin blocker changes module params by enacting proposals.
 		// Run before to ensure params are updated together before state changes.
 		committeetypes.ModuleName,
-		// magemint must be registered before distribution module in order to generate block staking rewards.
-		mageminttypes.ModuleName,
+		// Magemint must be registered before distribution module in order to generate block staking rewards.
+		Mageminttypes.ModuleName,
 		distrtypes.ModuleName,
 		// During begin block slashing happens after distr.BeginBlocker so that
 		// there is nothing left over in the validator fee pool, so as to keep the
@@ -782,7 +782,7 @@ func NewApp(
 		stakingtypes.ModuleName,
 		feemarkettypes.ModuleName,
 		evmtypes.ModuleName,
-		magedisttypes.ModuleName,
+		Magedisttypes.ModuleName,
 		communitytypes.ModuleName,
 		// Auction begin blocker will close out expired auctions and pay debt back to cdp.
 		// It should be run before cdp begin blocker which cancels out debt with stable and starts more auctions.
@@ -835,7 +835,7 @@ func NewApp(
 		committeetypes.ModuleName,
 		upgradetypes.ModuleName,
 		evidencetypes.ModuleName,
-		magedisttypes.ModuleName,
+		Magedisttypes.ModuleName,
 		swaptypes.ModuleName,
 		vestingtypes.ModuleName,
 		ibchost.ModuleName,
@@ -851,7 +851,7 @@ func NewApp(
 		liquidtypes.ModuleName,
 		earntypes.ModuleName,
 		routertypes.ModuleName,
-		mageminttypes.ModuleName,
+		Mageminttypes.ModuleName,
 		communitytypes.ModuleName,
 	)
 
@@ -864,14 +864,14 @@ func NewApp(
 		stakingtypes.ModuleName,
 		slashingtypes.ModuleName, // iterates over validators, run after staking
 		govtypes.ModuleName,
-		mageminttypes.ModuleName,
+		Mageminttypes.ModuleName,
 		ibchost.ModuleName,
 		evidencetypes.ModuleName,
 		authz.ModuleName,
 		ibctransfertypes.ModuleName,
 		evmtypes.ModuleName,
 		feemarkettypes.ModuleName,
-		magedisttypes.ModuleName,
+		Magedisttypes.ModuleName,
 		auctiontypes.ModuleName,
 		issuancetypes.ModuleName,
 		savingstypes.ModuleName,
@@ -992,7 +992,7 @@ func (app *App) RegisterServices(cfg module.Configurator) {
 	)
 
 	// register fake distribution query server
-	distrtypes.RegisterQueryServer(cfg.QueryServer(), magedistrquery.NewQueryServer(app.distrKeeper, app.communityKeeper))
+	distrtypes.RegisterQueryServer(cfg.QueryServer(), Magedistrquery.NewQueryServer(app.distrKeeper, app.communityKeeper))
 }
 
 // BeginBlocker contains app specific logic for the BeginBlock abci call.
@@ -1078,14 +1078,14 @@ func (app *App) RegisterTendermintService(clientCtx client.Context) {
 func (app *App) loadBlockedMaccAddrs() map[string]bool {
 	modAccAddrs := app.ModuleAccountAddrs()
 	allowedMaccs := map[string]bool{
-		// magedist
-		app.accountKeeper.GetModuleAddress(magedisttypes.ModuleName).String(): true,
+		// Magedist
+		app.accountKeeper.GetModuleAddress(Magedisttypes.ModuleName).String(): true,
 		// earn
 		app.accountKeeper.GetModuleAddress(earntypes.ModuleName).String(): true,
 		// liquid
 		app.accountKeeper.GetModuleAddress(liquidtypes.ModuleName).String(): true,
-		// magedist fund
-		app.accountKeeper.GetModuleAddress(magedisttypes.FundModuleAccount).String(): true,
+		// Magedist fund
+		app.accountKeeper.GetModuleAddress(Magedisttypes.FundModuleAccount).String(): true,
 		// community
 		app.accountKeeper.GetModuleAddress(communitytypes.ModuleAccountName).String(): true,
 	}

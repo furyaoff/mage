@@ -5,7 +5,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/furya-official/mage/x/magedist/types"
+	"github.com/furya-official/mage/x/Magedist/types"
 )
 
 type queryServer struct {
@@ -21,7 +21,7 @@ var _ types.QueryServer = queryServer{}
 
 func (s queryServer) Balance(ctx context.Context, req *types.QueryBalanceRequest) (*types.QueryBalanceResponse, error) {
 	sdkCtx := sdk.UnwrapSDKContext(ctx)
-	acc := s.keeper.accountKeeper.GetModuleAccount(sdkCtx, types.mageDistMacc)
+	acc := s.keeper.accountKeeper.GetModuleAccount(sdkCtx, types.MageDistMacc)
 	balance := s.keeper.bankKeeper.GetAllBalances(sdkCtx, acc.GetAddress())
 	return &types.QueryBalanceResponse{Coins: balance}, nil
 }

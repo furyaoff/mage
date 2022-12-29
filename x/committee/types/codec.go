@@ -10,7 +10,7 @@ import (
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 	proposaltypes "github.com/cosmos/cosmos-sdk/x/params/types/proposal"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
-	magedisttypes "github.com/furya-official/mage/x/magedist/types"
+	Magedisttypes "github.com/furya-official/mage/x/Magedist/types"
 )
 
 var (
@@ -103,7 +103,7 @@ func RegisterInterfaces(registry types.InterfaceRegistry) {
 		&Proposal{},
 		&distrtypes.CommunityPoolSpendProposal{},
 		&govtypes.TextProposal{},
-		&magedisttypes.CommunityPoolMultiSpendProposal{},
+		&Magedisttypes.CommunityPoolMultiSpendProposal{},
 		&proposaltypes.ParameterChangeProposal{},
 		&upgradetypes.SoftwareUpgradeProposal{},
 		&upgradetypes.CancelSoftwareUpgradeProposal{},

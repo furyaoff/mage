@@ -17,9 +17,9 @@ import (
 
 func TestBaseCommittee(t *testing.T) {
 	addresses := []sdk.AccAddress{
-		sdk.AccAddress(crypto.AddressHash([]byte("mageTest1"))),
-		sdk.AccAddress(crypto.AddressHash([]byte("mageTest2"))),
-		sdk.AccAddress(crypto.AddressHash([]byte("mageTest3"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("MageTest1"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("MageTest2"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("MageTest3"))),
 	}
 
 	testCases := []struct {
@@ -205,9 +205,9 @@ func TestBaseCommittee(t *testing.T) {
 
 func TestMemberCommittee(t *testing.T) {
 	addresses := []sdk.AccAddress{
-		sdk.AccAddress(crypto.AddressHash([]byte("mageTest1"))),
-		sdk.AccAddress(crypto.AddressHash([]byte("mageTest2"))),
-		sdk.AccAddress(crypto.AddressHash([]byte("mageTest3"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("MageTest1"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("MageTest2"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("MageTest3"))),
 	}
 
 	testCases := []struct {
@@ -251,9 +251,9 @@ func TestMemberCommittee(t *testing.T) {
 // TestTokenCommittee tests unique TokenCommittee functionality
 func TestTokenCommittee(t *testing.T) {
 	addresses := []sdk.AccAddress{
-		sdk.AccAddress(crypto.AddressHash([]byte("mageTest1"))),
-		sdk.AccAddress(crypto.AddressHash([]byte("mageTest2"))),
-		sdk.AccAddress(crypto.AddressHash([]byte("mageTest3"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("MageTest1"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("MageTest2"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("MageTest3"))),
 	}
 
 	testCases := []struct {

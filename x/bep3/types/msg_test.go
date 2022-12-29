@@ -30,8 +30,8 @@ func init() {
 		sdk.AccAddress(crypto.AddressHash([]byte("BinanceTest2"))),
 	}
 	mageAddrs = []sdk.AccAddress{
-		sdk.AccAddress(crypto.AddressHash([]byte("mageTest1"))),
-		sdk.AccAddress(crypto.AddressHash([]byte("mageTest2"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("MageTest1"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("MageTest2"))),
 	}
 }
 

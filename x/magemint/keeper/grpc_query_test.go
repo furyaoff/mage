@@ -13,20 +13,20 @@ import (
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
 	"github.com/cosmos/cosmos-sdk/x/staking"
 
-	"github.com/furya-official/mage/x/magemint/keeper"
-	"github.com/furya-official/mage/x/magemint/testutil"
-	"github.com/furya-official/mage/x/magemint/types"
+	"github.com/furya-official/mage/x/Magemint/keeper"
+	"github.com/furya-official/mage/x/Magemint/testutil"
+	"github.com/furya-official/mage/x/Magemint/types"
 )
 
 type grpcQueryTestSuite struct {
-	testutil.magemintTestSuite
+	testutil.MagemintTestSuite
 
 	queryClient     types.QueryClient
 	mintQueryClient minttypes.QueryClient
 }
 
 func (suite *grpcQueryTestSuite) SetupTest() {
-	suite.magemintTestSuite.SetupTest()
+	suite.MagemintTestSuite.SetupTest()
 
 	queryHelper := baseapp.NewQueryServerTestHelper(suite.Ctx, suite.App.InterfaceRegistry())
 	types.RegisterQueryServer(queryHelper, suite.Keeper)

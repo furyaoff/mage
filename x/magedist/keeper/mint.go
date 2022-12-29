@@ -5,7 +5,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/furya-official/mage/x/magedist/types"
+	"github.com/furya-official/mage/x/Magedist/types"
 )
 
 // MintPeriodInflation mints new tokens according to the inflation schedule specified in the parameters
@@ -96,7 +96,7 @@ func (k Keeper) mintInflationaryCoins(ctx sdk.Context, inflationRate sdk.Dec, ti
 	if amountToMint.IsZero() {
 		return sdk.Coin{}, nil
 	}
-	err := k.bankKeeper.MintCoins(ctx, types.mageDistMacc, sdk.NewCoins(sdk.NewCoin(denom, amountToMint)))
+	err := k.bankKeeper.MintCoins(ctx, types.MageDistMacc, sdk.NewCoins(sdk.NewCoin(denom, amountToMint)))
 	if err != nil {
 		return sdk.Coin{}, err
 	}

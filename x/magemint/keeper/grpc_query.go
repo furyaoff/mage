@@ -9,7 +9,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
 
-	"github.com/furya-official/mage/x/magemint/types"
+	"github.com/furya-official/mage/x/Magemint/types"
 )
 
 var _ types.QueryServer = Keeper{}
@@ -48,7 +48,7 @@ var _ minttypes.QueryServer = MintQueryServer{}
 func (MintQueryServer) Params(
 	_ context.Context, _ *minttypes.QueryParamsRequest,
 ) (*minttypes.QueryParamsResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "x/mint has been replaced by x/magemint")
+	return nil, status.Error(codes.Unimplemented, "x/mint has been replaced by x/Magemint")
 }
 
 // Inflation returns an adjusted inflation rate.
@@ -56,7 +56,7 @@ func (MintQueryServer) Params(
 // The usual staking APY calculation takes the inflation and determines the portion of it devoted
 // to staking rewards after adjusting for the bonded ratio and x/distribution community_tax.
 // staking_apy = (inflation - community_tax) * total_supply / total_bonded
-// Staking APY is not set directly via the x/magemint staking_rewards_apy param.
+// Staking APY is not set directly via the x/Magemint staking_rewards_apy param.
 // This endpoint returns the inflation that makes the above calculation equal to the param:
 // inflation = staking_apy * total_bonded / total_supply
 // NOTE: assumes x/distribution community_tax = 0
@@ -81,5 +81,5 @@ func (mq MintQueryServer) Inflation(
 func (MintQueryServer) AnnualProvisions(
 	_ context.Context, _ *minttypes.QueryAnnualProvisionsRequest,
 ) (*minttypes.QueryAnnualProvisionsResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "x/mint has been replaced by x/magemint")
+	return nil, status.Error(codes.Unimplemented, "x/mint has been replaced by x/Magemint")
 }

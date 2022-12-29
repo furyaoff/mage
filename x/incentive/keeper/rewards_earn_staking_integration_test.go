@@ -63,7 +63,7 @@ func (suite *EarnStakingRewardsIntegrationTestSuite) SetupTest() {
 
 	stakingBuilder := testutil.NewStakingGenesisBuilder()
 
-	magemintBuilder := testutil.NewmagemintGenesisBuilder().
+	MagemintBuilder := testutil.NewMagemintGenesisBuilder().
 		WithStakingRewardsApy(sdk.MustNewDecFromStr("0.2")).
 		WithPreviousBlockTime(suite.GenesisTime)
 
@@ -73,7 +73,7 @@ func (suite *EarnStakingRewardsIntegrationTestSuite) SetupTest() {
 		savingsBuilder,
 		earnBuilder,
 		stakingBuilder,
-		magemintBuilder,
+		MagemintBuilder,
 	)
 }
 

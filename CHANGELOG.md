@@ -73,9 +73,9 @@ Ref: https://keepachangelog.com/en/1.0.0/
 
 [\#596](https://github.com/furya-official/mage/pull/596) Add REST client and CLI query to get module account information for the CDP module
 
-[\#590](https://github.com/furya-official/mage/pull/590) Add CLI query to return magedist module account balance
+[\#590](https://github.com/furya-official/mage/pull/590) Add CLI query to return Magedist module account balance
 
-[\#584](https://github.com/furya-official/mage/pulls/584) Add REST client and CLI queries for `magedist` module
+[\#584](https://github.com/furya-official/mage/pulls/584) Add REST client and CLI queries for `Magedist` module
 
 [\#578](https://github.com/furya-official/mage/pulls/578) Add v0.3 compatible REST client that supports
 

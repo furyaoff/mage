@@ -37,7 +37,7 @@ import (
 	"github.com/furya-official/mage/x/cdp"
 	"github.com/furya-official/mage/x/committee"
 	"github.com/furya-official/mage/x/incentive"
-	"github.com/furya-official/mage/x/magedist"
+	"github.com/furya-official/mage/x/Magedist"
 	"github.com/furya-official/mage/x/pricefeed"
 	"github.com/furya-official/mage/x/swap"
 	validatorvesting "github.com/furya-official/mage/x/validator-vesting"
@@ -184,7 +184,7 @@ func TestAppImportExport(t *testing.T) {
 		{app.keys[bep3.StoreKey], newApp.keys[bep3.StoreKey], [][]byte{}},
 		{app.keys[cdp.StoreKey], newApp.keys[cdp.StoreKey], [][]byte{}},
 		{app.keys[incentive.StoreKey], newApp.keys[incentive.StoreKey], [][]byte{}},
-		{app.keys[magedist.StoreKey], newApp.keys[magedist.StoreKey], [][]byte{}},
+		{app.keys[Magedist.StoreKey], newApp.keys[Magedist.StoreKey], [][]byte{}},
 		{app.keys[pricefeed.StoreKey], newApp.keys[pricefeed.StoreKey], [][]byte{}},
 		{app.keys[validatorvesting.StoreKey], newApp.keys[validatorvesting.StoreKey], [][]byte{}},
 		{app.keys[committee.StoreKey], newApp.keys[committee.StoreKey], [][]byte{}},

@@ -11,7 +11,7 @@ import (
 	"github.com/furya-official/mage/x/validator-vesting/types"
 )
 
-// GetQueryCmd returns the cli query commands for the magedist module
+// GetQueryCmd returns the cli query commands for the Magedist module
 func GetQueryCmd() *cobra.Command {
 	valVestingQueryCmd := &cobra.Command{
 		Use:   types.QueryPath,

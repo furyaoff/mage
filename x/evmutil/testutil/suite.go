@@ -38,7 +38,7 @@ import (
 	"github.com/furya-official/mage/app"
 	"github.com/furya-official/mage/x/evmutil/keeper"
 	"github.com/furya-official/mage/x/evmutil/types"
-	mageminttypes "github.com/furya-official/mage/x/magemint/types"
+	Mageminttypes "github.com/furya-official/mage/x/Magemint/types"
 )
 
 type Suite struct {
@@ -181,7 +181,7 @@ func (suite *Suite) Commit() {
 	suite.Ctx = suite.App.NewContext(false, header)
 }
 
-func (suite *Suite) FundAccountWithmage(addr sdk.AccAddress, coins sdk.Coins) {
+func (suite *Suite) FundAccountWithMage(addr sdk.AccAddress, coins sdk.Coins) {
 	umage := coins.AmountOf("umage")
 	if umage.IsPositive() {
 		err := suite.App.FundAccount(suite.Ctx, addr, sdk.NewCoins(sdk.NewCoin("umage", umage)))
@@ -194,7 +194,7 @@ func (suite *Suite) FundAccountWithmage(addr sdk.AccAddress, coins sdk.Coins) {
 	}
 }
 
-func (suite *Suite) FundModuleAccountWithmage(moduleName string, coins sdk.Coins) {
+func (suite *Suite) FundModuleAccountWithMage(moduleName string, coins sdk.Coins) {
 	umage := coins.AmountOf("umage")
 	if umage.IsPositive() {
 		err := suite.App.FundModuleAccount(suite.Ctx, moduleName, sdk.NewCoins(sdk.NewCoin("umage", umage)))
@@ -348,11 +348,11 @@ func (suite *Suite) SendTx(
 }
 
 func (suite *Suite) MintFeeCollector(coins sdk.Coins) {
-	err := suite.App.GetBankKeeper().MintCoins(suite.Ctx, mageminttypes.ModuleAccountName, coins)
+	err := suite.App.GetBankKeeper().MintCoins(suite.Ctx, Mageminttypes.ModuleAccountName, coins)
 	suite.Require().NoError(err)
 	err = suite.App.GetBankKeeper().SendCoinsFromModuleToModule(
 		suite.Ctx,
-		mageminttypes.ModuleAccountName,
+		Mageminttypes.ModuleAccountName,
 		authtypes.FeeCollectorName,
 		coins,
 	)

@@ -7,7 +7,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/furya-official/mage/x/magemint/types"
+	"github.com/furya-official/mage/x/Magemint/types"
 )
 
 // GetQueryCmd returns the cli query commands for the minting module.

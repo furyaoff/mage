@@ -21,8 +21,8 @@ tags:
     description: Swap module APIs
   - name: Committee
     description: Committee module APIs
-  - name: magedist
-    description: magedist module APIs
+  - name: Magedist
+    description: Magedist module APIs
   - name: Issuance
     description: Issuance module APIs
   - name: Vesting
@@ -2547,12 +2547,12 @@ paths:
                   $ref: "#/definitions/LegacySwapPoolStatsQueryResult"
         500:
           description: Server internal error
-  /magedist/parameters:
+  /Magedist/parameters:
     get:
       deprecated: true
-      summary: Get the current magedist parameter values
+      summary: Get the current Magedist parameter values
       tags:
-        - magedist
+        - Magedist
       produces:
         - application/json
       responses:
@@ -2566,7 +2566,7 @@ paths:
               periods:
                 type: array
                 items:
-                  $ref: "#/definitions/LegacymagedistPeriod"
+                  $ref: "#/definitions/LegacyMagedistPeriod"
         500:
           description: Internal Server Error
 
@@ -3466,7 +3466,7 @@ definitions:
         type: string
       value:
         type: string
-  LegacymagedistPeriod:
+  LegacyMagedistPeriod:
     type: object
     properties:
       start:

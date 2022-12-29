@@ -591,7 +591,7 @@ func (suite *grpcQueryTestSuite) TestDeposits_bmage() {
 	})
 }
 
-func (suite *grpcQueryTestSuite) TestVault_bmage_Single() {
+func (suite *grpcQueryTestSuite) TestVault_bMage_Single() {
 	vaultDenom := "bmage"
 	coinDenom := testutil.TestBmageDenoms[0]
 
@@ -634,7 +634,7 @@ func (suite *grpcQueryTestSuite) TestVault_bmage_Single() {
 	)
 }
 
-func (suite *grpcQueryTestSuite) TestVault_bmage_Aggregate() {
+func (suite *grpcQueryTestSuite) TestVault_bMage_Aggregate() {
 	vaultDenom := "bmage"
 
 	address1, derivatives1, _ := suite.createAccountWithDerivatives(testutil.TestBmageDenoms[0], sdk.NewInt(1e9))

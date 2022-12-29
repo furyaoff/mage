@@ -1,16 +1,16 @@
 syntax = "proto3";
-package mage.magedist.v1beta1;
+package mage.Magedist.v1beta1;
 
 import "cosmos/base/v1beta1/coin.proto";
 import "cosmos_proto/cosmos.proto";
 import "gogoproto/gogo.proto";
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/furya-official/mage/x/magedist/types";
+option go_package = "github.com/furya-official/mage/x/Magedist/types";
 option (gogoproto.goproto_getters_all) = false;
 option (gogoproto.goproto_stringer_all) = false;
 
-// Params governance parameters for magedist module
+// Params governance parameters for Magedist module
 message Params {
   bool active = 1;
   repeated Period periods = 3 [(gogoproto.nullable) = false];

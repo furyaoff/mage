@@ -4,7 +4,7 @@ order: 5
 
 # Parameters
 
-The magedist module has the following parameters:
+The Magedist module has the following parameters:
 
 | Key                  | Type                 | Example       | Description                                              |
 | -------------------- | -------------------- | ------------- | -------------------------------------------------------- |

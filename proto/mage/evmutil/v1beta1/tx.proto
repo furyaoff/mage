@@ -38,7 +38,7 @@ message MsgConvertERC20ToCoin {
   // mage bech32 address that will receive the converted sdk.Coin.
   string receiver = 2 [(cosmos_proto.scalar) = "cosmos.AddressString"];
   // EVM 0x hex address of the ERC20 contract.
-  string mage_erc20_address = 3 [(gogoproto.customname) = "mageERC20Address"];
+  string mage_erc20_address = 3 [(gogoproto.customname) = "MageERC20Address "];
   // ERC20 token amount to convert.
   string amount = 4 [
     (cosmos_proto.scalar) = "cosmos.Int",

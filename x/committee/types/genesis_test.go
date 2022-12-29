@@ -17,9 +17,9 @@ import (
 func TestGenesisState_Validate(t *testing.T) {
 	testTime := time.Date(1998, time.January, 1, 0, 0, 0, 0, time.UTC)
 	addresses := []sdk.AccAddress{
-		sdk.AccAddress(crypto.AddressHash([]byte("mageTest1"))),
-		sdk.AccAddress(crypto.AddressHash([]byte("mageTest2"))),
-		sdk.AccAddress(crypto.AddressHash([]byte("mageTest3"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("MageTest1"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("MageTest2"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("MageTest3"))),
 		sdk.AccAddress(crypto.AddressHash([]byte("mageTest4"))),
 		sdk.AccAddress(crypto.AddressHash([]byte("mageTest5"))),
 	}

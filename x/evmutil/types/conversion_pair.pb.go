@@ -28,7 +28,7 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 // allowed to be converted between ERC20 and sdk.Coin
 type ConversionPair struct {
 	// ERC20 address of the token on the mage EVM
-	mageERC20Address HexBytes `protobuf:"bytes,1,opt,name=mage_erc20_address,json=mageErc20Address,proto3,casttype=HexBytes" json:"mage_erc20_address,omitempty"`
+	MageERC20Address  HexBytes `protobuf:"bytes,1,opt,name=mage_erc20_address,json=mageErc20Address,proto3,casttype=HexBytes" json:"mage_erc20_address,omitempty"`
 	// Denom of the corresponding sdk.Coin
 	Denom string `protobuf:"bytes,2,opt,name=denom,proto3" json:"denom,omitempty"`
 }
@@ -120,8 +120,8 @@ func (this *ConversionPair) VerboseEqual(that interface{}) error {
 	} else if this == nil {
 		return fmt.Errorf("that is type *ConversionPair but is not nil && this == nil")
 	}
-	if !bytes.Equal(this.mageERC20Address, that1.mageERC20Address) {
-		return fmt.Errorf("mageERC20Address this(%v) Not Equal that(%v)", this.mageERC20Address, that1.mageERC20Address)
+	if !bytes.Equal(this.MageERC20Address , that1.MageERC20Address ) {
+		return fmt.Errorf("MageERC20Address  this(%v) Not Equal that(%v)", this.MageERC20Address , that1.MageERC20Address )
 	}
 	if this.Denom != that1.Denom {
 		return fmt.Errorf("Denom this(%v) Not Equal that(%v)", this.Denom, that1.Denom)
@@ -147,7 +147,7 @@ func (this *ConversionPair) Equal(that interface{}) bool {
 	} else if this == nil {
 		return false
 	}
-	if !bytes.Equal(this.mageERC20Address, that1.mageERC20Address) {
+	if !bytes.Equal(this.MageERC20Address , that1.MageERC20Address ) {
 		return false
 	}
 	if this.Denom != that1.Denom {
@@ -182,10 +182,10 @@ func (m *ConversionPair) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x12
 	}
-	if len(m.mageERC20Address) > 0 {
-		i -= len(m.mageERC20Address)
-		copy(dAtA[i:], m.mageERC20Address)
-		i = encodeVarintConversionPair(dAtA, i, uint64(len(m.mageERC20Address)))
+	if len(m.MageERC20Address ) > 0 {
+		i -= len(m.MageERC20Address )
+		copy(dAtA[i:], m.MageERC20Address )
+		i = encodeVarintConversionPair(dAtA, i, uint64(len(m.MageERC20Address )))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -209,7 +209,7 @@ func (m *ConversionPair) Size() (n int) {
 	}
 	var l int
 	_ = l
-	l = len(m.mageERC20Address)
+	l = len(m.MageERC20Address )
 	if l > 0 {
 		n += 1 + l + sovConversionPair(uint64(l))
 	}
@@ -257,7 +257,7 @@ func (m *ConversionPair) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 1:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field mageERC20Address", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field MageERC20Address ", wireType)
 			}
 			var byteLen int
 			for shift := uint(0); ; shift += 7 {
@@ -284,9 +284,9 @@ func (m *ConversionPair) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.mageERC20Address = append(m.mageERC20Address[:0], dAtA[iNdEx:postIndex]...)
-			if m.mageERC20Address == nil {
-				m.mageERC20Address = []byte{}
+			m.MageERC20Address  = append(m.MageERC20Address [:0], dAtA[iNdEx:postIndex]...)
+			if m.MageERC20Address  == nil {
+				m.MageERC20Address  = []byte{}
 			}
 			iNdEx = postIndex
 		case 2:

@@ -19,7 +19,7 @@ import (
 	"github.com/furya-official/mage/x/incentive/keeper"
 	"github.com/furya-official/mage/x/incentive/testutil"
 	"github.com/furya-official/mage/x/incentive/types"
-	magedisttypes "github.com/furya-official/mage/x/magedist/types"
+	Magedisttypes "github.com/furya-official/mage/x/Magedist/types"
 )
 
 // Test suite used for all keeper tests
@@ -341,7 +341,7 @@ func (suite *PayoutTestSuite) TestSendCoinsToPeriodicVestingAccount() {
 				tc.args.accArgs.startTime,
 			)
 			if tc.args.mintModAccountCoins {
-				authBuilder = authBuilder.WithSimpleModuleAccount(magedisttypes.ModuleName, tc.args.period.Amount)
+				authBuilder = authBuilder.WithSimpleModuleAccount(Magedisttypes.ModuleName, tc.args.period.Amount)
 			}
 
 			suite.genesisTime = tc.args.ctxTime
@@ -350,7 +350,7 @@ func (suite *PayoutTestSuite) TestSendCoinsToPeriodicVestingAccount() {
 				authBuilder.BuildMarshalled(suite.app.AppCodec()),
 			)
 
-			err := suite.keeper.SendTimeLockedCoinsToPeriodicVestingAccount(suite.ctx, magedisttypes.ModuleName, suite.addrs[0], tc.args.period.Amount, tc.args.period.Length)
+			err := suite.keeper.SendTimeLockedCoinsToPeriodicVestingAccount(suite.ctx, Magedisttypes.ModuleName, suite.addrs[0], tc.args.period.Amount, tc.args.period.Length)
 
 			if tc.errArgs.expectErr {
 				suite.Require().Error(err)
@@ -372,7 +372,7 @@ func (suite *PayoutTestSuite) TestSendCoinsToPeriodicVestingAccount() {
 func (suite *PayoutTestSuite) TestSendCoinsToBaseAccount() {
 	authBuilder := app.NewAuthBankGenesisBuilder().
 		WithSimpleAccount(suite.addrs[1], cs(c("umage", 400))).
-		WithSimpleModuleAccount(magedisttypes.ModuleName, cs(c("umage", 600)))
+		WithSimpleModuleAccount(Magedisttypes.ModuleName, cs(c("umage", 600)))
 
 	suite.genesisTime = time.Unix(100, 0)
 	suite.SetupApp()
@@ -381,7 +381,7 @@ func (suite *PayoutTestSuite) TestSendCoinsToBaseAccount() {
 	)
 
 	// send coins to base account
-	err := suite.keeper.SendTimeLockedCoinsToAccount(suite.ctx, magedisttypes.ModuleName, suite.addrs[1], cs(c("umage", 100)), 5)
+	err := suite.keeper.SendTimeLockedCoinsToAccount(suite.ctx, Magedisttypes.ModuleName, suite.addrs[1], cs(c("umage", 100)), 5)
 	suite.Require().NoError(err)
 	acc := suite.getAccount(suite.addrs[1])
 	vacc, ok := acc.(*vestingtypes.PeriodicVestingAccount)
@@ -401,7 +401,7 @@ func (suite *PayoutTestSuite) TestSendCoinsToBaseAccount() {
 
 func (suite *PayoutTestSuite) TestSendCoinsToInvalidAccount() {
 	authBuilder := app.NewAuthBankGenesisBuilder().
-		WithSimpleModuleAccount(magedisttypes.ModuleName, cs(c("umage", 600)))
+		WithSimpleModuleAccount(Magedisttypes.ModuleName, cs(c("umage", 600)))
 
 	suite.SetupApp()
 	suite.app.InitializeFromGenesisStates(
@@ -409,11 +409,11 @@ func (suite *PayoutTestSuite) TestSendCoinsToInvalidAccount() {
 	)
 
 	// No longer an empty validator vesting account, just a regular addr
-	err := suite.keeper.SendTimeLockedCoinsToAccount(suite.ctx, magedisttypes.ModuleName, suite.addrs[2], cs(c("umage", 100)), 5)
+	err := suite.keeper.SendTimeLockedCoinsToAccount(suite.ctx, Magedisttypes.ModuleName, suite.addrs[2], cs(c("umage", 100)), 5)
 	suite.Require().ErrorIs(err, types.ErrAccountNotFound)
 
 	macc := suite.getModuleAccount(cdptypes.ModuleName)
-	err = suite.keeper.SendTimeLockedCoinsToAccount(suite.ctx, magedisttypes.ModuleName, macc.GetAddress(), cs(c("umage", 100)), 5)
+	err = suite.keeper.SendTimeLockedCoinsToAccount(suite.ctx, Magedisttypes.ModuleName, macc.GetAddress(), cs(c("umage", 100)), 5)
 	suite.Require().ErrorIs(err, types.ErrInvalidAccountType)
 }
 

@@ -13,7 +13,7 @@ import (
 
 const (
 	// ModuleName name that will be used throughout the module
-	ModuleName = "magedist"
+	ModuleName = "Magedist"
 
 	// RouterKey Top level router key
 	RouterKey = ModuleName
@@ -28,7 +28,7 @@ type GenesisState struct {
 	PreviousBlockTime time.Time `json:"previous_block_time" yaml:"previous_block_time"`
 }
 
-// Params governance parameters for magedist module
+// Params governance parameters for Magedist module
 type Params struct {
 	Active  bool    `json:"active" yaml:"active"`
 	Periods Periods `json:"periods" yaml:"periods"`

@@ -139,7 +139,7 @@ type MsgConvertERC20ToCoin struct {
 	// mage bech32 address that will receive the converted sdk.Coin.
 	Receiver string `protobuf:"bytes,2,opt,name=receiver,proto3" json:"receiver,omitempty"`
 	// EVM 0x hex address of the ERC20 contract.
-	mageERC20Address string `protobuf:"bytes,3,opt,name=mage_erc20_address,json=mageErc20Address,proto3" json:"mage_erc20_address,omitempty"`
+	MageERC20Address  string `protobuf:"bytes,3,opt,name=mage_erc20_address,json=mageErc20Address,proto3" json:"mage_erc20_address,omitempty"`
 	// ERC20 token amount to convert.
 	Amount github_com_cosmos_cosmos_sdk_types.Int `protobuf:"bytes,4,opt,name=amount,proto3,customtype=github.com/cosmos/cosmos-sdk/types.Int" json:"amount"`
 }
@@ -191,9 +191,9 @@ func (m *MsgConvertERC20ToCoin) GetReceiver() string {
 	return ""
 }
 
-func (m *MsgConvertERC20ToCoin) GetmageERC20Address() string {
+func (m *MsgConvertERC20ToCoin) GetMageERC20Address () string {
 	if m != nil {
-		return m.mageERC20Address
+		return m.MageERC20Address 
 	}
 	return ""
 }
@@ -424,8 +424,8 @@ func (this *MsgConvertERC20ToCoin) VerboseEqual(that interface{}) error {
 	if this.Receiver != that1.Receiver {
 		return fmt.Errorf("Receiver this(%v) Not Equal that(%v)", this.Receiver, that1.Receiver)
 	}
-	if this.mageERC20Address != that1.mageERC20Address {
-		return fmt.Errorf("mageERC20Address this(%v) Not Equal that(%v)", this.mageERC20Address, that1.mageERC20Address)
+	if this.MageERC20Address  != that1.MageERC20Address  {
+		return fmt.Errorf("MageERC20Address  this(%v) Not Equal that(%v)", this.MageERC20Address , that1.MageERC20Address )
 	}
 	if !this.Amount.Equal(that1.Amount) {
 		return fmt.Errorf("Amount this(%v) Not Equal that(%v)", this.Amount, that1.Amount)
@@ -457,7 +457,7 @@ func (this *MsgConvertERC20ToCoin) Equal(that interface{}) bool {
 	if this.Receiver != that1.Receiver {
 		return false
 	}
-	if this.mageERC20Address != that1.mageERC20Address {
+	if this.MageERC20Address  != that1.MageERC20Address  {
 		return false
 	}
 	if !this.Amount.Equal(that1.Amount) {
@@ -736,10 +736,10 @@ func (m *MsgConvertERC20ToCoin) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	}
 	i--
 	dAtA[i] = 0x22
-	if len(m.mageERC20Address) > 0 {
-		i -= len(m.mageERC20Address)
-		copy(dAtA[i:], m.mageERC20Address)
-		i = encodeVarintTx(dAtA, i, uint64(len(m.mageERC20Address)))
+	if len(m.MageERC20Address ) > 0 {
+		i -= len(m.MageERC20Address )
+		copy(dAtA[i:], m.MageERC20Address )
+		i = encodeVarintTx(dAtA, i, uint64(len(m.MageERC20Address )))
 		i--
 		dAtA[i] = 0x1a
 	}
@@ -838,7 +838,7 @@ func (m *MsgConvertERC20ToCoin) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovTx(uint64(l))
 	}
-	l = len(m.mageERC20Address)
+	l = len(m.MageERC20Address )
 	if l > 0 {
 		n += 1 + l + sovTx(uint64(l))
 	}
@@ -1157,7 +1157,7 @@ func (m *MsgConvertERC20ToCoin) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field mageERC20Address", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field MageERC20Address ", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -1185,7 +1185,7 @@ func (m *MsgConvertERC20ToCoin) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.mageERC20Address = string(dAtA[iNdEx:postIndex])
+			m.MageERC20Address  = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
 			if wireType != 2 {

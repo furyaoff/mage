@@ -11,7 +11,7 @@ Each parameter is an APY/inflation used in conjunction with the block time to
 calculate how much MAGE to mint for what purposes. See [params](./05_params.md) for a description of each param.
 
 ```go
-// Params wraps the governance parameters for the magemint module
+// Params wraps the governance parameters for the Magemint module
 type Params struct {
 	// yearly inflation of total token supply minted to the community pool.
 	CommunityPoolInflation sdk.Dec `json:"community_pool_inflation" yaml:"community_pool_inflation"`
@@ -20,11 +20,11 @@ type Params struct {
 }
 ```
 
-`GenesisState` defines the state that must be persisted when the blockchain stops/restarts in order for normal function of the magemint module to resume.
+`GenesisState` defines the state that must be persisted when the blockchain stops/restarts in order for normal function of the Magemint module to resume.
 
 ```go
 
-// GenesisState defines the magemint module's genesis state.
+// GenesisState defines the Magemint module's genesis state.
 type GenesisState struct {
 	// params defines all the parameters of the module.
 	Params Params `json:"params" yaml:"params"`

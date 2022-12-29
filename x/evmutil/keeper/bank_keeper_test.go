@@ -106,7 +106,7 @@ func (suite *evmBankKeeperTestSuite) TestGetBalance() {
 		suite.Run(tt.name, func() {
 			suite.SetupTest()
 
-			suite.FundAccountWithmage(suite.Addrs[0], tt.startingAmount)
+			suite.FundAccountWithMage(suite.Addrs[0], tt.startingAmount)
 			coin := suite.EvmBankKeeper.GetBalance(suite.Ctx, suite.Addrs[0], "amage")
 			suite.Require().Equal(tt.expAmount, coin.Amount)
 		})
@@ -231,11 +231,11 @@ func (suite *evmBankKeeperTestSuite) TestSendCoinsFromModuleToAccount() {
 		suite.Run(tt.name, func() {
 			suite.SetupTest()
 
-			suite.FundAccountWithmage(suite.Addrs[0], tt.startingAccBal)
-			suite.FundModuleAccountWithmage(evmtypes.ModuleName, startingModuleCoins)
+			suite.FundAccountWithMage(suite.Addrs[0], tt.startingAccBal)
+			suite.FundModuleAccountWithMage(evmtypes.ModuleName, startingModuleCoins)
 
 			// fund our module with some umage to account for converting extra amage back to umage
-			suite.FundModuleAccountWithmage(types.ModuleName, sdk.NewCoins(sdk.NewInt64Coin("umage", 10)))
+			suite.FundModuleAccountWithMage(types.ModuleName, sdk.NewCoins(sdk.NewInt64Coin("umage", 10)))
 
 			err := suite.EvmBankKeeper.SendCoinsFromModuleToAccount(suite.Ctx, evmtypes.ModuleName, suite.Addrs[0], tt.sendCoins)
 			if tt.hasErr {
@@ -349,8 +349,8 @@ func (suite *evmBankKeeperTestSuite) TestSendCoinsFromAccountToModule() {
 	for _, tt := range tests {
 		suite.Run(tt.name, func() {
 			suite.SetupTest()
-			suite.FundAccountWithmage(suite.Addrs[0], startingAccCoins)
-			suite.FundModuleAccountWithmage(evmtypes.ModuleName, startingModuleCoins)
+			suite.FundAccountWithMage(suite.Addrs[0], startingAccCoins)
+			suite.FundModuleAccountWithMage(evmtypes.ModuleName, startingModuleCoins)
 
 			err := suite.EvmBankKeeper.SendCoinsFromAccountToModule(suite.Ctx, suite.Addrs[0], evmtypes.ModuleName, tt.sendCoins)
 			if tt.hasErr {
@@ -478,7 +478,7 @@ func (suite *evmBankKeeperTestSuite) TestBurnCoins() {
 				sdk.NewCoin("umage", startingUmage),
 				sdk.NewCoin("amage", tt.amageStart),
 			)
-			suite.FundModuleAccountWithmage(evmtypes.ModuleName, startingCoins)
+			suite.FundModuleAccountWithMage(evmtypes.ModuleName, startingCoins)
 
 			err := suite.EvmBankKeeper.BurnCoins(suite.Ctx, evmtypes.ModuleName, tt.burnCoins)
 			if tt.hasErr {
@@ -588,8 +588,8 @@ func (suite *evmBankKeeperTestSuite) TestMintCoins() {
 	for _, tt := range tests {
 		suite.Run(tt.name, func() {
 			suite.SetupTest()
-			suite.FundModuleAccountWithmage(types.ModuleName, sdk.NewCoins(sdk.NewInt64Coin("umage", 10)))
-			suite.FundModuleAccountWithmage(evmtypes.ModuleName, sdk.NewCoins(sdk.NewCoin("amage", tt.amageStart)))
+			suite.FundModuleAccountWithMage(types.ModuleName, sdk.NewCoins(sdk.NewInt64Coin("umage", 10)))
+			suite.FundModuleAccountWithMage(evmtypes.ModuleName, sdk.NewCoins(sdk.NewCoin("amage", tt.amageStart)))
 
 			err := suite.EvmBankKeeper.MintCoins(suite.Ctx, evmtypes.ModuleName, tt.mintCoins)
 			if tt.hasErr {
@@ -680,17 +680,17 @@ func (suite *evmBankKeeperTestSuite) TestConvertOneUmageToAmageIfNeeded() {
 		suite.Run(tt.name, func() {
 			suite.SetupTest()
 
-			suite.FundAccountWithmage(suite.Addrs[0], tt.startingCoins)
+			suite.FundAccountWithMage(suite.Addrs[0], tt.startingCoins)
 			err := suite.EvmBankKeeper.ConvertOneUmageToAmageIfNeeded(suite.Ctx, suite.Addrs[0], amageNeeded)
-			modulemage := suite.BankKeeper.GetBalance(suite.Ctx, suite.AccountKeeper.GetModuleAddress(types.ModuleName), "umage")
+			moduleMage := suite.BankKeeper.GetBalance(suite.Ctx, suite.AccountKeeper.GetModuleAddress(types.ModuleName), "umage")
 			if tt.success {
 				suite.Require().NoError(err)
 				if tt.startingCoins.AmountOf("amage").LT(amageNeeded) {
-					suite.Require().Equal(sdk.OneInt(), modulemage.Amount)
+					suite.Require().Equal(sdk.OneInt(), moduleMage.Amount)
 				}
 			} else {
 				suite.Require().Error(err)
-				suite.Require().Equal(sdk.ZeroInt(), modulemage.Amount)
+				suite.Require().Equal(sdk.ZeroInt(), moduleMage.Amount)
 			}
 
 			amage := suite.Keeper.GetBalance(suite.Ctx, suite.Addrs[0])
@@ -729,7 +729,7 @@ func (suite *evmBankKeeperTestSuite) TestConvertAmageToUmage() {
 
 			err := suite.App.FundModuleAccount(suite.Ctx, types.ModuleName, sdk.NewCoins(sdk.NewInt64Coin("umage", 10)))
 			suite.Require().NoError(err)
-			suite.FundAccountWithmage(suite.Addrs[0], tt.startingCoins)
+			suite.FundAccountWithMage(suite.Addrs[0], tt.startingCoins)
 			err = suite.EvmBankKeeper.ConvertAmageToUmage(suite.Ctx, suite.Addrs[0])
 			suite.Require().NoError(err)
 			amage := suite.Keeper.GetBalance(suite.Ctx, suite.Addrs[0])

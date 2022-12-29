@@ -12,7 +12,7 @@ import (
 	"github.com/furya-official/mage/app"
 	"github.com/furya-official/mage/x/incentive/testutil"
 	"github.com/furya-official/mage/x/incentive/types"
-	magedisttypes "github.com/furya-official/mage/x/magedist/types"
+	Magedisttypes "github.com/furya-official/mage/x/Magedist/types"
 )
 
 const secondsPerDay = 24 * 60 * 60
@@ -65,10 +65,10 @@ func (suite *HandlerTestSuite) SetupWithGenState(builders ...testutil.GenesisBui
 	)
 }
 
-// authBuilder returns a new auth genesis builder with a full magedist module account.
+// authBuilder returns a new auth genesis builder with a full Magedist module account.
 func (suite *HandlerTestSuite) authBuilder() *app.AuthBankGenesisBuilder {
 	return app.NewAuthBankGenesisBuilder().
-		WithSimpleModuleAccount(magedisttypes.ModuleName, cs(c(types.USDXMintingRewardDenom, 1e18), c("hard", 1e18), c("swap", 1e18)))
+		WithSimpleModuleAccount(Magedisttypes.ModuleName, cs(c(types.USDXMintingRewardDenom, 1e18), c("hard", 1e18), c("swap", 1e18)))
 }
 
 // incentiveBuilder returns a new incentive genesis builder with a genesis time and multipliers set

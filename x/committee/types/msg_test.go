@@ -20,7 +20,7 @@ func MustNewMsgSubmitProposal(pubProposal PubProposal, proposer sdk.AccAddress, 
 }
 
 func TestMsgSubmitProposal_ValidateBasic(t *testing.T) {
-	addr := sdk.AccAddress(crypto.AddressHash([]byte("mageTest1")))
+	addr := sdk.AccAddress(crypto.AddressHash([]byte("MageTest1")))
 	tests := []struct {
 		name       string
 		msg        *MsgSubmitProposal
@@ -57,7 +57,7 @@ func TestMsgSubmitProposal_ValidateBasic(t *testing.T) {
 }
 
 func TestMsgVote_ValidateBasic(t *testing.T) {
-	addr := sdk.AccAddress(crypto.AddressHash([]byte("mageTest1")))
+	addr := sdk.AccAddress(crypto.AddressHash([]byte("MageTest1")))
 	tests := []struct {
 		name       string
 		msg        MsgVote

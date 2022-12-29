@@ -4,8 +4,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	communitytypes "github.com/furya-official/mage/x/community/types"
-	"github.com/furya-official/mage/x/magedist/keeper"
-	"github.com/furya-official/mage/x/magedist/types"
+	"github.com/furya-official/mage/x/Magedist/keeper"
+	"github.com/furya-official/mage/x/Magedist/types"
 )
 
 func (suite *keeperTestSuite) TestHandleCommunityPoolMultiSpendProposal() {

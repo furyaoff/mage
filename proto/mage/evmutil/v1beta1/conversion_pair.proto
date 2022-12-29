@@ -14,7 +14,7 @@ message ConversionPair {
 
   // ERC20 address of the token on the mage EVM
   bytes mage_erc20_address = 1 [
-    (gogoproto.customname) = "mageERC20Address",
+    (gogoproto.customname) = "MageERC20Address ",
     (gogoproto.casttype) = "HexBytes"
   ];
 

@@ -394,42 +394,42 @@
   
     - [Msg](#mage.issuance.v1beta1.Msg)
   
-- [furya-official/magemagedist/v1beta1/params.proto](#furya-official/magemagedist/v1beta1/params.proto)
-    - [CoreReward](#mage.magedist.v1beta1.CoreReward)
-    - [InfrastructureParams](#mage.magedist.v1beta1.InfrastructureParams)
-    - [Params](#mage.magedist.v1beta1.Params)
-    - [PartnerReward](#mage.magedist.v1beta1.PartnerReward)
-    - [Period](#mage.magedist.v1beta1.Period)
+- [furya-official/mageMagedist/v1beta1/params.proto](#furya-official/mageMagedist/v1beta1/params.proto)
+    - [CoreReward](#mage.Magedist.v1beta1.CoreReward)
+    - [InfrastructureParams](#mage.Magedist.v1beta1.InfrastructureParams)
+    - [Params](#mage.Magedist.v1beta1.Params)
+    - [PartnerReward](#mage.Magedist.v1beta1.PartnerReward)
+    - [Period](#mage.Magedist.v1beta1.Period)
   
-- [furya-official/magemagedist/v1beta1/genesis.proto](#furya-official/magemagedist/v1beta1/genesis.proto)
-    - [GenesisState](#mage.magedist.v1beta1.GenesisState)
+- [furya-official/mageMagedist/v1beta1/genesis.proto](#furya-official/mageMagedist/v1beta1/genesis.proto)
+    - [GenesisState](#mage.Magedist.v1beta1.GenesisState)
   
-- [furya-official/magemagedist/v1beta1/proposal.proto](#furya-official/magemagedist/v1beta1/proposal.proto)
-    - [CommunityPoolMultiSpendProposal](#mage.magedist.v1beta1.CommunityPoolMultiSpendProposal)
-    - [CommunityPoolMultiSpendProposalJSON](#mage.magedist.v1beta1.CommunityPoolMultiSpendProposalJSON)
-    - [MultiSpendRecipient](#mage.magedist.v1beta1.MultiSpendRecipient)
+- [furya-official/mageMagedist/v1beta1/proposal.proto](#furya-official/mageMagedist/v1beta1/proposal.proto)
+    - [CommunityPoolMultiSpendProposal](#mage.Magedist.v1beta1.CommunityPoolMultiSpendProposal)
+    - [CommunityPoolMultiSpendProposalJSON](#mage.Magedist.v1beta1.CommunityPoolMultiSpendProposalJSON)
+    - [MultiSpendRecipient](#mage.Magedist.v1beta1.MultiSpendRecipient)
   
-- [furya-official/magemagedist/v1beta1/query.proto](#furya-official/magemagedist/v1beta1/query.proto)
-    - [QueryBalanceRequest](#mage.magedist.v1beta1.QueryBalanceRequest)
-    - [QueryBalanceResponse](#mage.magedist.v1beta1.QueryBalanceResponse)
-    - [QueryParamsRequest](#mage.magedist.v1beta1.QueryParamsRequest)
-    - [QueryParamsResponse](#mage.magedist.v1beta1.QueryParamsResponse)
+- [furya-official/mageMagedist/v1beta1/query.proto](#furya-official/mageMagedist/v1beta1/query.proto)
+    - [QueryBalanceRequest](#mage.Magedist.v1beta1.QueryBalanceRequest)
+    - [QueryBalanceResponse](#mage.Magedist.v1beta1.QueryBalanceResponse)
+    - [QueryParamsRequest](#mage.Magedist.v1beta1.QueryParamsRequest)
+    - [QueryParamsResponse](#mage.Magedist.v1beta1.QueryParamsResponse)
   
-    - [Query](#mage.magedist.v1beta1.Query)
+    - [Query](#mage.Magedist.v1beta1.Query)
   
-- [furya-official/magemagemint/v1beta1/magemint.proto](#furya-official/magemagemint/v1beta1/magemint.proto)
-    - [Params](#mage.magemint.v1beta1.Params)
+- [furya-official/mageMagemint/v1beta1/Magemint.proto](#furya-official/mageMagemint/v1beta1/Magemint.proto)
+    - [Params](#mage.Magemint.v1beta1.Params)
   
-- [furya-official/magemagemint/v1beta1/genesis.proto](#furya-official/magemagemint/v1beta1/genesis.proto)
-    - [GenesisState](#mage.magemint.v1beta1.GenesisState)
+- [furya-official/mageMagemint/v1beta1/genesis.proto](#furya-official/mageMagemint/v1beta1/genesis.proto)
+    - [GenesisState](#mage.Magemint.v1beta1.GenesisState)
   
-- [furya-official/magemagemint/v1beta1/query.proto](#furya-official/magemagemint/v1beta1/query.proto)
-    - [QueryInflationRequest](#mage.magemint.v1beta1.QueryInflationRequest)
-    - [QueryInflationResponse](#mage.magemint.v1beta1.QueryInflationResponse)
-    - [QueryParamsRequest](#mage.magemint.v1beta1.QueryParamsRequest)
-    - [QueryParamsResponse](#mage.magemint.v1beta1.QueryParamsResponse)
+- [furya-official/mageMagemint/v1beta1/query.proto](#furya-official/mageMagemint/v1beta1/query.proto)
+    - [QueryInflationRequest](#mage.Magemint.v1beta1.QueryInflationRequest)
+    - [QueryInflationResponse](#mage.Magemint.v1beta1.QueryInflationResponse)
+    - [QueryParamsRequest](#mage.Magemint.v1beta1.QueryParamsRequest)
+    - [QueryParamsResponse](#mage.Magemint.v1beta1.QueryParamsResponse)
   
-    - [Query](#mage.magemint.v1beta1.Query)
+    - [Query](#mage.Magemint.v1beta1.Query)
   
 - [furya-official/mageliquid/v1beta1/query.proto](#furya-official/mageliquid/v1beta1/query.proto)
     - [QueryDelegatedBalanceRequest](#mage.liquid.v1beta1.QueryDelegatedBalanceRequest)
@@ -5573,14 +5573,14 @@ Msg defines the issuance Msg service.
 
 
 
-<a name="furya-official/magemagedist/v1beta1/params.proto"></a>
+<a name="furya-official/mageMagedist/v1beta1/params.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## furya-official/magemagedist/v1beta1/params.proto
+## furya-official/mageMagedist/v1beta1/params.proto
 
 
 
-<a name="mage.magedist.v1beta1.CoreReward"></a>
+<a name="mage.Magedist.v1beta1.CoreReward"></a>
 
 ### CoreReward
 CoreReward defines the reward weights for core infrastructure providers.
@@ -5596,7 +5596,7 @@ CoreReward defines the reward weights for core infrastructure providers.
 
 
 
-<a name="mage.magedist.v1beta1.InfrastructureParams"></a>
+<a name="mage.Magedist.v1beta1.InfrastructureParams"></a>
 
 ### InfrastructureParams
 InfrastructureParams define the parameters for infrastructure rewards.
@@ -5604,33 +5604,33 @@ InfrastructureParams define the parameters for infrastructure rewards.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `infrastructure_periods` | [Period](#mage.magedist.v1beta1.Period) | repeated |  |
-| `core_rewards` | [CoreReward](#mage.magedist.v1beta1.CoreReward) | repeated |  |
-| `partner_rewards` | [PartnerReward](#mage.magedist.v1beta1.PartnerReward) | repeated |  |
+| `infrastructure_periods` | [Period](#mage.Magedist.v1beta1.Period) | repeated |  |
+| `core_rewards` | [CoreReward](#mage.Magedist.v1beta1.CoreReward) | repeated |  |
+| `partner_rewards` | [PartnerReward](#mage.Magedist.v1beta1.PartnerReward) | repeated |  |
 
 
 
 
 
 
-<a name="mage.magedist.v1beta1.Params"></a>
+<a name="mage.Magedist.v1beta1.Params"></a>
 
 ### Params
-Params governance parameters for magedist module
+Params governance parameters for Magedist module
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | `active` | [bool](#bool) |  |  |
-| `periods` | [Period](#mage.magedist.v1beta1.Period) | repeated |  |
-| `infrastructure_params` | [InfrastructureParams](#mage.magedist.v1beta1.InfrastructureParams) |  |  |
+| `periods` | [Period](#mage.Magedist.v1beta1.Period) | repeated |  |
+| `infrastructure_params` | [InfrastructureParams](#mage.Magedist.v1beta1.InfrastructureParams) |  |  |
 
 
 
 
 
 
-<a name="mage.magedist.v1beta1.PartnerReward"></a>
+<a name="mage.Magedist.v1beta1.PartnerReward"></a>
 
 ### PartnerReward
 PartnerRewards defines the reward schedule for partner infrastructure providers.
@@ -5646,7 +5646,7 @@ PartnerRewards defines the reward schedule for partner infrastructure providers.
 
 
 
-<a name="mage.magedist.v1beta1.Period"></a>
+<a name="mage.Magedist.v1beta1.Period"></a>
 
 ### Period
 Period stores the specified start and end dates, and the inflation, expressed as a decimal
@@ -5673,22 +5673,22 @@ representing the yearly APR of MAGE tokens that will be minted during that perio
 
 
 
-<a name="furya-official/magemagedist/v1beta1/genesis.proto"></a>
+<a name="furya-official/mageMagedist/v1beta1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## furya-official/magemagedist/v1beta1/genesis.proto
+## furya-official/mageMagedist/v1beta1/genesis.proto
 
 
 
-<a name="mage.magedist.v1beta1.GenesisState"></a>
+<a name="mage.Magedist.v1beta1.GenesisState"></a>
 
 ### GenesisState
-GenesisState defines the magedist module's genesis state.
+GenesisState defines the Magedist module's genesis state.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#mage.magedist.v1beta1.Params) |  |  |
+| `params` | [Params](#mage.Magedist.v1beta1.Params) |  |  |
 | `previous_block_time` | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
 
 
@@ -5705,14 +5705,14 @@ GenesisState defines the magedist module's genesis state.
 
 
 
-<a name="furya-official/magemagedist/v1beta1/proposal.proto"></a>
+<a name="furya-official/mageMagedist/v1beta1/proposal.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## furya-official/magemagedist/v1beta1/proposal.proto
+## furya-official/mageMagedist/v1beta1/proposal.proto
 
 
 
-<a name="mage.magedist.v1beta1.CommunityPoolMultiSpendProposal"></a>
+<a name="mage.Magedist.v1beta1.CommunityPoolMultiSpendProposal"></a>
 
 ### CommunityPoolMultiSpendProposal
 CommunityPoolMultiSpendProposal spends from the community pool by sending to one or more
@@ -5723,14 +5723,14 @@ addresses
 | ----- | ---- | ----- | ----------- |
 | `title` | [string](#string) |  |  |
 | `description` | [string](#string) |  |  |
-| `recipient_list` | [MultiSpendRecipient](#mage.magedist.v1beta1.MultiSpendRecipient) | repeated |  |
+| `recipient_list` | [MultiSpendRecipient](#mage.Magedist.v1beta1.MultiSpendRecipient) | repeated |  |
 
 
 
 
 
 
-<a name="mage.magedist.v1beta1.CommunityPoolMultiSpendProposalJSON"></a>
+<a name="mage.Magedist.v1beta1.CommunityPoolMultiSpendProposalJSON"></a>
 
 ### CommunityPoolMultiSpendProposalJSON
 CommunityPoolMultiSpendProposalJSON defines a CommunityPoolMultiSpendProposal with a deposit
@@ -5740,7 +5740,7 @@ CommunityPoolMultiSpendProposalJSON defines a CommunityPoolMultiSpendProposal wi
 | ----- | ---- | ----- | ----------- |
 | `title` | [string](#string) |  |  |
 | `description` | [string](#string) |  |  |
-| `recipient_list` | [MultiSpendRecipient](#mage.magedist.v1beta1.MultiSpendRecipient) | repeated |  |
+| `recipient_list` | [MultiSpendRecipient](#mage.Magedist.v1beta1.MultiSpendRecipient) | repeated |  |
 | `deposit` | [cosmos.base.v1beta1.Coin](#cosmos.base.v1beta1.Coin) | repeated |  |
 
 
@@ -5748,7 +5748,7 @@ CommunityPoolMultiSpendProposalJSON defines a CommunityPoolMultiSpendProposal wi
 
 
 
-<a name="mage.magedist.v1beta1.MultiSpendRecipient"></a>
+<a name="mage.Magedist.v1beta1.MultiSpendRecipient"></a>
 
 ### MultiSpendRecipient
 MultiSpendRecipient defines a recipient and the amount of coins they are receiving
@@ -5773,27 +5773,27 @@ MultiSpendRecipient defines a recipient and the amount of coins they are receivi
 
 
 
-<a name="furya-official/magemagedist/v1beta1/query.proto"></a>
+<a name="furya-official/mageMagedist/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## furya-official/magemagedist/v1beta1/query.proto
+## furya-official/mageMagedist/v1beta1/query.proto
 
 
 
-<a name="mage.magedist.v1beta1.QueryBalanceRequest"></a>
+<a name="mage.Magedist.v1beta1.QueryBalanceRequest"></a>
 
 ### QueryBalanceRequest
-QueryBalanceRequest defines the request type for querying x/magedist balance.
+QueryBalanceRequest defines the request type for querying x/Magedist balance.
 
 
 
 
 
 
-<a name="mage.magedist.v1beta1.QueryBalanceResponse"></a>
+<a name="mage.Magedist.v1beta1.QueryBalanceResponse"></a>
 
 ### QueryBalanceResponse
-QueryBalanceResponse defines the response type for querying x/magedist balance.
+QueryBalanceResponse defines the response type for querying x/Magedist balance.
 
 
 | Field | Type | Label | Description |
@@ -5805,25 +5805,25 @@ QueryBalanceResponse defines the response type for querying x/magedist balance.
 
 
 
-<a name="mage.magedist.v1beta1.QueryParamsRequest"></a>
+<a name="mage.Magedist.v1beta1.QueryParamsRequest"></a>
 
 ### QueryParamsRequest
-QueryParamsRequest defines the request type for querying x/magedist parameters.
+QueryParamsRequest defines the request type for querying x/Magedist parameters.
 
 
 
 
 
 
-<a name="mage.magedist.v1beta1.QueryParamsResponse"></a>
+<a name="mage.Magedist.v1beta1.QueryParamsResponse"></a>
 
 ### QueryParamsResponse
-QueryParamsResponse defines the response type for querying x/magedist parameters.
+QueryParamsResponse defines the response type for querying x/Magedist parameters.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#mage.magedist.v1beta1.Params) |  |  |
+| `params` | [Params](#mage.Magedist.v1beta1.Params) |  |  |
 
 
 
@@ -5836,31 +5836,31 @@ QueryParamsResponse defines the response type for querying x/magedist parameters
  <!-- end HasExtensions -->
 
 
-<a name="mage.magedist.v1beta1.Query"></a>
+<a name="mage.Magedist.v1beta1.Query"></a>
 
 ### Query
 Query defines the gRPC querier service.
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#mage.magedist.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.magedist.v1beta1.QueryParamsResponse) | Params queries the parameters of x/magedist module. | GET|/furya-official/magemagedist/v1beta1/parameters|
-| `Balance` | [QueryBalanceRequest](#mage.magedist.v1beta1.QueryBalanceRequest) | [QueryBalanceResponse](#mage.magedist.v1beta1.QueryBalanceResponse) | Balance queries the balance of all coins of x/magedist module. | GET|/furya-official/magemagedist/v1beta1/balance|
+| `Params` | [QueryParamsRequest](#mage.Magedist.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.Magedist.v1beta1.QueryParamsResponse) | Params queries the parameters of x/Magedist module. | GET|/furya-official/mageMagedist/v1beta1/parameters|
+| `Balance` | [QueryBalanceRequest](#mage.Magedist.v1beta1.QueryBalanceRequest) | [QueryBalanceResponse](#mage.Magedist.v1beta1.QueryBalanceResponse) | Balance queries the balance of all coins of x/Magedist module. | GET|/furya-official/mageMagedist/v1beta1/balance|
 
  <!-- end services -->
 
 
 
-<a name="furya-official/magemagemint/v1beta1/magemint.proto"></a>
+<a name="furya-official/mageMagemint/v1beta1/Magemint.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## furya-official/magemagemint/v1beta1/magemint.proto
+## furya-official/mageMagemint/v1beta1/Magemint.proto
 
 
 
-<a name="mage.magemint.v1beta1.Params"></a>
+<a name="mage.Magemint.v1beta1.Params"></a>
 
 ### Params
-Params wraps the governance parameters for the magemint module
+Params wraps the governance parameters for the Magemint module
 
 
 | Field | Type | Label | Description |
@@ -5882,22 +5882,22 @@ Params wraps the governance parameters for the magemint module
 
 
 
-<a name="furya-official/magemagemint/v1beta1/genesis.proto"></a>
+<a name="furya-official/mageMagemint/v1beta1/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## furya-official/magemagemint/v1beta1/genesis.proto
+## furya-official/mageMagemint/v1beta1/genesis.proto
 
 
 
-<a name="mage.magemint.v1beta1.GenesisState"></a>
+<a name="mage.Magemint.v1beta1.GenesisState"></a>
 
 ### GenesisState
-GenesisState defines the magemint module's genesis state.
+GenesisState defines the Magemint module's genesis state.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#mage.magemint.v1beta1.Params) |  | Params defines all the parameters of the module. |
+| `params` | [Params](#mage.Magemint.v1beta1.Params) |  | Params defines all the parameters of the module. |
 | `previous_block_time` | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | PreviousBlockTime holds the last last time tokens were minted. On first block, tokens will be minted for total number of seconds passed since this time. |
 
 
@@ -5914,14 +5914,14 @@ GenesisState defines the magemint module's genesis state.
 
 
 
-<a name="furya-official/magemagemint/v1beta1/query.proto"></a>
+<a name="furya-official/mageMagemint/v1beta1/query.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## furya-official/magemagemint/v1beta1/query.proto
+## furya-official/mageMagemint/v1beta1/query.proto
 
 
 
-<a name="mage.magemint.v1beta1.QueryInflationRequest"></a>
+<a name="mage.Magemint.v1beta1.QueryInflationRequest"></a>
 
 ### QueryInflationRequest
 QueryInflationRequest is the request type for the Query/Inflation RPC method.
@@ -5931,7 +5931,7 @@ QueryInflationRequest is the request type for the Query/Inflation RPC method.
 
 
 
-<a name="mage.magemint.v1beta1.QueryInflationResponse"></a>
+<a name="mage.Magemint.v1beta1.QueryInflationResponse"></a>
 
 ### QueryInflationResponse
 QueryInflationResponse is the response type for the Query/Inflation RPC method.
@@ -5946,25 +5946,25 @@ QueryInflationResponse is the response type for the Query/Inflation RPC method.
 
 
 
-<a name="mage.magemint.v1beta1.QueryParamsRequest"></a>
+<a name="mage.Magemint.v1beta1.QueryParamsRequest"></a>
 
 ### QueryParamsRequest
-QueryParamsRequest defines the request type for querying x/magemint parameters.
+QueryParamsRequest defines the request type for querying x/Magemint parameters.
 
 
 
 
 
 
-<a name="mage.magemint.v1beta1.QueryParamsResponse"></a>
+<a name="mage.Magemint.v1beta1.QueryParamsResponse"></a>
 
 ### QueryParamsResponse
-QueryParamsResponse defines the response type for querying x/magemint parameters.
+QueryParamsResponse defines the response type for querying x/Magemint parameters.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#mage.magemint.v1beta1.Params) |  |  |
+| `params` | [Params](#mage.Magemint.v1beta1.Params) |  |  |
 
 
 
@@ -5977,15 +5977,15 @@ QueryParamsResponse defines the response type for querying x/magemint parameters
  <!-- end HasExtensions -->
 
 
-<a name="mage.magemint.v1beta1.Query"></a>
+<a name="mage.Magemint.v1beta1.Query"></a>
 
 ### Query
-Query defines the gRPC querier service for magemint.
+Query defines the gRPC querier service for Magemint.
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#mage.magemint.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.magemint.v1beta1.QueryParamsResponse) | Params queries the parameters of x/magemint module. | GET|/furya-official/magemagemint/v1beta1/params|
-| `Inflation` | [QueryInflationRequest](#mage.magemint.v1beta1.QueryInflationRequest) | [QueryInflationResponse](#mage.magemint.v1beta1.QueryInflationResponse) | Inflation queries x/magemint for the overall cumulative inflation rate of MAGE. | GET|/furya-official/magemagemint/v1beta1/inflation|
+| `Params` | [QueryParamsRequest](#mage.Magemint.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#mage.Magemint.v1beta1.QueryParamsResponse) | Params queries the parameters of x/Magemint module. | GET|/furya-official/mageMagemint/v1beta1/params|
+| `Inflation` | [QueryInflationRequest](#mage.Magemint.v1beta1.QueryInflationRequest) | [QueryInflationResponse](#mage.Magemint.v1beta1.QueryInflationResponse) | Inflation queries x/Magemint for the overall cumulative inflation rate of MAGE. | GET|/furya-official/mageMagemint/v1beta1/inflation|
 
  <!-- end services -->
 

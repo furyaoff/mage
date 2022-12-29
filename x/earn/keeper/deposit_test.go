@@ -168,7 +168,7 @@ func (suite *depositTestSuite) TestDeposit_PrivateVault() {
 	suite.Require().NoError(err, "private vault should allow deposits from allowed addresses")
 }
 
-func (suite *depositTestSuite) TestDeposit_bmage() {
+func (suite *depositTestSuite) TestDeposit_bMage() {
 	vaultDenom := "bmage"
 	coinDenom := testutil.TestBmageDenoms[0]
 

@@ -1,4 +1,4 @@
-package magemint_test
+package Magemint_test
 
 import (
 	"testing"
@@ -8,7 +8,7 @@ import (
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
 	"github.com/furya-official/mage/app"
-	"github.com/furya-official/mage/x/magemint/types"
+	"github.com/furya-official/mage/x/Magemint/types"
 )
 
 func TestmageMintModuleAccountWithPermissionsOnAppInit(t *testing.T) {

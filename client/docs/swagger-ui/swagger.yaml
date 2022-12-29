@@ -10728,10 +10728,10 @@ paths:
                       format: byte
       tags:
         - Issuance
-  /furya-official/magemagedist/v1beta1/balance:
+  /furya-official/mageMagedist/v1beta1/balance:
     get:
-      summary: Balance queries the balance of all coins of x/magedist module.
-      operationId: magedistBalance
+      summary: Balance queries the balance of all coins of x/Magedist module.
+      operationId: MagedistBalance
       responses:
         '200':
           description: A successful response.
@@ -10757,7 +10757,7 @@ paths:
                     signatures required by gogoproto.
             description: >-
               QueryBalanceResponse defines the response type for querying
-              x/magedist balance.
+              x/Magedist balance.
         default:
           description: An unexpected error response.
           schema:
@@ -10781,11 +10781,11 @@ paths:
                       type: string
                       format: byte
       tags:
-        - magedist
-  /furya-official/magemagedist/v1beta1/parameters:
+        - Magedist
+  /furya-official/mageMagedist/v1beta1/parameters:
     get:
-      summary: Params queries the parameters of x/magedist module.
-      operationId: magedistParams
+      summary: Params queries the parameters of x/Magedist module.
+      operationId: MagedistParams
       responses:
         '200':
           description: A successful response.
@@ -10889,10 +10889,10 @@ paths:
                     description: >-
                       InfrastructureParams define the parameters for
                       infrastructure rewards.
-                title: Params governance parameters for magedist module
+                title: Params governance parameters for Magedist module
             description: >-
               QueryParamsResponse defines the response type for querying
-              x/magedist parameters.
+              x/Magedist parameters.
         default:
           description: An unexpected error response.
           schema:
@@ -10916,7 +10916,7 @@ paths:
                       type: string
                       format: byte
       tags:
-        - magedist
+        - Magedist
   /furya-official/mageliquid/v1beta1/delegated_balance/{delegator}:
     get:
       summary: >-
@@ -12033,12 +12033,12 @@ paths:
                       format: byte
       tags:
         - Savings
-  /furya-official/magemagemint/v1beta1/inflation:
+  /furya-official/mageMagemint/v1beta1/inflation:
     get:
       summary: >-
-        Inflation queries x/magemint for the overall cumulative inflation rate
+        Inflation queries x/Magemint for the overall cumulative inflation rate
         of MAGE.
-      operationId: magemintInflation
+      operationId: MagemintInflation
       responses:
         '200':
           description: A successful response.
@@ -12076,11 +12076,11 @@ paths:
                       type: string
                       format: byte
       tags:
-        - magemint
-  /furya-official/magemagemint/v1beta1/params:
+        - Magemint
+  /furya-official/mageMagemint/v1beta1/params:
     get:
-      summary: Params queries the parameters of x/magemint module.
-      operationId: magemintParams
+      summary: Params queries the parameters of x/Magemint module.
+      operationId: MagemintParams
       responses:
         '200':
           description: A successful response.
@@ -12100,10 +12100,10 @@ paths:
                     description: >-
                       yearly inflation of bonded tokens minted for staking
                       rewards to validators.
-                title: Params wraps the governance parameters for the magemint module
+                title: Params wraps the governance parameters for the Magemint module
             description: >-
               QueryParamsResponse defines the response type for querying
-              x/magemint parameters.
+              x/Magemint parameters.
         default:
           description: An unexpected error response.
           schema:
@@ -12127,7 +12127,7 @@ paths:
                       type: string
                       format: byte
       tags:
-        - magemint
+        - Magemint
   /node_info:
     get:
       description: Information about the connected node
@@ -51591,12 +51591,12 @@ paths:
                   $ref: '#/definitions/LegacySwapPoolStatsQueryResult'
         '500':
           description: Server internal error
-  /magedist/parameters:
+  /Magedist/parameters:
     get:
       deprecated: true
-      summary: Get the current magedist parameter values
+      summary: Get the current Magedist parameter values
       tags:
-        - magedist
+        - Magedist
       produces:
         - application/json
       responses:
@@ -56815,7 +56815,7 @@ definitions:
       time_period:
         type: string
     title: RateLimit parameters for rate-limiting the supply of an issued asset
-  mage.magedist.v1beta1.CoreReward:
+  mage.Magedist.v1beta1.CoreReward:
     type: object
     properties:
       address:
@@ -56824,7 +56824,7 @@ definitions:
       weight:
         type: string
     description: CoreReward defines the reward weights for core infrastructure providers.
-  mage.magedist.v1beta1.InfrastructureParams:
+  mage.Magedist.v1beta1.InfrastructureParams:
     type: object
     properties:
       infrastructure_periods:
@@ -56890,7 +56890,7 @@ definitions:
             PartnerRewards defines the reward schedule for partner
             infrastructure providers.
     description: InfrastructureParams define the parameters for infrastructure rewards.
-  mage.magedist.v1beta1.Params:
+  mage.Magedist.v1beta1.Params:
     type: object
     properties:
       active:
@@ -56984,8 +56984,8 @@ definitions:
                 PartnerRewards defines the reward schedule for partner
                 infrastructure providers.
         description: InfrastructureParams define the parameters for infrastructure rewards.
-    title: Params governance parameters for magedist module
-  mage.magedist.v1beta1.PartnerReward:
+    title: Params governance parameters for Magedist module
+  mage.Magedist.v1beta1.PartnerReward:
     type: object
     properties:
       address:
@@ -57006,7 +57006,7 @@ definitions:
     description: >-
       PartnerRewards defines the reward schedule for partner infrastructure
       providers.
-  mage.magedist.v1beta1.Period:
+  mage.Magedist.v1beta1.Period:
     type: object
     properties:
       start:
@@ -57027,7 +57027,7 @@ definitions:
 
       representing the yearly APR of MAGE tokens that will be minted during that
       period
-  mage.magedist.v1beta1.QueryBalanceResponse:
+  mage.Magedist.v1beta1.QueryBalanceResponse:
     type: object
     properties:
       coins:
@@ -57045,9 +57045,9 @@ definitions:
             NOTE: The amount field is an Int which implements the custom method
             signatures required by gogoproto.
     description: >-
-      QueryBalanceResponse defines the response type for querying x/magedist
+      QueryBalanceResponse defines the response type for querying x/Magedist
       balance.
-  mage.magedist.v1beta1.QueryParamsResponse:
+  mage.Magedist.v1beta1.QueryParamsResponse:
     type: object
     properties:
       params:
@@ -57146,9 +57146,9 @@ definitions:
             description: >-
               InfrastructureParams define the parameters for infrastructure
               rewards.
-        title: Params governance parameters for magedist module
+        title: Params governance parameters for Magedist module
     description: >-
-      QueryParamsResponse defines the response type for querying x/magedist
+      QueryParamsResponse defines the response type for querying x/Magedist
       parameters.
   mage.liquid.v1beta1.QueryDelegatedBalanceResponse:
     type: object
@@ -57766,7 +57766,7 @@ definitions:
     description: >-
       TotalSupplyResponse defines the response type for the Query/TotalSupply
       method.
-  mage.magemint.v1beta1.Params:
+  mage.Magemint.v1beta1.Params:
     type: object
     properties:
       community_pool_inflation:
@@ -57777,8 +57777,8 @@ definitions:
         description: >-
           yearly inflation of bonded tokens minted for staking rewards to
           validators.
-    title: Params wraps the governance parameters for the magemint module
-  mage.magemint.v1beta1.QueryInflationResponse:
+    title: Params wraps the governance parameters for the Magemint module
+  mage.Magemint.v1beta1.QueryInflationResponse:
     type: object
     properties:
       inflation:
@@ -57789,7 +57789,7 @@ definitions:
     description: >-
       QueryInflationResponse is the response type for the Query/Inflation RPC
       method.
-  mage.magemint.v1beta1.QueryParamsResponse:
+  mage.Magemint.v1beta1.QueryParamsResponse:
     type: object
     properties:
       params:
@@ -57805,9 +57805,9 @@ definitions:
             description: >-
               yearly inflation of bonded tokens minted for staking rewards to
               validators.
-        title: Params wraps the governance parameters for the magemint module
+        title: Params wraps the governance parameters for the Magemint module
     description: >-
-      QueryParamsResponse defines the response type for querying x/magemint
+      QueryParamsResponse defines the response type for querying x/Magemint
       parameters.
   CheckTxResult:
     type: object
@@ -79832,7 +79832,7 @@ definitions:
         type: string
       value:
         type: string
-  LegacymagedistPeriod:
+  LegacyMagedistPeriod:
     type: object
     properties:
       start:

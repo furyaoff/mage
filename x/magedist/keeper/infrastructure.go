@@ -6,7 +6,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/furya-official/mage/x/magedist/types"
+	"github.com/furya-official/mage/x/Magedist/types"
 )
 
 func (k Keeper) mintInfrastructurePeriods(ctx sdk.Context, periods types.Periods, previousBlockTime time.Time) (sdk.Coin, sdk.Int, error) {

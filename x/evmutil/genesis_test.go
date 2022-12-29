@@ -39,7 +39,7 @@ func (s *genesisTestSuite) TestInitGenesis_SetAccounts() {
 func (s *genesisTestSuite) TestInitGenesis_SetParams() {
 	params := types.DefaultParams()
 	conversionPair := types.ConversionPair{
-		mageERC20Address: testutil.MustNewInternalEVMAddressFromString("0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2").Bytes(),
+		MageERC20Address : testutil.MustNewInternalEVMAddressFromString("0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2").Bytes(),
 		Denom:            "weth",
 	}
 	params.EnabledConversionPairs = []types.ConversionPair{conversionPair}
@@ -76,7 +76,7 @@ func (s *genesisTestSuite) TestExportGenesis() {
 	params := types.DefaultParams()
 	params.EnabledConversionPairs = []types.ConversionPair{
 		{
-			mageERC20Address: testutil.MustNewInternalEVMAddressFromString("0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2").Bytes(),
+			MageERC20Address : testutil.MustNewInternalEVMAddressFromString("0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2").Bytes(),
 			Denom:            "weth"},
 	}
 	s.Keeper.SetParams(s.Ctx, params)

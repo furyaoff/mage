@@ -181,7 +181,7 @@ func (suite *MsgServerSuite) TestConvertERC20ToCoin() {
 			types.MsgConvertERC20ToCoin{
 				Initiator:        "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc",
 				Receiver:         invokerCosmosAddr.String(),
-				mageERC20Address: contractAddr.String(),
+				MageERC20Address : contractAddr.String(),
 				Amount:           sdk.NewInt(10_000),
 			},
 			math.MaxBig256,

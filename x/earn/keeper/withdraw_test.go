@@ -242,7 +242,7 @@ func (suite *withdrawTestSuite) TestWithdraw_Partial() {
 	)
 }
 
-func (suite *withdrawTestSuite) TestWithdraw_bmage() {
+func (suite *withdrawTestSuite) TestWithdraw_bMage() {
 	vaultDenom := "bmage"
 	coinDenom := testutil.TestBmageDenoms[0]
 

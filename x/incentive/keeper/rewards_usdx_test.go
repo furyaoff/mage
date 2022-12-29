@@ -15,7 +15,7 @@ import (
 	"github.com/furya-official/mage/x/incentive/keeper"
 	"github.com/furya-official/mage/x/incentive/testutil"
 	"github.com/furya-official/mage/x/incentive/types"
-	magedisttypes "github.com/furya-official/mage/x/magedist/types"
+	Magedisttypes "github.com/furya-official/mage/x/Magedist/types"
 )
 
 type USDXIntegrationTests struct {
@@ -51,7 +51,7 @@ func (suite *USDXIntegrationTests) TestSingleUserAccumulatesRewardsAfterSyncing(
 	userA := suite.addrs[0]
 
 	authBulder := app.NewAuthBankGenesisBuilder().
-		WithSimpleModuleAccount(magedisttypes.ModuleName, cs(c(types.USDXMintingRewardDenom, 1e18))). // Fill magedist with enough coins to pay out any reward
+		WithSimpleModuleAccount(Magedisttypes.ModuleName, cs(c(types.USDXMintingRewardDenom, 1e18))). // Fill Magedist with enough coins to pay out any reward
 		WithSimpleAccount(userA, cs(c("bnb", 1e12)))                                                  // give the user some coins
 
 	incentBuilder := testutil.NewIncentiveGenesisBuilder().
@@ -107,7 +107,7 @@ func (suite *USDXIntegrationTests) TestSingleUserAccumulatesRewardsWithoutSyncin
 	initialCollateral := c("bnb", 1e9)
 
 	authBuilder := app.NewAuthBankGenesisBuilder().
-		WithSimpleModuleAccount(magedisttypes.ModuleName, cs(c(types.USDXMintingRewardDenom, 1e18))). // Fill magedist with enough coins to pay out any reward
+		WithSimpleModuleAccount(Magedisttypes.ModuleName, cs(c(types.USDXMintingRewardDenom, 1e18))). // Fill Magedist with enough coins to pay out any reward
 		WithSimpleAccount(user, cs(initialCollateral))
 
 	collateralType := "bnb-a"
@@ -154,7 +154,7 @@ func (suite *USDXIntegrationTests) TestReinstatingRewardParamsDoesNotTriggerOver
 	userB := suite.addrs[1]
 
 	authBuilder := app.NewAuthBankGenesisBuilder().
-		WithSimpleModuleAccount(magedisttypes.ModuleName, cs(c(types.USDXMintingRewardDenom, 1e18))). // Fill magedist with enough coins to pay out any reward
+		WithSimpleModuleAccount(Magedisttypes.ModuleName, cs(c(types.USDXMintingRewardDenom, 1e18))). // Fill Magedist with enough coins to pay out any reward
 		WithSimpleAccount(userA, cs(c("bnb", 1e10))).
 		WithSimpleAccount(userB, cs(c("bnb", 1e10)))
 

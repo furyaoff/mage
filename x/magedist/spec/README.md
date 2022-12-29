@@ -1,11 +1,11 @@
 <!--
 order: 0
-title: "magedist Overview"
+title: "Magedist Overview"
 parent:
-  title: "magedist"
+  title: "Magedist"
 -->
 
-# `magedist`
+# `Magedist`
 
 <!-- TOC -->
 1. **[Concepts](01_concepts.md)**
@@ -17,4 +17,4 @@ parent:
 
 ## Abstract
 
-`x/magedist` is an implementation of a Cosmos SDK Module that allows for governance controlled minting of coins into a module account. Coins are minted during inflationary periods, for which each period has a governance specified APR and duration. Additionally, coin rewards for governance specified infrastructure partners are minted and distributed.
+`x/Magedist` is an implementation of a Cosmos SDK Module that allows for governance controlled minting of coins into a module account. Coins are minted during inflationary periods, for which each period has a governance specified APR and duration. Additionally, coin rewards for governance specified infrastructure partners are minted and distributed.
