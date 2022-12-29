@@ -2,7 +2,7 @@ package types
 
 const (
 	// ModuleName name that will be used throughout the module
-	ModuleName = "Magedist"
+	ModuleName = "magedist"
 
 	// StoreKey Top level store key where all module items will be stored
 	StoreKey = ModuleName
