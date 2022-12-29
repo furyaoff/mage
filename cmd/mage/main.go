@@ -7,7 +7,7 @@ import (
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 
 	"github.com/furya-official/mage/app"
-	"github.com/furya-official/mage/cmd/mage"
+	"github.com/furya-official/mage/cmd/mage/cmd"
 )
 
 func main() {
