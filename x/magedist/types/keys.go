@@ -17,7 +17,7 @@ const (
 	DefaultParamspace = ModuleName
 
 	//.MageDistMacc module account for Magedist
-.MageDistMacc = ModuleName
+	MageDistMacc = ModuleName
 
 	// Treasury
 	FundModuleAccount = "mage-fund"
