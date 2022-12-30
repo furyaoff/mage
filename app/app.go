@@ -28,9 +28,11 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/authz"
 	authzkeeper "github.com/cosmos/cosmos-sdk/x/authz/keeper"
 	authzmodule "github.com/cosmos/cosmos-sdk/x/authz/module"
-	"github.com/cosmos/cosmos-sdk/x/bank"
-	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
+	// "github.com/cosmos/cosmos-sdk/x/bank"
+	// bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
+	"github.com/terra-money/alliance/custom/bank"
+    bankkeeper "github.com/terra-money/alliance/custom/bank/keeper"
 	"github.com/cosmos/cosmos-sdk/x/capability"
 	capabilitykeeper "github.com/cosmos/cosmos-sdk/x/capability/keeper"
 	capabilitytypes "github.com/cosmos/cosmos-sdk/x/capability/types"
@@ -148,6 +150,11 @@ import (
 	swaptypes "github.com/furya-official/mage/x/swap/types"
 	validatorvesting "github.com/furya-official/mage/x/validator-vesting"
 	validatorvestingtypes "github.com/furya-official/mage/x/validator-vesting/types"
+	
+	alliancemodule "github.com/terra-money/alliance/x/alliance"
+	alliancemoduleclient "github.com/terra-money/alliance/x/alliance/client"
+	alliancemodulekeeper "github.com/terra-money/alliance/x/alliance/keeper"
+	alliancemoduletypes "github.com/terra-money/alliance/x/alliance/types"
 )
 
 const (
@@ -180,6 +187,9 @@ var (
 			earnclient.WithdrawProposalHandler,
 			communityclient.LendDepositProposalHandler,
 			communityclient.LendWithdrawProposalHandler,
+			alliancemoduleclient.CreateAllianceProposalHandler,
+			alliancemoduleclient.UpdateAllianceProposalHandler,
+			alliancemoduleclient.DeleteAllianceProposalHandler,
 		),
 		params.AppModuleBasic{},
 		crisis.AppModuleBasic{},
@@ -210,6 +220,7 @@ var (
 		router.AppModuleBasic{},
 		Magemint.AppModuleBasic{},
 		community.AppModuleBasic{},
+		alliancemodule.AppModuleBasic{},
 	)
 
 	// module account permissions
@@ -238,6 +249,8 @@ var (
 		Magedisttypes.FundModuleAccount: nil,
 		Mageminttypes.ModuleAccountName: {authtypes.Minter},
 		communitytypes.ModuleName:       nil,
+		alliancemoduletypes.ModuleName:      {authtypes.Minter, authtypes.Burner},
+		alliancemoduletypes.RewardsPoolName: nil,
 	}
 )
 
@@ -314,7 +327,10 @@ type App struct {
 	// make scoped keepers public for test purposes
 	ScopedIBCKeeper      capabilitykeeper.ScopedKeeper
 	ScopedTransferKeeper capabilitykeeper.ScopedKeeper
-
+	
+	// this line is used by starport scaffolding # stargate/app/keeperDeclaration
+	AllianceKeeper alliancemodulekeeper.Keeper
+	
 	// the module manager
 	mm *module.Manager
 
@@ -363,7 +379,8 @@ func NewApp(
 		issuancetypes.StoreKey, bep3types.StoreKey, pricefeedtypes.StoreKey,
 		swaptypes.StoreKey, cdptypes.StoreKey, hardtypes.StoreKey,
 		committeetypes.StoreKey, incentivetypes.StoreKey, evmutiltypes.StoreKey,
-		savingstypes.StoreKey, earntypes.StoreKey, Mageminttypes.StoreKey,
+		savingstypes.StoreKey, earntypes.StoreKey, Mageminttypes.StoreKey, 
+		alliancemoduletypes.StoreKey,
 	)
 	tkeys := sdk.NewTransientStoreKeys(paramstypes.TStoreKey, evmtypes.TransientKey)
 	memKeys := sdk.NewMemoryStoreKeys(capabilitytypes.MemStoreKey)
@@ -440,6 +457,7 @@ func NewApp(
 		app.bankKeeper,
 		stakingSubspace,
 	)
+	
 	app.authzKeeper = authzkeeper.NewKeeper(
 		keys[authzkeeper.StoreKey],
 		appCodec,
@@ -661,6 +679,17 @@ func NewApp(
 		app.liquidKeeper,
 		&app.stakingKeeper,
 	)
+	
+	app.AllianceKeeper = alliancemodulekeeper.NewKeeper(
+    	appCodec,
+    	keys[alliancemoduletypes.StoreKey],
+	    app.GetSubspace(alliancemoduletypes.ModuleName),
+    	app.AccountKeeper,
+	    app.BankKeeper,
+    	&app.StakingKeeper,
+	    app.DistrKeeper,
+    
+	)
 
 	// create committee keeper with router
 	committeeGovRouter := govtypes.NewRouter()
@@ -679,12 +708,24 @@ func NewApp(
 		app.accountKeeper,
 		app.bankKeeper,
 	)
+	
+	app.AllianceKeeper = alliancemodulekeeper.NewKeeper(
+	    appCodec,
+    	keys[alliancemoduletypes.StoreKey],
+	    app.GetSubspace(alliancemoduletypes.ModuleName),
+    	app.AccountKeeper,
+	    app.BankKeeper,
+    	&stakingKeeper,
+	    app.DistrKeeper,
+	)
+	app.BankKeeper.RegisterKeepers(app.AllianceKeeper, &stakingKeeper)
+
 
 	// register the staking hooks
 	// NOTE: These keepers are passed by reference above, so they will contain these hooks.
 	app.stakingKeeper = *(app.stakingKeeper.SetHooks(
-		stakingtypes.NewMultiStakingHooks(app.distrKeeper.Hooks(), app.slashingKeeper.Hooks(), app.incentiveKeeper.Hooks())))
-
+		stakingtypes.NewMultiStakingHooks(app.distrKeeper.Hooks(), app.slashingKeeper.Hooks(), app.incentiveKeeper.Hooks, app.AllianceKeeper.StakingHooks())))
+	
 	app.swapKeeper = *swapKeeper.SetHooks(app.incentiveKeeper.Hooks())
 	app.cdpKeeper = *cdpKeeper.SetHooks(cdptypes.NewMultiCDPHooks(app.incentiveKeeper.Hooks()))
 	app.hardKeeper = *hardKeeper.SetHooks(hardtypes.NewMultiHARDHooks(app.incentiveKeeper.Hooks()))
@@ -703,7 +744,9 @@ func NewApp(
 		AddRoute(Magedisttypes.RouterKey, Magedist.NewCommunityPoolMultiSpendProposalHandler(app.MagedistKeeper)).
 		AddRoute(earntypes.RouterKey, earn.NewCommunityPoolProposalHandler(app.earnKeeper)).
 		AddRoute(communitytypes.RouterKey, community.NewCommunityPoolProposalHandler(app.communityKeeper)).
-		AddRoute(committeetypes.RouterKey, committee.NewProposalHandler(app.committeeKeeper))
+		AddRoute(committeetypes.RouterKey, committee.NewProposalHandler(app.committeeKeeper)).
+		AddRoute(alliancemoduletypes.RouterKey, alliancemodule.NewAllianceProposalHandler(app.AllianceKeeper))
+
 	app.govKeeper = govkeeper.NewKeeper(
 		appCodec,
 		keys[govtypes.StoreKey],
@@ -760,6 +803,8 @@ func NewApp(
 		router.NewAppModule(app.routerKeeper),
 		Magemint.NewAppModule(appCodec, app.MagemintKeeper, app.accountKeeper),
 		community.NewAppModule(app.communityKeeper, app.accountKeeper),
+		alliancemodule.NewAppModule(appCodec, app.AllianceKeeper, app.StakingKeeper, app.AccountKeeper, app.BankKeeper, app.interfaceRegistry),
+
 	)
 
 	// Warning: Some begin blockers must run before others. Ensure the dependencies are understood before modifying this list.
@@ -811,6 +856,8 @@ func NewApp(
 		liquidtypes.ModuleName,
 		earntypes.ModuleName,
 		routertypes.ModuleName,
+		alliancemoduletypes.ModuleName,
+
 	)
 
 	// Warning: Some end blockers must run before others. Ensure the dependencies are understood before modifying this list.
@@ -853,6 +900,8 @@ func NewApp(
 		routertypes.ModuleName,
 		Mageminttypes.ModuleName,
 		communitytypes.ModuleName,
+		alliancemoduletypes.ModuleName,
+
 	)
 
 	// Warning: Some init genesis methods must run before others. Ensure the dependencies are understood before modifying this list
@@ -894,8 +943,32 @@ func NewApp(
 		validatorvestingtypes.ModuleName,
 		liquidtypes.ModuleName,
 		routertypes.ModuleName,
-	)
+	    alliancemoduletypes.ModuleName,
 
+	)
+	
+	govProposalHandlers = append(govProposalHandlers,
+
+    ...
+
+    ibcclientclient.UpgradeProposalHandler,
+
+    alliancemoduleclient.CreateAllianceProposalHandler,
+
+    alliancemoduleclient.UpdateAllianceProposalHandler,
+
+    alliancemoduleclient.DeleteAllianceProposalHandler,
+
+)
+	func (app *App) BlockedModuleAccountAddrs() map[string]bool {
+
+    ...
+
+    delete(modAccAddrs, authtypes.NewModuleAddress(alliancemoduletypes.ModuleName).String())
+
+    return modAccAddrs
+
+}
 	app.mm.RegisterInvariants(&app.crisisKeeper)
 	app.mm.RegisterRoutes(app.Router(), app.QueryRouter(), encodingConfig.Amino)
 
@@ -911,7 +984,9 @@ func NewApp(
 	// NOTE: This is not required for apps that don't use the simulator for fuzz testing
 	// transactions.
 	// TODO
-	// app.sm = module.NewSimulationManager(
+	app.sm = module.NewSimulationManager(
+		alliancemodule.NewAppModule(appCodec, app.AllianceKeeper, app.StakingKeeper, app.AccountKeeper, app.BankKeeper, app.interfaceRegistry),
+
 	// 	auth.NewAppModule(app.accountKeeper),
 	// 	bank.NewAppModule(app.bankKeeper, app.accountKeeper),
 	// 	gov.NewAppModule(app.govKeeper, app.accountKeeper, app.accountKeeper, app.bankKeeper),
@@ -920,14 +995,24 @@ func NewApp(
 	//  staking.NewAppModule(app.stakingKeeper, app.accountKeeper, app.accountKeeper, app.bankKeeper),
 	//  evm.NewAppModule(app.evmKeeper, app.accountKeeper),
 	// 	slashing.NewAppModule(app.slashingKeeper, app.accountKeeper, app.stakingKeeper),
-	// )
+	)
 	// app.sm.RegisterStoreDecoders()
 
 	// initialize stores
 	app.MountKVStores(keys)
 	app.MountTransientStores(tkeys)
 	app.MountMemoryStores(memKeys)
+	
+	func initParamsKeeper(appCodec codec.BinaryCodec, legacyAmino *codec.LegacyAmino, key, tkey storetypes.StoreKey) paramskeeper.Keeper {
 
+    ...
+
+    paramsKeeper.Subspace(alliancemoduletypes.ModuleName)
+
+    return paramsKeeper
+
+}
+	
 	// initialize the app
 	var fetchers []ante.AddressFetcher
 	if options.MempoolEnableAuth {
