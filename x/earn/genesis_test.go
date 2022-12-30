@@ -43,9 +43,9 @@ func (suite *genesisTestSuite) Test_InitGenesis_ValidationPanic() {
 }
 
 func (suite *genesisTestSuite) Test_InitAndExportGenesis() {
-	depositor_1, err := sdk.AccAddressFromBech32("Mage1esagqd83rhqdtpy5sxhklaxgn58k2m3s3mnpea")
+	depositor_1, err := sdk.AccAddressFromBech32("mage1esagqd83rhqdtpy5sxhklaxgn58k2m3s3mnpea")
 	suite.Require().NoError(err)
-	depositor_2, err := sdk.AccAddressFromBech32("Mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
+	depositor_2, err := sdk.AccAddressFromBech32("mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
 	suite.Require().NoError(err)
 
 	// slices are sorted by key as stored in the data store, so init and export can be compared with equal
@@ -111,9 +111,9 @@ func (suite *genesisTestSuite) Test_InitAndExportGenesis() {
 }
 
 func (suite *genesisTestSuite) Test_Marshall() {
-	depositor_1, err := sdk.AccAddressFromBech32("Mage1esagqd83rhqdtpy5sxhklaxgn58k2m3s3mnpea")
+	depositor_1, err := sdk.AccAddressFromBech32("mage1esagqd83rhqdtpy5sxhklaxgn58k2m3s3mnpea")
 	suite.Require().NoError(err)
-	depositor_2, err := sdk.AccAddressFromBech32("Mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
+	depositor_2, err := sdk.AccAddressFromBech32("mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
 	suite.Require().NoError(err)
 
 	// slices are sorted by key as stored in the data store, so init and export can be compared with equal

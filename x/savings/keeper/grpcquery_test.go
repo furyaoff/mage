@@ -22,8 +22,8 @@ import (
 var dep = types.NewDeposit
 
 const (
-	bMage1 = "bMage-Magevaloper15gqc744d05xacn4n6w2furuads9fu4pqn6zxlu"
-	bMage2 = "bMage-Magevaloper15qdefkmwswysgg4qxgqpqr35k3m49pkx8yhpte"
+	bmage1 = "bmage-magevaloper15gqc744d05xacn4n6w2furuads9fu4pqn6zxlu"
+	bmage2 = "bmage-magevaloper15qdefkmwswysgg4qxgqpqr35k3m49pkx8yhpte"
 )
 
 type grpcQueryTestSuite struct {
@@ -58,7 +58,7 @@ func (suite *grpcQueryTestSuite) SetupTest() {
 	suite.Require().NoError(err)
 
 	savingsGenesis := types.GenesisState{
-		Params: types.NewParams([]string{"bnb", "busd", bMage1, bMage2}),
+		Params: types.NewParams([]string{"bnb", "busd", bmage1, bmage2}),
 	}
 	savingsGenState := app.GenesisState{types.ModuleName: suite.tApp.AppCodec().MustMarshalJSON(&savingsGenesis)}
 
@@ -81,7 +81,7 @@ func (suite *grpcQueryTestSuite) TestGrpcQueryParams() {
 
 	var expected types.GenesisState
 	savingsGenesis := types.GenesisState{
-		Params: types.NewParams([]string{"bnb", "busd", bMage1, bMage2}),
+		Params: types.NewParams([]string{"bnb", "busd", bmage1, bmage2}),
 	}
 	savingsGenState := app.GenesisState{types.ModuleName: suite.tApp.AppCodec().MustMarshalJSON(&savingsGenesis)}
 	suite.tApp.AppCodec().MustUnmarshalJSON(savingsGenState[types.ModuleName], &expected)
@@ -229,11 +229,11 @@ func (suite *grpcQueryTestSuite) TestGrpcQueryTotalSupply() {
 		})
 	}
 
-	suite.Run("aggregates bMage denoms, accounting for slashing", func() {
+	suite.Run("aggregates bmage denoms, accounting for slashing", func() {
 		suite.SetupTest()
 
-		address1, derivatives1, _ := suite.createAccountWithDerivatives(bMage1, sdk.NewInt(1e9))
-		address2, derivatives2, _ := suite.createAccountWithDerivatives(bMage2, sdk.NewInt(1e9))
+		address1, derivatives1, _ := suite.createAccountWithDerivatives(bmage1, sdk.NewInt(1e9))
+		address2, derivatives2, _ := suite.createAccountWithDerivatives(bmage2, sdk.NewInt(1e9))
 
 		// bond validators
 		staking.EndBlocker(suite.ctx, suite.tApp.GetStakingKeeper())
@@ -250,7 +250,7 @@ func (suite *grpcQueryTestSuite) TestGrpcQueryTotalSupply() {
 
 		expectedSupply := sdk.NewCoins(
 			sdk.NewCoin(
-				"bMage",
+				"bmage",
 				sdk.NewIntFromUint64(1e9). // derivative 1
 								Add(sdk.NewInt(1e9).MulRaw(80).QuoRaw(100))), // derivative 2: original value * 80%
 		)

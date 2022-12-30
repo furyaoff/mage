@@ -11,7 +11,7 @@ import (
 	"github.com/furya-official/mage/x/Magemint/types"
 )
 
-func TestMageMintModuleAccountWithPermissionsOnAppInit(t *testing.T) {
+func TestmageMintModuleAccountWithPermissionsOnAppInit(t *testing.T) {
 	tApp := app.NewTestApp()
 	ctx := tApp.NewContext(true, tmproto.Header{Height: 1})
 	tApp.InitializeFromGenesisStates()

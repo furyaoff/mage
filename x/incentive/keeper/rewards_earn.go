@@ -17,8 +17,8 @@ import (
 // AccumulateEarnRewards calculates new rewards to distribute this block and updates the global indexes to reflect this.
 // The provided rewardPeriod must be valid to avoid panics in calculating time durations.
 func (k Keeper) AccumulateEarnRewards(ctx sdk.Context, rewardPeriod types.MultiRewardPeriod) error {
-	if rewardPeriod.CollateralType == "bMage" {
-		return k.accumulateEarnBMageRewards(ctx, rewardPeriod)
+	if rewardPeriod.CollateralType == "bmage" {
+		return k.accumulateEarnBmageRewards(ctx, rewardPeriod)
 	}
 
 	k.accumulateEarnRewards(
@@ -34,25 +34,25 @@ func (k Keeper) AccumulateEarnRewards(ctx sdk.Context, rewardPeriod types.MultiR
 
 func GetProportionalRewardsPerSecond(
 	rewardPeriod types.MultiRewardPeriod,
-	totalBMageSupply sdk.Int,
-	singleBMageSupply sdk.Int,
+	totalBmageSupply sdk.Int,
+	singleBmageSupply sdk.Int,
 ) sdk.DecCoins {
-	// Rate per bMage-xxx = rewardsPerSecond * % of bMage-xxx
-	//                    = rewardsPerSecond * (bMage-xxx / total bMage)
-	//                    = (rewardsPerSecond * bMage-xxx) / total bMage
+	// Rate per bmage-xxx = rewardsPerSecond * % of bmage-xxx
+	//                    = rewardsPerSecond * (bmage-xxx / total bmage)
+	//                    = (rewardsPerSecond * bmage-xxx) / total bmage
 
 	newRate := sdk.NewDecCoins()
 
 	// Prevent division by zero, if there are no total shares then there are no
 	// rewards.
-	if totalBMageSupply.IsZero() {
+	if totalBmageSupply.IsZero() {
 		return newRate
 	}
 
 	for _, rewardCoin := range rewardPeriod.RewardsPerSecond {
 		scaledAmount := rewardCoin.Amount.ToDec().
-			Mul(singleBMageSupply.ToDec()).
-			Quo(totalBMageSupply.ToDec())
+			Mul(singleBmageSupply.ToDec()).
+			Quo(totalBmageSupply.ToDec())
 
 		newRate = newRate.Add(sdk.NewDecCoinFromDec(rewardCoin.Denom, scaledAmount))
 	}
@@ -60,61 +60,61 @@ func GetProportionalRewardsPerSecond(
 	return newRate
 }
 
-// accumulateEarnBMageRewards does the same as AccumulateEarnRewards but for
-// *all* bMage vaults.
-func (k Keeper) accumulateEarnBMageRewards(ctx sdk.Context, rewardPeriod types.MultiRewardPeriod) error {
-	// All bMage vault denoms
-	bMageVaultsDenoms := make(map[string]bool)
+// accumulateEarnBmageRewards does the same as AccumulateEarnRewards but for
+// *all* bmage vaults.
+func (k Keeper) accumulateEarnBmageRewards(ctx sdk.Context, rewardPeriod types.MultiRewardPeriod) error {
+	// All bmage vault denoms
+	bmageVaultsDenoms := make(map[string]bool)
 
-	// bMage vault denoms from earn records (non-empty vaults)
+	// bmage vault denoms from earn records (non-empty vaults)
 	k.earnKeeper.IterateVaultRecords(ctx, func(record earntypes.VaultRecord) (stop bool) {
 		if k.liquidKeeper.IsDerivativeDenom(ctx, record.TotalShares.Denom) {
-			bMageVaultsDenoms[record.TotalShares.Denom] = true
+			bmageVaultsDenoms[record.TotalShares.Denom] = true
 		}
 
 		return false
 	})
 
-	// bMage vault denoms from past incentive indexes, may include vaults
+	// bmage vault denoms from past incentive indexes, may include vaults
 	// that were fully withdrawn.
 	k.IterateEarnRewardIndexes(ctx, func(vaultDenom string, indexes types.RewardIndexes) (stop bool) {
 		if k.liquidKeeper.IsDerivativeDenom(ctx, vaultDenom) {
-			bMageVaultsDenoms[vaultDenom] = true
+			bmageVaultsDenoms[vaultDenom] = true
 		}
 
 		return false
 	})
 
-	totalBMageValue, err := k.liquidKeeper.GetTotalDerivativeValue(ctx)
+	totalBmageValue, err := k.liquidKeeper.GetTotalDerivativeValue(ctx)
 	if err != nil {
 		return err
 	}
 
 	i := 0
-	sortedBMageVaultsDenoms := make([]string, len(bMageVaultsDenoms))
-	for vaultDenom := range bMageVaultsDenoms {
-		sortedBMageVaultsDenoms[i] = vaultDenom
+	sortedBmageVaultsDenoms := make([]string, len(bmageVaultsDenoms))
+	for vaultDenom := range bmageVaultsDenoms {
+		sortedBmageVaultsDenoms[i] = vaultDenom
 		i++
 	}
 
 	// Sort the vault denoms to ensure deterministic iteration order.
-	sort.Strings(sortedBMageVaultsDenoms)
+	sort.Strings(sortedBmageVaultsDenoms)
 
-	// Accumulate rewards for each bMage vault.
-	for _, bMageDenom := range sortedBMageVaultsDenoms {
-		derivativeValue, err := k.liquidKeeper.GetDerivativeValue(ctx, bMageDenom)
+	// Accumulate rewards for each bmage vault.
+	for _, bmageDenom := range sortedBmageVaultsDenoms {
+		derivativeValue, err := k.liquidKeeper.GetDerivativeValue(ctx, bmageDenom)
 		if err != nil {
 			return err
 		}
 
-		k.accumulateBMageEarnRewards(
+		k.accumulateBmageEarnRewards(
 			ctx,
-			bMageDenom,
+			bmageDenom,
 			rewardPeriod.Start,
 			rewardPeriod.End,
 			GetProportionalRewardsPerSecond(
 				rewardPeriod,
-				totalBMageValue.Amount,
+				totalBmageValue.Amount,
 				derivativeValue.Amount,
 			),
 		)
@@ -123,7 +123,7 @@ func (k Keeper) accumulateEarnBMageRewards(ctx sdk.Context, rewardPeriod types.M
 	return nil
 }
 
-func (k Keeper) accumulateBMageEarnRewards(
+func (k Keeper) accumulateBmageEarnRewards(
 	ctx sdk.Context,
 	collateralType string,
 	periodStart time.Time,

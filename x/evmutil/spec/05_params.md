@@ -14,7 +14,7 @@ Example parameters for `ConversionPair`:
 
 | Key                | Type   | Example                                      | Description                        |
 | ------------------ | ------ | -------------------------------------------- | ---------------------------------- |
-| Mage_erc20_Address | string | "0x43d8814fdfb9b8854422df13f1c66e34e4fa91fd" | ERC20 contract address             |
+| mage_erc20_Address | string | "0x43d8814fdfb9b8854422df13f1c66e34e4fa91fd" | ERC20 contract address             |
 | denom              | string | "erc20/chain/usdc"                           | sdk.Coin denom for the ERC20 token |
 
 ## EnabledConversionPairs

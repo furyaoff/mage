@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Mage - Legacy REST and gRPC Gateway docs",
+    "title": "mage - Legacy REST and gRPC Gateway docs",
     "description": "A REST interface for state queries",
     "version": "1.0.0"
   },

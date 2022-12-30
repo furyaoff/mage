@@ -41,7 +41,7 @@ type liquidationTracker struct {
 
 func (suite *SeizeTestSuite) SetupTest() {
 	tApp := app.NewTestApp()
-	ctx := tApp.NewContext(true, tmproto.Header{Height: 1, Time: tmtime.Now(), ChainID: "Magetest_1-1"})
+	ctx := tApp.NewContext(true, tmproto.Header{Height: 1, Time: tmtime.Now(), ChainID: "magetest_1-1"})
 	tracker := liquidationTracker{}
 	coins := cs(c("btc", 100000000), c("xrp", 10000000000))
 	_, addrs := app.GeneratePrivKeyAddressPairs(100)
@@ -247,7 +247,7 @@ func (suite *SeizeTestSuite) TestKeeperLiquidation() {
 	layout := "2006-01-02T15:04:05.000Z"
 	endTimeStr := "9000-01-01T00:00:00.000Z"
 	endTime, _ := time.Parse(layout, endTimeStr)
-	addr, _ := sdk.AccAddressFromBech32("Mage1ze7y9qwdddejmy7jlw4cymqqlt2wh05yhwmrv2")
+	addr, _ := sdk.AccAddressFromBech32("mage1ze7y9qwdddejmy7jlw4cymqqlt2wh05yhwmrv2")
 
 	testCases := []test{
 		{
@@ -445,7 +445,7 @@ func (suite *SeizeTestSuite) TestBeginBlockerLiquidation() {
 	layout := "2006-01-02T15:04:05.000Z"
 	endTimeStr := "9000-01-01T00:00:00.000Z"
 	endTime, _ := time.Parse(layout, endTimeStr)
-	addr, _ := sdk.AccAddressFromBech32("Mage1ze7y9qwdddejmy7jlw4cymqqlt2wh05yhwmrv2")
+	addr, _ := sdk.AccAddressFromBech32("mage1ze7y9qwdddejmy7jlw4cymqqlt2wh05yhwmrv2")
 
 	testCases := []test{
 		{

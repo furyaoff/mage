@@ -1,4 +1,4 @@
 all:
-	docker build --tag furya-official/mageMagenode Magenode
+	docker build --tag furya-official/magemagenode magenode
 
 .PHONY: all

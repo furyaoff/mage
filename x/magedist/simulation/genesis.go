@@ -10,7 +10,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	"github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/furya-official/mage/x/Magedist/types"
+	"github.com/furya-official/mage/x/magedist/types"
 )
 
 // SecondsPerYear is the number of seconds in a year

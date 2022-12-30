@@ -5,7 +5,7 @@ package keeper_test
 // 	abci "github.com/tendermint/tendermint/abci/types"
 
 // 	"github.com/furya-official/mage/x/Magedist/keeper"
-// 	"github.com/furya-official/mage/x/Magedist/types"
+// 	"github.com/furya-official/mage/x/magedist/types"
 // )
 
 // func (suite *KeeperTestSuite) TestQuerierGetParams() {

@@ -24,7 +24,7 @@ func makeTestCodec() (cdc *codec.Codec) {
 
 func TestDecodeDistributionStore(t *testing.T) {
 	cdc := makeTestCodec()
-	addr, _ := sdk.AccAddressFromBech32("Mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw")
+	addr, _ := sdk.AccAddressFromBech32("mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw")
 	claim := types.NewUSDXMintingClaim(addr, sdk.NewCoin("umage", sdk.NewInt(1000000)), types.RewardIndexes{types.NewRewardIndex("bnb-a", sdk.ZeroDec())})
 	prevBlockTime := time.Now().Add(time.Hour * -1).UTC()
 	factor := sdk.ZeroDec()

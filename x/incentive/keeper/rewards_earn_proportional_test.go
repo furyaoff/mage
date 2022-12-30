@@ -14,8 +14,8 @@ func TestGetProportionalRewardPeriod(t *testing.T) {
 	tests := []struct {
 		name                  string
 		giveRewardPeriod      types.MultiRewardPeriod
-		giveTotalBMageSupply  sdk.Int
-		giveSingleBMageSupply sdk.Int
+		giveTotalBmageSupply  sdk.Int
+		giveSingleBmageSupply sdk.Int
 		wantRewardsPerSecond  sdk.DecCoins
 	}{
 		{
@@ -66,8 +66,8 @@ func TestGetProportionalRewardPeriod(t *testing.T) {
 				time.Time{},
 				cs(c("umage", 100), c("hard", 200)),
 			),
-			i(1000), // total bMage
-			i(1),    // bMage supply of this specific vault
+			i(1000), // total bmage
+			i(1),    // bmage supply of this specific vault
 			dcs(dc("umage", "0.1"), dc("hard", "0.2")), // rewards per second rounded to 0 if under 1umage/1hard
 		},
 	}
@@ -76,8 +76,8 @@ func TestGetProportionalRewardPeriod(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			rewardsPerSecond := keeper.GetProportionalRewardsPerSecond(
 				tt.giveRewardPeriod,
-				tt.giveTotalBMageSupply,
-				tt.giveSingleBMageSupply,
+				tt.giveTotalBmageSupply,
+				tt.giveSingleBmageSupply,
 			)
 
 			require.Equal(t, tt.wantRewardsPerSecond, rewardsPerSecond)

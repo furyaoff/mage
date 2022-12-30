@@ -45,7 +45,7 @@ func (suite *QuerierTestSuite) TestGetStakingAPR() {
 	usdcSupply := int64(2_500_000_000000)
 
 	earnKeeper := newFakeEarnKeeper().
-		addVault("bMage-asdf", earntypes.NewVaultShare("bMage-asdf", sdk.NewDec(liquidStakedTokens))).
+		addVault("bmage-asdf", earntypes.NewVaultShare("bmage-asdf", sdk.NewDec(liquidStakedTokens))).
 		addVault(usdcDenom, earntypes.NewVaultShare(usdcDenom, sdk.NewDec(usdcSupply)))
 
 	suite.keeper = suite.NewTestKeeper(&fakeParamSubspace{}).
@@ -62,7 +62,7 @@ func (suite *QuerierTestSuite) TestGetStakingAPR() {
 		).
 		WithEarnKeeper(earnKeeper).
 		WithLiquidKeeper(
-			newFakeLiquidKeeper().addDerivative(suite.ctx, "bMage-asdf", sdk.NewInt(liquidStakedTokens)),
+			newFakeLiquidKeeper().addDerivative(suite.ctx, "bmage-asdf", sdk.NewInt(liquidStakedTokens)),
 		).
 		WithPricefeedKeeper(
 			newFakePricefeedKeeper().
@@ -90,7 +90,7 @@ func (suite *QuerierTestSuite) TestGetStakingAPR() {
 		EarnRewardPeriods: types.MultiRewardPeriods{
 			{
 				Active:         true,
-				CollateralType: "bMage",
+				CollateralType: "bmage",
 				Start:          suite.ctx.BlockTime().Add(-time.Hour),
 				End:            suite.ctx.BlockTime().Add(time.Hour),
 				RewardsPerSecond: sdk.NewCoins(

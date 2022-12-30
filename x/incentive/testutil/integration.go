@@ -37,7 +37,7 @@ import (
 	swaptypes "github.com/furya-official/mage/x/swap/types"
 )
 
-var testChainID = "Magetest_1-1"
+var testChainID = "magetest_1-1"
 
 type IntegrationTester struct {
 	suite.Suite
@@ -560,10 +560,10 @@ func (suite *IntegrationTester) GetBeginBlockClaimedStakingRewards(
 		//
 		// Event: withdraw_rewards
 		// - amount:
-		// - validator: Magevaloper1em2mlkrkx0qsa6327tgvl3g0fh8a95hjnqvrwh
+		// - validator: magevaloper1em2mlkrkx0qsa6327tgvl3g0fh8a95hjnqvrwh
 		// Event: withdraw_rewards
 		// - amount: 523909umage
-		// - validator: Magevaloper1nmgpgr8l4t8pw9zqx9cltuymvz85wmw9sy8kjy
+		// - validator: magevaloper1nmgpgr8l4t8pw9zqx9cltuymvz85wmw9sy8kjy
 		attrsMap := attrsToMap(event.Attributes)
 
 		validator, found := attrsMap[distributiontypes.AttributeKeyValidator]

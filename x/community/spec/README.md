@@ -16,4 +16,4 @@ parent:
 
 ## Abstract
 
-`x/community` is an implementation of a Cosmos SDK Module that provides for functionality and governance for a community pool of funds controlled by Mage DAO.
+`x/community` is an implementation of a Cosmos SDK Module that provides for functionality and governance for a community pool of funds controlled by mage DAO.

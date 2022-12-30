@@ -22,7 +22,7 @@ func (suite *KeeperTestSuite) TestWithdraw() {
 	valAddr := sdk.ValAddress(valAccAddr)
 	initialBalance := sdk.NewInt(1e9)
 
-	bMageDenom := fmt.Sprintf("bMage-%s", valAddr.String())
+	bmageDenom := fmt.Sprintf("bmage-%s", valAddr.String())
 
 	type args struct {
 		allowedDenoms             []string
@@ -64,16 +64,16 @@ func (suite *KeeperTestSuite) TestWithdraw() {
 			},
 		},
 		{
-			"valid: partial bMage",
+			"valid: partial bmage",
 			args{
-				allowedDenoms:             []string{"bnb", "btcb", "umage", "bMage"},
+				allowedDenoms:             []string{"bnb", "btcb", "umage", "bmage"},
 				depositor:                 sdk.AccAddress(crypto.AddressHash([]byte("test"))),
-				initialDepositorBalance:   sdk.NewCoins(sdk.NewCoin(bMageDenom, sdk.NewInt(1000)), sdk.NewCoin("btcb", sdk.NewInt(1000))),
-				depositAmount:             sdk.NewCoins(sdk.NewCoin(bMageDenom, sdk.NewInt(200))),
-				withdrawAmount:            sdk.NewCoins(sdk.NewCoin(bMageDenom, sdk.NewInt(100))),
-				expectedAccountBalance:    sdk.NewCoins(sdk.NewCoin(bMageDenom, sdk.NewInt(900)), sdk.NewCoin("btcb", sdk.NewInt(1000))),
-				expectedModAccountBalance: sdk.NewCoins(sdk.NewCoin(bMageDenom, sdk.NewInt(100))),
-				expectedDepositCoins:      sdk.NewCoins(sdk.NewCoin(bMageDenom, sdk.NewInt(100))),
+				initialDepositorBalance:   sdk.NewCoins(sdk.NewCoin(bmageDenom, sdk.NewInt(1000)), sdk.NewCoin("btcb", sdk.NewInt(1000))),
+				depositAmount:             sdk.NewCoins(sdk.NewCoin(bmageDenom, sdk.NewInt(200))),
+				withdrawAmount:            sdk.NewCoins(sdk.NewCoin(bmageDenom, sdk.NewInt(100))),
+				expectedAccountBalance:    sdk.NewCoins(sdk.NewCoin(bmageDenom, sdk.NewInt(900)), sdk.NewCoin("btcb", sdk.NewInt(1000))),
+				expectedModAccountBalance: sdk.NewCoins(sdk.NewCoin(bmageDenom, sdk.NewInt(100))),
+				expectedDepositCoins:      sdk.NewCoins(sdk.NewCoin(bmageDenom, sdk.NewInt(100))),
 			},
 			errArgs{
 				expectPass:   true,
@@ -164,7 +164,7 @@ func (suite *KeeperTestSuite) TestWithdraw() {
 			suite.keeper = keeper
 			bankKeeper := tApp.GetBankKeeper()
 
-			// Create validator and delegate for bMage
+			// Create validator and delegate for bmage
 			suite.CreateAccountWithAddress(valAccAddr, cs(c("umage", 100e10)))
 			suite.CreateAccountWithAddress(delegator, cs(c("umage", 100e10)))
 

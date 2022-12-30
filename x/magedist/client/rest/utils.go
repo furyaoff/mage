@@ -4,7 +4,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/rest"
 
-	"github.com/furya-official/mage/x/Magedist/types"
+	"github.com/furya-official/mage/x/magedist/types"
 )
 
 type (

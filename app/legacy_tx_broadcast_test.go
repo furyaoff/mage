@@ -75,7 +75,7 @@ func (suite *LegacyTxBroadcastTestSuite) TearDownTest() {
 
 func (suite *LegacyTxBroadcastTestSuite) TestSimulateRequest() {
 	_, pk, fromAddr := testdata.KeyTestPubAddr()
-	toAddr, err := sdk.AccAddressFromBech32("Mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
+	toAddr, err := sdk.AccAddressFromBech32("mage1mq9qxlhze029lm0frzw2xr6hem8c3k9ts54w0w")
 	suite.Require().NoError(err)
 
 	// build a legacy transaction

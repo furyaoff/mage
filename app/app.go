@@ -89,7 +89,7 @@ import (
 	feemarkettypes "github.com/tharsis/ethermint/x/feemarket/types"
 
 	"github.com/furya-official/mage/app/ante"
-	Mageparams "github.com/furya-official/mage/app/params"
+	mageparams "github.com/furya-official/mage/app/params"
 	Magedistrquery "github.com/furya-official/mage/app/query/distribution"
 	"github.com/furya-official/mage/x/auction"
 	auctionkeeper "github.com/furya-official/mage/x/auction/keeper"
@@ -127,7 +127,7 @@ import (
 	"github.com/furya-official/mage/x/Magedist"
 	Magedistclient "github.com/furya-official/mage/x/Magedist/client"
 	Magedistkeeper "github.com/furya-official/mage/x/Magedist/keeper"
-	Magedisttypes "github.com/furya-official/mage/x/Magedist/types"
+	Magedisttypes "github.com/furya-official/mage/x/magedist/types"
 	"github.com/furya-official/mage/x/Magemint"
 	Magemintkeeper "github.com/furya-official/mage/x/Magemint/keeper"
 	Mageminttypes "github.com/furya-official/mage/x/Magemint/types"
@@ -151,7 +151,7 @@ import (
 )
 
 const (
-	appName = "Mage"
+	appName = "mage"
 )
 
 var (
@@ -262,7 +262,7 @@ var DefaultOptions = Options{
 	EVMMaxGasWanted: ethermintconfig.DefaultMaxTxGasWanted,
 }
 
-// App is the Mage ABCI application.
+// App is the mage ABCI application.
 type App struct {
 	*baseapp.BaseApp
 
@@ -340,7 +340,7 @@ func NewApp(
 	db dbm.DB,
 	homePath string,
 	traceStore io.Writer,
-	encodingConfig Mageparams.EncodingConfig,
+	encodingConfig mageparams.EncodingConfig,
 	options Options,
 	baseAppOptions ...func(*baseapp.BaseApp),
 ) *App {

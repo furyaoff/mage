@@ -5,7 +5,7 @@ import (
 
 	communitytypes "github.com/furya-official/mage/x/community/types"
 	"github.com/furya-official/mage/x/Magedist/keeper"
-	"github.com/furya-official/mage/x/Magedist/types"
+	"github.com/furya-official/mage/x/magedist/types"
 )
 
 func (suite *keeperTestSuite) TestHandleCommunityPoolMultiSpendProposal() {

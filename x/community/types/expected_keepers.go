@@ -19,7 +19,7 @@ type BankKeeper interface {
 	SendCoinsFromModuleToAccount(ctx sdk.Context, senderModule string, recipientAddr sdk.AccAddress, amt sdk.Coins) error
 }
 
-// HardKeeper defines the contract needed to be fulfilled for Mage Lend dependencies.
+// HardKeeper defines the contract needed to be fulfilled for mage Lend dependencies.
 type HardKeeper interface {
 	Deposit(ctx sdk.Context, depositor sdk.AccAddress, coins sdk.Coins) error
 	Withdraw(ctx sdk.Context, depositor sdk.AccAddress, coins sdk.Coins) error

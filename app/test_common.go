@@ -52,7 +52,7 @@ import (
 
 var (
 	emptyTime            time.Time
-	testChainID                = "Magetest_1-1"
+	testChainID                = "magetest_1-1"
 	defaultInitialHeight int64 = 1
 )
 

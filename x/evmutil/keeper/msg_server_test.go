@@ -28,7 +28,7 @@ func TestMsgServerSuite(t *testing.T) {
 }
 
 func (suite *MsgServerSuite) TestConvertCoinToERC20() {
-	invoker, err := sdk.AccAddressFromBech32("Mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz")
+	invoker, err := sdk.AccAddressFromBech32("mage123fxg0l602etulhhcdm0vt7l57qya5wjcrwhzz")
 	suite.Require().NoError(err)
 
 	err = suite.App.FundAccount(suite.Ctx, invoker, sdk.NewCoins(sdk.NewCoin("erc20/usdc", sdk.NewInt(10000))))
@@ -181,7 +181,7 @@ func (suite *MsgServerSuite) TestConvertERC20ToCoin() {
 			types.MsgConvertERC20ToCoin{
 				Initiator:        "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc",
 				Receiver:         invokerCosmosAddr.String(),
-				MageERC20Address: contractAddr.String(),
+				MageERC20Address : contractAddr.String(),
 				Amount:           sdk.NewInt(10_000),
 			},
 			math.MaxBig256,

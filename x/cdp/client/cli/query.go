@@ -58,7 +58,7 @@ func QueryCdpCmd() *cobra.Command {
 			fmt.Sprintf(`Get a CDP by the owner address and the collateral name.
 
 Example:
-$ %s query %s cdp Mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw atom-a
+$ %s query %s cdp mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw atom-a
 `, version.AppName, types.ModuleName)),
 		Args: cobra.ExactArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) error {
@@ -95,7 +95,7 @@ func QueryGetCdpsCmd() *cobra.Command {
 		Long: strings.TrimSpace(`Query for all paginated cdps that match optional filters:
 Example:
 $ kvcli q cdp cdps --collateral-type=bnb
-$ kvcli q cdp cdps --owner=Mage1hatdq32u5x4wnxrtv5wzjzmq49sxgjgsj0mffm
+$ kvcli q cdp cdps --owner=mage1hatdq32u5x4wnxrtv5wzjzmq49sxgjgsj0mffm
 $ kvcli q cdp cdps --id=21
 $ kvcli q cdp cdps --ratio=2.75
 $ kvcli q cdp cdps --page=2 --limit=100
@@ -192,7 +192,7 @@ func QueryCdpDepositsCmd() *cobra.Command {
 			fmt.Sprintf(`Get the deposits of a CDP.
 
 Example:
-$ %s query %s deposits Mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw atom-a
+$ %s query %s deposits mage15qdefkmwswysgg4qxgqpqr35k3m49pkx2jdfnw atom-a
 `, version.AppName, types.ModuleName)),
 		Args: cobra.ExactArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) error {

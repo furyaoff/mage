@@ -206,7 +206,7 @@ go.sum: go.mod
 # Set to exclude riot links as they trigger false positives
 link-check:
 	@go get -u github.com/raviqqe/liche@f57a5d1c5be4856454cb26de155a65a4fd856ee3
-	liche -r . --exclude "^http://127.*|^https://riot.im/app*|^http://mage-testnet*|^https://testnet-dex*|^https://Mage3.data.mage.io*|^https://ipfs.io*|^https://apps.apple.com*|^https://mage.quicksync.io*"
+	liche -r . --exclude "^http://127.*|^https://riot.im/app*|^http://mage-testnet*|^https://testnet-dex*|^https://mage3.data.mage.io*|^https://ipfs.io*|^https://apps.apple.com*|^https://mage.quicksync.io*"
 
 
 lint:
@@ -232,7 +232,7 @@ build-docker-local-mage:
 
 # Run a 4-node testnet locally
 localnet-start: build-linux localnet-stop
-	@if ! [ -f build/node0/mgd/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/mgd:Z furya-official/mageMagenode testnet --v 4 -o . --starting-ip-address 192.168.10.2 --keyring-backend=test ; fi
+	@if ! [ -f build/node0/mgd/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/mgd:Z furya-official/magemagenode testnet --v 4 -o . --starting-ip-address 192.168.10.2 --keyring-backend=test ; fi
 	docker-compose up -d
 
 localnet-stop:
@@ -291,9 +291,9 @@ test-migrate:
 # This submits an AWS Batch job to run a lot of sims, each within a docker image. Results are uploaded to S3
 start-remote-sims:
 	# build the image used for running sims in, and tag it
-	docker build -f simulations/Dockerfile -t furya-official/mageMage-sim:master .
+	docker build -f simulations/Dockerfile -t furya-official/magemage-sim:master .
 	# push that image to the hub
-	docker push furya-official/mageMage-sim:master
+	docker push furya-official/magemage-sim:master
 	# submit an array job on AWS Batch, using 1000 seeds, spot instances
 	aws batch submit-job \
 		-—job-name "master-$(VERSION)" \

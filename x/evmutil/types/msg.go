@@ -90,7 +90,7 @@ func NewMsgConvertERC20ToCoin(
 	return MsgConvertERC20ToCoin{
 		Initiator:        initiator.String(),
 		Receiver:         receiver.String(),
-		MageERC20Address: contractAddr.String(),
+		MageERC20Address : contractAddr.String(),
 		Amount:           amount,
 	}
 }

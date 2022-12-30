@@ -47,7 +47,7 @@ func getCmdMintDeposit() *cobra.Command {
 		Short: "mints staking derivative from a delegation and deposits them to earn",
 		Args:  cobra.ExactArgs(2),
 		Example: fmt.Sprintf(
-			`%s tx %s mint-deposit Magevaloper16lnfpgn6llvn4fstg5nfrljj6aaxyee9z59jqd 10000000umage --from <key>`, version.AppName, types.ModuleName,
+			`%s tx %s mint-deposit magevaloper16lnfpgn6llvn4fstg5nfrljj6aaxyee9z59jqd 10000000umage --from <key>`, version.AppName, types.ModuleName,
 		),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			clientCtx, err := client.GetClientTxContext(cmd)
@@ -80,7 +80,7 @@ func getCmdDelegateMintDeposit() *cobra.Command {
 		Short: "delegates tokens, mints staking derivative from a them, and deposits them to earn",
 		Args:  cobra.ExactArgs(2),
 		Example: fmt.Sprintf(
-			`%s tx %s delegate-mint-deposit Magevaloper16lnfpgn6llvn4fstg5nfrljj6aaxyee9z59jqd 10000000umage --from <key>`, version.AppName, types.ModuleName,
+			`%s tx %s delegate-mint-deposit magevaloper16lnfpgn6llvn4fstg5nfrljj6aaxyee9z59jqd 10000000umage --from <key>`, version.AppName, types.ModuleName,
 		),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			clientCtx, err := client.GetClientTxContext(cmd)
@@ -112,7 +112,7 @@ func getCmdWithdrawBurn() *cobra.Command {
 		Use:   "withdraw-burn [validator-addr] [amount]",
 		Short: "withdraws staking derivatives from earn and burns them to redeem a delegation",
 		Example: fmt.Sprintf(
-			`%s tx %s withdraw-burn Magevaloper16lnfpgn6llvn4fstg5nfrljj6aaxyee9z59jqd 10000000umage --from <key>`, version.AppName, types.ModuleName,
+			`%s tx %s withdraw-burn magevaloper16lnfpgn6llvn4fstg5nfrljj6aaxyee9z59jqd 10000000umage --from <key>`, version.AppName, types.ModuleName,
 		),
 		Args: cobra.ExactArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) error {
@@ -145,7 +145,7 @@ func getCmdWithdrawBurnUndelegate() *cobra.Command {
 		Use:   "withdraw-burn-undelegate [validator-addr] [amount]",
 		Short: "withdraws staking derivatives from earn, burns them to redeem a delegation, then unstakes the delegation",
 		Example: fmt.Sprintf(
-			`%s tx %s withdraw-burn-undelegate Magevaloper16lnfpgn6llvn4fstg5nfrljj6aaxyee9z59jqd 10000000umage --from <key>`, version.AppName, types.ModuleName,
+			`%s tx %s withdraw-burn-undelegate magevaloper16lnfpgn6llvn4fstg5nfrljj6aaxyee9z59jqd 10000000umage --from <key>`, version.AppName, types.ModuleName,
 		),
 		Args: cobra.ExactArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) error {

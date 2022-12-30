@@ -17,7 +17,7 @@ import (
 
 	"github.com/furya-official/mage/app"
 	"github.com/furya-official/mage/x/Magedist/keeper"
-	"github.com/furya-official/mage/x/Magedist/types"
+	"github.com/furya-official/mage/x/magedist/types"
 )
 
 // Suite implements a test suite for the Magedist module integration tests

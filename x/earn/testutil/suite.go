@@ -30,10 +30,10 @@ import (
 	tmtime "github.com/tendermint/tendermint/types/time"
 )
 
-var TestBMageDenoms = []string{
-	"bMage-Magevaloper15gqc744d05xacn4n6w2furuads9fu4pqn6zxlu",
-	"bMage-Magevaloper15qdefkmwswysgg4qxgqpqr35k3m49pkx8yhpte",
-	"bMage-Magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42",
+var TestBmageDenoms = []string{
+	"bmage-magevaloper15gqc744d05xacn4n6w2furuads9fu4pqn6zxlu",
+	"bmage-magevaloper15qdefkmwswysgg4qxgqpqr35k3m49pkx8yhpte",
+	"bmage-magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42",
 }
 
 // Suite implements a test suite for the earn module integration tests
@@ -156,9 +156,9 @@ func (suite *Suite) SetupTest() {
 				"umage",
 				"busd",
 				"usdx",
-				TestBMageDenoms[0],
-				TestBMageDenoms[1],
-				TestBMageDenoms[2],
+				TestBmageDenoms[0],
+				TestBmageDenoms[1],
+				TestBmageDenoms[2],
 			},
 		),
 		nil,

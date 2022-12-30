@@ -69,7 +69,7 @@ var xxx_messageInfo_GenesisState proto.InternalMessageInfo
 // BalanceAccount defines an account in the evmutil module.
 type Account struct {
 	Address github_com_cosmos_cosmos_sdk_types.AccAddress `protobuf:"bytes,1,opt,name=address,proto3,casttype=github.com/cosmos/cosmos-sdk/types.AccAddress" json:"address,omitempty"`
-	// balance indicates the amount of aMage owned by the address.
+	// balance indicates the amount of amage owned by the address.
 	Balance github_com_cosmos_cosmos_sdk_types.Int `protobuf:"bytes,2,opt,name=balance,proto3,customtype=github.com/cosmos/cosmos-sdk/types.Int" json:"balance"`
 }
 
@@ -109,7 +109,7 @@ var xxx_messageInfo_Account proto.InternalMessageInfo
 // Params defines the evmutil module params
 type Params struct {
 	// enabled_conversion_pairs defines the list of conversion pairs allowed to be
-	// converted between Mage ERC20 and sdk.Coin
+	// converted between mage ERC20 and sdk.Coin
 	EnabledConversionPairs ConversionPairs `protobuf:"bytes,4,rep,name=enabled_conversion_pairs,json=enabledConversionPairs,proto3,castrepeated=ConversionPairs" json:"enabled_conversion_pairs"`
 }
 

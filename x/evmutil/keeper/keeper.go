@@ -112,7 +112,7 @@ func (k Keeper) SetAccount(ctx sdk.Context, account types.Account) error {
 	return nil
 }
 
-// GetBalance returns the total balance of aMage for a given account by address.
+// GetBalance returns the total balance of amage for a given account by address.
 func (k Keeper) GetBalance(ctx sdk.Context, addr sdk.AccAddress) sdk.Int {
 	account := k.GetAccount(ctx, addr)
 	if account == nil {
@@ -121,7 +121,7 @@ func (k Keeper) GetBalance(ctx sdk.Context, addr sdk.AccAddress) sdk.Int {
 	return account.Balance
 }
 
-// SetBalance sets the total balance of aMage for a given account by address.
+// SetBalance sets the total balance of amage for a given account by address.
 func (k Keeper) SetBalance(ctx sdk.Context, addr sdk.AccAddress, bal sdk.Int) error {
 	account := k.GetAccount(ctx, addr)
 	if account == nil {
@@ -137,10 +137,10 @@ func (k Keeper) SetBalance(ctx sdk.Context, addr sdk.AccAddress, bal sdk.Int) er
 	return k.SetAccount(ctx, *account)
 }
 
-// SendBalance transfers the aMage balance from sender addr to recipient addr.
+// SendBalance transfers the amage balance from sender addr to recipient addr.
 func (k Keeper) SendBalance(ctx sdk.Context, senderAddr sdk.AccAddress, recipientAddr sdk.AccAddress, amt sdk.Int) error {
 	if amt.IsNegative() {
-		return fmt.Errorf("cannot send a negative amount of aMage: %d", amt)
+		return fmt.Errorf("cannot send a negative amount of amage: %d", amt)
 	}
 
 	if amt.IsZero() {
@@ -159,13 +159,13 @@ func (k Keeper) SendBalance(ctx sdk.Context, senderAddr sdk.AccAddress, recipien
 	return k.SetBalance(ctx, recipientAddr, receiverBal)
 }
 
-// AddBalance increments the aMage balance of an address.
+// AddBalance increments the amage balance of an address.
 func (k Keeper) AddBalance(ctx sdk.Context, addr sdk.AccAddress, amt sdk.Int) error {
 	bal := k.GetBalance(ctx, addr)
 	return k.SetBalance(ctx, addr, amt.Add(bal))
 }
 
-// RemoveBalance decrements the aMage balance of an address.
+// RemoveBalance decrements the amage balance of an address.
 func (k Keeper) RemoveBalance(ctx sdk.Context, addr sdk.AccAddress, amt sdk.Int) error {
 	if amt.IsNegative() {
 		return fmt.Errorf("cannot remove a negative amount from balance: %d", amt)

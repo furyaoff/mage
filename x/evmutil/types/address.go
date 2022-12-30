@@ -7,7 +7,7 @@ import (
 )
 
 // InternalEVMAddress is a type alias of common.Address to represent an address
-// on the Mage EVM.
+// on the mage EVM.
 type InternalEVMAddress struct {
 	common.Address
 }

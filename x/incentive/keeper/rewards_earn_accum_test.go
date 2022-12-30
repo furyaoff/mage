@@ -90,9 +90,9 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 	})
 }
 
-func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreased_bMage() {
-	vaultDenom1 := "bMage-meow"
-	vaultDenom2 := "bMage-woof"
+func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreased_bmage() {
+	vaultDenom1 := "bmage-meow"
+	vaultDenom2 := "bmage-woof"
 
 	previousAccrualTime := time.Date(1998, 1, 1, 0, 0, 0, 0, time.UTC)
 	suite.ctx = suite.ctx.WithBlockTime(previousAccrualTime)
@@ -145,7 +145,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 
 	rewardPeriod := types.NewMultiRewardPeriod(
 		true,
-		"bMage",         // reward period is set for "bMage" to apply to all vaults
+		"bmage",         // reward period is set for "bmage" to apply to all vaults
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
 		cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
@@ -167,7 +167,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 		{
 			CollateralType: "umage",
 			RewardFactor: d("3.64"). // base incentive
-							Add(d("360")), // staking rewards, 10% of total bMage per second
+							Add(d("360")), // staking rewards, 10% of total bmage per second
 		},
 	}
 
@@ -175,9 +175,9 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 	suite.storedIndexesEqual(vaultDenom2, expectedIndexes)
 }
 
-func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreased_bMage_partialDeposit() {
-	vaultDenom1 := "bMage-meow"
-	vaultDenom2 := "bMage-woof"
+func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreased_bmage_partialDeposit() {
+	vaultDenom1 := "bmage-meow"
+	vaultDenom2 := "bmage-woof"
 
 	vaultDenom1Supply := i(800000)
 	vaultDenom2Supply := i(200000)
@@ -192,7 +192,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 	vault1Shares := d("700000")
 	vault2Shares := d("100000")
 
-	// More bMage minted than deposited into earn
+	// More bmage minted than deposited into earn
 	// Rewards are higher per-share as a result
 	earnKeeper := newFakeEarnKeeper().
 		addVault(vaultDenom1, earntypes.NewVaultShare(vaultDenom1, vault1Shares)).
@@ -239,7 +239,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 
 	rewardPeriod := types.NewMultiRewardPeriod(
 		true,
-		"bMage",         // reward period is set for "bMage" to apply to all vaults
+		"bmage",         // reward period is set for "bmage" to apply to all vaults
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
 		cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
@@ -251,7 +251,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 	suite.storedTimeEquals(vaultDenom1, newAccrualTime)
 	suite.storedTimeEquals(vaultDenom2, newAccrualTime)
 
-	// Slightly increased rewards due to less bMage deposited
+	// Slightly increased rewards due to less bmage deposited
 	suite.storedIndexesEqual(vaultDenom1, types.RewardIndexes{
 		{
 			CollateralType: "earn",
@@ -268,7 +268,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 		},
 	})
 
-	// Much higher rewards per share because only a small amount of bMage is
+	// Much higher rewards per share because only a small amount of bmage is
 	// deposited. The **total** amount of incentives distributed to this vault
 	// is still the same proportional amount.
 
@@ -278,10 +278,10 @@ func (suite *AccumulateEarnRewardsTests) TestStateUpdatedWhenBlockTimeHasIncreas
 	// 7.2umage shares per second for 1 hour (started with 0.04)
 	// total rewards claimable = 7.2 * 100000 shares = 720000 umage
 
-	// 720000umage distributed which is 20% of total bMage umage rewards
-	// total rewards for *all* bMage vaults for 1 hour
+	// 720000umage distributed which is 20% of total bmage umage rewards
+	// total rewards for *all* bmage vaults for 1 hour
 	// = 1000umage per second * 3600 == 3600000umage
-	// vaultDenom2 has 20% of the total bMage amount so it should get 20% of 3600000umage == 720000umage
+	// vaultDenom2 has 20% of the total bmage amount so it should get 20% of 3600000umage == 720000umage
 
 	vault2expectedIndexes := types.RewardIndexes{
 		{
@@ -346,9 +346,9 @@ func (suite *AccumulateEarnRewardsTests) TestStateUnchangedWhenBlockTimeHasNotIn
 	suite.storedIndexesEqual(vaultDenom, expected)
 }
 
-func (suite *AccumulateEarnRewardsTests) TestStateUnchangedWhenBlockTimeHasNotIncreased_bMage() {
-	vaultDenom1 := "bMage-meow"
-	vaultDenom2 := "bMage-woof"
+func (suite *AccumulateEarnRewardsTests) TestStateUnchangedWhenBlockTimeHasNotIncreased_bmage() {
+	vaultDenom1 := "bmage-meow"
+	vaultDenom2 := "bmage-woof"
 
 	previousAccrualTime := time.Date(1998, 1, 1, 0, 0, 0, 0, time.UTC)
 	suite.ctx = suite.ctx.WithBlockTime(previousAccrualTime)
@@ -398,7 +398,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateUnchangedWhenBlockTimeHasNotIn
 
 	period := types.NewMultiRewardPeriod(
 		true,
-		"bMage",
+		"bmage",
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
 		cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
@@ -468,9 +468,9 @@ func (suite *AccumulateEarnRewardsTests) TestNoAccumulationWhenSourceSharesAreZe
 	suite.storedIndexesEqual(vaultDenom, expected)
 }
 
-func (suite *AccumulateEarnRewardsTests) TestNoAccumulationWhenSourceSharesAreZero_bMage() {
-	vaultDenom1 := "bMage-meow"
-	vaultDenom2 := "bMage-woof"
+func (suite *AccumulateEarnRewardsTests) TestNoAccumulationWhenSourceSharesAreZero_bmage() {
+	vaultDenom1 := "bmage-meow"
+	vaultDenom2 := "bmage-woof"
 
 	earnKeeper := newFakeEarnKeeper() // no vault, so no source shares
 	liquidKeeper := newFakeLiquidKeeper()
@@ -515,13 +515,13 @@ func (suite *AccumulateEarnRewardsTests) TestNoAccumulationWhenSourceSharesAreZe
 
 	period := types.NewMultiRewardPeriod(
 		true,
-		"bMage",
+		"bmage",
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
 		cs(c("earn", 2000), c("umage", 1000)), // same denoms as in global indexes
 	)
 
-	// TODO: There are no bMage vaults to iterate over, so the accrual times are
+	// TODO: There are no bmage vaults to iterate over, so the accrual times are
 	// not updated
 	suite.keeper.AccumulateEarnRewards(suite.ctx, period)
 
@@ -582,9 +582,9 @@ func (suite *AccumulateEarnRewardsTests) TestStateAddedWhenStateDoesNotExist() {
 	})
 }
 
-func (suite *AccumulateEarnRewardsTests) TestStateAddedWhenStateDoesNotExist_bMage() {
-	vaultDenom1 := "bMage-meow"
-	vaultDenom2 := "bMage-woof"
+func (suite *AccumulateEarnRewardsTests) TestStateAddedWhenStateDoesNotExist_bmage() {
+	vaultDenom1 := "bmage-meow"
+	vaultDenom2 := "bmage-woof"
 
 	firstAccrualTime := time.Date(1998, 1, 1, 0, 0, 0, 0, time.UTC)
 	suite.ctx = suite.ctx.WithBlockTime(firstAccrualTime)
@@ -601,7 +601,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateAddedWhenStateDoesNotExist_bMa
 
 	period := types.NewMultiRewardPeriod(
 		true,
-		"bMage",
+		"bmage",
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
 		cs(c("earn", 2000), c("umage", 1000)),
@@ -633,7 +633,7 @@ func (suite *AccumulateEarnRewardsTests) TestStateAddedWhenStateDoesNotExist_bMa
 		},
 		{
 			CollateralType: "umage",
-			// 10% of total bMage for rewards per second for 10 seconds
+			// 10% of total bmage for rewards per second for 10 seconds
 			// 1umage per share per second + regular 0.005umage incentive rewards
 			RewardFactor: d("1.005"),
 		},
@@ -671,9 +671,9 @@ func (suite *AccumulateEarnRewardsTests) TestNoPanicWhenStateDoesNotExist() {
 	suite.storedIndexesEqual(vaultDenom, nil)
 }
 
-func (suite *AccumulateEarnRewardsTests) TestNoPanicWhenStateDoesNotExist_bMage() {
-	vaultDenom1 := "bMage-meow"
-	vaultDenom2 := "bMage-woof"
+func (suite *AccumulateEarnRewardsTests) TestNoPanicWhenStateDoesNotExist_bmage() {
+	vaultDenom1 := "bmage-meow"
+	vaultDenom2 := "bmage-woof"
 
 	earnKeeper := newFakeEarnKeeper()
 	liquidKeeper := newFakeLiquidKeeper()
@@ -682,7 +682,7 @@ func (suite *AccumulateEarnRewardsTests) TestNoPanicWhenStateDoesNotExist_bMage(
 
 	period := types.NewMultiRewardPeriod(
 		true,
-		"bMage",
+		"bmage",
 		time.Unix(0, 0), // ensure the test is within start and end times
 		distantFuture,
 		cs(),
@@ -695,7 +695,7 @@ func (suite *AccumulateEarnRewardsTests) TestNoPanicWhenStateDoesNotExist_bMage(
 	// No increment and no previous indexes stored, results in an updated of nil. Setting this in the state panics.
 	// Check there is no panic.
 	suite.NotPanics(func() {
-		// This does not update any state, as there are no bMage vaults
+		// This does not update any state, as there are no bmage vaults
 		// to iterate over, denoms are unknown
 		suite.keeper.AccumulateEarnRewards(suite.ctx, period)
 	})

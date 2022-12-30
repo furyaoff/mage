@@ -230,7 +230,7 @@
   "usdx_minting_claims": [
     {
       "base_claim": {
-        "owner": "Mage1qptt5vu26cmxpmv0hf2tnnmf293x266pjcsjar",
+        "owner": "mage1qptt5vu26cmxpmv0hf2tnnmf293x266pjcsjar",
         "reward": { "denom": "umage", "amount": "550" }
       },
       "reward_indexes": [
@@ -242,7 +242,7 @@
   "hard_liquidity_provider_claims": [
     {
       "base_claim": {
-        "owner": "Mage1qqqvdyv8w0xdu7gjdtt598q78gtgqyukct4yz2",
+        "owner": "mage1qqqvdyv8w0xdu7gjdtt598q78gtgqyukct4yz2",
         "reward": [{ "denom": "hard", "amount": "1747514" }]
       },
       "supply_reward_indexes": [
@@ -279,7 +279,7 @@
     },
     {
       "base_claim": {
-        "owner": "Mage1w2uj6rpejrma47vjx4rcghh3fndhmrvs6pmxph",
+        "owner": "mage1w2uj6rpejrma47vjx4rcghh3fndhmrvs6pmxph",
         "reward": [
           {
             "amount": "1747514",
@@ -294,7 +294,7 @@
   "delegator_claims": [
     {
       "base_claim": {
-        "owner": "Mage1qqqvdyv8w0xdu7gjdtt598q78gtgqyukct4yz2",
+        "owner": "mage1qqqvdyv8w0xdu7gjdtt598q78gtgqyukct4yz2",
         "reward": []
       },
       "reward_indexes": [
@@ -317,7 +317,7 @@
   "swap_claims": [
     {
       "base_claim": {
-        "owner": "Mage1qzease8mre5adak7wcc2twh6ryh9evnxpr6caj",
+        "owner": "mage1qzease8mre5adak7wcc2twh6ryh9evnxpr6caj",
         "reward": [{ "denom": "swp", "amount": "1960368" }]
       },
       "reward_indexes": [

@@ -13,8 +13,8 @@ import (
 )
 
 func TestMsgMintDeposit_Signing(t *testing.T) {
-	address := mustAccAddressFromBech32("Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
-	validatorAddress := mustValAddressFromBech32("Magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42")
+	address := mustAccAddressFromBech32("mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
+	validatorAddress := mustValAddressFromBech32("magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42")
 
 	msg := types.NewMsgMintDeposit(
 		address,
@@ -24,7 +24,7 @@ func TestMsgMintDeposit_Signing(t *testing.T) {
 
 	// checking for the "type" field ensures the msg is registered on the amino codec
 	signBytes := []byte(
-		`{"type":"router/MsgMintDeposit","value":{"amount":{"amount":"1000000000","denom":"umage"},"depositor":"Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","validator":"Magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42"}}`,
+		`{"type":"router/MsgMintDeposit","value":{"amount":{"amount":"1000000000","denom":"umage"},"depositor":"mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","validator":"magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42"}}`,
 	)
 
 	assert.Equal(t, []sdk.AccAddress{address}, msg.GetSigners())
@@ -32,8 +32,8 @@ func TestMsgMintDeposit_Signing(t *testing.T) {
 }
 
 func TestMsgDelegateMintDeposit_Signing(t *testing.T) {
-	address := mustAccAddressFromBech32("Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
-	validatorAddress := mustValAddressFromBech32("Magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42")
+	address := mustAccAddressFromBech32("mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
+	validatorAddress := mustValAddressFromBech32("magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42")
 
 	msg := types.NewMsgDelegateMintDeposit(
 		address,
@@ -43,7 +43,7 @@ func TestMsgDelegateMintDeposit_Signing(t *testing.T) {
 
 	// checking for the "type" field ensures the msg is registered on the amino codec
 	signBytes := []byte(
-		`{"type":"router/MsgDelegateMintDeposit","value":{"amount":{"amount":"1000000000","denom":"umage"},"depositor":"Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","validator":"Magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42"}}`,
+		`{"type":"router/MsgDelegateMintDeposit","value":{"amount":{"amount":"1000000000","denom":"umage"},"depositor":"mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","validator":"magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42"}}`,
 	)
 
 	assert.Equal(t, []sdk.AccAddress{address}, msg.GetSigners())
@@ -51,8 +51,8 @@ func TestMsgDelegateMintDeposit_Signing(t *testing.T) {
 }
 
 func TestMsgWithdrawBurn_Signing(t *testing.T) {
-	address := mustAccAddressFromBech32("Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
-	validatorAddress := mustValAddressFromBech32("Magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42")
+	address := mustAccAddressFromBech32("mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
+	validatorAddress := mustValAddressFromBech32("magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42")
 
 	msg := types.NewMsgWithdrawBurn(
 		address,
@@ -62,7 +62,7 @@ func TestMsgWithdrawBurn_Signing(t *testing.T) {
 
 	// checking for the "type" field ensures the msg is registered on the amino codec
 	signBytes := []byte(
-		`{"type":"router/MsgWithdrawBurn","value":{"amount":{"amount":"1000000000","denom":"umage"},"from":"Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","validator":"Magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42"}}`,
+		`{"type":"router/MsgWithdrawBurn","value":{"amount":{"amount":"1000000000","denom":"umage"},"from":"mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","validator":"magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42"}}`,
 	)
 
 	assert.Equal(t, []sdk.AccAddress{address}, msg.GetSigners())
@@ -70,8 +70,8 @@ func TestMsgWithdrawBurn_Signing(t *testing.T) {
 }
 
 func TestMsgWithdrawBurnUndelegate_Signing(t *testing.T) {
-	address := mustAccAddressFromBech32("Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
-	validatorAddress := mustValAddressFromBech32("Magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42")
+	address := mustAccAddressFromBech32("mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
+	validatorAddress := mustValAddressFromBech32("magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42")
 
 	msg := types.NewMsgWithdrawBurnUndelegate(
 		address,
@@ -81,7 +81,7 @@ func TestMsgWithdrawBurnUndelegate_Signing(t *testing.T) {
 
 	// checking for the "type" field ensures the msg is registered on the amino codec
 	signBytes := []byte(
-		`{"type":"router/MsgWithdrawBurnUndelegate","value":{"amount":{"amount":"1000000000","denom":"umage"},"from":"Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","validator":"Magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42"}}`,
+		`{"type":"router/MsgWithdrawBurnUndelegate","value":{"amount":{"amount":"1000000000","denom":"umage"},"from":"mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","validator":"magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42"}}`,
 	)
 
 	assert.Equal(t, []sdk.AccAddress{address}, msg.GetSigners())
@@ -89,8 +89,8 @@ func TestMsgWithdrawBurnUndelegate_Signing(t *testing.T) {
 }
 
 func TestMsg_Validate(t *testing.T) {
-	validAddress := "Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d"
-	validValidatorAddress := "Magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42"
+	validAddress := "mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d"
+	validValidatorAddress := "magevaloper1ypjp0m04pyp73hwgtc0dgkx0e9rrydeckewa42"
 	validCoin := sdk.NewInt64Coin("umage", 1e9)
 
 	type msgArgs struct {

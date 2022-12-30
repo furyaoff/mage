@@ -78,7 +78,7 @@ func (suite *PermissionTestSuite) TestSubParamChangePermission_Allows() {
 	testCDPParams.DebtParam = testDP
 	testCDPParams.GlobalDebtLimit = testCPs[0].DebtLimit.Add(testCPs[0].DebtLimit) // correct global debt limit to pass genesis validation
 
-	testDeputy, err := sdk.AccAddressFromBech32("Mage1xy7hrjy9r0algz9w3gzm8u6mrpq97kwta747gj")
+	testDeputy, err := sdk.AccAddressFromBech32("mage1xy7hrjy9r0algz9w3gzm8u6mrpq97kwta747gj")
 	suite.Require().NoError(err)
 	// bep3 Asset Params
 	testAPs := bep3types.AssetParams{

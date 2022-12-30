@@ -5,7 +5,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/furya-official/mage/x/Magedist/types"
+	"github.com/furya-official/mage/x/magedist/types"
 )
 
 // MintPeriodInflation mints new tokens according to the inflation schedule specified in the parameters
@@ -14,7 +14,7 @@ func (k Keeper) MintPeriodInflation(ctx sdk.Context) error {
 	if !params.Active {
 		ctx.EventManager().EmitEvent(
 			sdk.NewEvent(
-				types.EventTypeMageDist,
+				types.EventTypemageDist,
 				sdk.NewAttribute(types.AttributeKeyStatus, types.AttributeValueInactive),
 			),
 		)
@@ -103,7 +103,7 @@ func (k Keeper) mintInflationaryCoins(ctx sdk.Context, inflationRate sdk.Dec, ti
 
 	ctx.EventManager().EmitEvent(
 		sdk.NewEvent(
-			types.EventTypeMageDist,
+			types.EventTypemageDist,
 			sdk.NewAttribute(types.AttributeKeyInflation, sdk.NewCoin(denom, amountToMint).String()),
 		),
 	)

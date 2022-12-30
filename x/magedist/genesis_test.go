@@ -12,7 +12,7 @@ import (
 
 	"github.com/furya-official/mage/x/Magedist"
 	testutil "github.com/furya-official/mage/x/Magedist/testutil"
-	"github.com/furya-official/mage/x/Magedist/types"
+	"github.com/furya-official/mage/x/magedist/types"
 )
 
 type genesisTestSuite struct {

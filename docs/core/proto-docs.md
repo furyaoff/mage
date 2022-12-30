@@ -3313,7 +3313,7 @@ QueryDepositsRequest is the request type for the Query/Deposits RPC method.
 | ----- | ---- | ----- | ----------- |
 | `depositor` | [string](#string) |  | depositor optionally filters deposits by depositor |
 | `denom` | [string](#string) |  | denom optionally filters deposits by vault denom |
-| `value_in_staked_tokens` | [bool](#bool) |  | respond with vault value in umage for bMage vaults |
+| `value_in_staked_tokens` | [bool](#bool) |  | respond with vault value in umage for bmage vaults |
 | `pagination` | [cosmos.base.query.v1beta1.PageRequest](#cosmos.base.query.v1beta1.PageRequest) |  | pagination defines an optional pagination for the request. |
 
 
@@ -3587,13 +3587,13 @@ Msg defines the earn Msg service.
 <a name="mage.evmutil.v1beta1.ConversionPair"></a>
 
 ### ConversionPair
-ConversionPair defines a Mage ERC20 address and corresponding denom that is
+ConversionPair defines a mage ERC20 address and corresponding denom that is
 allowed to be converted between ERC20 and sdk.Coin
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `Mage_erc20_address` | [bytes](#bytes) |  | ERC20 address of the token on the Mage EVM |
+| `mage_erc20_address` | [bytes](#bytes) |  | ERC20 address of the token on the mage EVM |
 | `denom` | [string](#string) |  | Denom of the corresponding sdk.Coin |
 
 
@@ -3626,7 +3626,7 @@ BalanceAccount defines an account in the evmutil module.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | `address` | [bytes](#bytes) |  |  |
-| `balance` | [string](#string) |  | balance indicates the amount of aMage owned by the address. |
+| `balance` | [string](#string) |  | balance indicates the amount of amage owned by the address. |
 
 
 
@@ -3657,7 +3657,7 @@ Params defines the evmutil module params
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `enabled_conversion_pairs` | [ConversionPair](#mage.evmutil.v1beta1.ConversionPair) | repeated | enabled_conversion_pairs defines the list of conversion pairs allowed to be converted between Mage ERC20 and sdk.Coin |
+| `enabled_conversion_pairs` | [ConversionPair](#mage.evmutil.v1beta1.ConversionPair) | repeated | enabled_conversion_pairs defines the list of conversion pairs allowed to be converted between mage ERC20 and sdk.Coin |
 
 
 
@@ -3734,13 +3734,13 @@ Query defines the gRPC querier service for evmutil module
 <a name="mage.evmutil.v1beta1.MsgConvertCoinToERC20"></a>
 
 ### MsgConvertCoinToERC20
-MsgConvertCoinToERC20 defines a conversion from sdk.Coin to Mage ERC20.
+MsgConvertCoinToERC20 defines a conversion from sdk.Coin to mage ERC20.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `initiator` | [string](#string) |  | Mage bech32 address initiating the conversion. |
-| `receiver` | [string](#string) |  | EVM 0x hex address that will receive the converted Mage ERC20 tokens. |
+| `initiator` | [string](#string) |  | mage bech32 address initiating the conversion. |
+| `receiver` | [string](#string) |  | EVM 0x hex address that will receive the converted mage ERC20 tokens. |
 | `amount` | [cosmos.base.v1beta1.Coin](#cosmos.base.v1beta1.Coin) |  | Amount is the sdk.Coin amount to convert. |
 
 
@@ -3761,14 +3761,14 @@ MsgConvertCoinToERC20Response defines the response value from Msg/ConvertCoinToE
 <a name="mage.evmutil.v1beta1.MsgConvertERC20ToCoin"></a>
 
 ### MsgConvertERC20ToCoin
-MsgConvertERC20ToCoin defines a conversion from Mage ERC20 to sdk.Coin.
+MsgConvertERC20ToCoin defines a conversion from mage ERC20 to sdk.Coin.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | `initiator` | [string](#string) |  | EVM 0x hex address initiating the conversion. |
-| `receiver` | [string](#string) |  | Mage bech32 address that will receive the converted sdk.Coin. |
-| `Mage_erc20_address` | [string](#string) |  | EVM 0x hex address of the ERC20 contract. |
+| `receiver` | [string](#string) |  | mage bech32 address that will receive the converted sdk.Coin. |
+| `mage_erc20_address` | [string](#string) |  | EVM 0x hex address of the ERC20 contract. |
 | `amount` | [string](#string) |  | ERC20 token amount to convert. |
 
 
@@ -3800,8 +3800,8 @@ Msg defines the evmutil Msg service.
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `ConvertCoinToERC20` | [MsgConvertCoinToERC20](#mage.evmutil.v1beta1.MsgConvertCoinToERC20) | [MsgConvertCoinToERC20Response](#mage.evmutil.v1beta1.MsgConvertCoinToERC20Response) | ConvertCoinToERC20 defines a method for converting sdk.Coin to Mage ERC20. | |
-| `ConvertERC20ToCoin` | [MsgConvertERC20ToCoin](#mage.evmutil.v1beta1.MsgConvertERC20ToCoin) | [MsgConvertERC20ToCoinResponse](#mage.evmutil.v1beta1.MsgConvertERC20ToCoinResponse) | ConvertERC20ToCoin defines a method for converting Mage ERC20 to sdk.Coin. | |
+| `ConvertCoinToERC20` | [MsgConvertCoinToERC20](#mage.evmutil.v1beta1.MsgConvertCoinToERC20) | [MsgConvertCoinToERC20Response](#mage.evmutil.v1beta1.MsgConvertCoinToERC20Response) | ConvertCoinToERC20 defines a method for converting sdk.Coin to mage ERC20. | |
+| `ConvertERC20ToCoin` | [MsgConvertERC20ToCoin](#mage.evmutil.v1beta1.MsgConvertERC20ToCoin) | [MsgConvertERC20ToCoinResponse](#mage.evmutil.v1beta1.MsgConvertERC20ToCoinResponse) | ConvertERC20ToCoin defines a method for converting mage ERC20 to sdk.Coin. | |
 
  <!-- end services -->
 

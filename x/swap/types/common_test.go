@@ -6,8 +6,8 @@ import (
 )
 
 func init() {
-	MageConfig := sdk.GetConfig()
-	app.SetBech32AddressPrefixes(MageConfig)
-	app.SetBip44CoinType(MageConfig)
-	MageConfig.Seal()
+	mageConfig := sdk.GetConfig()
+	app.SetBech32AddressPrefixes(mageConfig)
+	app.SetBip44CoinType(mageConfig)
+	mageConfig.Seal()
 }

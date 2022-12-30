@@ -27,7 +27,7 @@ func (suite *evmBankKeeperTestSuite) SetupTest() {
 
 func (suite *evmBankKeeperTestSuite) TestGetBalance_ReturnsSpendable() {
 	startingCoins := sdk.NewCoins(sdk.NewInt64Coin("umage", 10))
-	startingAMage := sdk.NewInt(100)
+	startingAmage := sdk.NewInt(100)
 
 	now := tmtime.Now()
 	endTime := now.Add(24 * time.Hour)
@@ -37,14 +37,14 @@ func (suite *evmBankKeeperTestSuite) TestGetBalance_ReturnsSpendable() {
 
 	err := suite.App.FundAccount(suite.Ctx, suite.Addrs[0], startingCoins)
 	suite.Require().NoError(err)
-	err = suite.Keeper.SetBalance(suite.Ctx, suite.Addrs[0], startingAMage)
+	err = suite.Keeper.SetBalance(suite.Ctx, suite.Addrs[0], startingAmage)
 	suite.Require().NoError(err)
 
-	coin := suite.EvmBankKeeper.GetBalance(suite.Ctx, suite.Addrs[0], "aMage")
-	suite.Require().Equal(startingAMage, coin.Amount)
+	coin := suite.EvmBankKeeper.GetBalance(suite.Ctx, suite.Addrs[0], "amage")
+	suite.Require().Equal(startingAmage, coin.Amount)
 
 	ctx := suite.Ctx.WithBlockTime(now.Add(12 * time.Hour))
-	coin = suite.EvmBankKeeper.GetBalance(ctx, suite.Addrs[0], "aMage")
+	coin = suite.EvmBankKeeper.GetBalance(ctx, suite.Addrs[0], "amage")
 	suite.Require().Equal(sdk.NewIntFromUint64(5_000_000_000_100), coin.Amount)
 }
 
@@ -64,17 +64,17 @@ func (suite *evmBankKeeperTestSuite) TestGetBalance() {
 		expAmount      sdk.Int
 	}{
 		{
-			"umage with aMage",
+			"umage with amage",
 			sdk.NewCoins(
-				sdk.NewInt64Coin("aMage", 100),
+				sdk.NewInt64Coin("amage", 100),
 				sdk.NewInt64Coin("umage", 10),
 			),
 			sdk.NewInt(10_000_000_000_100),
 		},
 		{
-			"just aMage",
+			"just amage",
 			sdk.NewCoins(
-				sdk.NewInt64Coin("aMage", 100),
+				sdk.NewInt64Coin("amage", 100),
 				sdk.NewInt64Coin("busd", 100),
 			),
 			sdk.NewInt(100),
@@ -88,14 +88,14 @@ func (suite *evmBankKeeperTestSuite) TestGetBalance() {
 			sdk.NewInt(10_000_000_000_000),
 		},
 		{
-			"no umage or aMage",
+			"no umage or amage",
 			sdk.NewCoins(),
 			sdk.ZeroInt(),
 		},
 		{
 			"with avaka that is more than 1 umage",
 			sdk.NewCoins(
-				sdk.NewInt64Coin("aMage", 20_000_000_000_220),
+				sdk.NewInt64Coin("amage", 20_000_000_000_220),
 				sdk.NewInt64Coin("umage", 11),
 			),
 			sdk.NewInt(31_000_000_000_220),
@@ -107,7 +107,7 @@ func (suite *evmBankKeeperTestSuite) TestGetBalance() {
 			suite.SetupTest()
 
 			suite.FundAccountWithMage(suite.Addrs[0], tt.startingAmount)
-			coin := suite.EvmBankKeeper.GetBalance(suite.Ctx, suite.Addrs[0], "aMage")
+			coin := suite.EvmBankKeeper.GetBalance(suite.Ctx, suite.Addrs[0], "amage")
 			suite.Require().Equal(tt.expAmount, coin.Amount)
 		})
 	}
@@ -115,7 +115,7 @@ func (suite *evmBankKeeperTestSuite) TestGetBalance() {
 
 func (suite *evmBankKeeperTestSuite) TestSendCoinsFromModuleToAccount() {
 	startingModuleCoins := sdk.NewCoins(
-		sdk.NewInt64Coin("aMage", 200),
+		sdk.NewInt64Coin("amage", 200),
 		sdk.NewInt64Coin("umage", 100),
 	)
 	tests := []struct {
@@ -127,100 +127,100 @@ func (suite *evmBankKeeperTestSuite) TestSendCoinsFromModuleToAccount() {
 	}{
 		{
 			"send more than 1 umage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 12_000_000_000_010)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 12_000_000_000_010)),
 			sdk.Coins{},
 			sdk.NewCoins(
-				sdk.NewInt64Coin("aMage", 10),
+				sdk.NewInt64Coin("amage", 10),
 				sdk.NewInt64Coin("umage", 12),
 			),
 			false,
 		},
 		{
 			"send less than 1 umage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 122)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 122)),
 			sdk.Coins{},
 			sdk.NewCoins(
-				sdk.NewInt64Coin("aMage", 122),
+				sdk.NewInt64Coin("amage", 122),
 				sdk.NewInt64Coin("umage", 0),
 			),
 			false,
 		},
 		{
 			"send an exact amount of umage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 98_000_000_000_000)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 98_000_000_000_000)),
 			sdk.Coins{},
 			sdk.NewCoins(
-				sdk.NewInt64Coin("aMage", 0o0),
+				sdk.NewInt64Coin("amage", 0o0),
 				sdk.NewInt64Coin("umage", 98),
 			),
 			false,
 		},
 		{
-			"send no aMage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 0)),
+			"send no amage",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 0)),
 			sdk.Coins{},
 			sdk.NewCoins(
-				sdk.NewInt64Coin("aMage", 0),
+				sdk.NewInt64Coin("amage", 0),
 				sdk.NewInt64Coin("umage", 0),
 			),
 			false,
 		},
 		{
 			"errors if sending other coins",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 500), sdk.NewInt64Coin("busd", 1000)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 500), sdk.NewInt64Coin("busd", 1000)),
 			sdk.Coins{},
 			sdk.Coins{},
 			true,
 		},
 		{
-			"errors if not enough total aMage to cover",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 100_000_000_001_000)),
+			"errors if not enough total amage to cover",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 100_000_000_001_000)),
 			sdk.Coins{},
 			sdk.Coins{},
 			true,
 		},
 		{
 			"errors if not enough umage to cover",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 200_000_000_000_000)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 200_000_000_000_000)),
 			sdk.Coins{},
 			sdk.Coins{},
 			true,
 		},
 		{
-			"converts receiver's aMage to umage if there's enough aMage after the transfer",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 99_000_000_000_200)),
+			"converts receiver's amage to umage if there's enough amage after the transfer",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 99_000_000_000_200)),
 			sdk.NewCoins(
-				sdk.NewInt64Coin("aMage", 999_999_999_900),
+				sdk.NewInt64Coin("amage", 999_999_999_900),
 				sdk.NewInt64Coin("umage", 1),
 			),
 			sdk.NewCoins(
-				sdk.NewInt64Coin("aMage", 100),
+				sdk.NewInt64Coin("amage", 100),
 				sdk.NewInt64Coin("umage", 101),
 			),
 			false,
 		},
 		{
-			"converts all of receiver's aMage to umage even if somehow receiver has more than 1umage of aMage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 12_000_000_000_100)),
+			"converts all of receiver's amage to umage even if somehow receiver has more than 1umage of amage",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 12_000_000_000_100)),
 			sdk.NewCoins(
-				sdk.NewInt64Coin("aMage", 5_999_999_999_990),
+				sdk.NewInt64Coin("amage", 5_999_999_999_990),
 				sdk.NewInt64Coin("umage", 1),
 			),
 			sdk.NewCoins(
-				sdk.NewInt64Coin("aMage", 90),
+				sdk.NewInt64Coin("amage", 90),
 				sdk.NewInt64Coin("umage", 19),
 			),
 			false,
 		},
 		{
-			"swap 1 umage for aMage if module account doesn't have enough aMage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 99_000_000_001_000)),
+			"swap 1 umage for amage if module account doesn't have enough amage",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 99_000_000_001_000)),
 			sdk.NewCoins(
-				sdk.NewInt64Coin("aMage", 200),
+				sdk.NewInt64Coin("amage", 200),
 				sdk.NewInt64Coin("umage", 1),
 			),
 			sdk.NewCoins(
-				sdk.NewInt64Coin("aMage", 1200),
+				sdk.NewInt64Coin("amage", 1200),
 				sdk.NewInt64Coin("umage", 100),
 			),
 			false,
@@ -234,7 +234,7 @@ func (suite *evmBankKeeperTestSuite) TestSendCoinsFromModuleToAccount() {
 			suite.FundAccountWithMage(suite.Addrs[0], tt.startingAccBal)
 			suite.FundModuleAccountWithMage(evmtypes.ModuleName, startingModuleCoins)
 
-			// fund our module with some umage to account for converting extra aMage back to umage
+			// fund our module with some umage to account for converting extra amage back to umage
 			suite.FundModuleAccountWithMage(types.ModuleName, sdk.NewCoins(sdk.NewInt64Coin("umage", 10)))
 
 			err := suite.EvmBankKeeper.SendCoinsFromModuleToAccount(suite.Ctx, evmtypes.ModuleName, suite.Addrs[0], tt.sendCoins)
@@ -249,20 +249,20 @@ func (suite *evmBankKeeperTestSuite) TestSendCoinsFromModuleToAccount() {
 			umageSender := suite.BankKeeper.GetBalance(suite.Ctx, suite.Addrs[0], "umage")
 			suite.Require().Equal(tt.expAccBal.AmountOf("umage").Int64(), umageSender.Amount.Int64())
 
-			// check aMage
-			actualAMage := suite.Keeper.GetBalance(suite.Ctx, suite.Addrs[0])
-			suite.Require().Equal(tt.expAccBal.AmountOf("aMage").Int64(), actualAMage.Int64())
+			// check amage
+			actualAmage := suite.Keeper.GetBalance(suite.Ctx, suite.Addrs[0])
+			suite.Require().Equal(tt.expAccBal.AmountOf("amage").Int64(), actualAmage.Int64())
 		})
 	}
 }
 
 func (suite *evmBankKeeperTestSuite) TestSendCoinsFromAccountToModule() {
 	startingAccCoins := sdk.NewCoins(
-		sdk.NewInt64Coin("aMage", 200),
+		sdk.NewInt64Coin("amage", 200),
 		sdk.NewInt64Coin("umage", 100),
 	)
 	startingModuleCoins := sdk.NewCoins(
-		sdk.NewInt64Coin("aMage", 100_000_000_000),
+		sdk.NewInt64Coin("amage", 100_000_000_000),
 	)
 	tests := []struct {
 		name           string
@@ -273,35 +273,35 @@ func (suite *evmBankKeeperTestSuite) TestSendCoinsFromAccountToModule() {
 	}{
 		{
 			"send more than 1 umage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 12_000_000_000_010)),
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 190), sdk.NewInt64Coin("umage", 88)),
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 100_000_000_010), sdk.NewInt64Coin("umage", 12)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 12_000_000_000_010)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 190), sdk.NewInt64Coin("umage", 88)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 100_000_000_010), sdk.NewInt64Coin("umage", 12)),
 			false,
 		},
 		{
 			"send less than 1 umage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 122)),
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 78), sdk.NewInt64Coin("umage", 100)),
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 100_000_000_122), sdk.NewInt64Coin("umage", 0)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 122)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 78), sdk.NewInt64Coin("umage", 100)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 100_000_000_122), sdk.NewInt64Coin("umage", 0)),
 			false,
 		},
 		{
 			"send an exact amount of umage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 98_000_000_000_000)),
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 200), sdk.NewInt64Coin("umage", 2)),
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 100_000_000_000), sdk.NewInt64Coin("umage", 98)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 98_000_000_000_000)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 200), sdk.NewInt64Coin("umage", 2)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 100_000_000_000), sdk.NewInt64Coin("umage", 98)),
 			false,
 		},
 		{
-			"send no aMage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 0)),
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 200), sdk.NewInt64Coin("umage", 100)),
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 100_000_000_000), sdk.NewInt64Coin("umage", 0)),
+			"send no amage",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 0)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 200), sdk.NewInt64Coin("umage", 100)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 100_000_000_000), sdk.NewInt64Coin("umage", 0)),
 			false,
 		},
 		{
 			"errors if sending other coins",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 500), sdk.NewInt64Coin("busd", 1000)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 500), sdk.NewInt64Coin("busd", 1000)),
 			sdk.Coins{},
 			sdk.Coins{},
 			true,
@@ -309,39 +309,39 @@ func (suite *evmBankKeeperTestSuite) TestSendCoinsFromAccountToModule() {
 		{
 			"errors if have dup coins",
 			sdk.Coins{
-				sdk.NewInt64Coin("aMage", 12_000_000_000_000),
-				sdk.NewInt64Coin("aMage", 2_000_000_000_000),
+				sdk.NewInt64Coin("amage", 12_000_000_000_000),
+				sdk.NewInt64Coin("amage", 2_000_000_000_000),
 			},
 			sdk.Coins{},
 			sdk.Coins{},
 			true,
 		},
 		{
-			"errors if not enough total aMage to cover",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 100_000_000_001_000)),
+			"errors if not enough total amage to cover",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 100_000_000_001_000)),
 			sdk.Coins{},
 			sdk.Coins{},
 			true,
 		},
 		{
 			"errors if not enough umage to cover",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 200_000_000_000_000)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 200_000_000_000_000)),
 			sdk.Coins{},
 			sdk.Coins{},
 			true,
 		},
 		{
-			"converts 1 umage to aMage if not enough aMage to cover",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 99_001_000_000_000)),
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 999_000_000_200), sdk.NewInt64Coin("umage", 0)),
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 101_000_000_000), sdk.NewInt64Coin("umage", 99)),
+			"converts 1 umage to amage if not enough amage to cover",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 99_001_000_000_000)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 999_000_000_200), sdk.NewInt64Coin("umage", 0)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 101_000_000_000), sdk.NewInt64Coin("umage", 99)),
 			false,
 		},
 		{
-			"converts receiver's aMage to umage if there's enough aMage after the transfer",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 5_900_000_000_200)),
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 100_000_000_000), sdk.NewInt64Coin("umage", 94)),
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 200), sdk.NewInt64Coin("umage", 6)),
+			"converts receiver's amage to umage if there's enough amage after the transfer",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 5_900_000_000_200)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 100_000_000_000), sdk.NewInt64Coin("umage", 94)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 200), sdk.NewInt64Coin("umage", 6)),
 			false,
 		},
 	}
@@ -363,32 +363,32 @@ func (suite *evmBankKeeperTestSuite) TestSendCoinsFromAccountToModule() {
 			// check sender balance
 			umageSender := suite.BankKeeper.GetBalance(suite.Ctx, suite.Addrs[0], "umage")
 			suite.Require().Equal(tt.expSenderCoins.AmountOf("umage").Int64(), umageSender.Amount.Int64())
-			actualAMage := suite.Keeper.GetBalance(suite.Ctx, suite.Addrs[0])
-			suite.Require().Equal(tt.expSenderCoins.AmountOf("aMage").Int64(), actualAMage.Int64())
+			actualAmage := suite.Keeper.GetBalance(suite.Ctx, suite.Addrs[0])
+			suite.Require().Equal(tt.expSenderCoins.AmountOf("amage").Int64(), actualAmage.Int64())
 
 			// check module balance
 			moduleAddr := suite.AccountKeeper.GetModuleAddress(evmtypes.ModuleName)
 			umageSender = suite.BankKeeper.GetBalance(suite.Ctx, moduleAddr, "umage")
 			suite.Require().Equal(tt.expModuleCoins.AmountOf("umage").Int64(), umageSender.Amount.Int64())
-			actualAMage = suite.Keeper.GetBalance(suite.Ctx, moduleAddr)
-			suite.Require().Equal(tt.expModuleCoins.AmountOf("aMage").Int64(), actualAMage.Int64())
+			actualAmage = suite.Keeper.GetBalance(suite.Ctx, moduleAddr)
+			suite.Require().Equal(tt.expModuleCoins.AmountOf("amage").Int64(), actualAmage.Int64())
 		})
 	}
 }
 
 func (suite *evmBankKeeperTestSuite) TestBurnCoins() {
-	startingUMage := sdk.NewInt(100)
+	startingUmage := sdk.NewInt(100)
 	tests := []struct {
 		name       string
 		burnCoins  sdk.Coins
-		expUMage   sdk.Int
-		expAMage   sdk.Int
+		expUmage   sdk.Int
+		expAmage   sdk.Int
 		hasErr     bool
-		aMageStart sdk.Int
+		amageStart sdk.Int
 	}{
 		{
 			"burn more than 1 umage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 12_021_000_000_002)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 12_021_000_000_002)),
 			sdk.NewInt(88),
 			sdk.NewInt(100_000_000_000),
 			false,
@@ -396,7 +396,7 @@ func (suite *evmBankKeeperTestSuite) TestBurnCoins() {
 		},
 		{
 			"burn less than 1 umage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 122)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 122)),
 			sdk.NewInt(100),
 			sdk.NewInt(878),
 			false,
@@ -404,24 +404,24 @@ func (suite *evmBankKeeperTestSuite) TestBurnCoins() {
 		},
 		{
 			"burn an exact amount of umage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 98_000_000_000_000)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 98_000_000_000_000)),
 			sdk.NewInt(2),
 			sdk.NewInt(10),
 			false,
 			sdk.NewInt(10),
 		},
 		{
-			"burn no aMage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 0)),
-			startingUMage,
+			"burn no amage",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 0)),
+			startingUmage,
 			sdk.ZeroInt(),
 			false,
 			sdk.ZeroInt(),
 		},
 		{
 			"errors if burning other coins",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 500), sdk.NewInt64Coin("busd", 1000)),
-			startingUMage,
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 500), sdk.NewInt64Coin("busd", 1000)),
+			startingUmage,
 			sdk.NewInt(100),
 			true,
 			sdk.NewInt(100),
@@ -429,25 +429,25 @@ func (suite *evmBankKeeperTestSuite) TestBurnCoins() {
 		{
 			"errors if have dup coins",
 			sdk.Coins{
-				sdk.NewInt64Coin("aMage", 12_000_000_000_000),
-				sdk.NewInt64Coin("aMage", 2_000_000_000_000),
+				sdk.NewInt64Coin("amage", 12_000_000_000_000),
+				sdk.NewInt64Coin("amage", 2_000_000_000_000),
 			},
-			startingUMage,
+			startingUmage,
 			sdk.ZeroInt(),
 			true,
 			sdk.ZeroInt(),
 		},
 		{
 			"errors if burn amount is negative",
-			sdk.Coins{sdk.Coin{Denom: "aMage", Amount: sdk.NewInt(-100)}},
-			startingUMage,
+			sdk.Coins{sdk.Coin{Denom: "amage", Amount: sdk.NewInt(-100)}},
+			startingUmage,
 			sdk.NewInt(50),
 			true,
 			sdk.NewInt(50),
 		},
 		{
-			"errors if not enough aMage to cover burn",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 100_999_000_000_000)),
+			"errors if not enough amage to cover burn",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 100_999_000_000_000)),
 			sdk.NewInt(0),
 			sdk.NewInt(99_000_000_000),
 			true,
@@ -455,15 +455,15 @@ func (suite *evmBankKeeperTestSuite) TestBurnCoins() {
 		},
 		{
 			"errors if not enough umage to cover burn",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 200_000_000_000_000)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 200_000_000_000_000)),
 			sdk.NewInt(100),
 			sdk.ZeroInt(),
 			true,
 			sdk.ZeroInt(),
 		},
 		{
-			"converts 1 umage to aMage if not enough aMage to cover",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 12_021_000_000_002)),
+			"converts 1 umage to amage if not enough amage to cover",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 12_021_000_000_002)),
 			sdk.NewInt(87),
 			sdk.NewInt(980_000_000_000),
 			false,
@@ -475,8 +475,8 @@ func (suite *evmBankKeeperTestSuite) TestBurnCoins() {
 		suite.Run(tt.name, func() {
 			suite.SetupTest()
 			startingCoins := sdk.NewCoins(
-				sdk.NewCoin("umage", startingUMage),
-				sdk.NewCoin("aMage", tt.aMageStart),
+				sdk.NewCoin("umage", startingUmage),
+				sdk.NewCoin("amage", tt.amageStart),
 			)
 			suite.FundModuleAccountWithMage(evmtypes.ModuleName, startingCoins)
 
@@ -490,11 +490,11 @@ func (suite *evmBankKeeperTestSuite) TestBurnCoins() {
 
 			// check umage
 			umageActual := suite.BankKeeper.GetBalance(suite.Ctx, suite.EvmModuleAddr, "umage")
-			suite.Require().Equal(tt.expUMage, umageActual.Amount)
+			suite.Require().Equal(tt.expUmage, umageActual.Amount)
 
-			// check aMage
-			aMageActual := suite.Keeper.GetBalance(suite.Ctx, suite.EvmModuleAddr)
-			suite.Require().Equal(tt.expAMage, aMageActual)
+			// check amage
+			amageActual := suite.Keeper.GetBalance(suite.Ctx, suite.EvmModuleAddr)
+			suite.Require().Equal(tt.expAmage, amageActual)
 		})
 	}
 }
@@ -504,13 +504,13 @@ func (suite *evmBankKeeperTestSuite) TestMintCoins() {
 		name       string
 		mintCoins  sdk.Coins
 		umage      sdk.Int
-		aMage      sdk.Int
+		amage      sdk.Int
 		hasErr     bool
-		aMageStart sdk.Int
+		amageStart sdk.Int
 	}{
 		{
 			"mint more than 1 umage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 12_021_000_000_002)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 12_021_000_000_002)),
 			sdk.NewInt(12),
 			sdk.NewInt(21_000_000_002),
 			false,
@@ -518,7 +518,7 @@ func (suite *evmBankKeeperTestSuite) TestMintCoins() {
 		},
 		{
 			"mint less than 1 umage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 901_000_000_001)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 901_000_000_001)),
 			sdk.ZeroInt(),
 			sdk.NewInt(901_000_000_001),
 			false,
@@ -526,15 +526,15 @@ func (suite *evmBankKeeperTestSuite) TestMintCoins() {
 		},
 		{
 			"mint an exact amount of umage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 123_000_000_000_000_000)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 123_000_000_000_000_000)),
 			sdk.NewInt(123_000),
 			sdk.ZeroInt(),
 			false,
 			sdk.ZeroInt(),
 		},
 		{
-			"mint no aMage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 0)),
+			"mint no amage",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 0)),
 			sdk.ZeroInt(),
 			sdk.ZeroInt(),
 			false,
@@ -542,7 +542,7 @@ func (suite *evmBankKeeperTestSuite) TestMintCoins() {
 		},
 		{
 			"errors if minting other coins",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 500), sdk.NewInt64Coin("busd", 1000)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 500), sdk.NewInt64Coin("busd", 1000)),
 			sdk.ZeroInt(),
 			sdk.NewInt(100),
 			true,
@@ -551,8 +551,8 @@ func (suite *evmBankKeeperTestSuite) TestMintCoins() {
 		{
 			"errors if have dup coins",
 			sdk.Coins{
-				sdk.NewInt64Coin("aMage", 12_000_000_000_000),
-				sdk.NewInt64Coin("aMage", 2_000_000_000_000),
+				sdk.NewInt64Coin("amage", 12_000_000_000_000),
+				sdk.NewInt64Coin("amage", 2_000_000_000_000),
 			},
 			sdk.ZeroInt(),
 			sdk.ZeroInt(),
@@ -561,23 +561,23 @@ func (suite *evmBankKeeperTestSuite) TestMintCoins() {
 		},
 		{
 			"errors if mint amount is negative",
-			sdk.Coins{sdk.Coin{Denom: "aMage", Amount: sdk.NewInt(-100)}},
+			sdk.Coins{sdk.Coin{Denom: "amage", Amount: sdk.NewInt(-100)}},
 			sdk.ZeroInt(),
 			sdk.NewInt(50),
 			true,
 			sdk.NewInt(50),
 		},
 		{
-			"adds to existing aMage balance",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 12_021_000_000_002)),
+			"adds to existing amage balance",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 12_021_000_000_002)),
 			sdk.NewInt(12),
 			sdk.NewInt(21_000_000_102),
 			false,
 			sdk.NewInt(100),
 		},
 		{
-			"convert aMage balance to umage if it exceeds 1 umage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 10_999_000_000_000)),
+			"convert amage balance to umage if it exceeds 1 umage",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 10_999_000_000_000)),
 			sdk.NewInt(12),
 			sdk.NewInt(1_200_000_001),
 			false,
@@ -589,7 +589,7 @@ func (suite *evmBankKeeperTestSuite) TestMintCoins() {
 		suite.Run(tt.name, func() {
 			suite.SetupTest()
 			suite.FundModuleAccountWithMage(types.ModuleName, sdk.NewCoins(sdk.NewInt64Coin("umage", 10)))
-			suite.FundModuleAccountWithMage(evmtypes.ModuleName, sdk.NewCoins(sdk.NewCoin("aMage", tt.aMageStart)))
+			suite.FundModuleAccountWithMage(evmtypes.ModuleName, sdk.NewCoins(sdk.NewCoin("amage", tt.amageStart)))
 
 			err := suite.EvmBankKeeper.MintCoins(suite.Ctx, evmtypes.ModuleName, tt.mintCoins)
 			if tt.hasErr {
@@ -603,9 +603,9 @@ func (suite *evmBankKeeperTestSuite) TestMintCoins() {
 			umageActual := suite.BankKeeper.GetBalance(suite.Ctx, suite.EvmModuleAddr, "umage")
 			suite.Require().Equal(tt.umage, umageActual.Amount)
 
-			// check aMage
-			aMageActual := suite.Keeper.GetBalance(suite.Ctx, suite.EvmModuleAddr)
-			suite.Require().Equal(tt.aMage, aMageActual)
+			// check amage
+			amageActual := suite.Keeper.GetBalance(suite.Ctx, suite.EvmModuleAddr)
+			suite.Require().Equal(tt.amage, amageActual)
 		})
 	}
 }
@@ -618,12 +618,12 @@ func (suite *evmBankKeeperTestSuite) TestValidateEvmCoins() {
 	}{
 		{
 			"valid coins",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 500)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 500)),
 			false,
 		},
 		{
 			"dup coins",
-			sdk.Coins{sdk.NewInt64Coin("aMage", 500), sdk.NewInt64Coin("aMage", 500)},
+			sdk.Coins{sdk.NewInt64Coin("amage", 500), sdk.NewInt64Coin("amage", 500)},
 			true,
 		},
 		{
@@ -633,7 +633,7 @@ func (suite *evmBankKeeperTestSuite) TestValidateEvmCoins() {
 		},
 		{
 			"negative coins",
-			sdk.Coins{sdk.Coin{Denom: "aMage", Amount: sdk.NewInt(-500)}},
+			sdk.Coins{sdk.Coin{Denom: "amage", Amount: sdk.NewInt(-500)}},
 			true,
 		},
 	}
@@ -649,8 +649,8 @@ func (suite *evmBankKeeperTestSuite) TestValidateEvmCoins() {
 	}
 }
 
-func (suite *evmBankKeeperTestSuite) TestConvertOneUMageToAMageIfNeeded() {
-	aMageNeeded := sdk.NewInt(200)
+func (suite *evmBankKeeperTestSuite) TestConvertOneUmageToAmageIfNeeded() {
+	amageNeeded := sdk.NewInt(200)
 	tests := []struct {
 		name          string
 		startingCoins sdk.Coins
@@ -659,20 +659,20 @@ func (suite *evmBankKeeperTestSuite) TestConvertOneUMageToAMageIfNeeded() {
 	}{
 		{
 			"not enough umage for conversion",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 100)),
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 100)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 100)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 100)),
 			false,
 		},
 		{
-			"converts 1 umage to aMage",
-			sdk.NewCoins(sdk.NewInt64Coin("umage", 10), sdk.NewInt64Coin("aMage", 100)),
-			sdk.NewCoins(sdk.NewInt64Coin("umage", 9), sdk.NewInt64Coin("aMage", 1_000_000_000_100)),
+			"converts 1 umage to amage",
+			sdk.NewCoins(sdk.NewInt64Coin("umage", 10), sdk.NewInt64Coin("amage", 100)),
+			sdk.NewCoins(sdk.NewInt64Coin("umage", 9), sdk.NewInt64Coin("amage", 1_000_000_000_100)),
 			true,
 		},
 		{
 			"conversion not needed",
-			sdk.NewCoins(sdk.NewInt64Coin("umage", 10), sdk.NewInt64Coin("aMage", 200)),
-			sdk.NewCoins(sdk.NewInt64Coin("umage", 10), sdk.NewInt64Coin("aMage", 200)),
+			sdk.NewCoins(sdk.NewInt64Coin("umage", 10), sdk.NewInt64Coin("amage", 200)),
+			sdk.NewCoins(sdk.NewInt64Coin("umage", 10), sdk.NewInt64Coin("amage", 200)),
 			true,
 		},
 	}
@@ -681,11 +681,11 @@ func (suite *evmBankKeeperTestSuite) TestConvertOneUMageToAMageIfNeeded() {
 			suite.SetupTest()
 
 			suite.FundAccountWithMage(suite.Addrs[0], tt.startingCoins)
-			err := suite.EvmBankKeeper.ConvertOneUMageToAMageIfNeeded(suite.Ctx, suite.Addrs[0], aMageNeeded)
+			err := suite.EvmBankKeeper.ConvertOneUmageToAmageIfNeeded(suite.Ctx, suite.Addrs[0], amageNeeded)
 			moduleMage := suite.BankKeeper.GetBalance(suite.Ctx, suite.AccountKeeper.GetModuleAddress(types.ModuleName), "umage")
 			if tt.success {
 				suite.Require().NoError(err)
-				if tt.startingCoins.AmountOf("aMage").LT(aMageNeeded) {
+				if tt.startingCoins.AmountOf("amage").LT(amageNeeded) {
 					suite.Require().Equal(sdk.OneInt(), moduleMage.Amount)
 				}
 			} else {
@@ -693,15 +693,15 @@ func (suite *evmBankKeeperTestSuite) TestConvertOneUMageToAMageIfNeeded() {
 				suite.Require().Equal(sdk.ZeroInt(), moduleMage.Amount)
 			}
 
-			aMage := suite.Keeper.GetBalance(suite.Ctx, suite.Addrs[0])
-			suite.Require().Equal(tt.expectedCoins.AmountOf("aMage"), aMage)
+			amage := suite.Keeper.GetBalance(suite.Ctx, suite.Addrs[0])
+			suite.Require().Equal(tt.expectedCoins.AmountOf("amage"), amage)
 			umage := suite.BankKeeper.GetBalance(suite.Ctx, suite.Addrs[0], "umage")
 			suite.Require().Equal(tt.expectedCoins.AmountOf("umage"), umage.Amount)
 		})
 	}
 }
 
-func (suite *evmBankKeeperTestSuite) TestConvertAMageToUMage() {
+func (suite *evmBankKeeperTestSuite) TestConvertAmageToUmage() {
 	tests := []struct {
 		name          string
 		startingCoins sdk.Coins
@@ -709,18 +709,18 @@ func (suite *evmBankKeeperTestSuite) TestConvertAMageToUMage() {
 	}{
 		{
 			"not enough umage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 100)),
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 100), sdk.NewInt64Coin("umage", 0)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 100)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 100), sdk.NewInt64Coin("umage", 0)),
 		},
 		{
-			"converts aMage for 1 umage",
-			sdk.NewCoins(sdk.NewInt64Coin("umage", 10), sdk.NewInt64Coin("aMage", 1_000_000_000_003)),
-			sdk.NewCoins(sdk.NewInt64Coin("umage", 11), sdk.NewInt64Coin("aMage", 3)),
+			"converts amage for 1 umage",
+			sdk.NewCoins(sdk.NewInt64Coin("umage", 10), sdk.NewInt64Coin("amage", 1_000_000_000_003)),
+			sdk.NewCoins(sdk.NewInt64Coin("umage", 11), sdk.NewInt64Coin("amage", 3)),
 		},
 		{
-			"converts more than 1 umage of aMage",
-			sdk.NewCoins(sdk.NewInt64Coin("umage", 10), sdk.NewInt64Coin("aMage", 8_000_000_000_123)),
-			sdk.NewCoins(sdk.NewInt64Coin("umage", 18), sdk.NewInt64Coin("aMage", 123)),
+			"converts more than 1 umage of amage",
+			sdk.NewCoins(sdk.NewInt64Coin("umage", 10), sdk.NewInt64Coin("amage", 8_000_000_000_123)),
+			sdk.NewCoins(sdk.NewInt64Coin("umage", 18), sdk.NewInt64Coin("amage", 123)),
 		},
 	}
 	for _, tt := range tests {
@@ -730,17 +730,17 @@ func (suite *evmBankKeeperTestSuite) TestConvertAMageToUMage() {
 			err := suite.App.FundModuleAccount(suite.Ctx, types.ModuleName, sdk.NewCoins(sdk.NewInt64Coin("umage", 10)))
 			suite.Require().NoError(err)
 			suite.FundAccountWithMage(suite.Addrs[0], tt.startingCoins)
-			err = suite.EvmBankKeeper.ConvertAMageToUMage(suite.Ctx, suite.Addrs[0])
+			err = suite.EvmBankKeeper.ConvertAmageToUmage(suite.Ctx, suite.Addrs[0])
 			suite.Require().NoError(err)
-			aMage := suite.Keeper.GetBalance(suite.Ctx, suite.Addrs[0])
-			suite.Require().Equal(tt.expectedCoins.AmountOf("aMage"), aMage)
+			amage := suite.Keeper.GetBalance(suite.Ctx, suite.Addrs[0])
+			suite.Require().Equal(tt.expectedCoins.AmountOf("amage"), amage)
 			umage := suite.BankKeeper.GetBalance(suite.Ctx, suite.Addrs[0], "umage")
 			suite.Require().Equal(tt.expectedCoins.AmountOf("umage"), umage.Amount)
 		})
 	}
 }
 
-func (suite *evmBankKeeperTestSuite) TestSplitAMageCoins() {
+func (suite *evmBankKeeperTestSuite) TestSplitAmageCoins() {
 	tests := []struct {
 		name          string
 		coins         sdk.Coins
@@ -760,33 +760,33 @@ func (suite *evmBankKeeperTestSuite) TestSplitAMageCoins() {
 			false,
 		},
 		{
-			"umage & aMage coins",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 8_000_000_000_123)),
-			sdk.NewCoins(sdk.NewInt64Coin("umage", 8), sdk.NewInt64Coin("aMage", 123)),
+			"umage & amage coins",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 8_000_000_000_123)),
+			sdk.NewCoins(sdk.NewInt64Coin("umage", 8), sdk.NewInt64Coin("amage", 123)),
 			false,
 		},
 		{
-			"only aMage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 10_123)),
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 10_123)),
+			"only amage",
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 10_123)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 10_123)),
 			false,
 		},
 		{
 			"only umage",
-			sdk.NewCoins(sdk.NewInt64Coin("aMage", 5_000_000_000_000)),
+			sdk.NewCoins(sdk.NewInt64Coin("amage", 5_000_000_000_000)),
 			sdk.NewCoins(sdk.NewInt64Coin("umage", 5)),
 			false,
 		},
 	}
 	for _, tt := range tests {
 		suite.Run(tt.name, func() {
-			umage, aMage, err := keeper.SplitAMageCoins(tt.coins)
+			umage, amage, err := keeper.SplitAmageCoins(tt.coins)
 			if tt.shouldErr {
 				suite.Require().Error(err)
 			} else {
 				suite.Require().NoError(err)
 				suite.Require().Equal(tt.expectedCoins.AmountOf("umage"), umage.Amount)
-				suite.Require().Equal(tt.expectedCoins.AmountOf("aMage"), aMage)
+				suite.Require().Equal(tt.expectedCoins.AmountOf("amage"), amage)
 			}
 		})
 	}

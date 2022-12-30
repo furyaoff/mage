@@ -20,8 +20,8 @@ func TestGenesisState_Validate(t *testing.T) {
 		sdk.AccAddress(crypto.AddressHash([]byte("MageTest1"))),
 		sdk.AccAddress(crypto.AddressHash([]byte("MageTest2"))),
 		sdk.AccAddress(crypto.AddressHash([]byte("MageTest3"))),
-		sdk.AccAddress(crypto.AddressHash([]byte("MageTest4"))),
-		sdk.AccAddress(crypto.AddressHash([]byte("MageTest5"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("mageTest4"))),
+		sdk.AccAddress(crypto.AddressHash([]byte("mageTest5"))),
 	}
 
 	testGenesis := types.NewGenesisState(

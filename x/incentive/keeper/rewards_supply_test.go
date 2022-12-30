@@ -19,7 +19,7 @@ import (
 	"github.com/furya-official/mage/x/incentive/keeper"
 	"github.com/furya-official/mage/x/incentive/testutil"
 	"github.com/furya-official/mage/x/incentive/types"
-	Magedisttypes "github.com/furya-official/mage/x/Magedist/types"
+	Magedisttypes "github.com/furya-official/mage/x/magedist/types"
 )
 
 type SupplyIntegrationTests struct {

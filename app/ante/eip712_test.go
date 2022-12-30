@@ -42,7 +42,7 @@ import (
 )
 
 const (
-	ChainID       = "Magetest_1-1"
+	ChainID       = "magetest_1-1"
 	USDCCoinDenom = "erc20/usdc"
 	USDCCDPType   = "erc20-usdc"
 )
@@ -155,7 +155,7 @@ func (suite *EIP712TestSuite) SetupTest() {
 
 	// Genesis states
 	evmGs := evmtypes.NewGenesisState(
-		evmtypes.NewParams("aMage", true, true, evmtypes.DefaultChainConfig()),
+		evmtypes.NewParams("amage", true, true, evmtypes.DefaultChainConfig()),
 		nil,
 	)
 
@@ -346,7 +346,7 @@ func (suite *EIP712TestSuite) SetupTest() {
 			ValueTypes: []evmtypes.EIP712MsgAttrType{
 				{Name: "initiator", Type: "string"},
 				{Name: "receiver", Type: "string"},
-				{Name: "Mage_erc20_address", Type: "string"},
+				{Name: "mage_erc20_address", Type: "string"},
 				{Name: "amount", Type: "string"},
 			},
 		},
@@ -560,7 +560,7 @@ func (suite *EIP712TestSuite) TestEIP712Tx() {
 			updateTx: func(txBuilder client.TxBuilder, msgs []sdk.Msg) client.TxBuilder {
 				gasAmt := sdk.NewCoins(sdk.NewCoin("umage", sdk.NewInt(20)))
 				return suite.createTestEIP712CosmosTxBuilder(
-					suite.testAddr, suite.testPrivKey, "Magetest_12-1", uint64(helpers.DefaultGenTxGas*10), gasAmt, msgs,
+					suite.testAddr, suite.testPrivKey, "magetest_12-1", uint64(helpers.DefaultGenTxGas*10), gasAmt, msgs,
 				)
 			},
 		},

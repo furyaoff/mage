@@ -62,13 +62,13 @@ func (s queryServer) Vaults(
 
 	var vaultRecordsErr error
 
-	// Iterate over vault records instead of AllowedVaults to get all bMage-*
+	// Iterate over vault records instead of AllowedVaults to get all bmage-*
 	// vaults
 	s.keeper.IterateVaultRecords(sdkCtx, func(record types.VaultRecord) bool {
-		// Check if bMage, use allowed vault
+		// Check if bmage, use allowed vault
 		allowedVaultDenom := record.TotalShares.Denom
-		if strings.HasPrefix(record.TotalShares.Denom, bMagePrefix) {
-			allowedVaultDenom = bMageDenom
+		if strings.HasPrefix(record.TotalShares.Denom, bmagePrefix) {
+			allowedVaultDenom = bmageDenom
 		}
 
 		allowedVault, found := allowedVaultsMap[allowedVaultDenom]
@@ -155,12 +155,12 @@ func (s queryServer) Vault(
 		return nil, status.Errorf(codes.NotFound, "vault not found with specified denom")
 	}
 
-	// Handle bMage separately to get total of **all** bMage vaults
-	if req.Denom == bMageDenom {
-		return s.getAggregateBMageVault(sdkCtx, allowedVault)
+	// Handle bmage separately to get total of **all** bmage vaults
+	if req.Denom == bmageDenom {
+		return s.getAggregateBmageVault(sdkCtx, allowedVault)
 	}
 
-	// Must be req.Denom and not allowedVault.Denom to get full "bMage" denom
+	// Must be req.Denom and not allowedVault.Denom to get full "bmage" denom
 	vaultRecord, found := s.keeper.GetVaultRecord(sdkCtx, req.Denom)
 	if !found {
 		// No supply yet, no error just set it to zero
@@ -173,7 +173,7 @@ func (s queryServer) Vault(
 	}
 
 	vault := types.VaultResponse{
-		// VaultRecord denom instead of AllowedVault.Denom for full bMage denom
+		// VaultRecord denom instead of AllowedVault.Denom for full bmage denom
 		Denom:             vaultRecord.TotalShares.Denom,
 		Strategies:        allowedVault.Strategies,
 		IsPrivateVault:    allowedVault.IsPrivateVault,
@@ -187,18 +187,18 @@ func (s queryServer) Vault(
 	}, nil
 }
 
-// getAggregateBMageVault returns a VaultResponse of the total of all bMage
+// getAggregateBmageVault returns a VaultResponse of the total of all bmage
 // vaults.
-func (s queryServer) getAggregateBMageVault(
+func (s queryServer) getAggregateBmageVault(
 	ctx sdk.Context,
 	allowedVault types.AllowedVault,
 ) (*types.QueryVaultResponse, error) {
-	allBMage := sdk.NewCoins()
+	allBmage := sdk.NewCoins()
 
 	var iterErr error
 	s.keeper.IterateVaultRecords(ctx, func(record types.VaultRecord) (stop bool) {
-		// Skip non bMage vaults
-		if !strings.HasPrefix(record.TotalShares.Denom, bMagePrefix) {
+		// Skip non bmage vaults
+		if !strings.HasPrefix(record.TotalShares.Denom, bmagePrefix) {
 			return false
 		}
 
@@ -208,7 +208,7 @@ func (s queryServer) getAggregateBMageVault(
 			return false
 		}
 
-		allBMage = allBMage.Add(vaultValue)
+		allBmage = allBmage.Add(vaultValue)
 
 		return false
 	})
@@ -217,14 +217,14 @@ func (s queryServer) getAggregateBMageVault(
 		return nil, iterErr
 	}
 
-	vaultValue, err := s.keeper.liquidKeeper.GetStakedTokensForDerivatives(ctx, allBMage)
+	vaultValue, err := s.keeper.liquidKeeper.GetStakedTokensForDerivatives(ctx, allBmage)
 	if err != nil {
 		return nil, err
 	}
 
 	return &types.QueryVaultResponse{
 		Vault: types.VaultResponse{
-			Denom:             bMageDenom,
+			Denom:             bmageDenom,
 			Strategies:        allowedVault.Strategies,
 			IsPrivateVault:    allowedVault.IsPrivateVault,
 			AllowedDepositors: addressSliceToStringSlice(allowedVault.AllowedDepositors),
@@ -250,9 +250,9 @@ func (s queryServer) Deposits(
 
 	sdkCtx := sdk.UnwrapSDKContext(ctx)
 
-	// bMage aggregate total
-	if req.Denom == bMageDenom {
-		return s.getOneAccountBMageVaultDeposit(sdkCtx, req)
+	// bmage aggregate total
+	if req.Denom == bmageDenom {
+		return s.getOneAccountBmageVaultDeposit(sdkCtx, req)
 	}
 
 	// specific vault
@@ -273,7 +273,7 @@ func (s queryServer) TotalSupply(
 	totalSupply := sdk.NewCoins()
 	liquidStakedDerivatives := sdk.NewCoins()
 
-	// allowed vaults param contains info on allowed strategies, but bMage is aggregated
+	// allowed vaults param contains info on allowed strategies, but bmage is aggregated
 	allowedVaults := s.keeper.GetAllowedVaults(sdkCtx)
 	allowedVaultByDenom := make(map[string]types.AllowedVault)
 	for _, av := range allowedVaults {
@@ -284,11 +284,11 @@ func (s queryServer) TotalSupply(
 	// iterate actual records to properly enumerate all denoms
 	s.keeper.IterateVaultRecords(sdkCtx, func(vault types.VaultRecord) (stop bool) {
 		isLiquidStakingDenom := false
-		// find allowed vault to get parameters. handle translating bMage denoms to allowed vault denom
+		// find allowed vault to get parameters. handle translating bmage denoms to allowed vault denom
 		allowedVaultDenom := vault.TotalShares.Denom
-		if strings.HasPrefix(vault.TotalShares.Denom, bMagePrefix) {
+		if strings.HasPrefix(vault.TotalShares.Denom, bmagePrefix) {
 			isLiquidStakingDenom = true
-			allowedVaultDenom = bMageDenom
+			allowedVaultDenom = bmageDenom
 		}
 		allowedVault, found := allowedVaultByDenom[allowedVaultDenom]
 		if !found {
@@ -318,7 +318,7 @@ func (s queryServer) TotalSupply(
 		return false
 	})
 
-	// determine underlying value of bMage denoms
+	// determine underlying value of bmage denoms
 	if len(liquidStakedDerivatives) > 0 {
 		underlyingValue, err := s.keeper.liquidKeeper.GetStakedTokensForDerivatives(
 			sdkCtx,
@@ -327,7 +327,7 @@ func (s queryServer) TotalSupply(
 		if err != nil {
 			return nil, err
 		}
-		totalSupply = totalSupply.Add(sdk.NewCoin(bMageDenom, underlyingValue.Amount))
+		totalSupply = totalSupply.Add(sdk.NewCoin(bmageDenom, underlyingValue.Amount))
 	}
 
 	return &types.QueryTotalSupplyResponse{
@@ -402,9 +402,9 @@ func (s queryServer) getOneAccountOneVaultDeposit(
 	}, nil
 }
 
-// getOneAccountBMageVaultDeposit returns deposits for the aggregated bMage vault
+// getOneAccountBmageVaultDeposit returns deposits for the aggregated bmage vault
 // and a specific account
-func (s queryServer) getOneAccountBMageVaultDeposit(
+func (s queryServer) getOneAccountBmageVaultDeposit(
 	ctx sdk.Context,
 	req *types.QueryDepositsRequest,
 ) (*types.QueryDepositsResponse, error) {
@@ -428,22 +428,22 @@ func (s queryServer) getOneAccountBMageVaultDeposit(
 		}, nil
 	}
 
-	// Get all account deposit values to add up bMage
+	// Get all account deposit values to add up bmage
 	totalAccountValue, err := getAccountTotalValue(ctx, s.keeper, depositor, shareRecord.Shares)
 	if err != nil {
 		return nil, err
 	}
 
-	// Remove non-bMage coins, GetStakedTokensForDerivatives expects only bMage
-	totalBMageValue := sdk.NewCoins()
+	// Remove non-bmage coins, GetStakedTokensForDerivatives expects only bmage
+	totalBmageValue := sdk.NewCoins()
 	for _, coin := range totalAccountValue {
 		if s.keeper.liquidKeeper.IsDerivativeDenom(ctx, coin.Denom) {
-			totalBMageValue = totalBMageValue.Add(coin)
+			totalBmageValue = totalBmageValue.Add(coin)
 		}
 	}
 
-	// Use account value with only the aggregate bMage converted to underlying staked tokens
-	stakedValue, err := s.keeper.liquidKeeper.GetStakedTokensForDerivatives(ctx, totalBMageValue)
+	// Use account value with only the aggregate bmage converted to underlying staked tokens
+	stakedValue, err := s.keeper.liquidKeeper.GetStakedTokensForDerivatives(ctx, totalBmageValue)
 	if err != nil {
 		return nil, err
 	}
@@ -495,7 +495,7 @@ func (s queryServer) getOneAccountAllDeposits(
 		var valueInStakedTokens []sdk.Coin
 
 		for _, coin := range value {
-			// Skip non-bMage coins
+			// Skip non-bmage coins
 			if !s.keeper.liquidKeeper.IsDerivativeDenom(ctx, coin.Denom) {
 				continue
 			}
@@ -511,7 +511,7 @@ func (s queryServer) getOneAccountAllDeposits(
 
 		var filteredShares types.VaultShares
 		for _, share := range accountShare.Shares {
-			// Remove non-bMage coins from shares as they are used to
+			// Remove non-bmage coins from shares as they are used to
 			// determine which value is mapped to which denom
 			// These should be in the same order as valueInStakedTokens
 			if !s.keeper.liquidKeeper.IsDerivativeDenom(ctx, share.Denom) {

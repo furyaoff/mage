@@ -21,7 +21,7 @@ import (
 
 	"github.com/furya-official/mage/app"
 	"github.com/furya-official/mage/app/params"
-	Mageclient "github.com/furya-official/mage/client"
+	mageclient "github.com/furya-official/mage/client"
 	"github.com/furya-official/mage/migrate"
 )
 
@@ -48,7 +48,7 @@ func NewRootCmd() *cobra.Command {
 
 	rootCmd := &cobra.Command{
 		Use:   "mage",
-		Short: "Daemon and CLI for the Mage blockchain.",
+		Short: "Daemon and CLI for the mage blockchain.",
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
 			cmd.SetOut(cmd.OutOrStdout())
 			cmd.SetErr(cmd.ErrOrStderr())
@@ -108,6 +108,6 @@ func addSubCmds(rootCmd *cobra.Command, encodingConfig params.EncodingConfig, de
 		StatusCommand(),
 		newQueryCmd(),
 		newTxCmd(),
-		Mageclient.KeyCommands(app.DefaultNodeHome),
+		mageclient.KeyCommands(app.DefaultNodeHome),
 	)
 }

@@ -4,7 +4,7 @@ order: 1
 
 # Concepts
 
-This module implements governance controlled user incentives. When users take a certain action, for example opening a CDP, they become eligible for rewards. Rewards are **opt in** meaning that users must submit a message before the claim deadline to claim their rewards. The goals and background of this module were subject of a previous Mage governance proposal, which can be found [here](https://ipfs.io/ipfs/QmSYedssC3nyQacDJmNcREtgmTPyaMx2JX7RNkMdAVkdkr/user-growth-fund-proposal.pdf)
+This module implements governance controlled user incentives. When users take a certain action, for example opening a CDP, they become eligible for rewards. Rewards are **opt in** meaning that users must submit a message before the claim deadline to claim their rewards. The goals and background of this module were subject of a previous mage governance proposal, which can be found [here](https://ipfs.io/ipfs/QmSYedssC3nyQacDJmNcREtgmTPyaMx2JX7RNkMdAVkdkr/user-growth-fund-proposal.pdf)
 
 ## General Reward Distribution
 
@@ -86,9 +86,9 @@ The code is further complicated by:
 
 ## HARD Token distribution
 
-The incentive module also distributes the HARD token on the Mage blockchain. HARD tokens are distributed to two types of ecosystem participants:
+The incentive module also distributes the HARD token on the mage blockchain. HARD tokens are distributed to two types of ecosystem participants:
 
-1. Mage stakers - any address that stakes (delegates) MAGE tokens will be eligible to claim HARD tokens. For each delegator, HARD tokens are accumulated ratably based on the total number of mage tokens staked. For example, if a user stakes 1 million MAGE tokens and there are 100 million staked MAGE, that user will accumulate 1% of HARD tokens earmarked for stakers during the distribution period. Distribution periods are defined by a start date, an end date, and a number of HARD tokens that are distributed per second.
+1. mage stakers - any address that stakes (delegates) MAGE tokens will be eligible to claim HARD tokens. For each delegator, HARD tokens are accumulated ratably based on the total number of mage tokens staked. For example, if a user stakes 1 million MAGE tokens and there are 100 million staked MAGE, that user will accumulate 1% of HARD tokens earmarked for stakers during the distribution period. Distribution periods are defined by a start date, an end date, and a number of HARD tokens that are distributed per second.
 2. Depositors/Borrows - any address that deposits and/or borrows eligible tokens to the hard module will be eligible to claim HARD tokens. For each depositor, HARD tokens are accumulated ratably based on the total number of tokens staked of that denomination. For example, if a user deposits 1 million "xyz" tokens and there are 100 million xyz deposited, that user will accumulate 1% of HARD tokens earmarked for depositors of that denomination during the distribution period. Distribution periods are defined by a start date, an end date, and a number of HARD tokens that are distributed per second.
 
 Users are not air-dropped tokens, rather they accumulate `Claim` objects that they may submit a transaction in order to claim. In order to better align long term incentives, when users claim HARD tokens, they have options, called 'multipliers', for how tokens are distributed.
@@ -104,7 +104,7 @@ The incentive module is responsible for distribution of MAGE tokens to users who
 
 ## SWP Token Distribution
 
-The incentive module distributes the SWP token on the Mage blockchain. SWP tokens are distributed to two types of ecosystem participants:
+The incentive module distributes the SWP token on the mage blockchain. SWP tokens are distributed to two types of ecosystem participants:
 
-1. Mage stakers - any address that stakes (delegates) MAGE tokens will be eligible to claim SWP tokens. For each delegator, SWP tokens are accumulated ratably based on the total number of mage tokens staked. For example, if a user stakes 1 million MAGE tokens and there are 100 million staked MAGE, that user will accumulate 1% of SWP tokens earmarked for stakers during the distribution period. Distribution periods are defined by a start date, an end date, and a number of SWP tokens that are distributed per second.
+1. mage stakers - any address that stakes (delegates) MAGE tokens will be eligible to claim SWP tokens. For each delegator, SWP tokens are accumulated ratably based on the total number of mage tokens staked. For example, if a user stakes 1 million MAGE tokens and there are 100 million staked MAGE, that user will accumulate 1% of SWP tokens earmarked for stakers during the distribution period. Distribution periods are defined by a start date, an end date, and a number of SWP tokens that are distributed per second.
 2. Liquidity providers - any address that provides liquidity to eligible Swap protocol pools will be eligible to claim SWP tokens. For each liquidity provider, SWP tokens are accumulated ratably based on the total amount of pool shares. For example, if a liquidity provider deposits "xyz" and "abc" tokens into the "abc:xyz" pool to receive 10 shares and the pool has 50 total shares, then that user will accumulate 20% of SWP tokens earmarked for liquidity providers of that pool during the distribution period. Distribution periods are defined by a start date, an end date, and a number of SWP tokens that are distributed per second.

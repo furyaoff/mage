@@ -10,7 +10,7 @@ import (
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
 	tmtime "github.com/tendermint/tendermint/types/time"
 
-	MagedistTypes "github.com/furya-official/mage/x/Magedist/types"
+	MagedistTypes "github.com/furya-official/mage/x/magedist/types"
 )
 
 // Parameter keys and default values

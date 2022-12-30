@@ -12,7 +12,7 @@ import (
 	"github.com/furya-official/mage/app"
 	"github.com/furya-official/mage/x/incentive/testutil"
 	"github.com/furya-official/mage/x/incentive/types"
-	Magedisttypes "github.com/furya-official/mage/x/Magedist/types"
+	Magedisttypes "github.com/furya-official/mage/x/magedist/types"
 )
 
 const secondsPerDay = 24 * 60 * 60

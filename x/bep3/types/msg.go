@@ -32,7 +32,7 @@ var (
 	_                      sdk.Msg = &MsgCreateAtomicSwap{}
 	_                      sdk.Msg = &MsgClaimAtomicSwap{}
 	_                      sdk.Msg = &MsgRefundAtomicSwap{}
-	AtomicSwapCoinsAccAddr         = sdk.AccAddress(crypto.AddressHash([]byte("MageAtomicSwapCoins")))
+	AtomicSwapCoinsAccAddr         = sdk.AccAddress(crypto.AddressHash([]byte("mageAtomicSwapCoins")))
 )
 
 // NewMsgCreateAtomicSwap initializes a new MsgCreateAtomicSwap

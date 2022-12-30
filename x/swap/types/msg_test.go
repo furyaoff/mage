@@ -18,10 +18,10 @@ func TestMsgDeposit_Attributes(t *testing.T) {
 }
 
 func TestMsgDeposit_Signing(t *testing.T) {
-	signData := `{"type":"swap/MsgDeposit","value":{"deadline":"1623606299","depositor":"Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","slippage":"0.010000000000000000","token_a":{"amount":"1000000","denom":"umage"},"token_b":{"amount":"5000000","denom":"usdx"}}}`
+	signData := `{"type":"swap/MsgDeposit","value":{"deadline":"1623606299","depositor":"mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","slippage":"0.010000000000000000","token_a":{"amount":"1000000","denom":"umage"},"token_b":{"amount":"5000000","denom":"usdx"}}}`
 	signBytes := []byte(signData)
 
-	addr, err := sdk.AccAddressFromBech32("Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
+	addr, err := sdk.AccAddressFromBech32("mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
 	require.NoError(t, err)
 
 	msg := types.NewMsgDeposit(addr.String(), sdk.NewCoin("umage", sdk.NewInt(1e6)), sdk.NewCoin("usdx", sdk.NewInt(5e6)), sdk.MustNewDecFromStr("0.01"), 1623606299)
@@ -30,7 +30,7 @@ func TestMsgDeposit_Signing(t *testing.T) {
 }
 
 func TestMsgDeposit_Validation(t *testing.T) {
-	addr, err := sdk.AccAddressFromBech32("Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
+	addr, err := sdk.AccAddressFromBech32("mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
 	require.NoError(t, err)
 
 	validMsg := types.NewMsgDeposit(
@@ -62,7 +62,7 @@ func TestMsgDeposit_Validation(t *testing.T) {
 		},
 		{
 			name:        "invalid address",
-			depositor:   "Mage1abcde",
+			depositor:   "mage1abcde",
 			tokenA:      validMsg.TokenA,
 			tokenB:      validMsg.TokenB,
 			slippage:    validMsg.Slippage,
@@ -207,10 +207,10 @@ func TestMsgWithdraw_Attributes(t *testing.T) {
 }
 
 func TestMsgWithdraw_Signing(t *testing.T) {
-	signData := `{"type":"swap/MsgWithdraw","value":{"deadline":"1623606299","from":"Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","min_token_a":{"amount":"1000000","denom":"umage"},"min_token_b":{"amount":"2000000","denom":"usdx"},"shares":"1500000"}}`
+	signData := `{"type":"swap/MsgWithdraw","value":{"deadline":"1623606299","from":"mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","min_token_a":{"amount":"1000000","denom":"umage"},"min_token_b":{"amount":"2000000","denom":"usdx"},"shares":"1500000"}}`
 	signBytes := []byte(signData)
 
-	addr, err := sdk.AccAddressFromBech32("Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
+	addr, err := sdk.AccAddressFromBech32("mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
 	require.NoError(t, err)
 
 	msg := types.NewMsgWithdraw(
@@ -254,7 +254,7 @@ func TestMsgWithdraw_Validation(t *testing.T) {
 		},
 		{
 			name:        "invalid address",
-			from:        "Mage1abcde",
+			from:        "mage1abcde",
 			shares:      validMsg.Shares,
 			minTokenA:   validMsg.MinTokenA,
 			minTokenB:   validMsg.MinTokenB,
@@ -399,10 +399,10 @@ func TestMsgSwapExactForTokens_Attributes(t *testing.T) {
 }
 
 func TestMsgSwapExactForTokens_Signing(t *testing.T) {
-	signData := `{"type":"swap/MsgSwapExactForTokens","value":{"deadline":"1623606299","exact_token_a":{"amount":"1000000","denom":"umage"},"requester":"Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","slippage":"0.010000000000000000","token_b":{"amount":"5000000","denom":"usdx"}}}`
+	signData := `{"type":"swap/MsgSwapExactForTokens","value":{"deadline":"1623606299","exact_token_a":{"amount":"1000000","denom":"umage"},"requester":"mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","slippage":"0.010000000000000000","token_b":{"amount":"5000000","denom":"usdx"}}}`
 	signBytes := []byte(signData)
 
-	addr, err := sdk.AccAddressFromBech32("Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
+	addr, err := sdk.AccAddressFromBech32("mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
 	require.NoError(t, err)
 
 	msg := types.NewMsgSwapExactForTokens(addr.String(), sdk.NewCoin("umage", sdk.NewInt(1e6)), sdk.NewCoin("usdx", sdk.NewInt(5e6)), sdk.MustNewDecFromStr("0.01"), 1623606299)
@@ -440,7 +440,7 @@ func TestMsgSwapExactForTokens_Validation(t *testing.T) {
 		},
 		{
 			name:        "invalid address",
-			requester:   "Mage1abcde",
+			requester:   "mage1abcde",
 			exactTokenA: validMsg.ExactTokenA,
 			tokenB:      validMsg.TokenB,
 			slippage:    validMsg.Slippage,
@@ -585,10 +585,10 @@ func TestMsgSwapForExactTokens_Attributes(t *testing.T) {
 }
 
 func TestMsgSwapForExactTokens_Signing(t *testing.T) {
-	signData := `{"type":"swap/MsgSwapForExactTokens","value":{"deadline":"1623606299","exact_token_b":{"amount":"5000000","denom":"usdx"},"requester":"Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","slippage":"0.010000000000000000","token_a":{"amount":"1000000","denom":"umage"}}}`
+	signData := `{"type":"swap/MsgSwapForExactTokens","value":{"deadline":"1623606299","exact_token_b":{"amount":"5000000","denom":"usdx"},"requester":"mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d","slippage":"0.010000000000000000","token_a":{"amount":"1000000","denom":"umage"}}}`
 	signBytes := []byte(signData)
 
-	addr, err := sdk.AccAddressFromBech32("Mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
+	addr, err := sdk.AccAddressFromBech32("mage1gepm4nwzz40gtpur93alv9f9wm5ht4l0hzzw9d")
 	require.NoError(t, err)
 
 	msg := types.NewMsgSwapForExactTokens(addr.String(), sdk.NewCoin("umage", sdk.NewInt(1e6)), sdk.NewCoin("usdx", sdk.NewInt(5e6)), sdk.MustNewDecFromStr("0.01"), 1623606299)
@@ -626,7 +626,7 @@ func TestMsgSwapForExactTokens_Validation(t *testing.T) {
 		},
 		{
 			name:        "invalid address",
-			requester:   "Mage1abcde",
+			requester:   "mage1abcde",
 			tokenA:      validMsg.TokenA,
 			exactTokenB: validMsg.ExactTokenB,
 			slippage:    validMsg.Slippage,

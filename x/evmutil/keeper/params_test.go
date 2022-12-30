@@ -20,7 +20,7 @@ func TestParamsSuite(t *testing.T) {
 func (suite *ParamsTestSuite) TestEnabledConversionPair() {
 	pairAddr := testutil.MustNewInternalEVMAddressFromString("0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2")
 	expPair := types.ConversionPair{
-		MageERC20Address: pairAddr.Bytes(),
+		MageERC20Address : pairAddr.Bytes(),
 		Denom:            "weth",
 	}
 	params := types.DefaultParams()
